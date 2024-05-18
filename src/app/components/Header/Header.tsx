@@ -32,10 +32,10 @@ export default function Header() {
                     </Bounce>
                     <div className="container-button mx-auto space-x-1 flex">
                         <Link href={"https://github.com/Victor-Zarzar"} target="blank">
-                            <Button> <FaGithub className="mr-1" /> Github</Button>
+                            <Button className="px-2 md:px-4"> <FaGithub className="mr-1" /> Github</Button>
                         </Link>
                         <Link href={"https://www.linkedin.com/in/victorzarzar"} target="blank">
-                            <Button> <FaLinkedin className="mr-1" /> Linkedin</Button>
+                            <Button className="px-2 md:px-4"> <FaLinkedin className="mr-1" /> Linkedin</Button>
                         </Link>
                     </div>
                 </div>
