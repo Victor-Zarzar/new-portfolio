@@ -1,37 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" id="header">
+ New Portfolio
+</h1>
 
-## Getting Started
+<h2 id="stack">
+🤖 Stack:
+</h2>
+<p>
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" width="48" title="Html"> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TailwindCSS-Dark.svg" width="48" title="TailWindCss">
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" width="48" title="React.Js">  <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TypeScript.svg" width="48" title="TypeScript">
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/NextJS-Dark.svg" width="48" title="Next.Js">  <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Vercel-Dark.svg" width="48"  title="Vercel"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" width="48" title="Docker">
+</p>
 
-First, run the development server:
+- TypeScript
+- React
+- Html
+- TailWind CSS
+- Next.js
+- Docker
+- Docker-Compose
+- Zod and Rect Form Validation
+- Shadcn UI
+- RSuite JS UI
+  
+<br />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+⚙️ How to install:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project Clone
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+     git clone https://github.com/Victor-Zarzar/new-portfolio
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+With docker and docker-compose installed, the following command moves up the stack:
 
-## Learn More
+     make up
 
-To learn more about Next.js, take a look at the following resources:
+Starting the project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Clear the stack:
 
-## Deploy on Vercel
+    make clean
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For the stack:
+   
+    make down
+   
+<p align="center">
+  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/59aa781d-7f37-4b77-92ca-3d882e252cc9" width="1000" height="500" alt="Screenshot 2024-01-20 at 01 04 13">
+</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# new-portfolio
+<p align="center">
+  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/d0f54857-f73e-41d6-a902-fda2d5f07e5a" alt="Screenshot 2024-02-22 13-19-06" width="270px" height="450px"> 
+  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/79e4ea65-f14d-4d84-93ab-fdf2deec07e6" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
+  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/02e5756b-d16b-4355-9672-f6d645185a29" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
+</p>
