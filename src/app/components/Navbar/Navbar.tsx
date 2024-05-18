@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io"
 import Link from "next/link"
 import { NavItem } from "@/app/types/main"
-import { RiMoonFill, RiSunLine } from "react-icons/ri"
+import { GiHeraldicSun } from "react-icons/gi";
+import { GiMoonBats } from "react-icons/gi";
 import { useTheme } from "next-themes";
 
 export default function Navbar() {
@@ -69,13 +70,13 @@ export default function Navbar() {
                 <button
                   onClick={() => setTheme("light")}
                   className="p-2 rounded-xl">
-                  <RiSunLine size={25} color="white" />
+                  <GiHeraldicSun size={27} color="white" />
                 </button>
               ) : (
                 <button
                   onClick={() => setTheme("dark")}
                   className="p-2 rounded-xl">
-                  <RiMoonFill size={25} />
+                  <GiMoonBats size={27} />
                 </button>
               )}
             </div>
