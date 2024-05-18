@@ -14,6 +14,8 @@ type education = {
 }
 
 type Project = {
+    title: string;
+    description: string | JSX.Element;
     photo: string;
     sourceCodeLink: string;
 };
