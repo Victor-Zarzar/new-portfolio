@@ -1,4 +1,14 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply h-full m-0 p-0 dark:bg-stone-900;
+}
+#root {
+  @apply flex flex-col min-h-full;
+}
+.content {
+  @apply grow;
+}
