@@ -46,13 +46,13 @@ Clear the stack:
 For the stack:
    
     make down
-   
+
 <p align="center">
-  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/59aa781d-7f37-4b77-92ca-3d882e252cc9" width="1000" height="500" alt="Screenshot 2024-01-20 at 01 04 13">
+  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/32944179-afea-42f0-a1eb-9bb0c6b9462a" width="1000" height="500" alt="Screenshot 2024-01-20 at 01 04 13">
 </p>
 
 <p align="center">
-  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/d0f54857-f73e-41d6-a902-fda2d5f07e5a" alt="Screenshot 2024-02-22 13-19-06" width="270px" height="450px"> 
-  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/79e4ea65-f14d-4d84-93ab-fdf2deec07e6" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
-  <img src="https://github.com/Victor-Zarzar/my-website/assets/114430780/02e5756b-d16b-4355-9672-f6d645185a29" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
+  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/a8962c1a-33d4-48e1-8b1e-ceb2cd0ffcdf" alt="Screenshot 2024-02-22 13-19-06" width="270px" height="450px"> 
+  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/9a47f745-882c-4a9b-9c71-9edaf09dad9d" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
+  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/ad35ea18-03f9-40ff-9eb7-20527e0ea18e" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
 </p>
