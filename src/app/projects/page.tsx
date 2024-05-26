@@ -23,7 +23,7 @@ import { Project } from "../types/main";
 
 export default function Projects() {
 
-    const vacancymanager = '/vacancies.png';
+    const gasoline = '/gasoline.png';
     const agepet = '/agepet.png';
     const shoppingapp = '/shoppingflutter.png';
     const portfolio = '/portfolio.png';
@@ -31,10 +31,10 @@ export default function Projects() {
 
     const projects: Project[] = [
         {
-            title: "Vacancies Manager App",
+            title: "Alcohol or Gasoline App",
             description: (
                 <div>
-                    <p className="mb-3">App Vacancies Manager Flutter.</p>
+                    <p className="mb-3">App Alcohol or Gasoline Flutter.</p>
                     <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
                         <FlutterIcon />
                         <DartIcon />
@@ -45,8 +45,8 @@ export default function Projects() {
                     </div>
                 </div>
             ),
-            photo: vacancymanager,
-            sourceCodeLink: "https://github.com/Victor-Zarzar/gerenciador_vagas_rotativas",
+            photo: gasoline,
+            sourceCodeLink: "https://github.com/Victor-Zarzar/alcool_ou_gasolina.git",
         },
         {
             title: "Law Firm",
