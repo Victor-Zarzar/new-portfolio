@@ -19,7 +19,7 @@
 - Next.js
 - Docker
 - Docker-Compose
-- Zod and Rect Form Validation
+- Zod and React Hook Validation
 - Shadcn UI
 - RSuite JS UI
   
