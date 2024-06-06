@@ -1,13 +1,63 @@
 {
-    "Navbar": {
-      "titlenavbar": "Victor Zarzar",
-      "home": "Home",
-      "about": "About",
-      "projects": "Projects",
-      "contact": "Contact"
-    },
-
-    "Header": {
-        
-    }
+  "Navbar": {
+    "titlenavbar": "Victor Zarzar",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Header": {
+    "h1": "Welcome to my portfolio,",
+    "span": "I´am Front-End Developer🖖🏻"
+  },
+  "Skills": {
+    "h1": "Skills",
+    "p": "Some of the technologies I use in my daily life"
+  },
+  "About": {
+    "h1": "About",
+    "p": "My first contact with programming was in 2009, using SQL-SERVER 2000 & My SQL technologies, creating, restoring and editing databases, and creating sites in PHP.Always looking to improve my knowledge daily, Im not afraid of the unknown, I try to evolve every day, new challenges are welcome. I love learning about new technologies and solving problems. In love with coffee, my vinyl records & Rock n Roll 🤘🏻.",
+    "h2": "Languagem",
+    "span1": "English - Basic Tech",
+    "span2": "PT-BR - Native Speaker"
+  },
+  "Experiences": {
+    "h1": "Experiences Tech & Education",
+    "p1": "March 2023 - Present",
+    "p2": "Front-End Developer - Front web and Flutter Mobile.",
+    "p3": "São Leopoldo, RS, Brazil - Remote",
+    "p4": "December 2022 - March 2023",
+    "p5": "QA Tester - Functional, Usability, Load, Localization, Accessibility, Regression.",
+    "p6": "Novo Hamburgo, RS, Brazil - Remote",
+    "p7": "Apr 2024 - Oct 2027 - Ampli SP",
+    "p8": "Software Engineering",
+    "p9": "Jul 2022 - Jul 2024 - Ampli SP",
+    "p10": "Analysis and systems development"
+  },
+  "Projects": {
+    "h1": "Projects",
+    "h2": "Featured projects",
+    "projecttitle1": "Alcohol or Gasoline App",
+    "projectdescription1": "App Alcohol or Gasoline Flutter.",
+    "projecttitle2": "Law Firm",
+    "projectdescription2": "Web site application Law Firm.",
+    "projecttitle3": "Age Pet App",
+    "projectdescription3": "Age Pet App Flutter.",
+    "projecttitle4": "My Portfolio",
+    "projectdescription4": "My professional portfolio website.",
+    "projecttitle5": "Shopping App",
+    "projectdescription5": "App Shopping Flutter."
+  },
+  "Contact": {
+    "h1": "Contact Me ;)",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Submit",
+    "namerequired": "Name Required",
+    "invalidemail": "Invalid Email",
+    "subjectrequired": "Subject Required",
+    "messagerequired": "Message Required"
   }
+}

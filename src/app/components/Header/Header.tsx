@@ -9,9 +9,13 @@ import { HiArrowDown } from "react-icons/hi";
 import Link from "next/link";
 import { Bounce } from "react-awesome-reveal";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import { useTranslations } from 'next-intl';
 
 export default function Header() {
+
+    const t = useTranslations('Header');
+
     return (
         <>
             <div className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
@@ -23,10 +27,10 @@ export default function Header() {
                 </div>
                 <div className="md:mt-2 md:w-3/5">
                     <Bounce>
-                        <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-5xl">Welcome to my portfolio,</h1>
+                        <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-5xl">{t('h1')}</h1>
                         <p className="text-lg mt-4 mb-6 md:text-2xl">
                             <span className="font-semibold text-gray-600">
-                                I´am Front-End Developer🖖🏻
+                                {t('span')}
                             </span>
                         </p>
                     </Bounce>

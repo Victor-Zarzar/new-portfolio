@@ -14,15 +14,18 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea"
+import { Textarea } from "@/components/ui/textarea";
+import { useTranslations } from 'next-intl';
 
 export default function Contact() {
 
+    const t = useTranslations('Contact');
+
     const formSchema = z.object({
-        name: z.string().min(1, ('namerequired')),
-        email: z.string().email(('invalidemail')),
-        subject: z.string().min(1, ('subjectrequired')),
-        message: z.string().min(1, ('messagerequired')),
+        name: z.string().min(1, t('namerequired')),
+        email: z.string().email(t('invalidemail')),
+        subject: z.string().min(1, t('subjectrequired')),
+        message: z.string().min(1, t('messagerequired')),
     });
 
     const form = useForm({
@@ -43,7 +46,7 @@ export default function Contact() {
         <div className="col-span-4 mx-auto">
             <div className="h1 p-6">
                 <Fade>
-                    <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">Contact Me</h1>
+                    <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">{t('h1')}</h1>
                 </Fade>
                 <div className='form-container mx-auto justify-center items-center flex mt-20 md:mt-28 mb-40 md:mb-36'>
                     <Form {...form}>
@@ -55,9 +58,9 @@ export default function Contact() {
                                 name="name"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Name</FormLabel>
+                                        <FormLabel>{t('name')}</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Name" {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
+                                            <Input placeholder={t('name')} {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
                                                 autoComplete='name' />
                                         </FormControl>
                                         <FormMessage />
@@ -69,9 +72,9 @@ export default function Contact() {
                                 name="email"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Email</FormLabel>
+                                        <FormLabel>{t('email')}</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Email" type="email" {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
+                                            <Input placeholder={t('email')} type="email" {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
                                                 autoComplete='email' />
                                         </FormControl>
                                         <FormMessage />
@@ -83,9 +86,9 @@ export default function Contact() {
                                 name="subject"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Subject</FormLabel>
+                                        <FormLabel>{t('subject')}</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Subject" {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
+                                            <Input placeholder={t('subject')} {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
                                                 autoComplete='subject' />
                                         </FormControl>
                                         <FormMessage />
@@ -97,9 +100,9 @@ export default function Contact() {
                                 name="message"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Message</FormLabel>
+                                        <FormLabel>{t('message')}</FormLabel>
                                         <FormControl>
-                                            <Textarea placeholder="Message" {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
+                                            <Textarea placeholder={t('message')} {...field} className='dark:bg-stone-900 dark:border-b dark:border-stone-600'
                                                 autoComplete='message' />
                                         </FormControl>
                                         <FormMessage />
@@ -107,7 +110,7 @@ export default function Contact() {
                                 )}
                             />
                             <Button type="submit" className="w-full">
-                                Submit
+                                {t('submit')}
                             </Button>
                         </form>
                     </Form>

@@ -20,8 +20,11 @@ import AndroidStudioIcon from "@/app/components/icons/projects/androidstudio";
 import { AiOutlineGithub } from "react-icons/ai";
 import Autoplay from "embla-carousel-autoplay";
 import { Project } from "../types/main";
+import { useTranslations } from 'next-intl';
 
 export default function Projects() {
+
+    const t = useTranslations('Projects');
 
     const gasoline = '/gasoline.png';
     const agepet = '/agepet.png';
@@ -31,10 +34,10 @@ export default function Projects() {
 
     const projects: Project[] = [
         {
-            title: "Alcohol or Gasoline App",
+            title: t('projecttitle1'),
             description: (
                 <div>
-                    <p className="mb-3">App Alcohol or Gasoline Flutter.</p>
+                    <p className="mb-3">{t('projectdescription1')}</p>
                     <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
                         <FlutterIcon />
                         <DartIcon />
@@ -49,10 +52,10 @@ export default function Projects() {
             sourceCodeLink: "https://github.com/Victor-Zarzar/alcool_ou_gasolina.git",
         },
         {
-            title: "Law Firm",
+            title: t('projecttitle2'),
             description: (
                 <div>
-                    <p className="mb-3">Web site application Law Firm.</p>
+                    <p className="mb-3">{t('projectdescription2')}</p>
                     <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
                         <HtmlIcon />
                         <ReactIcon />
@@ -67,10 +70,10 @@ export default function Projects() {
             sourceCodeLink: "https://github.com/Victor-Zarzar/law-firm",
         },
         {
-            title: "Age Pet",
+            title: t('projecttitle3'),
             description: (
                 <div>
-                    <p className="mb-3">Age Pet App Flutter.</p>
+                    <p className="mb-3">{t('projectdescription3')}</p>
                     <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
                         <FlutterIcon />
                         <DartIcon />
@@ -85,10 +88,10 @@ export default function Projects() {
             sourceCodeLink: "https://github.com/Victor-Zarzar/age-pet",
         },
         {
-            title: "My Portfolio",
+            title: t('projecttitle4'),
             description: (
                 <div>
-                    <p className='mb-3'>My professional portfolio website.</p>
+                    <p className='mb-3'>{t('projectdescription4')}</p>
                     <div className="flex space-x-1 md:space-x-2 transition-transform cursor-pointer">
                         <HtmlIcon />
                         <ReactIcon />
@@ -103,10 +106,10 @@ export default function Projects() {
             sourceCodeLink: "https://github.com/Victor-Zarzar/new-portfolio",
         },
         {
-            title: "Shopping App",
+            title: t('projecttitle5'),
             description: (
                 <div>
-                    <p className="mb-3">App Shopping Flutter.</p>
+                    <p className="mb-3">{t('projectdescription5')}</p>
                     <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
                         <FlutterIcon />
                         <DartIcon />
@@ -128,14 +131,14 @@ export default function Projects() {
                 <div className="col-span-4 mx-auto">
                     <div className="h1 p-6">
                         <Fade>
-                            <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">Projects</h1>
+                            <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">{t('h1')}</h1>
                         </Fade>
                     </div>
                 </div>
                 <div className="my-4 mt-8 md:mt-6" id="projects">
-                    <h1 className="title-skills font-extrabold leading-10 tracking-tight text-sm md:text-2xl lg:text-2xl mt-8 md:mt-4 mb-8 text-center">
-                        Featured projects
-                    </h1>
+                    <h2 className="title-skills font-extrabold leading-10 tracking-tight text-sm md:text-2xl lg:text-2xl mt-8 md:mt-4 mb-8 text-center">
+                    {t('h2')}
+                    </h2>
                 </div>
                 <div className="carrousel-container">
                     <Carousel plugins={[Autoplay({ delay: 2000 }),

@@ -3,15 +3,19 @@ import React from 'react';
 import SkillOutline from './IconSkills';
 import { skills } from './IconSkills';
 import { Fade } from 'react-awesome-reveal';
+import { useTranslations } from 'next-intl';
 
 export default function Skills() {
+
+    const t = useTranslations('Skills');
+
     return (
         <div className="space-y-1 max-w-lg md:max-w-3xl mt-28 mb-16">
             <div className="text-center mb-20">
                 <Fade>
-                    <h1 className="title-skills mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center">Skills</h1>
+                    <h1 className="title-skills mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center">{t('h1')}</h1>
                 </Fade>
-                <p className="text-sm leading-relaxed mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter">Some of the technologies I use in my daily life</p>
+                <p className="text-sm leading-relaxed mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter">{t('p')}</p>
                 <div className="flex mt-6 justify-center">
                 </div>
             </div>
