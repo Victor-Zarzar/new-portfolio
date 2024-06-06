@@ -6,27 +6,30 @@ import { NavItem } from "@/app/types/main"
 import { GiHeraldicSun } from "react-icons/gi";
 import { GiMoonBats } from "react-icons/gi";
 import { useTheme } from "next-themes";
+import {useTranslations} from 'next-intl';
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === "system" ? systemTheme : theme
 
+  const t = useTranslations('Navbar');
+
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: "Home",
+      label: t('home'),
       link: "/",
     },
     {
-      label: "About",
+      label: t('about'),
       link: "about",
     },
     {
-      label: "Projects",
+      label: t('projects'),
       link: "projects",
     },
     {
-      label: "Contact",
+      label: t('contact'),
       link: "contact",
     },
   ]
@@ -37,7 +40,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="/">
             <div className="container flex items-center space-x-2">
-              <h2 className="text-2xl font-bold">Victor Zarzar</h2>
+              <h2 className="text-2xl font-bold">{t('titlenavbar')}</h2>
             </div>
           </Link>
           <div className="md:hidden">
