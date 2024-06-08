@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-import TimelineComponent from "../components/Timeline/Timeline";
+import TimelineComponent from "@/app/components/Timeline/Timeline";
 import { useTranslations } from 'next-intl';
 
 export default function About() {
