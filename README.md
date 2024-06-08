@@ -22,6 +22,8 @@
 - Zod and React Hook Validation
 - Shadcn UI
 - RSuite JS UI
+- Dark Mode - Next Themes
+- Next Intl Translate EN/PT-BR
   
 <br />
 
