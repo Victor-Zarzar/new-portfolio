@@ -19,7 +19,7 @@ import XcodeIcon from "@/app/components/icons/projects/xcode";
 import AndroidStudioIcon from "@/app/components/icons/projects/androidstudio";
 import { AiOutlineGithub } from "react-icons/ai";
 import Autoplay from "embla-carousel-autoplay";
-import { Project } from "../types/main";
+import { Project } from "@/app/types/main";
 import { useTranslations } from 'next-intl';
 
 export default function Projects() {
