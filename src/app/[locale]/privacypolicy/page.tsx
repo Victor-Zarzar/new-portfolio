@@ -7,19 +7,19 @@ export default function PrivacyPolicy() {
     const t = useTranslations('PrivacyPolicy');
 
     const sections = [
-        "service", 
-        "informationcollected", 
-        "infocollected", 
-        "localization", 
-        "providerservice", 
-        "security", 
-        "securitydescription", 
-        "childrensprivacy", 
-        "childrensprivacydescription", 
-        "changestothisprivacypolicy", 
-        "changesdescription", 
-        "contactme", 
-        "contactmedescription", 
+        "service",
+        "informationcollected",
+        "infocollected",
+        "localization",
+        "providerservice",
+        "security",
+        "securitydescription",
+        "childrensprivacy",
+        "childrensprivacydescription",
+        "changestothisprivacypolicy",
+        "changesdescription",
+        "contactme",
+        "contactmedescription",
         "contactinformation"
     ];
 

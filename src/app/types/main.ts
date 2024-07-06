@@ -18,6 +18,7 @@ type Project = {
     description: string | JSX.Element;
     photo: string;
     sourceCodeLink: string;
+    sourceLinkPrivacy: string;
 };
 
 type NavItem = {

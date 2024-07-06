@@ -21,12 +21,14 @@ import { AiOutlineGithub } from "react-icons/ai";
 import Autoplay from "embla-carousel-autoplay";
 import { Project } from "@/app/types/main";
 import { useTranslations } from 'next-intl';
+import { MdPrivacyTip } from "react-icons/md";
 
 export default function Projects() {
 
     const t = useTranslations('Projects');
 
     const gasoline = '/gasoline.png';
+    const grocery = '/groceryapp.png';
     const agepet = '/agepet.png';
     const shoppingapp = '/shoppingflutter.png';
     const portfolio = '/portfolio.png';
@@ -50,6 +52,7 @@ export default function Projects() {
             ),
             photo: gasoline,
             sourceCodeLink: "https://github.com/Victor-Zarzar/alcool_ou_gasolina.git",
+            sourceLinkPrivacy: "privacypolicy",
         },
         {
             title: t('projecttitle2'),
@@ -68,6 +71,7 @@ export default function Projects() {
             ),
             photo: lawfirm,
             sourceCodeLink: "https://github.com/Victor-Zarzar/law-firm",
+            sourceLinkPrivacy: "privacypolicy",
         },
         {
             title: t('projecttitle3'),
@@ -84,14 +88,34 @@ export default function Projects() {
                     </div>
                 </div>
             ),
-            photo: agepet,
-            sourceCodeLink: "https://github.com/Victor-Zarzar/age-pet",
+            photo: grocery,
+            sourceCodeLink: "https://github.com/Victor-Zarzar/shopping-flutter",
+            sourceLinkPrivacy: "privacypolicy",
         },
         {
             title: t('projecttitle4'),
             description: (
                 <div>
-                    <p className='mb-3'>{t('projectdescription4')}</p>
+                    <p className="mb-3">{t('projectdescription4')}</p>
+                    <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
+                        <FlutterIcon />
+                        <DartIcon />
+                        <AndroidIcon />
+                        <IosIcon />
+                        <XcodeIcon />
+                        <AndroidStudioIcon />
+                    </div>
+                </div>
+            ),
+            photo: agepet,
+            sourceCodeLink: "https://github.com/Victor-Zarzar/age-pet",
+            sourceLinkPrivacy: "privacypolicy",
+        },
+        {
+            title: t('projecttitle5'),
+            description: (
+                <div>
+                    <p className='mb-3'>{t('projectdescription5')}</p>
                     <div className="flex space-x-1 md:space-x-2 transition-transform cursor-pointer">
                         <HtmlIcon />
                         <ReactIcon />
@@ -104,12 +128,13 @@ export default function Projects() {
             ),
             photo: portfolio,
             sourceCodeLink: "https://github.com/Victor-Zarzar/new-portfolio",
+            sourceLinkPrivacy: "privacypolicy",
         },
         {
-            title: t('projecttitle5'),
+            title: t('projecttitle6'),
             description: (
                 <div>
-                    <p className="mb-3">{t('projectdescription5')}</p>
+                    <p className="mb-3">{t('projectdescription6')}</p>
                     <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
                         <FlutterIcon />
                         <DartIcon />
@@ -122,6 +147,7 @@ export default function Projects() {
             ),
             photo: shoppingapp,
             sourceCodeLink: "https://github.com/Victor-Zarzar/shopping-flutter",
+            sourceLinkPrivacy: "privacypolicy",
         },
     ];
 
@@ -137,7 +163,7 @@ export default function Projects() {
                 </div>
                 <div className="my-4 mt-8 md:mt-6" id="projects">
                     <h2 className="title-skills font-extrabold leading-10 tracking-tight text-sm md:text-2xl lg:text-2xl mt-8 md:mt-4 mb-8 text-center">
-                    {t('h2')}
+                        {t('h2')}
                     </h2>
                 </div>
                 <div className="carrousel-container">
@@ -167,13 +193,22 @@ export default function Projects() {
                                                         <div className="text-xs md:text-sm font-semibold">
                                                             {project.description}
                                                         </div>
-                                                        <a href={project.sourceCodeLink} target="_blank" className="text-gray-500 hover:text-gray-400 dark:hover:text-white 
+                                                        <div className="flex mx-auto items-center justify-center space-x-3">
+                                                            <a href={project.sourceCodeLink} target="_blank" className="text-gray-500 hover:text-gray-400 dark:hover:text-white 
                                                     dark:text-gray-400" rel="noreferrer">
-                                                            <AiOutlineGithub
-                                                                className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
-                                                                size={30}
-                                                            />
-                                                        </a>
+                                                                <AiOutlineGithub
+                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                    size={30}
+                                                                />
+                                                            </a>
+                                                            <a href={project.sourceLinkPrivacy} target="_blank" className="text-gray-500 hover:text-gray-400 dark:hover:text-white 
+                                                    dark:text-gray-400" rel="noreferrer">
+                                                                <MdPrivacyTip
+                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                    size={30}
+                                                                />
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </PopoverContent>
                                             </Popover>
