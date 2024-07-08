@@ -4,7 +4,10 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "language": "Language",
+    "english": "English",
+    "portuguese": "Portuguese"
   },
   "Header": {
     "h1": "Welcome to my portfolio,",

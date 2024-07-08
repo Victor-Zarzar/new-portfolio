@@ -4,7 +4,10 @@
     "home": "Início",
     "about": "Sobre",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "language": "Linguagem",
+    "english": "Inglês",
+    "portuguese": "Português"
   },
   "Header": {
     "h1": "Bem-vindo ao meu portfólio,",

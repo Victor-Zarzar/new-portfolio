@@ -6,7 +6,8 @@ import { NavItem } from "@/app/types/main"
 import { GiHeraldicSun } from "react-icons/gi";
 import { GiMoonBats } from "react-icons/gi";
 import { useTheme } from "next-themes";
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { SwitchLocale } from "../SwitchLocale/SwitchLocale";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -40,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="/">
             <div className="container flex items-center space-x-2">
-              <h2 className="text-2xl font-bold">{t('titlenavbar')}</h2>
+              <h2 className="text-lg lg:text-2xl font-bold">{t('titlenavbar')}</h2>
             </div>
           </Link>
           <div className="md:hidden">
@@ -69,16 +70,17 @@ export default function Navbar() {
                   </Link>
                 )
               })}
-               {currentTheme === "dark" ? (
+              <SwitchLocale />
+              {currentTheme === "dark" ? (
                 <button
                   onClick={() => setTheme("light")}
-                  className="p-2 rounded-xl">
+                  className="p-1 rounded-xl">
                   <GiHeraldicSun size={27} color="white" />
                 </button>
               ) : (
                 <button
                   onClick={() => setTheme("dark")}
-                  className="p-2 rounded-xl">
+                  className="p-1 rounded-xl">
                   <GiMoonBats size={27} />
                 </button>
               )}
