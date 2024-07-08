@@ -53,7 +53,7 @@
     "projecttitle6": "App de compras",
     "projectdescription6": "App Shopping Flutter."
   },
-  "PrivacyPolicy": {
+  "PrivacyPolicyApps": {
     "h1": "Política de Privacidade",
     "p": "Introdução",
     "h2": "Esta política de privacidade ajudará você a entender quais informações coletamos nos aplicativos desenvolvidos por mim, Victor Zarzar, como os utilizo e quais escolhas você tem. Eu, Victor Zarzar, criei os seguintes aplicativos como aplicativos gratuitos:",
@@ -61,6 +61,29 @@
     "app2": "Lista de compras",
     "app3": "Aplicativo de finanças",
     "service": "Este serviço é fornecido por mim, Victor Zarzar, sem custo e é destinado para uso como está. Se você optar por usar nosso Serviço, então você concorda com a coleta e uso de informações relacionadas a esta política. No entanto, informo que nenhum dos meus aplicativos coleta dados pessoais de seus usuários.",
+    "informationcollected": "Informações Coletadas",
+    "infocollected": "Eu não coleto nenhuma informação pessoal identificável dos usuários enquanto eles utilizam meus aplicativos.",
+    "localization": "Meus aplicativos não coletam informações de localização ou quaisquer outras informações do dispositivo que possam identificar o usuário individual.",
+    "providerservice": "Eu não emprego empresas ou indivíduos de terceiros para coletar ou processar dados pessoais de nossos usuários.",
+    "security": "Segurança",
+    "securitydescription": "Valorizo ​​sua confiança ao usar meus aplicativos e estou comprometido em garantir que suas informações sejam seguras. No entanto, como não coleto informações pessoais, não há risco de exposição de dados pessoais.",
+    "childrensprivacy": "Privacidade infantil",
+    "childrensprivacydescription": "Este Serviço não coleta informações pessoalmente identificáveis de crianças menores de 13 anos. Não tenho conhecimento de coleta de dados de menores de 13 anos e, se isso ocorrer, tomarei medidas imediatas para excluir essas informações de meus servidores.",
+    "changestothisprivacypolicy": "Alterações a Esta Política de Privacidade",
+    "changesdescription": "Posso atualizar minha Política de Privacidade de tempos em tempos. Assim, aconselho você a revisar esta página periodicamente para quaisquer alterações. Notificarei você de quaisquer alterações postando a nova Política de Privacidade nesta página. Essas alterações são efetivas imediatamente após serem postadas nesta página.",
+    "contactme": "Contate-me",
+    "contactmedescription": "Se você tiver quaisquer perguntas ou sugestões sobre minha Política de Privacidade, não hesite em me contatar.",
+    "contactinformation": "Informações de Contato:",
+    "email": "Email: victorzarzardev@gmail.com",
+    "website": "Website: www.victorzarzar.com.br"
+  },
+  "PrivacyPolicy": {
+    "h1": "Política de Privacidade",
+    "p": "Introdução",
+    "h2": "Esta política de privacidade ajudará você a entender quais informações coletamos nos aplicativos desenvolvidos por mim, Victor Zarzar, como os utilizo e quais escolhas você tem. Eu, Victor Zarzar, criei estas aplicações web:",
+    "app1": "Escritório de Advocacia",
+    "app2": "Meu Portfólio",
+    "service": "Este serviço é fornecido por mim, Victor Zarzar, sem custo e é destinado para uso como está. Se você optar por usar nosso Serviço, então você concorda com a coleta e uso de informações relacionadas a esta política. No entanto, informo que nenhuma das aplicações coleta dados pessoais de seus usuários.",
     "informationcollected": "Informações Coletadas",
     "infocollected": "Eu não coleto nenhuma informação pessoal identificável dos usuários enquanto eles utilizam meus aplicativos.",
     "localization": "Meus aplicativos não coletam informações de localização ou quaisquer outras informações do dispositivo que possam identificar o usuário individual.",

@@ -26,7 +26,7 @@ export function SwitchLocale() {
 
   function onSelectChange(value: string) {
     startTransition(() => {
-      router.replace(`/${value}`);
+      router.push(`/${value}`);
     });
   }
 

@@ -52,7 +52,7 @@ export default function Projects() {
             ),
             photo: gasoline,
             sourceCodeLink: "https://github.com/Victor-Zarzar/alcool_ou_gasolina.git",
-            sourceLinkPrivacy: "privacypolicy",
+            sourceLinkPrivacy: "privacypolicy-apps",
         },
         {
             title: t('projecttitle2'),
@@ -90,7 +90,7 @@ export default function Projects() {
             ),
             photo: grocery,
             sourceCodeLink: "https://github.com/Victor-Zarzar/shopping-flutter",
-            sourceLinkPrivacy: "privacypolicy",
+            sourceLinkPrivacy: "privacypolicy-apps",
         },
         {
             title: t('projecttitle4'),
@@ -147,7 +147,7 @@ export default function Projects() {
             ),
             photo: shoppingapp,
             sourceCodeLink: "https://github.com/Victor-Zarzar/shopping-flutter",
-            sourceLinkPrivacy: "privacypolicy",
+            sourceLinkPrivacy: "privacypolicy-apps",
         },
     ];
 

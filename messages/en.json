@@ -53,7 +53,7 @@
     "projecttitle6": "Shopping App",
     "projectdescription6": "App Shopping Flutter."
   },
-  "PrivacyPolicy": {
+  "PrivacyPolicyApps": {
     "h1": "Privacy Policy",
     "p": "Introduction",
     "h2": "This privacy policy will help you understand what information we collect in applications developed by me, Victor Zarzar, how I use them, and what choices you have. I, Victor Zarzar, have created the following apps as free apps:",
@@ -61,6 +61,29 @@
     "app2": "Grocery List",
     "app3": "Finance App",
     "service": "This service is provided by me, Victor Zarzar, at no cost and is intended for use as is. If you choose to use our Service, then you consent to the collection and use of information in connection with this policy. However, I inform you that none of my applications collect personal data from its users.",
+    "informationcollected": "Information Collected",
+    "infocollected": "I do not collect any personally identifiable information from users while they use my applications.",
+    "localization": "My apps do not collect location information or any other device information that could identify the individual user.",
+    "providerservice": "I do not employ third-party companies or individuals to collect or process personal data from our users.",
+    "security": "Security",
+    "securitydescription": "I value your trust when using my apps and am committed to ensuring your information is secure. However, as I do not collect personal information, there is no risk of personal data being exposed.",
+    "childrensprivacy": "Children's Privacy",
+    "childrensprivacydescription": "This Service does not knowingly collect personally identifiable information from children under the age of 13. I am not aware of data being collected from anyone under the age of 13, and if this occurs, I will take immediate action to delete such information from my servers.",
+    "changestothisprivacypolicy": "Changes to This Privacy Policy",
+    "changesdescription": "I may update my Privacy Policy from time to time. Therefore, I advise you to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.",
+    "contactme": "Contact me",
+    "contactmedescription": "If you have any questions or suggestions about my Privacy Policy, please do not hesitate to contact me.",
+    "contactinformation": "Contact information:",
+    "email": "Email: victorzarzardev@gmail.com",
+    "website": "Website: www.victorzarzar.com.br"
+  },
+  "PrivacyPolicy": {
+    "h1": "Privacy Policy",
+    "p": "Introduction",
+    "h2": "This privacy policy will help you understand what information we collect in applications developed by me, Victor Zarzar, how I use them, and what choices you have. I, Victor Zarzar, created these web applications:",
+    "app1": "Law Firm",
+    "app2": "My Portfolio",
+    "service": "This service is provided by me, Victor Zarzar, at no charge and is intended for use as is. If you choose to use our Service, then you consent to the collection and use of information in connection with this policy. However, I inform you that none of the applications collect personal data from their users.",
     "informationcollected": "Information Collected",
     "infocollected": "I do not collect any personally identifiable information from users while they use my applications.",
     "localization": "My apps do not collect location information or any other device information that could identify the individual user.",

@@ -3,8 +3,8 @@ import React from 'react'
 import { Fade } from 'react-awesome-reveal'
 import { useTranslations } from 'next-intl';
 
-export default function PrivacyPolicy() {
-    const t = useTranslations('PrivacyPolicy');
+export default function PrivacyPolicyApps() {
+    const t = useTranslations('PrivacyPolicyApps');
 
     const sections = [
         "service",
@@ -40,6 +40,7 @@ export default function PrivacyPolicy() {
                 <ul>
                     <li className='mb-3'>{t("app1")}</li>
                     <li className='mb-3'>{t("app2")}</li>
+                    <li className='mb-3'>{t("app3")}</li>
                 </ul>
             </div>
             {sections.map((section, index) => (
