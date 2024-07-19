@@ -1,6 +1,6 @@
-"use client"
-import * as React from "react"
-import { Button } from "@/components/ui/button"
+"use client";
+import * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,12 +21,13 @@ export function SwitchLocale() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localeActive = useLocale();
-
   const t = useTranslations('Navbar');
 
   function onSelectChange(value: string) {
     startTransition(() => {
-      router.push(`/${value}`);
+      const currentPath = window.location.pathname;
+      const newPath = currentPath.replace(`/${localeActive}`, `/${value}`);
+      router.push(newPath);
     });
   }
 
@@ -66,5 +67,5 @@ export function SwitchLocale() {
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

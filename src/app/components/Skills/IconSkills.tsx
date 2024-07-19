@@ -32,6 +32,8 @@ import {
   SiNpm,
   SiMobx,
   SiMantine,
+  SiPython,
+  SiDjango,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -172,6 +174,14 @@ export const skills = [
   {
     icon: SiMantine,
     text: "Mantine UI",
+  },
+  {
+    icon: SiPython,
+    text: "Python",
+  },
+  {
+    icon: SiDjango,
+    text: "Django",
   }
 ];
 
