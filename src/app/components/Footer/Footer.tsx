@@ -6,6 +6,7 @@ import {
   AiOutlineFacebook
 } from "react-icons/ai";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { BiLogoDevTo } from "react-icons/bi";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,6 +22,12 @@ export default function Footer() {
           <div className="flex flex-row items-center justify-center space-x-2 mb-1 mt-2 md:mt-0">
             <a href="https://github.com/Victor-Zarzar" rel="noreferrer" target="_blank">
               <AiOutlineGithub
+                className="hover:-translate-y-1 transition-transform cursor-pointer"
+                size={30}
+              />
+            </a>
+            <a href="https://dev.to/victorzarzar" rel="noreferrer" target="_blank">
+              <BiLogoDevTo
                 className="hover:-translate-y-1 transition-transform cursor-pointer"
                 size={30}
               />
