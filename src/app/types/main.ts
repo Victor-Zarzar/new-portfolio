@@ -1,17 +1,17 @@
 type experience = {
-    company: string,
-    position: string,
-    startDate: string,
-    endDate: string,
-    desc: string[]
-}
+    company: string;
+    position: string;
+    startDate: string;
+    endDate: string;
+    desc: string[];
+};
 
 type education = {
-    institute: string,
-    degree: string,
-    startDate: string,
-    endDate: string,
-}
+    institute: string;
+    degree: string;
+    startDate: string;
+    endDate: string;
+};
 
 type Project = {
     title: string;
@@ -22,8 +22,8 @@ type Project = {
 };
 
 type NavItem = {
-    label: string
-    link: string
-}
+    label: string;
+    link: string;
+};
 
 export type { NavItem, Project, experience, education };
