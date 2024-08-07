@@ -39,8 +39,8 @@ export function SwitchLocale() {
                             </a>
                         </Link>
                     </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="pt-br">
-                        <Link href="/pt-br" locale="pt-br" legacyBehavior>
+                    <DropdownMenuRadioItem value="pt-BR">
+                        <Link href="/pt-BR" locale="pt-BR" legacyBehavior>
                             <a className="flex items-center">
                                 <Image src="/br.png" alt="br" width={20} height={20} priority className="h-3 w-3 md:w-5 md:h-5 mr-1" />
                                 {t('portuguese')}
