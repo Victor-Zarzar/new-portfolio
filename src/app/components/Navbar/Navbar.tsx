@@ -7,7 +7,6 @@ import { GiHeraldicSun } from 'react-icons/gi';
 import { GiMoonBats } from 'react-icons/gi';
 import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';
-import { SwitchLocale } from '../SwitchLocale/SwitchLocale';
 
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
@@ -70,7 +69,6 @@ export default function Navbar() {
                                     </Link>
                                 );
                             })}
-                            <SwitchLocale />
                             {currentTheme === 'dark' ? (
                                 <button onClick={() => setTheme('light')} className="p-1 rounded-xl">
                                     <GiHeraldicSun size={27} color="white" />

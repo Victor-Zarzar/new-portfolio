@@ -22,7 +22,8 @@
     "p": "Meu primeiro contato com programação foi em 2009, utilizando as tecnologias SQL-SERVER 2000 & My SQL, criando, restaurando e editando bancos de dados, e criando sites em PHP. Sempre buscando aprimorar meus conhecimentos diariamente, não tenho medo do desconhecido, procuro evoluir a cada dia, novos desafios são bem vindos adoro aprender sobre novas tecnologias e resolver problemas. Apaixonada por café, meus discos de vinil & Rock n Roll 🤘🏻.",
     "h2": "Linguagem",
     "span1": "Inglês - Técnico Básico",
-    "span2": "PT-BR - Língua Nativa"
+    "span2": "PT-BR - Língua Nativa",
+    "span3": "Espanhol - Básico"
   },
   "Experiences": {
     "h1": "Experiências Tech e Educação",
@@ -50,8 +51,8 @@
     "projectdescription4": "App Idade do Pet Flutter.",
     "projecttitle5": "Meu portfólio",
     "projectdescription5": "Meu portfólio profissional.",
-    "projecttitle6": "App de compras",
-    "projectdescription6": "App Shopping Flutter."
+    "projecttitle6": "App Scanner PDF",
+    "projectdescription6": "Aplicativo Scanner PDF Flutter."
   },
   "PrivacyPolicyApps": {
     "h1": "Política de Privacidade",

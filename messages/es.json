@@ -1,0 +1,120 @@
+{
+    "Navbar": {
+      "titlenavbar": "Victor Zarzar",
+      "home": "Casa",
+      "about": "Acerca de",
+      "projects": "Proyectos",
+      "contact": "Contacto",
+      "language": "Idioma",
+      "english": "Inglés",
+      "portuguese": "Portugués"
+    },
+    "Header": {
+    "h1": "Bienvenido a mi portafolio,",
+    "span": "Soy desarrollador front-end🖖🏻"
+  },
+  "Skills": {
+    "h1": "Habilidades",
+    "p": "Algunas de las tecnologías que uso en mi vida diaria"
+  },
+  "About": {
+    "h1": "Acerca de",
+    "p": "Mi primer contacto con la programación fue en el año 2009, utilizando tecnologías SQL-SERVER 2000 y My SQL, creando, restaurando y editando bases de datos, y creando sitios en PHP. Siempre buscando mejorar mis conocimientos a diario, no tengo miedo de desconocido, trato de evolucionar cada día, los nuevos desafíos son bienvenidos. Me encanta aprender sobre nuevas tecnologías y resolver problemas. Enamorada del café, mis discos de vinilo y el Rock n Roll 🤘🏻.",
+    "h2": "Idioma",
+    "span1": "Inglés - Tecnología básica",
+    "span2": "PT-BR - Hablante nativo",
+    "span3": "Español - Básico"
+  },
+  "Experiences": {
+    "h1": "Experiencias Tecnología y Educación",
+    "p1": "Marzo de 2023 - Presente",
+    "p2": "Desarrollador front-end - Front web y Flutter Mobile.",
+    "p3": "São Leopoldo, RS, Brasil - Remoto",
+    "p4": "Diciembre 2022 - Marzo 2023",
+    "p5": "Probador de control de calidad: funcional, usabilidad, carga, localización, accesibilidad, regresión.",
+    "p6": "Novo Hamburgo, RS, Brazil - Remoto",
+    "p7": "Abr 2024 - Oct 2027 - Ampli SP",
+    "p8": "Ingeniería de software",
+    "p9": "Julio 2022 - Julio 2024 - Ampli SP",
+    "p10": "Análisis y desarrollo de sistemas"
+  },
+  "Projects": {
+    "h1": "Proyectos",
+    "h2": "Proyectos destacados",
+    "projecttitle1": "Aplicación de alcohol o gasolina",
+    "projectdescription1": "Aplicación Flutter de alcohol o gasolina.",
+    "projecttitle2": "Bufete de abogados",
+    "projectdescription2": "Solicitud de sitio web para bufete de abogados.",
+    "projecttitle3": "Lista de compras",
+    "projectdescription3": "Aplicación Flutter de lista de compras.",
+    "projecttitle4": "Aplicación Edad de la mascota",
+    "projectdescription4": "Aplicación Edad de la mascota Flutter.",
+    "projecttitle5": "Mi Portafolio",
+    "projectdescription5": "Sitio web de mi portafolio profesional.",
+    "projecttitle6": "Aplicación de escáner PDF",
+    "projectdescription6": "Aplicación Escáner PDF Flutter."
+  },
+  "PrivacyPolicyApps": {
+    "h1": "Política de privacidad",
+    "p": "Introducción",
+    "h2": "Esta política de privacidad le ayudará a comprender qué información recopilamos en las aplicaciones desarrolladas por mí, Victor Zarzar, cómo las uso y qué opciones tiene. Yo, Victor Zarzar, he creado las siguientes aplicaciones como aplicaciones gratuitas:",
+    "app1": "¿Alcohol o gasolina?",
+    "app2": "Lista de compras",
+    "app3": "Aplicación de finanzas",
+    "service": "Este servicio lo proporciono yo, Víctor Zarzar, sin costo y está diseñado para usarse tal como está. Si elige utilizar nuestro Servicio, entonces acepta la recopilación y el uso de información en relación con esta política. Sin embargo, les informo que ninguna de mis aplicaciones recopila datos personales de sus usuarios.",
+    "informationcollected": "Información recopilada",
+    "infocollected": "No recopilo ninguna información de identificación personal de los usuarios mientras usan mis aplicaciones.",
+    "localization": "Mis aplicaciones no recopilan información de ubicación ni ninguna otra información del dispositivo que pueda identificar al usuario individual.",
+    "providerservice": "No empleo a empresas o individuos de terceros para recopilar o procesar datos personales de nuestros usuarios.",
+    "security": "Seguridad",
+    "securitydescription": "Valoro su confianza cuando uso mis aplicaciones y me comprometo a garantizar que su información esté segura. Sin embargo, como no recopilo información personal, no hay riesgo de que los datos personales queden expuestos.",
+    "childrensprivacy": "Privacidad de los niños",
+    "childrensprivacydescription": "Este Servicio no recopila intencionalmente información de identificación personal de niños menores de 13 años. No tengo conocimiento de que se recopilen datos de ninguna persona menor de 13 años y, si esto ocurre, tomaré medidas inmediatas para eliminarlos. dicha información de mis servidores.",
+    "changestothisprivacypolicy": "Cambios a esta Política de Privacidad",
+    "changesdescription": "Puedo actualizar mi Política de Privacidad de vez en cuando. Por lo tanto, le aconsejo que revise esta página periódicamente para detectar cualquier cambio. Le notificaré cualquier cambio publicando la nueva Política de Privacidad en esta página. Estos cambios son efectivo inmediatamente después de su publicación en esta página.",
+    "contactme": "Contáctame",
+    "contactmedescription": "Si tiene alguna pregunta o sugerencia sobre mi Política de Privacidad, no dude en ponerse en contacto conmigo.",
+    "contactinformation": "Información de contacto:",
+    "email": "Correo electrónico: victorzarzardev@gmail.com",
+    "website": "Sitio web: www.victorzarzar.com.br"
+  },
+  "PrivacyPolicy": {
+    "h1": "Política de privacidad",
+    "p": "Introducción",
+    "h2": "Esta política de privacidad le ayudará a comprender qué información recopilamos en las aplicaciones desarrolladas por mí, Victor Zarzar, cómo las uso y qué opciones tiene. Yo, Victor Zarzar, creé estas aplicaciones web:",
+    "app1": "Bufete de abogados",
+    "app2": "Mi Portafolio",
+    "service": "Este servicio lo proporciono yo, Víctor Zarzar, sin costo alguno y está diseñado para usarse tal como está. Si elige utilizar nuestro Servicio, acepta la recopilación y el uso de información en relación con esta política. Sin embargo, les informo que ninguna de las aplicaciones recopila datos personales de sus usuarios.",
+    "informationcollected": "Información recopilada",
+    "infocollected": "No recopilo ninguna información de identificación personal de los usuarios mientras usan mis aplicaciones.",
+    "localization": "Mis aplicaciones no recopilan información de ubicación ni ninguna otra información del dispositivo que pueda identificar al usuario individual.",
+    "providerservice": "No empleo a empresas o individuos de terceros para recopilar o procesar datos personales de nuestros usuarios.",
+    "security": "Seguridad",
+    "securitydescription": "Valoro su confianza cuando uso mis aplicaciones y me comprometo a garantizar que su información esté segura. Sin embargo, como no recopilo información personal, no hay riesgo de que los datos personales queden expuestos.",
+    "childrensprivacy": "Privacidad de los niños",
+    "childrensprivacydescription": "Este Servicio no recopila intencionalmente información de identificación personal de niños menores de 13 años. No tengo conocimiento de que se recopilen datos de ninguna persona menor de 13 años y, si esto ocurre, tomaré medidas inmediatas para eliminarlos. dicha información de mis servidores.",
+    "changestothisprivacypolicy": "Cambios a esta Política de Privacidad",
+    "changesdescription": "Puedo actualizar mi Política de Privacidad de vez en cuando. Por lo tanto, le aconsejo que revise esta página periódicamente para detectar cualquier cambio. Le notificaré cualquier cambio publicando la nueva Política de Privacidad en esta página. Estos cambios son efectivo inmediatamente después de su publicación en esta página.",
+    "contactme": "Contáctame",
+    "contactmedescription": "Si tiene alguna pregunta o sugerencia sobre mi Política de Privacidad, no dude en ponerse en contacto conmigo.",
+    "contactinformation": "Información de contacto:",
+    "email": "Correo electrónico: victorzarzardev@gmail.com",
+    "website": "Sitio web: www.victorzarzar.com.br"
+  },
+  "Contact": {
+    "h1": "Contáctame ;)",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "namerequired": "Nombre requerido",
+    "invalidemail": "Correo electrónico no válido",
+    "subjectrequired": "Asunto requerido",
+    "messagerequired": "Mensaje requerido"
+  },
+  "NotFound": {
+    "p": "Lo sentimos, no pudimos encontrar esta página.",
+    "button": "Volver a la página de inicio"
+  }
+}

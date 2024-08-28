@@ -31,10 +31,16 @@ export default function About() {
                         <span className="text-sm leading-relaxed md:text-2xl lg:text-2xl font-semibold tracking-tighter">{t('span1')}</span>
                     </div>
                 </div>
-                <div className="flex mb-20">
+                <div className="flex">
                     <div className="flex items-center mx-auto mt-5">
                         <Image src="/br.png" alt="br" width={20} height={20} priority className="h-3 w-3 md:w-7 md:h-7 mr-1" />
                         <span className="text-sm leading-relaxed md:text-2xl lg:text-2xl font-semibold tracking-tighter">{t('span2')}</span>
+                    </div>
+                </div>
+                <div className="flex mb-20">
+                    <div className="flex items-center mx-auto mt-5">
+                        <Image src="/es.png" alt="br" width={20} height={20} priority className="h-3 w-3 md:w-7 md:h-7 mr-1" />
+                        <span className="text-sm leading-relaxed md:text-2xl lg:text-2xl font-semibold tracking-tighter">{t('span3')}</span>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,8 @@ import AndroidIcon from '@/app/components/icons/projects/android';
 import IosIcon from '@/app/components/icons/projects/ios';
 import XcodeIcon from '@/app/components/icons/projects/xcode';
 import AndroidStudioIcon from '@/app/components/icons/projects/androidstudio';
-import { AiOutlineGithub } from 'react-icons/ai';
+import { AiOutlineGithub, AiOutlineGlobal } from 'react-icons/ai';
+import { FaGooglePlay, FaAppStoreIos } from 'react-icons/fa';
 import Autoplay from 'embla-carousel-autoplay';
 import { Project } from '@/app/types/main';
 import { useTranslations } from 'next-intl';
@@ -29,7 +30,7 @@ export default function Projects() {
     const gasoline = '/gasoline.png';
     const grocery = '/groceryapp.png';
     const agepet = '/agepet.png';
-    const shoppingapp = '/shoppingflutter.png';
+    const scanner = '/scanner.png';
     const portfolio = '/portfolio.png';
     const lawfirm = '/lawfirm.png';
 
@@ -52,6 +53,9 @@ export default function Projects() {
             photo: gasoline,
             sourceCodeLink: 'https://github.com/Victor-Zarzar/alcool_ou_gasolina.git',
             sourceLinkPrivacy: 'privacypolicy-apps',
+            androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
+            iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+            webLink: '',
         },
         {
             title: t('projecttitle2'),
@@ -71,6 +75,9 @@ export default function Projects() {
             photo: lawfirm,
             sourceCodeLink: 'https://github.com/Victor-Zarzar/law-firm',
             sourceLinkPrivacy: 'privacypolicy',
+            androidLink: '',
+            iosLink: '',
+            webLink: 'https://advocaciabaptista.vercel.app'
         },
         {
             title: t('projecttitle3'),
@@ -88,8 +95,11 @@ export default function Projects() {
                 </div>
             ),
             photo: grocery,
-            sourceCodeLink: 'https://github.com/Victor-Zarzar/shopping-flutter',
+            sourceCodeLink: 'https://github.com/Victor-Zarzar/grocery-list',
             sourceLinkPrivacy: 'privacypolicy-apps',
+            androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
+            iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+            webLink: '',
         },
         {
             title: t('projecttitle4'),
@@ -108,7 +118,10 @@ export default function Projects() {
             ),
             photo: agepet,
             sourceCodeLink: 'https://github.com/Victor-Zarzar/age-pet',
-            sourceLinkPrivacy: 'privacypolicy',
+            sourceLinkPrivacy: 'privacypolicy-apps',
+            androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
+            iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+            webLink: '',
         },
         {
             title: t('projecttitle5'),
@@ -128,6 +141,9 @@ export default function Projects() {
             photo: portfolio,
             sourceCodeLink: 'https://github.com/Victor-Zarzar/new-portfolio',
             sourceLinkPrivacy: 'privacypolicy',
+            webLink: 'http://victorzarzar.com.br',
+            androidLink: '',
+            iosLink: ''
         },
         {
             title: t('projecttitle6'),
@@ -144,9 +160,12 @@ export default function Projects() {
                     </div>
                 </div>
             ),
-            photo: shoppingapp,
-            sourceCodeLink: 'https://github.com/Victor-Zarzar/shopping-flutter',
+            photo: scanner,
+            sourceCodeLink: 'https://github.com/Victor-Zarzar/scanner-pdf',
             sourceLinkPrivacy: 'privacypolicy-apps',
+            androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
+            iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+            webLink: '',
         },
     ];
 
@@ -199,29 +218,64 @@ export default function Projects() {
                                                             <a
                                                                 href={project.sourceCodeLink}
                                                                 target="_blank"
-                                                                className="text-gray-500 hover:text-gray-400 dark:hover:text-white 
-                                                    dark:text-gray-400"
+                                                                className="text-gray-500 hover:text-gray-400 dark:hover:text-white dark:text-gray-400"
                                                                 rel="noreferrer"
                                                             >
                                                                 <AiOutlineGithub
-                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer 
-                                                                    text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
                                                                     size={30}
                                                                 />
                                                             </a>
                                                             <a
                                                                 href={project.sourceLinkPrivacy}
                                                                 target="_blank"
-                                                                className="text-gray-500 hover:text-gray-400 dark:hover:text-white 
-                                                    dark:text-gray-400"
+                                                                className="text-gray-500 hover:text-gray-400 dark:hover:text-white dark:text-gray-400"
                                                                 rel="noreferrer"
                                                             >
                                                                 <MdPrivacyTip
-                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer 
-                                                                    text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
                                                                     size={30}
                                                                 />
                                                             </a>
+                                                            {project.androidLink && (
+                                                                <a
+                                                                    href={project.androidLink}
+                                                                    target="_blank"
+                                                                    className="text-gray-500 hover:text-gray-400 dark:hover:text-white dark:text-gray-400"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    <FaGooglePlay
+                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                        size={30}
+                                                                    />
+                                                                </a>
+                                                            )}
+                                                            {project.iosLink && (
+                                                                <a
+                                                                    href={project.iosLink}
+                                                                    target="_blank"
+                                                                    className="text-gray-500 hover:text-gray-400 dark:hover:text-white dark:text-gray-400"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    <FaAppStoreIos
+                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                        size={30}
+                                                                    />
+                                                                </a>
+                                                            )}
+                                                            {project.webLink && (
+                                                                <a
+                                                                    href={project.webLink}
+                                                                    target="_blank"
+                                                                    className="text-gray-500 hover:text-gray-400 dark:hover:text-white dark:text-gray-400"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    <AiOutlineGlobal
+                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                        size={30}
+                                                                    />
+                                                                </a>
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </PopoverContent>

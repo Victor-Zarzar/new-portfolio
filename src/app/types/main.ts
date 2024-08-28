@@ -14,6 +14,9 @@ type education = {
 };
 
 type Project = {
+    androidLink: string;
+    iosLink: string;
+    webLink: string;
     title: string;
     description: string | JSX.Element;
     photo: string;
