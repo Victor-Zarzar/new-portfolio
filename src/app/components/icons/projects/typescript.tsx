@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function TypescriptIcon() {
     return (
@@ -6,7 +6,9 @@ export default function TypescriptIcon() {
             width="30px"
             height="30px"
             viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg" className='h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1'>
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
+        >
             <title>file_type_typescript_official</title>
             <rect x="2" y="2" width="28" height="28" rx="1.312" style={{ fill: '#3178c6' }} />
             <path
@@ -14,5 +16,5 @@ export default function TypescriptIcon() {
                 style={{ fill: '#ffffff', fillRule: 'evenodd' }}
             />
         </svg>
-    )
+    );
 }

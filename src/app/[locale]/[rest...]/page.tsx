@@ -1,5 +1,6 @@
-import Link from 'next/link';
+'use client';
 import React from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
 
@@ -7,20 +8,16 @@ export default function NotFound404() {
     const t = useTranslations('NotFound');
 
     return (
-        <div className="dark:bg-stone-900 dark:border-b dark:border-stone-600 mt-0 h-screen">
-            <section className="section">
-                <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-                    <div className="mx-auto max-w-screen-sm text-center mt-48 md:mt-52 md:mb-0">
-                        <h1 className="mb-4 text-4xl md:text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">
-                            404
-                        </h1>
-                        <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">{t('p')}</p>
-                        <Link href={'/'}>
-                            <Button className="font-semibold px-2 md:px-6 py-3">{t('button')}</Button>
-                        </Link>
-                    </div>
+        <main className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-stone-900">
+            <section className="text-center">
+                <div className="max-w-md mx-auto px-4 py-8">
+                    <h1 className="text-4xl md:text-7xl lg:text-9xl font-extrabold text-primary-600 dark:text-primary-500">404</h1>
+                    <p className="mt-4 text-lg md:text-xl font-light text-gray-500 dark:text-gray-400">{t('p')}</p>
+                    <Link href="/">
+                        <Button className="mt-6 px-4 py-2 md:px-6 md:py-3 font-semibold">{t('button')}</Button>
+                    </Link>
                 </div>
             </section>
-        </div>
+        </main>
     );
 }

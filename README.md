@@ -23,7 +23,7 @@
 - Shadcn UI
 - RSuite JS UI
 - Dark Mode - Next Themes
-- Next Intl Translate EN/PT-BR
+- Next Intl Translate EN/PT-BR/ES
   
 <br />
 

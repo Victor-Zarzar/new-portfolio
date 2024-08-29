@@ -77,7 +77,7 @@ export default function Projects() {
             sourceLinkPrivacy: 'privacypolicy',
             androidLink: '',
             iosLink: '',
-            webLink: 'https://advocaciabaptista.vercel.app'
+            webLink: 'https://advocaciabaptista.vercel.app',
         },
         {
             title: t('projecttitle3'),
@@ -143,7 +143,7 @@ export default function Projects() {
             sourceLinkPrivacy: 'privacypolicy',
             webLink: 'http://victorzarzar.com.br',
             androidLink: '',
-            iosLink: ''
+            iosLink: '',
         },
         {
             title: t('projecttitle6'),
@@ -171,22 +171,22 @@ export default function Projects() {
 
     return (
         <>
-            <div className="container-projects">
-                <div className="col-span-4 mx-auto">
-                    <div className="h1 p-6">
+            <main className="container-projects">
+                <section className="col-span-4 mx-auto">
+                    <header className="h1 p-6">
                         <Fade>
                             <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">
                                 {t('h1')}
                             </h1>
                         </Fade>
-                    </div>
-                </div>
-                <div className="my-4 mt-8 md:mt-6" id="projects">
+                    </header>
+                </section>
+                <section className="my-4 mt-8 md:mt-6" id="projects">
                     <h2 className="title-skills font-extrabold leading-10 tracking-tight text-sm md:text-2xl lg:text-2xl mt-8 md:mt-4 mb-8 text-center">
                         {t('h2')}
                     </h2>
-                </div>
-                <div className="carrousel-container">
+                </section>
+                <section className="carrousel-container">
                     <Carousel
                         plugins={[Autoplay({ delay: 2000 })]}
                         className="w-full max-w-[16rem] md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto mb-52 md:mb-72"
@@ -194,7 +194,7 @@ export default function Projects() {
                         <CarouselContent className="-ml-1">
                             {projects.map((project, index) => (
                                 <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                                    <div className="p-2">
+                                    <article className="p-2">
                                         <Card>
                                             <Popover>
                                                 <PopoverTrigger asChild>
@@ -222,7 +222,8 @@ export default function Projects() {
                                                                 rel="noreferrer"
                                                             >
                                                                 <AiOutlineGithub
-                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100
+                                                                     mx-auto mt-2 md:mt-3"
                                                                     size={30}
                                                                 />
                                                             </a>
@@ -233,7 +234,8 @@ export default function Projects() {
                                                                 rel="noreferrer"
                                                             >
                                                                 <MdPrivacyTip
-                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                    className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100
+                                                                     mx-auto mt-2 md:mt-3"
                                                                     size={30}
                                                                 />
                                                             </a>
@@ -245,7 +247,8 @@ export default function Projects() {
                                                                     rel="noreferrer"
                                                                 >
                                                                     <FaGooglePlay
-                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 
+                                                                        mx-auto mt-2 md:mt-3"
                                                                         size={30}
                                                                     />
                                                                 </a>
@@ -258,7 +261,8 @@ export default function Projects() {
                                                                     rel="noreferrer"
                                                                 >
                                                                     <FaAppStoreIos
-                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 
+                                                                        mx-auto mt-2 md:mt-3"
                                                                         size={30}
                                                                     />
                                                                 </a>
@@ -271,7 +275,8 @@ export default function Projects() {
                                                                     rel="noreferrer"
                                                                 >
                                                                     <AiOutlineGlobal
-                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 mx-auto mt-2 md:mt-3"
+                                                                        className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100 
+                                                                        mx-auto mt-2 md:mt-3"
                                                                         size={30}
                                                                     />
                                                                 </a>
@@ -281,15 +286,15 @@ export default function Projects() {
                                                 </PopoverContent>
                                             </Popover>
                                         </Card>
-                                    </div>
+                                    </article>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
                         <CarouselPrevious className="dark:bg-stone-900 dark:hover:bg-stone-900" />
                         <CarouselNext className="dark:bg-stone-900 dark:hover:bg-stone-900" />
                     </Carousel>
-                </div>
-            </div>
+                </section>
+            </main>
         </>
     );
 }

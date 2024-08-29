@@ -24,41 +24,35 @@ export default function PrivacyPolicyApps() {
     ];
 
     return (
-        <div>
-            <div className="h1 p-6">
+        <main className="py-10 px-4 mx-auto max-w-3xl">
+            <section className="text-center mb-16">
                 <Fade>
-                    <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">
-                        {t('h1')}
-                    </h1>
+                    <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-6">{t('h1')}</h1>
                 </Fade>
-            </div>
-            <p className="text-sm leading-relaxed text-center max-w-3xl mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter mt-10">
-                {t('p')}
-            </p>
-            <div className="text-sm leading-relaxed text-center max-w-3xl mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter mt-10">
-                {t('h2')}
-            </div>
-            <div className="text-sm leading-relaxed text-center max-w-3xl mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter mt-10">
-                <ul>
+                <p className="text-lg md:text-xl font-semibold leading-relaxed">{t('p')}</p>
+            </section>
+
+            <section className="text-center mt-10">
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">{t('h2')}</h2>
+                <ul className="list-disc list-inside mx-auto max-w-md">
                     <li className="mb-3">{t('app1')}</li>
                     <li className="mb-3">{t('app2')}</li>
                     <li className="mb-3">{t('app3')}</li>
                 </ul>
-            </div>
+            </section>
+
             {sections.map((section, index) => (
-                <div
-                    key={index}
-                    className="text-sm leading-relaxed text-center max-w-3xl mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter mt-10"
-                >
-                    <p>{t(section)}</p>
-                </div>
+                <section key={index} className="text-center mt-10">
+                    <p className="text-lg md:text-xl font-semibold leading-relaxed">{t(section)}</p>
+                </section>
             ))}
-            <div className="text-sm leading-relaxed text-center max-w-3xl mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter mt-10">
-                <ul>
+
+            <section className="text-center mt-10">
+                <ul className="list-disc list-inside mx-auto max-w-md">
                     <li className="mb-3">{t('email')}</li>
                     <li className="mb-20">{t('website')}</li>
                 </ul>
-            </div>
-        </div>
+            </section>
+        </main>
     );
 }
