@@ -16,7 +16,7 @@ export default function Header() {
             <header className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
                 <section className="md:mt-2 md:w-1/2">
                     <Avatar className="w-40 h-40 md:w-72 md:h-72 bg-gray-300 rounded-full mb-4 mx-auto mt-2">
-                        <AvatarImage src="profile.jpg" alt={t('avatarAlt')} />
+                        <AvatarImage src="profile.jpg" alt="victorzarzar" />
                         <AvatarFallback className="dark:bg-stone-900">VZ</AvatarFallback>
                     </Avatar>
                 </section>

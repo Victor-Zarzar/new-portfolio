@@ -16,7 +16,7 @@ export default function Skills() {
                 </Fade>
                 <p className="text-sm leading-relaxed mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter">{t('p')}</p>
             </header>
-            <div className="grid grid-cols-3 gap-4 p-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-2 md:gap-4 lg:gap-5">
+            <div className="gap-3.5 p-4 sm:p-0 w-96 sm:w-full sm:gap-2 md:gap-4 lg:gap-5 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                 {skills.map((skill) => (
                     <article key={skill.text} className="flex flex-col items-center">
                         <SkillOutline Icon={skill.icon} text={skill.text} />
