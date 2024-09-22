@@ -33,8 +33,31 @@ export default function Projects() {
     const scanner = '/scanner.png';
     const portfolio = '/portfolio.png';
     const lawfirm = '/lawfirm.png';
+    const pdfreader = '/pdf-reader.png';
 
     const projects: Project[] = [
+        {
+            title: t('projecttitle7'),
+            description: (
+                <div>
+                    <p className="mb-3">{t('projectdescription7')}</p>
+                    <div className="flex space-x-2 md:space-x-2 transition-transform cursor-pointer">
+                        <FlutterIcon />
+                        <DartIcon />
+                        <AndroidIcon />
+                        <IosIcon />
+                        <XcodeIcon />
+                        <AndroidStudioIcon />
+                    </div>
+                </div>
+            ),
+            photo: pdfreader,
+            sourceCodeLink: 'https://github.com/Victor-Zarzar/pdf-reader',
+            sourceLinkPrivacy: 'privacypolicy-apps',
+            androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
+            iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+            webLink: '',
+        },
         {
             title: t('projecttitle1'),
             description: (
@@ -205,6 +228,7 @@ export default function Projects() {
                                                                 alt={project.title}
                                                                 width={600}
                                                                 height={600}
+                                                                priority
                                                                 className="w-[16rem] h-full md:w-[20rem] lg:w-[18rem] xl:w-[23rem] absolute"
                                                             />
                                                         </CardContent>

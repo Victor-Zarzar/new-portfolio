@@ -52,7 +52,9 @@
     "projecttitle5": "Mi Portafolio",
     "projectdescription5": "Sitio web de mi portafolio profesional.",
     "projecttitle6": "Aplicación de escáner PDF",
-    "projectdescription6": "Aplicación Escáner PDF Flutter."
+    "projectdescription6": "Aplicación Escáner PDF Flutter.",
+    "projecttitle7": "Aplicación de lectura de PDF",
+    "projectdescription7": "Aplicación para leer archivos PDF."
   },
   "PrivacyPolicyApps": {
     "h1": "Política de privacidad",
