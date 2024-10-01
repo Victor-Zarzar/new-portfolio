@@ -34,6 +34,7 @@ import {
     SiMantine,
     SiPython,
     SiDjango,
+    SiSqlite
 } from 'react-icons/si';
 import { IconType } from 'react-icons';
 
@@ -144,10 +145,6 @@ export const skills = [
         text: 'macOS',
     },
     {
-        icon: SiLinux,
-        text: 'Linux',
-    },
-    {
         icon: SiArchlinux,
         text: 'Arch Linux',
     },
@@ -182,6 +179,10 @@ export const skills = [
     {
         icon: SiDjango,
         text: 'Django',
+    },
+    {
+        icon: SiSqlite,
+        text: 'SQLite',
     },
 ];
 
