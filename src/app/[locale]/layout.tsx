@@ -4,7 +4,6 @@ import './globals.css';
 import LayoutProvider from '../components/Layout/Layout';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import Head from 'next/head';
 
 const JetBrains = JetBrains_Mono({ subsets: ['latin'] });
 
@@ -18,9 +17,9 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
 
     return (
         <html lang={locale}>
-            <Head>
-                <link rel="icon" href={`/favicon.ico`} />
-            </Head>
+            <head>
+                <link rel="icon" href="/favicon.ico" />
+            </head>
             <body className={JetBrains.className}>
                 <NextIntlClientProvider messages={messages}>
                     <LayoutProvider>{children}</LayoutProvider>
