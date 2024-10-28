@@ -19,7 +19,6 @@ import {
     SiSwagger,
     SiCodemagic,
     SiMacos,
-    SiLinux,
     SiArchlinux,
     SiVercel,
     SiGithub,

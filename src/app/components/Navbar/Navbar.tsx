@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import Link from 'next/link';
-import { NavItem } from '@/app/types/main';
+import { type NavItem } from '@/app/types/main';
 import { GiHeraldicSun } from 'react-icons/gi';
 import { GiMoonBats } from 'react-icons/gi';
 import { useTheme } from 'next-themes';

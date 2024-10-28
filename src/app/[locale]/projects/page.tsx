@@ -20,7 +20,7 @@ import AndroidStudioIcon from '@/app/components/icons/projects/androidstudio';
 import { AiOutlineGithub, AiOutlineGlobal } from 'react-icons/ai';
 import { FaGooglePlay, FaAppStoreIos } from 'react-icons/fa';
 import Autoplay from 'embla-carousel-autoplay';
-import { Project } from '@/app/types/main';
+import { type Project } from '@/app/types/main';
 import { useTranslations } from 'next-intl';
 import { MdPrivacyTip } from 'react-icons/md';
 
