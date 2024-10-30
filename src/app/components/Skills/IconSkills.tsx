@@ -35,7 +35,7 @@ import {
     SiDjango,
     SiSqlite
 } from 'react-icons/si';
-import { IconType } from 'react-icons';
+import { type IconType } from 'react-icons';
 
 interface SkillOutlineProps {
     Icon: IconType;

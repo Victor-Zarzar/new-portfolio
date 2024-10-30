@@ -3,6 +3,7 @@
     "titlenavbar": "Victor Zarzar",
     "home": "Home",
     "about": "About",
+    "services": "Services",
     "projects": "Projects",
     "contact": "Contact",
     "language": "Language",
@@ -24,6 +25,18 @@
     "span1": "English - Basic Tech",
     "span2": "PT-BR - Native Speaker",
     "span3": "Spanish - Basic"
+  },
+  "Services": {
+   "h1": "Services",
+   "cardtitle1": "Web Development",
+   "carddescription1": "Modern, responsive websites and web applications",
+   "p1": "Creation of personalized websites and web applications, focusing on performance, SEO, and user experience.",
+   "cardtitle2": "Android Mobile Development",
+   "carddescription2": "Android apps with Flutter",
+   "p2": "Development of Android applications with Flutter, ensuring a native and high-performance experience.",
+   "cardtitle3": "iOS Mobile Development",
+   "carddescription3": "iOS apps with Flutter",
+   "p3": "Building iOS apps using Flutter, leveraging a single codebase for multiple platforms."
   },
   "Experiences": {
     "h1": "Experiences Tech & Education",

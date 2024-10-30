@@ -30,9 +30,7 @@ export default function Contact() {
         },
     });
 
-    const handleSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log({ values });
-    };
+    function handleSubmit(_values: z.infer<typeof formSchema>) {}
 
     return (
         <section className="col-span-4 mx-auto p-6">

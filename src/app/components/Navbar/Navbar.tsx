@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import Link from 'next/link';
 import { type NavItem } from '@/app/types/main';
-import { GiHeraldicSun } from 'react-icons/gi';
-import { GiMoonBats } from 'react-icons/gi';
+import { GiHeraldicSun, GiMoonBats } from 'react-icons/gi';
 import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';
 
@@ -23,6 +22,10 @@ export default function Navbar() {
         {
             label: t('about'),
             link: 'about',
+        },
+        {
+            label: t('services'),
+            link: 'services',
         },
         {
             label: t('projects'),

@@ -29,4 +29,6 @@ type NavItem = {
     link: string;
 };
 
-export type { NavItem, Project, experience, education };
+type Locale = 'en' | 'es' | 'pt';
+
+export type { NavItem, Project, experience, education, Locale };

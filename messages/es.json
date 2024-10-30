@@ -3,6 +3,7 @@
       "titlenavbar": "Victor Zarzar",
       "home": "Casa",
       "about": "Acerca de",
+      "services": "Servicios",
       "projects": "Proyectos",
       "contact": "Contacto",
       "language": "Idioma",
@@ -25,6 +26,18 @@
     "span2": "PT-BR - Hablante nativo",
     "span3": "Español - Básico"
   },
+ "Services": {
+    "h1": "Servicios",
+    "cardtitle1": "Desarrollo web",
+    "carddescription1": "Sitios web y aplicaciones web modernos y responsivos",
+    "p1": "Creación de sitios web y aplicaciones web personalizados, centrándose en el rendimiento, SEO y experiencia de usuario.",
+    "cardtitle2": "Desenvolvimento móvel Android",
+    "carddescription2": "Aplicaciones de Android con Flutter",
+    "p2": "Desarrollo de aplicaciones Android con Flutter, asegurando una experiencia nativa y de alto rendimiento.",
+    "cardtitle3": "Desarrollo móvil iOS",
+    "carddescription3": "aplicaciones de iOS con Flutter",
+    "p3": "Creación de aplicaciones de iOS usando Flutter, aprovechando una única base de código para múltiples plataformas"
+   },
   "Experiences": {
     "h1": "Experiencias Tecnología y Educación",
     "p1": "Marzo de 2023 - Presente",
