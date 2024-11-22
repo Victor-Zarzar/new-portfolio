@@ -8,7 +8,7 @@ export default function ServicesPage() {
     const t = useTranslations('Services');
 
     return (
-        <main className="services min-h-screen">
+        <main className="services">
             <section className="col-span-4 mx-auto">
                 <header className="h1 p-6">
                     <Fade>
@@ -19,10 +19,10 @@ export default function ServicesPage() {
                 </header>
             </section>
 
-            <section className=" p-4 flex flex-col gap-4 items-center">
+            <section className="p-4 flex flex-col gap-4 items-center min-h-screen">
                 <Card
                     className="w-full max-w-md font-medium transition-colors 
-            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input 
+            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input mb-4 
             bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-1 dark:bg-transparent dark:border-gray-200"
                 >
                     <CardHeader>
@@ -36,7 +36,7 @@ export default function ServicesPage() {
 
                 <Card
                     className="w-full max-w-md font-medium transition-colors 
-            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input 
+            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input mb-4 
             bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-1 dark:bg-transparent dark:border-gray-200"
                 >
                     <CardHeader>

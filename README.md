@@ -16,7 +16,7 @@
 - React
 - Html
 - TailWind CSS
-- Next.js
+- Next.js 15 
 - Docker
 - Docker-Compose
 - Zod and React Hook Validation
@@ -24,6 +24,8 @@
 - RSuite JS UI
 - Dark Mode - Next Themes
 - Next Intl Translate EN/PT-BR/ES
+- Nodemailer
+- React Toastify
   
 <br />
 

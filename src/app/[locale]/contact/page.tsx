@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { useTranslations } from 'next-intl';
+import { toast } from 'react-toastify';
 
 export default function Contact() {
     const t = useTranslations('Contact');
@@ -30,7 +31,27 @@ export default function Contact() {
         },
     });
 
-    function handleSubmit(_values: z.infer<typeof formSchema>) {}
+    async function handleSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values),
+            });
+
+            if (response.ok) {
+                toast.success('Email enviado com sucesso!');
+                form.reset();
+            } else {
+                toast.error('Erro ao enviar o email. Tente novamente mais tarde.');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            toast.error('Erro ao enviar o email.');
+        }
+    }
 
     return (
         <section className="col-span-4 mx-auto p-6">
