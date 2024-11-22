@@ -19,7 +19,7 @@ export default function ServicesPage() {
                 </header>
             </section>
 
-            <section className="p-4 flex flex-col gap-4 items-center min-h-screen">
+            <section className="p-4 flex flex-col gap-4 items-center min-h-screen mb-10 md:mb-0">
                 <Card
                     className="w-full max-w-md font-medium transition-colors 
             focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input mb-4 
@@ -30,7 +30,7 @@ export default function ServicesPage() {
                         <CardDescription>{t('carddescription1')}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p>{t('p1')}</p>
+                        <p className='text-sm md:text-xl'>{t('p1')}</p>
                     </CardContent>
                 </Card>
 
@@ -44,7 +44,7 @@ export default function ServicesPage() {
                         <CardDescription>{t('carddescription2')}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p>{t('p2')}</p>
+                        <p className='text-sm md:text-xl'>{t('p2')}</p>
                     </CardContent>
                 </Card>
 
@@ -58,7 +58,7 @@ export default function ServicesPage() {
                         <CardDescription>{t('carddescription3')}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p>{t('p3')}</p>
+                        <p className='text-sm md:text-xl'>{t('p3')}</p>
                     </CardContent>
                 </Card>
             </section>
