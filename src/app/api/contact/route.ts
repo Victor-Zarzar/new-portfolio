@@ -6,18 +6,18 @@ export async function POST(request: Request) {
 
     try {
         const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465, 
+            host: 'smtp.gmail.com',
+            port: 465,
             secure: true,
             auth: {
                 user: process.env.SMTP_EMAIL,
                 pass: process.env.SMTP_PASSWORD,
             },
-        });            
+        });
 
         const mailOptions = {
             from: email,
-            to: 'victorzarzardev@gmail.com',
+            to: process.env.SMTP_EMAIL,
             subject: `Contato: ${subject}`,
             text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
         };
