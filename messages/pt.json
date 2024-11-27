@@ -126,7 +126,9 @@
     "namerequired": "Nome obrigatório",
     "invalidemail": "E-mail inválido",
     "subjectrequired": "Assunto obrigatório",
-    "messagerequired": "Mensagem necessária"
+    "messagerequired": "Mensagem necessária",
+    "emailerror": "Erro ao enviar o e-mail. Tente novamente mais tarde.",
+    "emailssucess": "E-mail enviado com sucesso!"
   },
   "NotFound": {
     "p": "Desculpe, não conseguimos encontrar esta página.",

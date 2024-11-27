@@ -126,7 +126,9 @@
     "namerequired": "Nombre requerido",
     "invalidemail": "Correo electrónico no válido",
     "subjectrequired": "Asunto requerido",
-    "messagerequired": "Mensaje requerido"
+    "messagerequired": "Mensaje requerido",
+    "emailerror": "Error al enviar el correo electrónico. Vuelva a intentarlo más tarde.",
+    "emailssucess": "¡Correo electrónico enviado exitosamente!"
   },
   "NotFound": {
     "p": "Lo sentimos, no pudimos encontrar esta página.",

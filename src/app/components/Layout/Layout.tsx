@@ -25,7 +25,7 @@ export default function LayoutProvider({ children }: { children: React.ReactNode
                 <ToastContainer
                     toastClassName={(context) =>
                         contextClass[context?.type || 'default'] +
-                        ' relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer'
+                        ' relative flex p-1 min-h-10 max-w-xs md:max-w-2xl mx-auto rounded-md justify-between overflow-hidden cursor-pointer'
                     }
                     bodyClassName={() => 'text-sm font-white font-med block p-3'}
                     position="top-right"

@@ -42,14 +42,14 @@ export default function Contact() {
             });
 
             if (response.ok) {
-                toast.success('Email enviado com sucesso!');
+                toast.success(t('emailsucess'));
                 form.reset();
             } else {
-                toast.error('Erro ao enviar o email. Tente novamente mais tarde.');
+                toast.error(t('emailerror'));
             }
         } catch (error) {
             console.error('Erro:', error);
-            toast.error('Erro ao enviar o email.');
+            toast.error(t('emailerror'));
         }
     }
 
