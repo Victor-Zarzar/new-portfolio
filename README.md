@@ -35,6 +35,11 @@ Project Clone
 
      git clone https://github.com/Victor-Zarzar/new-portfolio
 
+Create .env in project root directory:
+
+     SMTP_EMAIL=example@gmail.com
+     SMTP_PASSWORD=passwordexample       
+
 With docker and docker-compose installed, the following command moves up the stack:
 
      make up
@@ -51,12 +56,16 @@ For the stack:
    
     make down
 
+To view container logs:
+   
+    docker logs new-portfolio    
+
 <p align="center">
-  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/32944179-afea-42f0-a1eb-9bb0c6b9462a" width="1000" height="500" alt="Screenshot 2024-01-20 at 01 04 13">
+  <img src="https://github.com/user-attachments/assets/2ce59f47-1454-47d4-b180-79abc964fa8d" width="1000" height="500" alt="Screenshot 2024-01-20 at 01 04 13">
 </p>
 
 <p align="center">
-  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/a8962c1a-33d4-48e1-8b1e-ceb2cd0ffcdf" alt="Screenshot 2024-02-22 13-19-06" width="270px" height="450px"> 
-  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/9a47f745-882c-4a9b-9c71-9edaf09dad9d" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
-  <img src="https://github.com/Victor-Zarzar/new-portfolio/assets/114430780/ad35ea18-03f9-40ff-9eb7-20527e0ea18e" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
+  <img src="https://github.com/user-attachments/assets/413a3c7f-fe53-4411-b762-da0bd84e6de1" alt="Screenshot 2024-02-22 13-19-06" width="270px" height="450px"> 
+  <img src="https://github.com/user-attachments/assets/1a536d36-62ad-46c1-b44b-93bed6792226" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
+  <img src="https://github.com/user-attachments/assets/c1f47389-0d39-4fed-8157-606fd4a01f90" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
 </p>
