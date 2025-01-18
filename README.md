@@ -26,6 +26,7 @@
 - Next Intl Translate EN/PT-BR/ES
 - Nodemailer
 - React Toastify
+- Nextjs Google analytics
   
 <br />
 
@@ -38,7 +39,8 @@ Project Clone
 Create .env in project root directory:
 
      SMTP_EMAIL=example@gmail.com
-     SMTP_PASSWORD=passwordexample       
+     SMTP_PASSWORD=passwordexample
+     NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXX       
 
 With docker and docker-compose installed, the following command moves up the stack:
 

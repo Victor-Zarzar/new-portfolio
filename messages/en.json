@@ -133,5 +133,13 @@
   "NotFound": {
     "p": "Sorry, we couldn´t find this page.",
     "button": "Back to Homepage"
-  }
+  },
+  "Cookies": {
+    "title": "We use cookies",
+    "accept": "Accept",
+    "decline": "Decline",
+    "message": "We use cookies to improve your experience.",
+    "privacyLink": "Read our Privacy Policy",
+    "error": "Error accepting cookies"
+  }  
 }
