@@ -1,14 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --breakpoint-3xl: 1920px;
+    --bg-color: #ffffff;
+}
+
+.dark {
+    --bg-color: #1c1917;
+}
 
 html,
 body {
-  @apply h-full m-0 p-0 dark:bg-stone-900;
+    @apply h-full m-0 p-0;
+    background-color: var(--bg-color);
 }
+
 #root {
-  @apply flex flex-col min-h-full;
+    @apply flex flex-col min-h-full;
 }
+
 .content {
-  @apply grow;
+    @apply grow;
 }

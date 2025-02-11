@@ -1,8 +1,7 @@
 'use client';
-import React from 'react';
-import SkillOutline, { skills } from './IconSkills';
-import { Fade } from 'react-awesome-reveal';
 import { useTranslations } from 'next-intl';
+import { Fade } from 'react-awesome-reveal';
+import SkillOutline, { skills } from './IconSkills';
 
 export default function Skills() {
     const t = useTranslations('Skills');

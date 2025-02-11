@@ -1,12 +1,11 @@
 'use client';
-import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { HiArrowDown } from 'react-icons/hi';
+import { Button } from '@/components/ui/button';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Bounce } from 'react-awesome-reveal';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Button } from '@/components/ui/button';
-import { useTranslations } from 'next-intl';
+import { HiArrowDown } from 'react-icons/hi';
 
 export default function Header() {
     const t = useTranslations('Header');

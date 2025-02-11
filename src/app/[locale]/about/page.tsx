@@ -1,9 +1,8 @@
 'use client';
-import React from 'react';
-import Image from 'next/image';
-import { Fade } from 'react-awesome-reveal';
 import TimelineComponent from '@/app/components/Timeline/Timeline';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { Fade } from 'react-awesome-reveal';
 
 export default function About() {
     const t = useTranslations('About');

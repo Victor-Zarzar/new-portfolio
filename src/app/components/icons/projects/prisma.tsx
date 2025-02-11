@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function PrismaIcon() {
     return (
         <svg width="30px" height="30px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="h-[25px] w-[25px] md:h-[30px] md:w-[30px]">

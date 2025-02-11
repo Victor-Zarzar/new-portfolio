@@ -1,10 +1,10 @@
 'use client';
-import { CookieIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { CookieIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 export default function CookieConsentComponent({ demo = false, onAcceptCallback = () => {}, onDeclineCallback = () => {} }) {
@@ -59,10 +59,10 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
             className={cn(
                 'fixed z-[200] bottom-0 right-0 sm:right-4 sm:bottom-4 w-full sm:max-w-md duration-700',
                 !isOpen ? 'transition-[opacity,transform] translate-y-8 opacity-0' : 'transition-[opacity,transform] translate-y-0 opacity-100',
-                hide && 'hidden'
+                hide && 'hidden',
             )}
         >
-            <div className="dark:bg-card bg-background rounded-md m-3 border border-border shadow-lg">
+            <div className="dark:bg-stone-900 bg-gray-50 rounded-md m-3 border border-border shadow-lg">
                 <div className="grid gap-2">
                     <div className="border-b border-border h-14 flex items-center justify-between p-4">
                         <h1 className="text-lg font-medium"> {t('title')}</h1>
@@ -80,7 +80,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
                         <Button onClick={accept} className="w-full">
                             {t('accept')}
                         </Button>
-                        <Button onClick={decline} className="w-full" variant="secondary">
+                        <Button onClick={decline} className="w-full bg-gray-300 hover:bg-gray-400" variant="secondary">
                             {t('decline')}
                         </Button>
                     </div>

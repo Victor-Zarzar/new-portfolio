@@ -1,7 +1,6 @@
 'use client';
-import React from 'react';
-import { Fade } from 'react-awesome-reveal';
 import { useTranslations } from 'next-intl';
+import { Fade } from 'react-awesome-reveal';
 
 export default function PrivacyPolicyApps() {
     const t = useTranslations('PrivacyPolicyApps');

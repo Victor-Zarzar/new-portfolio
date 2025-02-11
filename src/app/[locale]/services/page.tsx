@@ -26,7 +26,9 @@ export default function ServicesPage() {
             bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-1 dark:bg-transparent dark:border-gray-200"
                 >
                     <CardHeader>
-                        <CardTitle>{t('cardtitle1')}</CardTitle>
+                        <CardTitle> 
+                        <p className='text-sm md:text-xl'>{t('cardtitle1')}</p>
+                        </CardTitle>
                         <CardDescription>{t('carddescription1')}</CardDescription>
                     </CardHeader>
                     <CardContent>

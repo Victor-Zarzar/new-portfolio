@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 type experience = {
     company: string;
     position: string;
@@ -31,4 +33,4 @@ type NavItem = {
 
 type Locale = 'en' | 'es' | 'pt';
 
-export type { NavItem, Project, experience, education, Locale };
+export type { education, experience, Locale, NavItem, Project };

@@ -1,12 +1,12 @@
+import type { Locale } from '@/app/types/main';
+import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
-import { JetBrains_Mono } from 'next/font/google';
-import './globals.css';
-import LayoutProvider from '../components/Layout/Layout';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { JetBrains_Mono } from 'next/font/google';
+import LayoutProvider from '../components/Layout/Layout';
 import NotFound404 from './[rest...]/page';
-import { routing } from '@/i18n/routing';
-import type { Locale } from '@/app/types/main';
+import './globals.css';
 
 const JetBrains = JetBrains_Mono({ subsets: ['latin'] });
 
@@ -25,7 +25,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     const messages = await getMessages();
 
     return (
-        <html lang={locale} suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning className="dark">
             <head>
                 <link rel="icon" href="/favicon.ico" />
             </head>

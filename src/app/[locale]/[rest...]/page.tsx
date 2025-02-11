@@ -1,8 +1,7 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { Bounce } from 'react-awesome-reveal';
 
 export default function NotFound404() {

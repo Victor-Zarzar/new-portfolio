@@ -60,7 +60,16 @@ For the stack:
 
 To view container logs:
    
-    docker logs new-portfolio    
+    docker logs new-portfolio
+
+To run Eslint and check for possible errors in the code:
+
+    cd Frontend
+
+Now type the following command in the terminal:
+
+    pnpm run lint
+            
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2ce59f47-1454-47d4-b180-79abc964fa8d" width="1000" height="500" alt="Screenshot 2024-01-20 at 01 04 13">

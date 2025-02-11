@@ -1,10 +1,9 @@
 'use client';
-import React from 'react';
-import { Timeline } from 'rsuite';
-import { Fade } from 'react-awesome-reveal';
-import { FaReact, FaBug } from 'react-icons/fa';
-import { IoIosSchool } from 'react-icons/io';
 import { useTranslations } from 'next-intl';
+import { Fade } from 'react-awesome-reveal';
+import { FaBug, FaReact } from 'react-icons/fa';
+import { IoIosSchool } from 'react-icons/io';
+import { Timeline } from 'rsuite';
 
 export default function TimelineComponent() {
     const t = useTranslations('Experiences');

@@ -1,13 +1,13 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { ThemeProvider } from 'next-themes';
-import 'rsuite/dist/rsuite-no-reset.min.css';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import 'rsuite/dist/rsuite-no-reset.min.css';
 import CookieConsentComponent from '../CookieConsent/CookieConsent';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 
 export default function LayoutProvider({ children }: { children: React.ReactNode }) {
     const [hasConsented, setHasConsented] = useState(false);
