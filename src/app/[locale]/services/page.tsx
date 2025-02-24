@@ -1,11 +1,32 @@
 'use client';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { type CardItemType } from '@/app/types/main';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useTranslations } from 'next-intl';
-import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 
 export default function ServicesPage() {
     const t = useTranslations('Services');
+
+    const CardServicesData: CardItemType[] = [
+        {
+            id: 1,
+            title: t('cardtitle1'),
+            description: t('carddescription1'),
+            p: t('p1'),
+        },
+        {
+            id: 2,
+            title: t('cardtitle2'),
+            description: t('carddescription2'),
+            p: t('p2'),
+        },
+        {
+            id: 3,
+            title: t('cardtitle3'),
+            description: t('carddescription3'),
+            p: t('p3'),
+        },
+    ];
 
     return (
         <main className="services">
@@ -20,49 +41,21 @@ export default function ServicesPage() {
             </section>
 
             <section className="p-4 flex flex-col gap-4 items-center min-h-screen mb-10 md:mb-0">
-                <Card
-                    className="w-full max-w-md font-medium transition-colors 
-            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input mb-4 
-            bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-1 dark:bg-transparent dark:border-gray-200"
-                >
-                    <CardHeader>
-                        <CardTitle> 
-                        <p className='text-sm md:text-xl'>{t('cardtitle1')}</p>
-                        </CardTitle>
-                        <CardDescription>{t('carddescription1')}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <p className='text-sm md:text-xl'>{t('p1')}</p>
-                    </CardContent>
-                </Card>
-
-                <Card
-                    className="w-full max-w-md font-medium transition-colors 
-            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input mb-4 
-            bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-1 dark:bg-transparent dark:border-gray-200"
-                >
-                    <CardHeader>
-                        <CardTitle>{t('cardtitle2')}</CardTitle>
-                        <CardDescription>{t('carddescription2')}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <p className='text-sm md:text-xl'>{t('p2')}</p>
-                    </CardContent>
-                </Card>
-
-                <Card
-                    className="w-full max-w-md font-medium transition-colors 
-            focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input 
-            bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground hover:-translate-y-1 dark:bg-transparent dark:border-gray-200"
-                >
-                    <CardHeader>
-                        <CardTitle>{t('cardtitle3')}</CardTitle>
-                        <CardDescription>{t('carddescription3')}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <p className='text-sm md:text-xl'>{t('p3')}</p>
-                    </CardContent>
-                </Card>
+                {CardServicesData.map((item) => (
+                    <Card
+                        key={item.id}
+                        className="w-3/4 max-w-md mb-4 bg-transparent shadow-sm 
+                        hover:-translate-y-1 dark:bg-transparent border-black dark:border-gray-200"
+                    >
+                        <CardHeader>
+                            <CardTitle className="text-sm sm:text-2xl">{item.title}</CardTitle>
+                            <CardDescription className="text-xs sm:text-xl">{item.description}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-sm md:text-xl">{item.p}</p>
+                        </CardContent>
+                    </Card>
+                ))}
             </section>
         </main>
     );

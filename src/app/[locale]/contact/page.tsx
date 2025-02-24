@@ -136,7 +136,12 @@ export default function Contact() {
                                 </FormItem>
                             )}
                         />
-                        <Button type="submit" className="w-full">
+                        <Button
+                            type="submit"
+                            className="w-full dark:bg-transparent bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground 
+                            hover:-translate-y-1 border-black dark:border-gray-200 cursor-pointer"
+                            variant="outline"
+                        >
                             {t('submit')}
                         </Button>
                     </form>

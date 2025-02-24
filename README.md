@@ -12,22 +12,21 @@
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" width="48" title="Docker">
 </p>
 
-- TypeScript
-- React
-- Html
-- TailWind CSS
-- Next.js 15 
-- Docker
-- Docker-Compose
-- Zod and React Hook Validation
-- Shadcn UI
-- RSuite JS UI
-- Dark Mode - Next Themes
-- Next Intl Translate EN/PT-BR/ES
-- Nodemailer
-- React Toastify
-- Nextjs Google analytics
-  
+-   TypeScript
+-   React 19
+-   Html
+-   TailWind CSS v4
+-   Next.js 15
+-   Docker
+-   Docker-Compose
+-   Zod and React Hook Validation
+-   Shadcn UI
+-   Dark Mode - Next Themes
+-   Next Intl Translate EN/PT-BR/ES
+-   Nodemailer
+-   React Toastify
+-   Nextjs Google analytics
+
 <br />
 
 ⚙️ How to install:
@@ -40,7 +39,7 @@ Create .env in project root directory:
 
      SMTP_EMAIL=example@gmail.com
      SMTP_PASSWORD=passwordexample
-     NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXX       
+     NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXX
 
 With docker and docker-compose installed, the following command moves up the stack:
 
@@ -55,11 +54,11 @@ Clear the stack:
     make clean
 
 For the stack:
-   
+
     make down
 
 To view container logs:
-   
+
     docker logs new-portfolio
 
 To run Eslint and check for possible errors in the code:
@@ -69,14 +68,11 @@ To run Eslint and check for possible errors in the code:
 Now type the following command in the terminal:
 
     pnpm run lint
-            
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2ce59f47-1454-47d4-b180-79abc964fa8d" width="1000" height="500" alt="Screenshot 2024-01-20 at 01 04 13">
+  <img src="https://github.com/user-attachments/assets/4ceb57e5-6d8e-44b7-a484-1d9624f45bdf" width="1000" height="600" alt="Screenshot 2024-01-20 at 01 04 13">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/413a3c7f-fe53-4411-b762-da0bd84e6de1" alt="Screenshot 2024-02-22 13-19-06" width="270px" height="450px"> 
-  <img src="https://github.com/user-attachments/assets/1a536d36-62ad-46c1-b44b-93bed6792226" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
-  <img src="https://github.com/user-attachments/assets/c1f47389-0d39-4fed-8157-606fd4a01f90" alt="Screenshot 2024-02-22 13-20-00" width="270px" height="450px">
+  <img src="https://github.com/user-attachments/assets/9e3807ef-87ec-4c4d-b869-ebe9dbad3510" alt="Screenshot 2024-02-22 13-19-06" width="1000px" height="500"> 
 </p>

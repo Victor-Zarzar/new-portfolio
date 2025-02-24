@@ -18,16 +18,16 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
         document.cookie = `${name}=${value}; ${defaultOptions} ${options.additional || ''}`;
     }
 
-    const accept = () => {
+    function accept() {
         setIsOpen(false);
         setCookie('cookieConsent', 'true');
         setTimeout(() => {
             setHide(true);
         }, 700);
         onAcceptCallback();
-    };
+    }
 
-    const decline = () => {
+    function decline() {
         setIsOpen(false);
         setCookie('cookieConsent', 'declined');
         localStorage.setItem('cookieConsent', 'declined');
@@ -35,7 +35,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
             setHide(true);
         }, 700);
         onDeclineCallback();
-    };
+    }
 
     useEffect(() => {
         try {

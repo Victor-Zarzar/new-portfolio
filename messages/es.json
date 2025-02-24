@@ -8,11 +8,19 @@
         "contact": "Contacto",
         "language": "Idioma",
         "english": "Inglés",
-        "portuguese": "Portugués"
+        "portuguese": "Portugués",
+        "settings": "Configuración",
+        "dialog-description": "Personaliza tu experiencia.",
+        "dark-mode": "Modo oscuro",
+        "toggle-theme": "Tema",
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema",
+        "close": "Cerrar"
     },
     "Header": {
         "h1": "Bienvenido a mi portafolio,",
-        "span": "Soy desarrollador front-end🖖🏻"
+        "span": "Soy desarrollador de software🖖🏻\nWeb y Móvil"
     },
     "Skills": {
         "h1": "Habilidades",
@@ -46,9 +54,9 @@
         "p4": "Diciembre 2022 - Marzo 2023",
         "p5": "Probador de control de calidad: funcional, usabilidad, carga, localización, accesibilidad, regresión.",
         "p6": "Novo Hamburgo, RS, Brazil - Remoto",
-        "p7": "Abr 2024 - Oct 2027 - Ampli SP",
+        "p7": "Colegio Ahanguera",
         "p8": "Ingeniería de software",
-        "p9": "Julio 2022 - Julio 2024 - Ampli SP",
+        "p9": "Colegio Ahanguera",
         "p10": "Análisis y desarrollo de sistemas"
     },
     "Projects": {

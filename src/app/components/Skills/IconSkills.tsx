@@ -1,13 +1,15 @@
 import { type IconType } from 'react-icons';
+import { FaFigma } from 'react-icons/fa';
+import { IoTerminal } from 'react-icons/io5';
 import {
     SiAndroidstudio,
     SiArchlinux,
     SiCodemagic,
     SiCss3,
-    SiCypress,
     SiDart,
     SiDjango,
     SiDocker,
+    SiFastapi,
     SiFirebase,
     SiFlutter,
     SiGit,
@@ -17,10 +19,8 @@ import {
     SiJavascript,
     SiMacos,
     SiMantine,
-    SiMobx,
     SiMui,
     SiNextdotjs,
-    SiNodedotjs,
     SiNpm,
     SiPostman,
     SiPrisma,
@@ -55,10 +55,7 @@ export const skills = [
         icon: SiReact,
         text: 'React',
     },
-    {
-        icon: SiCypress,
-        text: 'Cypress',
-    },
+
     {
         icon: SiNextdotjs,
         text: 'Next',
@@ -72,44 +69,12 @@ export const skills = [
         text: 'Tailwind',
     },
     {
-        icon: SiDart,
-        text: 'Dart',
-    },
-    {
-        icon: SiFlutter,
-        text: 'Flutter',
-    },
-    {
         icon: SiHtml5,
         text: 'HTML5',
     },
     {
         icon: SiCss3,
         text: 'CSS3',
-    },
-    {
-        icon: SiMobx,
-        text: 'Mobx',
-    },
-    {
-        icon: SiNodedotjs,
-        text: 'Node',
-    },
-    {
-        icon: SiFirebase,
-        text: 'Firebase',
-    },
-    {
-        icon: SiGit,
-        text: 'Git',
-    },
-    {
-        icon: SiGithub,
-        text: 'GitHub',
-    },
-    {
-        icon: SiGitlab,
-        text: 'Gitlab',
     },
     {
         icon: SiDocker,
@@ -126,6 +91,30 @@ export const skills = [
     {
         icon: SiShadcnui,
         text: 'Shadcn UI',
+    },
+    {
+        icon: SiDart,
+        text: 'Dart',
+    },
+    {
+        icon: SiFlutter,
+        text: 'Flutter',
+    },
+    {
+        icon: SiFirebase,
+        text: 'Firebase',
+    },
+    {
+        icon: SiGit,
+        text: 'Git',
+    },
+    {
+        icon: SiGithub,
+        text: 'GitHub',
+    },
+    {
+        icon: SiGitlab,
+        text: 'Gitlab',
     },
     {
         icon: SiPostman,
@@ -180,8 +169,20 @@ export const skills = [
         text: 'Django',
     },
     {
+        icon: SiFastapi,
+        text: 'FastAPI',
+    },
+    {
         icon: SiSqlite,
         text: 'SQLite',
+    },
+    {
+        icon: IoTerminal,
+        text: 'OpenSSH',
+    },
+    {
+        icon: FaFigma,
+        text: 'Figma',
     },
 ];
 

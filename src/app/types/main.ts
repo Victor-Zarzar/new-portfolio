@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { type JSX } from 'react';
 
 type experience = {
     company: string;
@@ -6,13 +6,6 @@ type experience = {
     startDate: string;
     endDate: string;
     desc: string[];
-};
-
-type education = {
-    institute: string;
-    degree: string;
-    startDate: string;
-    endDate: string;
 };
 
 type Project = {
@@ -31,6 +24,21 @@ type NavItem = {
     link: string;
 };
 
+type TimelineItemType = {
+    id: number;
+    title: string;
+    description?: string;
+    local: string;
+    time: string;
+};
+
+type CardItemType = {
+    id: number;
+    title: string;
+    description: string;
+    p: string;
+};
+
 type Locale = 'en' | 'es' | 'pt';
 
-export type { education, experience, Locale, NavItem, Project };
+export type { CardItemType, experience, Locale, NavItem, Project, TimelineItemType };

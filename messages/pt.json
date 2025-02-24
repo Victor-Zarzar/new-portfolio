@@ -8,11 +8,19 @@
         "contact": "Contato",
         "language": "Linguagem",
         "english": "Inglês",
-        "portuguese": "Português"
+        "portuguese": "Português",
+        "settings": "Configurações",
+        "dialog-description": "Personalize sua experiência.",
+        "dark-mode": "Modo escuro",
+        "toggle-theme": "Tema",
+        "light": "Claro",
+        "dark": "Escuro",
+        "system": "Sistema",
+        "close": "Fechar"
     },
     "Header": {
         "h1": "Bem-vindo ao meu portfólio,",
-        "span": "Sou Desenvolvedor Front-End🖖🏻"
+        "span": "Sou Desenvolvedor de Software🖖🏻\nWeb & Mobile"
     },
     "Skills": {
         "h1": "Habilidades",
@@ -46,9 +54,9 @@
         "p4": "Dezembro de 2022 - março de 2023",
         "p5": "Testador QA - Funcional, Usabilidade, Carga, Localização, Acessibilidade, Regressão.",
         "p6": "Novo Hamburgo, RS, Brasil - Remoto",
-        "p7": "Abril 2024 - Outubro 2027 - Ampli SP",
+        "p7": "Faculdade Ahanguera",
         "p8": "Engenharia de Software",
-        "p9": "Julho 2022 - Julho 2024 - Ampli SP",
+        "p9": "Faculdade Ahanguera",
         "p10": "Análise e desenvolvimento de sistemas"
     },
     "Projects": {

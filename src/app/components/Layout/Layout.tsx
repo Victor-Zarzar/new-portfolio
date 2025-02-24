@@ -4,7 +4,6 @@ import { ThemeProvider } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import 'rsuite/dist/rsuite-no-reset.min.css';
 import CookieConsentComponent from '../CookieConsent/CookieConsent';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';

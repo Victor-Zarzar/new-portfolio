@@ -23,17 +23,25 @@ export default function Header() {
                     <Bounce>
                         <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-5xl">{t('h1')}</h1>
                         <p className="text-lg mt-4 mb-6 md:text-2xl">
-                            <span className="font-semibold text-gray-600">{t('span')}</span>
+                            <span className="font-semibold text-gray-600 whitespace-pre-line">{t('span')}</span>
                         </p>
                     </Bounce>
                     <nav className="container-button mx-auto space-x-1 flex">
                         <Link href="https://github.com/Victor-Zarzar" target="_blank" rel="noreferrer">
-                            <Button className="px-2 md:px-4">
+                            <Button
+                                className="px-2 md:px-4 dark:bg-transparent bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground 
+                                hover:-translate-y-1 border-black dark:border-gray-200 cursor-pointer"
+                                variant="outline"
+                            >
                                 <FaGithub className="mr-1" /> Github
                             </Button>
                         </Link>
                         <Link href="https://www.linkedin.com/in/victorzarzar" target="_blank" rel="noreferrer">
-                            <Button className="px-2 md:px-4">
+                            <Button
+                                className="px-2 md:px-4 dark:bg-transparent bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground
+                                 hover:-translate-y-1 border-black dark:border-gray-200 cursor-pointer"
+                                variant="outline"
+                            >
                                 <FaLinkedin className="mr-1" /> Linkedin
                             </Button>
                         </Link>

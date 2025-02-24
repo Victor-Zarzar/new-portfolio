@@ -1,17 +1,21 @@
 'use client';
 import { type NavItem } from '@/app/types/main';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useState } from 'react';
-import { GiHeraldicSun, GiMoonBats } from 'react-icons/gi';
-import { IoMdClose, IoMdMenu } from 'react-icons/io';
+import { FaArrowRight, FaLaptopCode } from 'react-icons/fa';
+import { IoMdClose, IoMdMenu, IoMdSettings } from 'react-icons/io';
+import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
+import LangToggler from '../LocaleSwitcher/LangToggler';
 
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
-    const { systemTheme, theme, setTheme } = useTheme();
-    const currentTheme = theme === 'system' ? systemTheme : theme;
-
+    const [open, setOpen] = useState(false);
+    const { setTheme, theme } = useTheme();
     const t = useTranslations('Navbar');
 
     const NAV_ITEMS: Array<NavItem> = [
@@ -43,7 +47,13 @@ export default function Navbar() {
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <Link href="/">
                         <div className="container flex items-center space-x-2">
-                            <h2 className="text-lg lg:text-2xl font-bold">{t('titlenavbar')}</h2>
+                            <h1
+                                className="text-2xl lg:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-500 to-gray-800
+                             dark:from-gray-300 dark:to-gray-500 drop-shadow-md transition-all duration-300 hover:scale-105 hover:text-gray-500
+                              dark:hover:text-gray-300 font-mono animate-pulse"
+                            >
+                                {t('titlenavbar')}
+                            </h1>
                         </div>
                     </Link>
                     <div className="md:hidden">
@@ -72,15 +82,65 @@ export default function Navbar() {
                                     </Link>
                                 );
                             })}
-                            {currentTheme === 'dark' ? (
-                                <button onClick={() => setTheme('light')} className="p-1 rounded-xl">
-                                    <GiHeraldicSun size={27} color="white" />
-                                </button>
-                            ) : (
-                                <button onClick={() => setTheme('dark')} className="p-1 rounded-xl">
-                                    <GiMoonBats size={27} />
-                                </button>
-                            )}
+                            <Dialog open={open} onOpenChange={setOpen}>
+                                <DialogTrigger asChild>
+                                    <button className="p-1 rounded-xl" onClick={() => setOpen(true)}>
+                                        <IoMdSettings size={27} />
+                                    </button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-[320px] sm:max-w-[425px] dark:bg-stone-900 bg-[#ffffff]">
+                                    <DialogHeader>
+                                        <DialogTitle>
+                                            <div className="flex items-center">
+                                                <IoMdSettings size={20} />
+                                                {t('settings')}
+                                            </div>
+                                        </DialogTitle>
+                                        <DialogDescription>{t('dialog-description')}</DialogDescription>
+                                    </DialogHeader>
+                                    <span className="border-b" />
+                                    <div className="grid gap-4 py-4">
+                                        <div className="flex items-center justify-between">
+                                            <span>{t('toggle-theme')}</span>
+                                            <Select value={theme} onValueChange={setTheme}>
+                                                <SelectTrigger className="w-[120px]">
+                                                    <SelectValue />
+                                                </SelectTrigger>
+                                                <SelectContent className="bg-[#ffffff]">
+                                                    <SelectItem value="light">
+                                                        <div className="flex items-center space-x-2">
+                                                            <MdOutlineLightMode />
+                                                            <span>{t('light')}</span>
+                                                        </div>
+                                                    </SelectItem>
+                                                    <SelectItem value="dark">
+                                                        <div className="flex items-center space-x-2">
+                                                            <MdDarkMode />
+                                                            <span>{t('dark')}</span>
+                                                        </div>
+                                                    </SelectItem>
+                                                    <SelectItem value="system">
+                                                        <div className="flex items-center space-x-2">
+                                                            <FaLaptopCode />
+                                                            <span>{t('system')}</span>
+                                                        </div>
+                                                    </SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <span>{t('language')}</span>
+                                            <LangToggler />
+                                        </div>
+                                    </div>
+                                    <DialogFooter>
+                                        <Button type="button" className="cursor-pointer" onClick={() => setOpen(false)}>
+                                            {t('close')}
+                                            <FaArrowRight className="ml-1 animate-pulse" />
+                                        </Button>
+                                    </DialogFooter>
+                                </DialogContent>
+                            </Dialog>
                         </div>
                     </div>
                 </div>

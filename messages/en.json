@@ -8,11 +8,19 @@
         "contact": "Contact",
         "language": "Language",
         "english": "English",
-        "portuguese": "Portuguese"
+        "portuguese": "Portuguese",
+        "settings": "Settings",
+        "dialog-description": "Customize your experience.",
+        "dark-mode": "Dark Mode",
+        "toggle-theme": "Theme",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System",
+        "close": "Close"
     },
     "Header": {
         "h1": "Welcome to my portfolio,",
-        "span": "I´am Front-End Developer🖖🏻"
+        "span": "I´am Software Developer🖖🏻\nWeb & Mobile"
     },
     "Skills": {
         "h1": "Skills",
@@ -46,9 +54,9 @@
         "p4": "December 2022 - March 2023",
         "p5": "QA Tester - Functional, Usability, Load, Localization, Accessibility, Regression.",
         "p6": "Novo Hamburgo, RS, Brazil - Remote",
-        "p7": "Apr 2024 - Oct 2027 - Ampli SP",
+        "p7": "Ahanguera College",
         "p8": "Software Engineering",
-        "p9": "Jul 2022 - Jul 2024 - Ampli SP",
+        "p9": "Ahanguera College",
         "p10": "Analysis and systems development"
     },
     "Projects": {

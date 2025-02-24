@@ -233,7 +233,7 @@ export default function Projects() {
                                                         </CardContent>
                                                     </div>
                                                 </PopoverTrigger>
-                                                <PopoverContent className="w-60 md:w-80 dark:bg-stone-900 border-3">
+                                                <PopoverContent className="w-60 md:w-80 dark:bg-stone-900 border-2">
                                                     <div className="space-y-2">
                                                         <h4 className="font-medium leading-none text-sm md:text-md title-font">{project.title}</h4>
                                                         <div className="text-xs md:text-sm font-semibold">{project.description}</div>
