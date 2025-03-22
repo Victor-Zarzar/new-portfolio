@@ -20,7 +20,7 @@
     },
     "Header": {
         "h1": "Welcome to my portfolio,",
-        "span": "I´am Software Developer🖖🏻\nWeb & Mobile"
+        "span": "I´am FullStack Developer🖖🏻\nWeb & Mobile"
     },
     "Skills": {
         "h1": "Skills",
@@ -49,7 +49,7 @@
     "Experiences": {
         "h1": "Experiences Tech & Education",
         "p1": "March 2023 - Present",
-        "p2": "Front-End Developer - Front web and Flutter Mobile.",
+        "p2": "FullStack Developer - Web and Flutter Mobile.",
         "p3": "São Leopoldo, RS, Brazil - Remote",
         "p4": "December 2022 - March 2023",
         "p5": "QA Tester - Functional, Usability, Load, Localization, Accessibility, Regression.",

@@ -24,7 +24,6 @@
 -   Dark Mode - Next Themes
 -   Next Intl Translate EN/PT-BR/ES
 -   Nodemailer
--   React Toastify
 -   Nextjs Google analytics
 
 <br />
@@ -41,9 +40,13 @@ Create .env in project root directory:
      SMTP_PASSWORD=passwordexample
      NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXX
 
+For information about commands available in the container:
+
+     make help
+
 With docker and docker-compose installed, the following command moves up the stack:
 
-     make up
+     make run
 
 Starting the project:
 
@@ -55,7 +58,7 @@ Clear the stack:
 
 For the stack:
 
-    make down
+    make stop
 
 To view container logs:
 
@@ -68,6 +71,10 @@ To run Eslint and check for possible errors in the code:
 Now type the following command in the terminal:
 
     pnpm run lint
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cab8f356-ae88-4d9f-bd90-dbc0c61e6265" width="1000" height="600" alt="Screenshot 2024-01-20 at 01 04 13">
+</p>
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4ceb57e5-6d8e-44b7-a484-1d9624f45bdf" width="1000" height="600" alt="Screenshot 2024-01-20 at 01 04 13">

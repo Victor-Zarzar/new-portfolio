@@ -20,7 +20,7 @@
     },
     "Header": {
         "h1": "Bem-vindo ao meu portfólio,",
-        "span": "Sou Desenvolvedor de Software🖖🏻\nWeb & Mobile"
+        "span": "Sou Desenvolvedor FullStack🖖🏻\nWeb & Mobile"
     },
     "Skills": {
         "h1": "Habilidades",
@@ -49,7 +49,7 @@
     "Experiences": {
         "h1": "Experiências Tech e Educação",
         "p1": "Março de 2023 - Presente",
-        "p2": "Desenvolvedor Front-End - Front web e Flutter Mobile.",
+        "p2": "Desenvolvedor FullStack - Web e Flutter Mobile.",
         "p3": "São Leopoldo, RS, Brasil - Remoto",
         "p4": "Dezembro de 2022 - março de 2023",
         "p5": "Testador QA - Funcional, Usabilidade, Carga, Localização, Acessibilidade, Regressão.",
@@ -136,7 +136,7 @@
         "subjectrequired": "Assunto obrigatório",
         "messagerequired": "Mensagem necessária",
         "emailerror": "Erro ao enviar o e-mail. Tente novamente mais tarde.",
-        "emailssucess": "E-mail enviado com sucesso!"
+        "emailsucess": "E-mail enviado com sucesso!"
     },
     "NotFound": {
         "p": "Desculpe, não conseguimos encontrar esta página.",

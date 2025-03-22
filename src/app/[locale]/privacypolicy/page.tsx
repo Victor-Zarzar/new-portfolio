@@ -1,4 +1,5 @@
 'use client';
+
 import { useTranslations } from 'next-intl';
 import { Fade } from 'react-awesome-reveal';
 

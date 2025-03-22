@@ -1,6 +1,7 @@
 'use client';
-import { type CardItemType } from '@/app/types/main';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { type CardItemType } from '@/app/shared/types/main';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/app/shared/ui/card';
 import { useTranslations } from 'next-intl';
 import { Fade } from 'react-awesome-reveal';
 

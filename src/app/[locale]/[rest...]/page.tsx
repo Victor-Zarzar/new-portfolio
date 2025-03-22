@@ -1,5 +1,6 @@
 'use client';
-import { Button } from '@/components/ui/button';
+
+import { Button } from '@/app/shared/ui/button';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Bounce } from 'react-awesome-reveal';

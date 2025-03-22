@@ -1,5 +1,6 @@
 'use client';
-import { TimelineLayout } from '@/app/components/Timeline/timeline-layout';
+
+import { TimelineLayout } from '@/app/features/timeline-layout/timeline-layout';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
@@ -17,7 +18,9 @@ export default function About() {
             <p className="text-sm leading-relaxed text-center max-w-3xl mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter mt-10">
                 {t('p')}
             </p>
+
             <TimelineLayout />
+
             <section className="rounded-lg p-6 mt-4">
                 <Fade>
                     <header className="text-center mt-4">
