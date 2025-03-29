@@ -3,6 +3,11 @@ DOCKER_IMAGE_NAME = new-portfolio
 DOCKER_CONTAINER_NAME = new-portfolio
 PORT = 3000
 
+install:
+	@echo "Installing dependencies with pnpm..."
+	pnpm install
+	@echo "Dependencies installed."
+
 run:
 	@echo "Starting application on port $(PORT)..."
 	docker-compose build 
@@ -16,7 +21,8 @@ stop:
 clean:
 	@echo "Cleaning environment..."
 	docker-compose down -v
-	docker rmi -f new-portfolio
+	docker rmi -f $(DOCKER_IMAGE_NAME)
+	rm -rf node_modules .next || true
 	docker system prune -af
 	@echo "Environment cleaned."
 
@@ -53,6 +59,7 @@ help:
 	@echo "New-Portfolio Makefile"
 	@echo "------------------------"
 	@echo "Available commands:"
+	@echo "  make install        - To install the required dependencies"
 	@echo "  make run            - Run application locally"
 	@echo "  make stop           - Stop local application"
 	@echo "  make clean          - Clean environment"

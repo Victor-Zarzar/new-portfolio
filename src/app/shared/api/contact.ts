@@ -20,7 +20,7 @@ export const contactService = {
                 return false;
             }
         } catch (error) {
-            console.error('Erro:', error);
+            console.error('Error:', error);
             toast.error(errorMessage);
             return false;
         }

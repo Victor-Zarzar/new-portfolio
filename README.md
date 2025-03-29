@@ -44,6 +44,10 @@ For information about commands available in the container:
 
      make help
 
+To install the required dependencies:
+
+     make install
+
 With docker and docker-compose installed, the following command moves up the stack:
 
      make run
