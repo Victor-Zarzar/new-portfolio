@@ -23,7 +23,7 @@ export default function SettingsSwitcher() {
                         <IoMdSettings size={27} />
                     </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-[320px] sm:max-w-[425px] dark:bg-stone-900 bg-[#ffffff]">
+                <DialogContent className="max-w-[320px] sm:max-w-[425px] dark:bg-stone-950 bg-[#ffffff] border-black dark:border-gray-200">
                     <DialogHeader>
                         <DialogTitle>
                             <div className="flex items-center">
@@ -33,7 +33,7 @@ export default function SettingsSwitcher() {
                         </DialogTitle>
                         <DialogDescription>{t('dialog-description')}</DialogDescription>
                     </DialogHeader>
-                    <span className="border-b" />
+                    <span className="border-b border-black dark:border-gray-200" />
                     <div className="grid gap-4 py-4">
                         <div className="flex items-center justify-between">
                             <span>{t('toggle-theme')}</span>

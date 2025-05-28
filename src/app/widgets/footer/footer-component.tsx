@@ -1,7 +1,6 @@
-import React from 'react';
-import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineInstagram, AiOutlineFacebook } from 'react-icons/ai';
-import { FaSquareXTwitter } from 'react-icons/fa6';
+import { AiOutlineFacebook, AiOutlineGithub, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';
 import { BiLogoDevTo } from 'react-icons/bi';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();

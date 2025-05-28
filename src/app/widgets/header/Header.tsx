@@ -17,14 +17,14 @@ export default function Header() {
                 <section className="md:mt-2 md:w-1/2">
                     <Avatar className="w-40 h-40 md:w-72 md:h-72 bg-gray-300 rounded-full mb-4 mx-auto mt-2">
                         <AvatarImage src="profile.jpg" alt="victorzarzar" />
-                        <AvatarFallback className="dark:bg-stone-900">VZ</AvatarFallback>
+                        <AvatarFallback className="dark:bg-stone-950">VZ</AvatarFallback>
                     </Avatar>
                 </section>
                 <section className="md:mt-2 md:w-3/5">
                     <Bounce>
                         <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-5xl">{t('h1')}</h1>
                         <p className="text-lg mt-4 mb-6 md:text-2xl">
-                            <span className="font-semibold text-gray-600 whitespace-pre-line">{t('span')}</span>
+                            <span className="font-semibold text-gray-500 whitespace-pre-line">{t('span')}</span>
                         </p>
                     </Bounce>
                     <nav className="container-button mx-auto space-x-1 flex">

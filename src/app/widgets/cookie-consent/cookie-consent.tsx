@@ -63,9 +63,9 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
                 hide && 'hidden',
             )}
         >
-            <div className="dark:bg-stone-900 bg-gray-50 rounded-md m-3 border border-border shadow-lg">
+            <div className="dark:bg-stone-950 bg-gray-50 border-black dark:border-gray-200 rounded-md m-3 border shadow-lg">
                 <div className="grid gap-2">
-                    <div className="border-b border-border h-14 flex items-center justify-between p-4">
+                    <div className="border-b h-14 flex items-center justify-between p-4 border-black dark:border-gray-200">
                         <h1 className="text-lg font-medium"> {t('title')}</h1>
                         <CookieIcon className="h-[1.2rem] w-[1.2rem]" />
                     </div>
@@ -77,7 +77,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
                             </Link>
                         </p>
                     </div>
-                    <div className="flex gap-2 p-4 py-5 border-t border-border dark:bg-background/20">
+                    <div className="flex gap-2 p-4 py-5 border-t dark:bg-background/20 border-black dark:border-gray-200">
                         <Button onClick={accept} className="w-full">
                             {t('accept')}
                         </Button>

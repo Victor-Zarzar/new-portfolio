@@ -186,7 +186,7 @@ export default function SkillOutline({ Icon, text }: SkillOutlineProps) {
         <div
             className="inline-flex items-center justify-center rounded-md text-[10px] sm:text-[10.5px] font-medium transition-colors 
             focus-visible:outline-none focus-visible:ring-1
-     focus-visible:ring-ring border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-28 sm:w-36 
+     focus-visible:ring-ring border  bg-transparent border-black dark:border-gray-200 shadow-sm hover:bg-accent hover:text-accent-foreground h-9 w-28 sm:w-36 
      px-1 sm:px-4 py-2 mr-2 hover:-translate-y-1"
         >
             <Icon className="h-3 w-3 mr-1 md:h-4 md:w-4" />

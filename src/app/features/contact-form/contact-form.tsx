@@ -53,7 +53,7 @@ export default function ContactForm() {
                                     <Input
                                         placeholder={t('name')}
                                         {...field}
-                                        className="dark:bg-stone-900 dark:border-b dark:border-stone-600"
+                                        className="dark:bg-stone-950 dark:border-b dark:border-stone-600"
                                         autoComplete="name"
                                     />
                                 </FormControl>
@@ -72,7 +72,7 @@ export default function ContactForm() {
                                         placeholder={t('email')}
                                         type="email"
                                         {...field}
-                                        className="dark:bg-stone-900 dark:border-b dark:border-stone-600"
+                                        className="dark:bg-stone-950 dark:border-b dark:border-stone-600"
                                         autoComplete="email"
                                     />
                                 </FormControl>
@@ -90,7 +90,7 @@ export default function ContactForm() {
                                     <Input
                                         placeholder={t('subject')}
                                         {...field}
-                                        className="dark:bg-stone-900 dark:border-b dark:border-stone-600"
+                                        className="dark:bg-stone-950 dark:border-b dark:border-stone-600"
                                         autoComplete="subject"
                                     />
                                 </FormControl>
@@ -108,7 +108,7 @@ export default function ContactForm() {
                                     <Textarea
                                         placeholder={t('message')}
                                         {...field}
-                                        className="dark:bg-stone-900 dark:border-b dark:border-stone-600"
+                                        className="dark:bg-stone-950 dark:border-b dark:border-stone-600"
                                         autoComplete="message"
                                     />
                                 </FormControl>
