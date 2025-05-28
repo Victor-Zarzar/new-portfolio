@@ -26,10 +26,10 @@ export default function LangToggler() {
 
     return (
         <Select disabled={isPending} onValueChange={onSelectChange} defaultValue={locale}>
-            <SelectTrigger className="w-auto dark:bg-stone-900 bg-[#ffffff]">
+            <SelectTrigger className="w-auto dark:bg-stone-950 bg-[#ffffff]">
                 <SelectValue />
             </SelectTrigger>
-            <SelectContent className="dark:bg-stone-900 bg-[#ffffff]">
+            <SelectContent className="dark:bg-stone-950 bg-[#ffffff]">
                 <SelectItem value="en">
                     <div className="flex items-center gap-2">
                         <Image src={en} alt="English" width={20} height={20} />
