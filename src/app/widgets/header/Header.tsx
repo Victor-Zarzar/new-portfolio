@@ -13,6 +13,8 @@ export default function Header() {
     const t = useTranslations('Header');
     const [isLoaded, setIsLoaded] = useState(false);
 
+    const profile = '/profile.jpg';
+
     return (
         <>
             <header className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
@@ -21,7 +23,7 @@ export default function Header() {
                         {!isLoaded && <Skeleton className="w-full h-full rounded-full absolute top-0 left-0 z-0" />}
                         <Avatar className="w-full h-full z-10">
                             <AvatarImage
-                                src="profile.jpg"
+                                src={profile}
                                 alt="victorzarzar"
                                 onLoad={() => setIsLoaded(true)}
                                 className={`${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
