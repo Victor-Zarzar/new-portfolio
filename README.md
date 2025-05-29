@@ -81,9 +81,9 @@ Now type the following command in the terminal:
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4ceb57e5-6d8e-44b7-a484-1d9624f45bdf" width="1000" height="600" alt="Screenshot 2024-01-20 at 01 04 13">
+  <img src="https://github.com/user-attachments/assets/f76a4f39-dc46-4fac-b604-1c647495e957" width="1000" height="600" alt="Screenshot 2024-01-20 at 01 04 13">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9e3807ef-87ec-4c4d-b869-ebe9dbad3510" alt="Screenshot 2024-02-22 13-19-06" width="1000px" height="500"> 
+  <img src="https://github.com/user-attachments/assets/86abbd0b-b2b5-4c5e-a952-261c5691834d" alt="Screenshot 2024-02-22 13-19-06" width="1000px" height="500"> 
 </p>
