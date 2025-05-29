@@ -12,19 +12,18 @@
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" width="48" title="Docker">
 </p>
 
--   TypeScript
--   React 19
--   Html
--   TailWind CSS v4
--   Next.js 15
--   Docker
--   Docker-Compose
--   Zod and React Hook Validation
--   Shadcn UI
--   Dark Mode - Next Themes
--   Next Intl Translate EN/PT-BR/ES
--   Nodemailer
--   Nextjs Google analytics
+-   🟦 TypeScript
+-   ⚛️ React 19
+-   🧱 HTML
+-   🎨 Tailwind CSS v4
+-   🌐 Next.js 15
+-   🐳 Docker + Docker-Compose
+-   🛡 Zod & React Hook Form
+-   🧩 Shadcn UI
+-   🌗 Dark Mode (Next Themes)
+-   🌍 Next Intl Translate (EN / PT-BR / ES)
+-   📬 Nodemailer
+-   📈 Google Analytics (Next.js)
 
 <br />
 

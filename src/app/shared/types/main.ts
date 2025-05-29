@@ -52,6 +52,25 @@ type SkillOutlineProps = {
     text: string;
 };
 
+type GetProjectsParams = {
+    t: (key: string) => string;
+};
+
+type GetTimelineDataParams = {
+    t: (key: string) => string;
+};
+
 type Locale = 'en' | 'es' | 'pt';
 
-export type { CardItemType, ContactFormData, experience, Locale, NavItem, Project, SkillOutlineProps, TimelineItemType };
+export type {
+    CardItemType,
+    ContactFormData,
+    experience,
+    GetProjectsParams,
+    GetTimelineDataParams,
+    Locale,
+    NavItem,
+    Project,
+    SkillOutlineProps,
+    TimelineItemType,
+};

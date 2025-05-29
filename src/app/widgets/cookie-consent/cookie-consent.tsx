@@ -14,8 +14,11 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
 
     const t = useTranslations('Cookies');
 
-    function setCookie(name: string, value: string, options: { additional?: string } = {}) {
-        const defaultOptions = 'Secure; SameSite=Strict; expires=Fri, 31 Dec 9999 23:59:59 GMT';
+    function setCookie(name: string, value: string, days = 180, options: { additional?: string } = {}) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        const expires = `expires=${date.toUTCString()}`;
+        const defaultOptions = `Secure; SameSite=Strict; ${expires}`;
         document.cookie = `${name}=${value}; ${defaultOptions} ${options.additional || ''}`;
     }
 
@@ -24,7 +27,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
         setCookie('cookieConsent', 'true');
         setTimeout(() => {
             setHide(true);
-        }, 700);
+        }, 180);
         onAcceptCallback();
     }
 
@@ -34,7 +37,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
         localStorage.setItem('cookieConsent', 'declined');
         setTimeout(() => {
             setHide(true);
-        }, 700);
+        }, 180);
         onDeclineCallback();
     }
 

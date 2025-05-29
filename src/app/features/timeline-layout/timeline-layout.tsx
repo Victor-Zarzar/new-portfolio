@@ -1,3 +1,4 @@
+import { getTimelineData } from '@/app/shared/data/getTimelineData';
 import { type TimelineItemType } from '@/app/shared/types/main';
 import { Timeline, TimelineDescription, TimelineHeader, TimelineItem, TimelineTime, TimelineTitle } from '@/app/shared/ui/timeline';
 import { useTranslations } from 'next-intl';
@@ -5,37 +6,7 @@ import { Fade } from 'react-awesome-reveal';
 
 export const TimelineLayout = () => {
     const t = useTranslations('Experiences');
-
-    const timelineData: TimelineItemType[] = [
-        {
-            id: 1,
-            title: 'XLabs Security',
-            description: t('p2'),
-            local: t('p3'),
-            time: '2023 - Present',
-        },
-        {
-            id: 2,
-            title: 'Freelance',
-            description: t('p5'),
-            local: t('p6'),
-            time: '2022 - 2023',
-        },
-        {
-            id: 3,
-            title: t('p7'),
-            description: t('p8'),
-            local: '',
-            time: '2024 - 2027',
-        },
-        {
-            id: 4,
-            title: t('p9'),
-            description: t('p10'),
-            local: '',
-            time: '2022 - 2024',
-        },
-    ];
+    const timelineData: TimelineItemType[] = getTimelineData({ t });
 
     return (
         <section className="mx-auto mt-28 mb-28 max-w-3xl">
