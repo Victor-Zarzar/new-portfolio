@@ -76,7 +76,9 @@
         "projecttitle6": "Aplicación de escáner PDF",
         "projectdescription6": "Aplicación Escáner PDF Flutter.",
         "projecttitle7": "Aplicación de lectura de PDF",
-        "projectdescription7": "Aplicación para leer archivos PDF."
+        "projectdescription7": "Aplicación para leer archivos PDF.",
+        "projecttitle8": "Aplicación de calculadora CLT vs PJ",
+        "projectdescription8": "La aplicación te ayuda a comparar la diferencia financiera entre trabajar como CLT (empleado) y PJ (autónomo/contratista) en Brasil."
     },
     "PrivacyPolicyApps": {
         "h1": "Política de privacidad",

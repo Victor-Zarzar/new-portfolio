@@ -1,7 +1,7 @@
 'use client';
 
 import { Toaster } from '@/app/shared/ui/sonner';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import CookieConsentComponent from '../cookie-consent/cookie-consent';
@@ -31,7 +31,7 @@ export default function LayoutProvider({ children }: { children: React.ReactNode
                 <Navbar />
                 {children}
                 <Toaster position="top-right" expand={true} />
-                {hasConsented && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />}
+                {hasConsented && <Analytics />}
                 <CookieConsentComponent onAcceptCallback={handleAccept} onDeclineCallback={handleDecline} />
                 <Footer />
             </ThemeProvider>

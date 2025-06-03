@@ -15,6 +15,25 @@ import { ReactNode } from 'react';
 
 export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     {
+        title: t('projecttitle8'),
+        description: (
+            <Description text={t('projectdescription8')}>
+                <FlutterIcon />
+                <DartIcon />
+                <AndroidIcon />
+                <IosIcon />
+                <XcodeIcon />
+                <AndroidStudioIcon />
+            </Description>
+        ),
+        photo: '/ctlxpj.png',
+        sourceCodeLink: 'https://github.com/Victor-Zarzar/cltxpj-flutter',
+        sourceLinkPrivacy: 'privacypolicy-apps',
+        androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
+        iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+        webLink: '',
+    },
+    {
         title: t('projecttitle7'),
         description: (
             <Description text={t('projectdescription7')}>

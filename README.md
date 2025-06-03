@@ -1,5 +1,5 @@
 <h1 align="center" id="header">
- New Portfolio
+ New Portfolio - Application Full Stack Front + Backend (NextJS)
 </h1>
 
 <h2 id="stack">
@@ -23,7 +23,7 @@
 -   🌗 Dark Mode (Next Themes)
 -   🌍 Next Intl Translate (EN / PT-BR / ES)
 -   📬 Nodemailer
--   📈 Google Analytics (Next.js)
+-   📈 Analytics (Vercel)
 
 <br />
 
@@ -37,7 +37,6 @@ Create .env in project root directory:
 
      SMTP_EMAIL=example@gmail.com
      SMTP_PASSWORD=passwordexample
-     NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXX
 
 For information about commands available in the container:
 
