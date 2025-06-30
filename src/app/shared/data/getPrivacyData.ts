@@ -1,0 +1,16 @@
+export const privacyPolicySections = [
+    'service',
+    'informationcollected',
+    'infocollected',
+    'localization',
+    'providerservice',
+    'security',
+    'securitydescription',
+    'childrensprivacy',
+    'childrensprivacydescription',
+    'changestothisprivacypolicy',
+    'changesdescription',
+    'contactme',
+    'contactmedescription',
+    'contactinformation',
+];

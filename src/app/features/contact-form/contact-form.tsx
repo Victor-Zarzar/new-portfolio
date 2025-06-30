@@ -19,6 +19,7 @@ export default function ContactForm() {
         email: z.string().email(t('invalidemail')),
         subject: z.string().min(1, t('subjectrequired')),
         message: z.string().min(1, t('messagerequired')),
+        company: z.string().optional(),
     });
 
     const form = useForm({
@@ -28,6 +29,7 @@ export default function ContactForm() {
             email: '',
             subject: '',
             message: '',
+            company: '',
         },
     });
 
@@ -61,6 +63,9 @@ export default function ContactForm() {
                             </FormItem>
                         )}
                     />
+
+                    <input type="text" name="company" style={{ display: 'none' }} autoComplete="off" />
+
                     <FormField
                         control={form.control}
                         name="email"
@@ -118,8 +123,9 @@ export default function ContactForm() {
                     />
                     <Button
                         type="submit"
-                        className="w-full dark:bg-transparent bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground 
-                        hover:-translate-y-1 border-black dark:border-gray-200 cursor-pointer"
+                        className="w-full font-medium border 
+            border-black dark:border-gray-400 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
+            dark:hover:shadow-stone-600 cursor-pointer hover:text-accent-foreground"
                         variant="outline"
                     >
                         {t('submit')}

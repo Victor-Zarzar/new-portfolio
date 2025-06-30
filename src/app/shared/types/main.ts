@@ -1,4 +1,4 @@
-import { type JSX } from 'react';
+import { ReactNode } from 'react';
 import { IconType } from 'react-icons';
 
 type experience = {
@@ -14,7 +14,7 @@ type Project = {
     iosLink: string;
     webLink: string;
     title: string;
-    description: string | JSX.Element;
+    description: ReactNode;
     photo: string;
     sourceCodeLink: string;
     sourceLinkPrivacy: string;
@@ -45,6 +45,7 @@ type ContactFormData = {
     email: string;
     subject: string;
     message: string;
+    company?: string;
 };
 
 type SkillOutlineProps = {
@@ -60,6 +61,10 @@ type GetTimelineDataParams = {
     t: (key: string) => string;
 };
 
+type GetServicesDataParams = {
+    t: (key: string) => string;
+};
+
 type Locale = 'en' | 'es' | 'pt';
 
 export type {
@@ -67,6 +72,7 @@ export type {
     ContactFormData,
     experience,
     GetProjectsParams,
+    GetServicesDataParams,
     GetTimelineDataParams,
     Locale,
     NavItem,

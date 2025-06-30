@@ -12,6 +12,11 @@ import TailwindIcon from '@/app/shared/ui/icons/projects/tailwindcss';
 import TypescriptIcon from '@/app/shared/ui/icons/projects/typescript';
 import XcodeIcon from '@/app/shared/ui/icons/projects/xcode';
 import { ReactNode } from 'react';
+import { DockerComposeIcon } from '../ui/icons/projects/docker-compose';
+import { FastAPIIcon } from '../ui/icons/projects/fastapi';
+import { PandasIcon } from '../ui/icons/projects/pandas';
+import { PythonIcon } from '../ui/icons/projects/python';
+import { ReportLabIcon } from '../ui/icons/projects/reportlab';
 
 export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     {
@@ -94,19 +99,19 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
         title: t('projecttitle3'),
         description: (
             <Description text={t('projectdescription3')}>
-                <FlutterIcon />
-                <DartIcon />
-                <AndroidIcon />
-                <IosIcon />
-                <XcodeIcon />
-                <AndroidStudioIcon />
+                <FastAPIIcon />
+                <PythonIcon />
+                <ReportLabIcon />
+                <PandasIcon />
+                <DockerIcon />
+                <DockerComposeIcon />
             </Description>
         ),
-        photo: '/groceryapp.png',
-        sourceCodeLink: 'https://github.com/Victor-Zarzar/grocery-list',
-        sourceLinkPrivacy: 'privacypolicy-apps',
-        androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
-        iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+        photo: '/task-track.png',
+        sourceCodeLink: 'https://github.com/Victor-Zarzar/task-tracker-api',
+        sourceLinkPrivacy: 'privacypolicy',
+        androidLink: '',
+        iosLink: '',
         webLink: '',
     },
     {
@@ -151,19 +156,19 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
         title: t('projecttitle6'),
         description: (
             <Description text={t('projectdescription6')}>
-                <FlutterIcon />
-                <DartIcon />
-                <AndroidIcon />
-                <IosIcon />
-                <XcodeIcon />
-                <AndroidStudioIcon />
+                <FastAPIIcon />
+                <PythonIcon />
+                <ReportLabIcon />
+                <PandasIcon />
+                <DockerIcon />
+                <DockerComposeIcon />
             </Description>
         ),
-        photo: '/scanner.png',
-        sourceCodeLink: 'https://github.com/Victor-Zarzar/scanner-pdf',
-        sourceLinkPrivacy: 'privacypolicy-apps',
-        androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
-        iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
+        photo: '/expense-report.png',
+        sourceCodeLink: 'https://github.com/Victor-Zarzar/expense-report',
+        sourceLinkPrivacy: 'privacypolicy',
+        androidLink: '',
+        iosLink: '',
         webLink: '',
     },
 ];

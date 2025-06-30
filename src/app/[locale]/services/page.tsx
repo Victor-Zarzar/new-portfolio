@@ -1,33 +1,13 @@
 'use client';
 
-import { type CardItemType } from '@/app/shared/types/main';
+import { getServicesData } from '@/app/shared/data/getServicesData';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/app/shared/ui/card';
 import { useTranslations } from 'next-intl';
 import { Fade } from 'react-awesome-reveal';
 
 export default function ServicesPage() {
     const t = useTranslations('Services');
-
-    const CardServicesData: CardItemType[] = [
-        {
-            id: 1,
-            title: t('cardtitle1'),
-            description: t('carddescription1'),
-            p: t('p1'),
-        },
-        {
-            id: 2,
-            title: t('cardtitle2'),
-            description: t('carddescription2'),
-            p: t('p2'),
-        },
-        {
-            id: 3,
-            title: t('cardtitle3'),
-            description: t('carddescription3'),
-            p: t('p3'),
-        },
-    ];
+    const projects = getServicesData({ t });
 
     return (
         <main className="services">
@@ -41,12 +21,12 @@ export default function ServicesPage() {
                 </header>
             </section>
 
-            <section className="p-4 flex flex-col gap-4 items-center min-h-screen mb-10 md:mb-0">
-                {CardServicesData.map((item) => (
+            <section className="p-4 flex flex-col gap-4 items-center min-h-screen mb-12 md:mb-0">
+                {projects.map((item) => (
                     <Card
                         key={item.id}
-                        className="w-3/4 max-w-md mb-4 bg-transparent shadow-sm 
-                        hover:-translate-y-1 dark:bg-transparent border-black dark:border-gray-200"
+                        className="w-3/4 max-w-md mb-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600 
+                        border-black dark:border-gray-400 cursor-pointer"
                     >
                         <CardHeader>
                             <CardTitle className="text-sm sm:text-2xl">{item.title}</CardTitle>

@@ -2,9 +2,6 @@
 
 import { getProjectsData } from '@/app/shared/data/projectsData';
 import { Card, CardContent } from '@/app/shared/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/app/shared/ui/carousel';
-import { Popover, PopoverContent, PopoverTrigger } from '@/app/shared/ui/popover';
-import Autoplay from 'embla-carousel-autoplay';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
@@ -34,49 +31,32 @@ export default function Projects() {
                 </h2>
             </section>
 
-            <section className="carrousel-container">
-                <Carousel
-                    plugins={[Autoplay({ delay: 2000 })]}
-                    className="w-full max-w-[16rem] md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto mb-52 md:mb-72"
-                >
-                    <CarouselContent className="-ml-1">
-                        {projects.map((project, index) => (
-                            <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                                <article className="p-2">
-                                    <Card>
-                                        <Popover>
-                                            <PopoverTrigger asChild>
-                                                <div className="cursor-pointer">
-                                                    <CardContent className="flex aspect-square items-center justify-center p-6 dark:bg-stone-950">
-                                                        <Image
-                                                            src={project.photo}
-                                                            alt={project.title}
-                                                            width={600}
-                                                            height={600}
-                                                            priority
-                                                            className="w-[16rem] h-full md:w-[20rem] lg:w-[18rem] xl:w-[23rem] absolute"
-                                                        />
-                                                    </CardContent>
-                                                </div>
-                                            </PopoverTrigger>
-                                            <PopoverContent className="w-60 md:w-80 dark:bg-stone-950 border-2">
-                                                <div className="space-y-2">
-                                                    <h4 className="font-medium leading-none text-sm md:text-md title-font">{project.title}</h4>
-                                                    <div className="text-xs md:text-sm font-semibold">{project.description}</div>
-                                                    <div className="flex mx-auto items-center justify-center space-x-3">
-                                                        <ProjectLinks project={project} />
-                                                    </div>
-                                                </div>
-                                            </PopoverContent>
-                                        </Popover>
-                                    </Card>
-                                </article>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="dark:bg-stone-900 dark:hover:bg-stone-900" />
-                    <CarouselNext className="dark:bg-stone-900 dark:hover:bg-stone-900" />
-                </Carousel>
+            <section className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-4 md:px-40 mb-52 md:mb-72">
+                {projects.map((project, index) => (
+                    <Card
+                        key={index}
+                        className="max-w-2xl w-full mx-auto transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
+                        border-black dark:border-gray-400 dark:hover:shadow-stone-600 cursor-pointer"
+                    >
+                        <CardContent className="p-4">
+                            <div className="relative w-11/12 mx-auto h-48 md:h-56 lg:h-64 rounded overflow-hidden">
+                                <Image
+                                    src={project.photo}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover rounded-lg"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
+                            </div>
+                            <h4 className="mt-4 text-lg font-semibold">{project.title}</h4>
+                            <div className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{project.description}</div>
+                            <div className="flex mt-4 justify-start items-center gap-3">
+                                <ProjectLinks project={project} />
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))}
             </section>
         </main>
     );
@@ -85,25 +65,29 @@ export default function Projects() {
 function ProjectLinks({ project }: { project: any }) {
     return (
         <>
-            <a href={project.sourceCodeLink} target="_blank" rel="noreferrer">
-                <AiOutlineGithub size={30} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
-            </a>
-            <a href={project.sourceLinkPrivacy} target="_blank" rel="noreferrer">
-                <MdPrivacyTip size={30} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
-            </a>
+            {project.sourceCodeLink && (
+                <a href={project.sourceCodeLink} target="_blank" rel="noreferrer">
+                    <AiOutlineGithub size={24} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
+                </a>
+            )}
+            {project.sourceLinkPrivacy && (
+                <a href={project.sourceLinkPrivacy} target="_blank" rel="noreferrer">
+                    <MdPrivacyTip size={24} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
+                </a>
+            )}
             {project.androidLink && (
                 <a href={project.androidLink} target="_blank" rel="noreferrer">
-                    <FaGooglePlay size={30} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
+                    <FaGooglePlay size={24} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
                 </a>
             )}
             {project.iosLink && (
                 <a href={project.iosLink} target="_blank" rel="noreferrer">
-                    <FaAppStoreIos size={30} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
+                    <FaAppStoreIos size={24} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
                 </a>
             )}
             {project.webLink && (
                 <a href={project.webLink} target="_blank" rel="noreferrer">
-                    <AiOutlineGlobal size={30} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
+                    <AiOutlineGlobal size={24} className="hover:-translate-y-1 transition-transform text-neutral-500 dark:text-neutral-100" />
                 </a>
             )}
         </>

@@ -1,13 +1,15 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { RateLimiterMemory } from 'rate-limiter-flexible';
+import sanitizeHtml from 'sanitize-html';
 import { z } from 'zod';
 
 const contactSchema = z.object({
-    name: z.string().min(1, 'Name is required').max(100),
-    email: z.string().email('Invalid email'),
-    subject: z.string().min(1, 'Subject is required').max(100),
-    message: z.string().min(1, 'Message is required').max(1000),
+    name: z.string().min(1).max(100),
+    email: z.string().email(),
+    subject: z.string().min(1).max(100),
+    message: z.string().min(1).max(1000),
+    company: z.string().optional(),
 });
 
 const rateLimiter = new RateLimiterMemory({
@@ -17,11 +19,21 @@ const rateLimiter = new RateLimiterMemory({
 
 export async function POST(request: Request) {
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
-    const body = await request.json();
-    const { name, email, subject, message } = contactSchema.parse(body);
 
     try {
+        const body = await request.json();
+
+        if (body.company) {
+            return NextResponse.json({ message: 'Bot detected' }, { status: 400 });
+        }
+
+        const { name, email, subject, message } = contactSchema.parse(body);
         await rateLimiter.consume(ip);
+
+        const sanitizedName = sanitizeHtml(name);
+        const sanitizedEmail = sanitizeHtml(email);
+        const sanitizedSubject = sanitizeHtml(subject);
+        const sanitizedMessage = sanitizeHtml(message);
 
         const transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
@@ -34,10 +46,11 @@ export async function POST(request: Request) {
         });
 
         const mailOptions = {
-            from: email,
+            from: process.env.SMTP_EMAIL,
+            replyTo: sanitizedEmail,
             to: process.env.SMTP_EMAIL,
-            subject: `Contact: ${subject}`,
-            text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+            subject: `Contact: ${sanitizedSubject}`,
+            text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`,
         };
 
         await transporter.sendMail(mailOptions);

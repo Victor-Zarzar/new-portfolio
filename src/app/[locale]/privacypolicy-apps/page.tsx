@@ -1,30 +1,14 @@
 'use client';
 
+import { privacyAppsPolicySections } from '@/app/shared/data/getPrivacyAppData';
 import { useTranslations } from 'next-intl';
 import { Fade } from 'react-awesome-reveal';
 
 export default function PrivacyPolicyApps() {
     const t = useTranslations('PrivacyPolicyApps');
 
-    const sections = [
-        'service',
-        'informationcollected',
-        'infocollected',
-        'localization',
-        'providerservice',
-        'security',
-        'securitydescription',
-        'childrensprivacy',
-        'childrensprivacydescription',
-        'changestothisprivacypolicy',
-        'changesdescription',
-        'contactme',
-        'contactmedescription',
-        'contactinformation',
-    ];
-
     return (
-        <main className="py-10 px-4 mx-auto max-w-3xl">
+        <main className="mt-28 md:mt-40 mx-auto max-w-3xl">
             <section className="text-center mb-16">
                 <Fade>
                     <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-6">{t('h1')}</h1>
@@ -41,7 +25,7 @@ export default function PrivacyPolicyApps() {
                 </ul>
             </section>
 
-            {sections.map((section, index) => (
+            {privacyAppsPolicySections.map((section, index) => (
                 <section key={index} className="text-center mt-10">
                     <p className="text-lg md:text-xl font-semibold leading-relaxed">{t(section)}</p>
                 </section>

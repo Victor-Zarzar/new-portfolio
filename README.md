@@ -33,6 +33,14 @@ Project Clone
 
      git clone https://github.com/Victor-Zarzar/new-portfolio
 
+Enter in directory:
+
+     cd new-portfolio
+
+Open in your favorite editor(e.g. VSCode):
+
+    code .
+
 Create .env in project root directory:
 
      SMTP_EMAIL=example@gmail.com
