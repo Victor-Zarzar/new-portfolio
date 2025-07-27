@@ -50,11 +50,11 @@ export default function Header() {
                                     <span className="font-semibold text-gray-500 whitespace-pre-line">{t('span')}</span>
                                 </p>
                             </Bounce>
-                            <nav className="container-button mx-auto space-x-1 flex">
+                            <nav className="container-button mx-auto space-x-2 flex">
                                 <Link href="https://github.com/Victor-Zarzar" target="_blank" rel="noreferrer">
                                     <Button
-                                        className="px-2 md:px-4 dark:bg-transparent bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground
-                                        hover:-translate-y-1 border-black dark:border-gray-200 cursor-pointer"
+                                        className="px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600 
+                        border-black dark:border-gray-400 cursor-pointer"
                                         variant="outline"
                                     >
                                         <FaGithub className="mr-1" /> Github
@@ -62,8 +62,8 @@ export default function Header() {
                                 </Link>
                                 <Link href="https://www.linkedin.com/in/victorzarzar" target="_blank" rel="noreferrer">
                                     <Button
-                                        className="px-2 md:px-4 dark:bg-transparent bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground 
-                                        hover:-translate-y-1 border-black dark:border-gray-200 cursor-pointer"
+                                        className="px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600 
+                        border-black dark:border-gray-400 cursor-pointer"
                                         variant="outline"
                                     >
                                         <FaLinkedin className="mr-1" /> Linkedin

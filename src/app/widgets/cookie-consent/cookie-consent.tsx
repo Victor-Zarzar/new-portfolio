@@ -81,10 +81,10 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
                         </p>
                     </div>
                     <div className="flex gap-2 p-4 py-5 border-t dark:bg-background/20 border-black dark:border-gray-200">
-                        <Button onClick={accept} className="w-full">
+                        <Button onClick={accept} className="w-full cursor-pointer">
                             {t('accept')}
                         </Button>
-                        <Button onClick={decline} className="w-full bg-gray-300 hover:bg-gray-400" variant="secondary">
+                        <Button onClick={decline} className="w-full bg-gray-300 hover:bg-gray-400 cursor-pointer" variant="secondary">
                             {t('decline')}
                         </Button>
                     </div>
