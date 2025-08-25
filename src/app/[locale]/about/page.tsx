@@ -1,6 +1,7 @@
 'use client';
 
 import { TimelineLayout } from '@/app/features/timeline-layout/timeline-layout';
+import TerminalCourses from '@/app/widgets/terminal-courses/terminal-coursex';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
@@ -20,6 +21,8 @@ export default function About() {
             </p>
 
             <TimelineLayout />
+
+            <TerminalCourses />
 
             <section className="rounded-lg p-6 mt-4">
                 <Fade>

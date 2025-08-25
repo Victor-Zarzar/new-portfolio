@@ -48,6 +48,12 @@ type ContactFormData = {
     company?: string;
 };
 
+type CoursesType = {
+    id: number;
+    title: string;
+    url: string;
+};
+
 type SkillOutlineProps = {
     Icon: IconType;
     text: string;
@@ -65,12 +71,18 @@ type GetServicesDataParams = {
     t: (key: string) => string;
 };
 
+type GetCourseDataParams = {
+    t: (key: string) => string;
+};
+
 type Locale = 'en' | 'es' | 'pt';
 
 export type {
     CardItemType,
     ContactFormData,
+    CoursesType,
     experience,
+    GetCourseDataParams,
     GetProjectsParams,
     GetServicesDataParams,
     GetTimelineDataParams,

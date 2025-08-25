@@ -1,5 +1,5 @@
 import { type SkillOutlineProps } from '@/app/shared/types/main';
-import { FaFigma } from 'react-icons/fa';
+import { FaAws, FaFigma } from 'react-icons/fa';
 import { IoTerminal } from 'react-icons/io5';
 import {
     SiAndroidstudio,
@@ -17,11 +17,15 @@ import {
     SiGitlab,
     SiHtml5,
     SiJavascript,
+    SiLetsencrypt,
     SiMacos,
     SiMantine,
     SiMui,
+    SiMysql,
     SiNextdotjs,
+    SiNginx,
     SiNpm,
+    SiOwasp,
     SiPostman,
     SiPrisma,
     SiPython,
@@ -152,6 +156,10 @@ export const skills = [
         text: 'Vercel',
     },
     {
+        icon: FaAws,
+        text: 'AWS',
+    },
+    {
         icon: SiMantine,
         text: 'Mantine UI',
     },
@@ -178,6 +186,23 @@ export const skills = [
     {
         icon: FaFigma,
         text: 'Figma',
+    },
+    {
+        icon: SiNginx,
+        text: 'Nginx',
+    },
+    {
+        icon: SiOwasp,
+        text: 'OWASP',
+    },
+    {
+        icon: SiMysql,
+        text: 'MySQL',
+    },
+
+    {
+        icon: SiLetsencrypt,
+        text: "Let's Encrypt",
     },
 ];
 

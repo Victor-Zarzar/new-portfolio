@@ -35,6 +35,17 @@
         "span2": "PT-BR - Língua Nativa",
         "span3": "Espanhol - Básico"
     },
+    "Courses": {
+        "h1": "Cursos",
+        "p": "ls cursos/",
+        "course1": "De Zero a Programador em apenas 14 aulas. Dart e Flutter",
+        "course2": "TypeScript do básico ao avançado (com React e Express)",
+        "course3": "Masterclass SwiftUI 2023 - Desenvolvimento iOS & Swift",
+        "course4": "Apps iOS 12 com Swift 5 e Xcode 10 - Básico",
+        "course5": "Curso de Web Design: HTML5, CSS3 e JS + 5 Projetos",
+        "course6": "Testes Automatizados com Cypress - Básico",
+        "course7": "Testes Automatizados + Curso COMPLETO de Teste de Software"
+    },
     "Services": {
         "h1": "Serviços",
         "cardtitle1": "Desenvolvimento Web",
