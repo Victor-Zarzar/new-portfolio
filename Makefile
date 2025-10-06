@@ -1,4 +1,4 @@
-# Makefile New-Portfolio
+# Makefile - New-Portfolio
 DOCKER_IMAGE_NAME = new-portfolio
 DOCKER_CONTAINER_NAME = new-portfolio
 PORT = 3000
@@ -6,68 +6,63 @@ PORT = 3000
 install:
 	@echo "Installing dependencies with pnpm..."
 	pnpm install
-	@echo "Dependencies installed."
+	@echo "Dependencies installed successfully."
 
-run:
-	@echo "Starting application on port $(PORT)..."
-	docker-compose build 
-	docker-compose up
+dev:
+	@echo "Starting local development server on port $(PORT)..."
+	pnpm run dev
 
-stop:
-	@echo "Stopping application..."
-	docker-compose down
-	@echo "Application stopped."
-
-clean:
-	@echo "Cleaning environment..."
-	docker-compose down -v
-	docker rmi -f $(DOCKER_IMAGE_NAME)
-	rm -rf node_modules .next || true
-	docker system prune -af
-	@echo "Environment cleaned."
-
-docker-build:
+build:
 	@echo "Building Docker image..."
 	docker build -t $(DOCKER_IMAGE_NAME) .
-	@echo "Docker image built."
+	@echo "Docker image built successfully."
 
-docker-run:
-	@echo "Starting Docker container on port $(PORT)..."
-	docker run -d --name $(DOCKER_CONTAINER_NAME) -p $(PORT):$(PORT) $(DOCKER_IMAGE_NAME)
-	@echo "Docker container started."
+run: build
+	@echo "Running Docker container on port $(PORT)..."
+	docker run -d \
+		--name $(DOCKER_CONTAINER_NAME) \
+		-p $(PORT):3000 \
+		-v $(PWD):/app \
+		-v /app/node_modules \
+		$(DOCKER_IMAGE_NAME)
+	@echo "Docker container started successfully."
 
-docker-stop:
-	@echo "Stopping Docker container..."
-	docker stop $(DOCKER_CONTAINER_NAME)
-	docker rm $(DOCKER_CONTAINER_NAME)
+stop:
+	@echo "Stopping and removing Docker container..."
+	-@docker stop $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
+	-@docker rm $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
 	@echo "Docker container stopped and removed."
 
-docker-clean: docker-stop
-	@echo "Removing Docker image..."
-	docker rmi $(DOCKER_IMAGE_NAME)
-	@echo "Docker image removed."
+clean:
+	@echo "Cleaning Docker environment..."
+	-@docker stop $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
+	-@docker rm $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
+	-@docker rmi -f $(DOCKER_IMAGE_NAME) >/dev/null 2>&1 || true
+	-@docker system prune -af >/dev/null 2>&1 || true
+	-@sudo rm -rf node_modules .next >/dev/null 2>&1 || true
+	@echo "Docker environment cleaned."
 
-docker-logs:
-	@echo "Showing container logs..."
+logs:
+	@echo "Displaying container logs..."
 	docker logs -f $(DOCKER_CONTAINER_NAME)
 
-docker-shell:
+shell:
 	@echo "Accessing container shell..."
-	docker exec -it $(DOCKER_CONTAINER_NAME) /bin/bash
+	docker exec -it $(DOCKER_CONTAINER_NAME) sh
 
 help:
+	@echo ""
 	@echo "New-Portfolio Makefile"
-	@echo "------------------------"
-	@echo "Available commands:"
-	@echo "   make install        - Install the required dependencies"
-	@echo "   make run            - Run application locally"
-	@echo "   make stop           - Stop local application"
-	@echo "   make clean          - Clean environment"
+	@echo "=========================="
+	@echo "Local Commands:"
+	@echo "  make install         Install dependencies using pnpm"
+	@echo "  make dev             Run the app locally in development mode"
 	@echo ""
 	@echo "Docker Commands:"
-	@echo "   make docker-build   - Build Docker image"
-	@echo "   make docker-run     - Run Docker container"
-	@echo "   make docker-stop    - Stop and remove Docker container"
-	@echo "   make docker-clean   - Remove Docker image"
-	@echo "   make docker-logs    - Show container logs"
-	@echo "   make docker-shell   - Access container shell"
+	@echo "  make build           Build the Docker image"
+	@echo "  make run             Run the Docker container"
+	@echo "  make stop            Stop and remove the container"
+	@echo "  make clean           Remove image and clean environment"
+	@echo "  make logs            Show container logs"
+	@echo "  make shell           Access container shell"
+	@echo ""

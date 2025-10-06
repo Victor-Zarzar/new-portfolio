@@ -1,95 +1,302 @@
 <h1 align="center" id="header">
- New Portfolio - Application Full Stack Front + Backend (NextJS)
+  New Portfolio - Full Stack Application (NextJS)
 </h1>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
+</p>
+
+<p align="center">
+  Modern portfolio application built with Next.js 15, featuring internationalization, dark mode, and containerized deployment.
+</p>
+
+---
+
 <h2 id="stack">
-🤖 Stack:
+🤖 Tech Stack
 </h2>
+
 <p>
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" width="48" title="Html"> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TailwindCSS-Dark.svg" width="48" title="TailWindCss">
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" width="48" title="React.Js">  <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TypeScript.svg" width="48" title="TypeScript">
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/NextJS-Dark.svg" width="48" title="Next.Js">  <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Vercel-Dark.svg" width="48"  title="Vercel"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" width="48" title="HTML5"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TailwindCSS-Dark.svg" width="48" title="TailwindCSS">
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" width="48" title="React.js"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TypeScript.svg" width="48" title="TypeScript">
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/NextJS-Dark.svg" width="48" title="Next.js"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Vercel-Dark.svg" width="48" title="Vercel">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" width="48" title="Docker">
 </p>
 
--   🟦 TypeScript
--   ⚛️ React 19
--   🧱 HTML
--   🎨 Tailwind CSS v4
--   🌐 Next.js 15
--   🐳 Docker + Docker-Compose
--   🛡 Zod & React Hook Form
--   🧩 Shadcn UI
--   🌗 Dark Mode (Next Themes)
--   🌍 Next Intl Translate (EN / PT-BR / ES)
--   📬 Nodemailer
--   📈 Analytics (Vercel)
+### Core Technologies
 
-<br />
+-   🟦 **TypeScript** - Type-safe development
+-   ⚛️ **React 19** - Latest React features
+-   🌐 **Next.js 15** - React framework with App Router
+-   🎨 **Tailwind CSS v4** - Utility-first CSS framework
+-   🐳 **Docker** - Containerized deployment
 
-⚙️ How to install:
+### Features & Integrations
 
-Project Clone
+-   🛡️ **Zod & React Hook Form** - Form validation and management
+-   🧩 **Shadcn UI** - Beautiful and accessible components
+-   🌗 **Dark Mode** - Theme switching with Next Themes
+-   🌍 **i18n** - Multi-language support (EN / PT-BR / ES) via Next Intl
+-   📬 **Nodemailer** - Email functionality
+-   📈 **Vercel Analytics** - Performance monitoring
 
-     git clone https://github.com/Victor-Zarzar/new-portfolio
+---
 
-Enter in directory:
+<h2 id="prerequisites">
+📋 Prerequisites
+</h2>
 
-     cd new-portfolio
+Before starting, ensure you have the following installed:
 
-Open in your favorite editor(e.g. VSCode):
+-   [Node.js](https://nodejs.org/) (v18 or higher)
+-   [pnpm](https://pnpm.io/) (v8 or higher)
+-   [Docker](https://www.docker.com/) & Docker Compose (for containerized deployment)
+-   [Git](https://git-scm.com/)
 
-    code .
+---
 
-Create .env in project root directory:
+<h2 id="installation">
+⚙️ Installation & Setup
+</h2>
 
-     SMTP_EMAIL=example@gmail.com
-     SMTP_PASSWORD=passwordexample
+### 1. Clone the Repository
 
-For information about commands available in the container:
+```bash
+git clone https://github.com/Victor-Zarzar/new-portfolio
+cd new-portfolio
+```
 
-     make help
+### 2. Environment Configuration
 
-To install the required dependencies:
+Create a `.env` file in the project root:
 
-     make install
+```env
+SMTP_EMAIL=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+```
 
-With docker and docker-compose installed, the following command moves up the stack:
+> **Note:** For Gmail, you'll need to generate an [App Password](https://support.google.com/accounts/answer/185833).
 
-     make run
+### 3. Install Dependencies
 
-Starting the project:
+```bash
+make install
+```
 
-    localhost:3000
+Or manually with pnpm:
 
-Clear the stack:
+```bash
+pnpm install
+```
 
-    make clean
+---
 
-For the stack:
+<h2 id="usage">
+🚀 Usage
+</h2>
 
-    make stop
+### Available Commands
 
-To view container logs:
+View all available Make commands:
 
-    docker logs new-portfolio
+```bash
+make help
+```
 
-To run Eslint and check for possible errors in the code:
+### Local Development
 
-    cd Frontend
+Start the development server (port 3000):
 
-Now type the following command in the terminal:
+```bash
+make dev
+```
 
-    pnpm run lint
+Access the application at `http://localhost:3000`
+
+### Docker Deployment
+
+#### Build and Run
+
+Build the Docker image and start the container:
+
+```bash
+make run
+```
+
+#### Stop Container
+
+```bash
+make stop
+```
+
+#### View Logs
+
+```bash
+make logs
+```
+
+Or directly with Docker:
+
+```bash
+docker logs -f new-portfolio
+```
+
+#### Access Container Shell
+
+```bash
+make shell
+```
+
+#### Clean Environment
+
+Remove containers, images, and build artifacts:
+
+```bash
+make clean
+```
+
+---
+
+<h2 id="makefile-commands">
+📝 Makefile Commands Reference
+</h2>
+
+| Command        | Description                              |
+| -------------- | ---------------------------------------- |
+| `make install` | Install dependencies using pnpm          |
+| `make dev`     | Run the app locally in development mode  |
+| `make build`   | Build the Docker image                   |
+| `make run`     | Build and run the Docker container       |
+| `make stop`    | Stop and remove the container            |
+| `make clean`   | Clean Docker environment and build files |
+| `make logs`    | Display container logs in real-time      |
+| `make shell`   | Access container shell (sh)              |
+| `make help`    | Show all available commands              |
+
+---
+
+<h2 id="development">
+🛠️ Development
+</h2>
+
+### Code Linting
+
+Run ESLint to check for code issues:
+
+```bash
+pnpm run lint
+```
+
+### Type Checking
+
+Run TypeScript type checking:
+
+```bash
+pnpm run type-check
+```
+
+### Build for Production
+
+```bash
+pnpm run build
+```
+
+---
+
+<h2 id="project-structure">
+📁 Project Structure
+</h2>
+
+```
+new-portfolio/
+├── app/                 # Next.js App Router
+├── components/          # React components
+├── lib/                 # Utility functions
+├── public/              # Static assets
+├── styles/              # Global styles
+├── .env                 # Environment variables
+├── Dockerfile           # Docker configuration
+├── Makefile             # Build automation
+├── next.config.js       # Next.js configuration
+├── tailwind.config.ts   # Tailwind configuration
+└── tsconfig.json        # TypeScript configuration
+```
+
+---
+
+<h2 id="screenshots">
+📸 Screenshots
+</h2>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/cab8f356-ae88-4d9f-bd90-dbc0c61e6265" width="1000" height="600" alt="Screenshot 2024-01-20 at 01 04 13">
+  <img src="https://github.com/user-attachments/assets/cab8f356-ae88-4d9f-bd90-dbc0c61e6265" width="1000" height="600" alt="Home Page">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f76a4f39-dc46-4fac-b604-1c647495e957" width="1000" height="600" alt="Screenshot 2024-01-20 at 01 04 13">
+  <img src="https://github.com/user-attachments/assets/f76a4f39-dc46-4fac-b604-1c647495e957" width="1000" height="600" alt="Projects Section">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/86abbd0b-b2b5-4c5e-a952-261c5691834d" alt="Screenshot 2024-02-22 13-19-06" width="1000px" height="500"> 
+  <img src="https://github.com/user-attachments/assets/86abbd0b-b2b5-4c5e-a952-261c5691834d" alt="Dark Mode" width="1000" height="500">
+</p>
+
+---
+
+<h2 id="deployment">
+🌐 Deployment
+</h2>
+
+### Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/new-portfolio)
+
+### Docker Production
+
+```bash
+docker build -t new-portfolio:production .
+docker run -d -p 3000:3000 --name new-portfolio-prod new-portfolio:production
+```
+
+---
+
+<h2 id="contributing">
+🤝 Contributing
+</h2>
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+<h2 id="license">
+📄 License
+</h2>
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<h2 id="contact">
+📧 Contact
+</h2>
+
+Victor Zarzar - [@Victor-Zarzar](https://github.com/Victor-Zarzar)
+
+Project Link: [https://github.com/Victor-Zarzar/new-portfolio](https://github.com/Victor-Zarzar/new-portfolio)
+
+---
+
+<p align="center">
+  Made with ❤️ by Victor Zarzar
 </p>

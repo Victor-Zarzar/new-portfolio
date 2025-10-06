@@ -1,17 +1,14 @@
-FROM node:20
-
-RUN mkdir -p /app
+FROM node:22-alpine AS base
 
 WORKDIR /app
 
 COPY package*.json pnpm-lock.yaml* ./
 
-RUN npm install -g pnpm
-
-RUN pnpm install
+RUN npm install -g pnpm \
+    && pnpm install
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["pnpm", "run", "dev"]
+CMD ["pnpm", "dev"]
