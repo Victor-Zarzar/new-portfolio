@@ -3,8 +3,6 @@ import { FaAws, FaFigma } from 'react-icons/fa';
 import { IoTerminal } from 'react-icons/io5';
 import {
     SiAndroidstudio,
-    SiArchlinux,
-    SiCodemagic,
     SiCss3,
     SiDart,
     SiDjango,
@@ -18,6 +16,7 @@ import {
     SiHtml5,
     SiJavascript,
     SiLetsencrypt,
+    SiLinux,
     SiMacos,
     SiMantine,
     SiMui,
@@ -26,6 +25,7 @@ import {
     SiNginx,
     SiNpm,
     SiOwasp,
+    SiPortainer,
     SiPostman,
     SiPrisma,
     SiPython,
@@ -80,6 +80,10 @@ export const skills = [
         text: 'Docker',
     },
     {
+        icon: SiPortainer,
+        text: 'Portainer.io',
+    },
+    {
         icon: SiPrisma,
         text: 'Prisma',
     },
@@ -124,16 +128,12 @@ export const skills = [
         text: 'Swagger',
     },
     {
-        icon: SiCodemagic,
-        text: 'Code Magic',
-    },
-    {
         icon: SiMacos,
         text: 'macOS',
     },
     {
-        icon: SiArchlinux,
-        text: 'Arch Linux',
+        icon: SiLinux,
+        text: 'Linux',
     },
     {
         icon: SiXcode,
@@ -199,7 +199,6 @@ export const skills = [
         icon: SiMysql,
         text: 'MySQL',
     },
-
     {
         icon: SiLetsencrypt,
         text: "Let's Encrypt",

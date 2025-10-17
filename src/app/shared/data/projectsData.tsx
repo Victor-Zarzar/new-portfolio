@@ -32,7 +32,7 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
             </Description>
         ),
         photo: '/ctlxpj.png',
-        sourceCodeLink: 'https://github.com/Victor-Zarzar/cltxpj-flutter',
+        sourceCodeLink: 'https://github.com/Victor-Zarzar/cltvspj',
         sourceLinkPrivacy: 'privacypolicy-apps',
         androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
         iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',

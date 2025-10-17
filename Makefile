@@ -2,6 +2,7 @@
 DOCKER_IMAGE_NAME = new-portfolio
 DOCKER_CONTAINER_NAME = new-portfolio
 PORT = 3000
+DOCKER_TAG = 1.0.0
 
 install:
 	@echo "Installing dependencies with pnpm..."
@@ -14,7 +15,7 @@ dev:
 
 build:
 	@echo "Building Docker image..."
-	docker build -t $(DOCKER_IMAGE_NAME) .
+	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) .
 	@echo "Docker image built successfully."
 
 run: build
@@ -24,7 +25,7 @@ run: build
 		-p $(PORT):3000 \
 		-v $(PWD):/app \
 		-v /app/node_modules \
-		$(DOCKER_IMAGE_NAME)
+		$(DOCKER_IMAGE_NAME):$(DOCKER_TAG)
 	@echo "Docker container started successfully."
 
 stop:
