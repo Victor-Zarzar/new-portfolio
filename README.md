@@ -79,6 +79,7 @@ Create a `.env` file in the project root:
 ```env
 SMTP_EMAIL=your-email@gmail.com
 SMTP_PASSWORD=your-app-password
+NEXT_PUBLIC_DISABLE_DEVTOOLS=true
 ```
 
 > **Note:** For Gmail, you'll need to generate an [App Password](https://support.google.com/accounts/answer/185833).
