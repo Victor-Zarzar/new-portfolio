@@ -166,5 +166,9 @@
     },
     "Stats": {
         "stats": "⚡ Estadísticas ⚡"
+    },
+    "Unauthorized": {
+        "title": "Acceso denegado",
+        "p": "No tienes permiso para acceder a esta página."
     }
 }

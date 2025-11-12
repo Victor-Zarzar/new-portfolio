@@ -1,5 +1,6 @@
 'use client';
 
+import DevToolsGuard from '@/app/guard/disable-dev-tools';
 import { Toaster } from '@/app/shared/ui/sonner';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from 'next-themes';
@@ -29,6 +30,7 @@ export default function LayoutProvider({ children }: { children: React.ReactNode
         <>
             <ThemeProvider enableSystem={true} attribute="class">
                 <Navbar />
+                <DevToolsGuard />
                 {children}
                 <Toaster position="top-right" expand={true} />
                 {hasConsented && <Analytics />}

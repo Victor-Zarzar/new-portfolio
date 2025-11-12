@@ -163,5 +163,9 @@
         "message": "We use cookies to improve your experience.",
         "privacyLink": "Read our Privacy Policy",
         "error": "Error accepting cookies"
+    },
+    "Unauthorized": {
+        "title": "Access denied",
+        "p": "You don't have permission to access this page."
     }
 }

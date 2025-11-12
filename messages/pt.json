@@ -165,5 +165,9 @@
     },
     "Stats": {
         "stats": "⚡ Status ⚡"
+    },
+    "Unauthorized": {
+        "title": "Acesso negado",
+        "p": "Você não tem permissão para acessar esta página."
     }
 }
