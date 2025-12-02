@@ -172,6 +172,7 @@ make clean
 | -------------- | ---------------------------------------- |
 | `make install` | Install dependencies using pnpm          |
 | `make dev`     | Run the app locally in development mode  |
+| `make prod`    | Run the app in production mode           |
 | `make build`   | Build the Docker image                   |
 | `make run`     | Build and run the Docker container       |
 | `make stop`    | Stop and remove the container            |
@@ -205,7 +206,7 @@ pnpm run type-check
 ### Build for Production
 
 ```bash
-pnpm run build
+make prod
 ```
 
 ---
