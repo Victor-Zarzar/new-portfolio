@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/app/shared/lib/utils';
+import type { CookieConsentProps } from '@/app/shared/types/main';
 import { Button } from '@/app/shared/ui//button';
 import { CookieIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -8,7 +9,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
-export default function CookieConsentComponent({ demo = false, onAcceptCallback = () => {}, onDeclineCallback = () => {} }) {
+export default function CookieConsentComponent({ demo = false, onAcceptCallback, onDeclineCallback }: CookieConsentProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [hide, setHide] = useState(false);
 
@@ -28,7 +29,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
         setTimeout(() => {
             setHide(true);
         }, 180);
-        onAcceptCallback();
+        onAcceptCallback?.();
     }
 
     function decline() {
@@ -38,7 +39,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
         setTimeout(() => {
             setHide(true);
         }, 180);
-        onDeclineCallback();
+        onDeclineCallback?.();
     }
 
     useEffect(() => {
@@ -56,7 +57,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback 
         } catch (e) {
             toast.error(t('error'));
         }
-    }, []);
+    }, [demo, t]);
 
     return (
         <div

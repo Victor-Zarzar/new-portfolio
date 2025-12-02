@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { IconType } from 'react-icons';
+import type { ReactNode } from 'react';
+import type { IconType } from 'react-icons';
 
 type experience = {
     company: string;
@@ -77,9 +77,16 @@ type GetCourseDataParams = {
 
 type Locale = 'en' | 'es' | 'pt';
 
+type CookieConsentProps = {
+    demo?: boolean;
+    onAcceptCallback?: () => void;
+    onDeclineCallback?: () => void;
+};
+
 export type {
     CardItemType,
     ContactFormData,
+    CookieConsentProps,
     CoursesType,
     experience,
     GetCourseDataParams,

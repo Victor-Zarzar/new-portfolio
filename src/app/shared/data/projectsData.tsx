@@ -1,4 +1,4 @@
-import { type GetProjectsParams, type Project } from '@/app/shared/types/main';
+import type { GetProjectsParams, Project } from '@/app/shared/types/main';
 import AndroidIcon from '@/app/shared/ui/icons/projects/android';
 import AndroidStudioIcon from '@/app/shared/ui/icons/projects/androidstudio';
 import DartIcon from '@/app/shared/ui/icons/projects/dart';
@@ -11,7 +11,7 @@ import ReactIcon from '@/app/shared/ui/icons/projects/react';
 import TailwindIcon from '@/app/shared/ui/icons/projects/tailwindcss';
 import TypescriptIcon from '@/app/shared/ui/icons/projects/typescript';
 import XcodeIcon from '@/app/shared/ui/icons/projects/xcode';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { DockerComposeIcon } from '../ui/icons/projects/docker-compose';
 import { FastAPIIcon } from '../ui/icons/projects/fastapi';
 import { PandasIcon } from '../ui/icons/projects/pandas';

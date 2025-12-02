@@ -1,7 +1,7 @@
 'use client';
 
 import { contactService } from '@/app/shared/api/contact';
-import { ContactFormData } from '@/app/shared/types/main';
+import type { ContactFormData } from '@/app/shared/types/main';
 import { Button } from '@/app/shared/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/app/shared/ui/form';
 import { Input } from '@/app/shared/ui/input';

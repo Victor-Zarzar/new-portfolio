@@ -1,4 +1,4 @@
-import { GetTimelineDataParams, type TimelineItemType } from '@/app/shared/types/main';
+import type { GetTimelineDataParams, TimelineItemType } from '@/app/shared/types/main';
 
 export function getTimelineData({ t }: GetTimelineDataParams): TimelineItemType[] {
     return [

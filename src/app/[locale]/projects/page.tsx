@@ -1,6 +1,7 @@
 'use client';
 
 import { getProjectsData } from '@/app/shared/data/projectsData';
+import type { Project } from '@/app/shared/types/main';
 import { Card, CardContent } from '@/app/shared/ui/card';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -11,7 +12,7 @@ import { MdPrivacyTip } from 'react-icons/md';
 
 export default function Projects() {
     const t = useTranslations('Projects');
-    const projects = getProjectsData({ t });
+    const projects: Project[] = getProjectsData({ t });
 
     return (
         <main className="container-projects">
@@ -62,7 +63,7 @@ export default function Projects() {
     );
 }
 
-function ProjectLinks({ project }: { project: any }) {
+function ProjectLinks({ project }: { project: Project }) {
     return (
         <>
             {project.sourceCodeLink && (

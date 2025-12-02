@@ -1,4 +1,4 @@
-import { GetServicesDataParams, type CardItemType } from '@/app/shared/types/main';
+import type { CardItemType, GetServicesDataParams } from '@/app/shared/types/main';
 
 export function getServicesData({ t }: GetServicesDataParams): CardItemType[] {
     return [

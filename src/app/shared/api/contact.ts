@@ -1,4 +1,4 @@
-import { ContactFormData } from '@/app/shared/types/main';
+import type { ContactFormData } from '@/app/shared/types/main';
 import { toast } from 'sonner';
 
 export const contactService = {
