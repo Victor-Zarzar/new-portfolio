@@ -5,6 +5,7 @@
         "about": "Acerca de",
         "services": "Servicios",
         "projects": "Proyectos",
+        "articles": "Artículos",
         "contact": "Contacto",
         "language": "Idioma",
         "english": "Inglés",
@@ -150,7 +151,12 @@
         "subjectrequired": "Asunto requerido",
         "messagerequired": "Mensaje requerido",
         "emailerror": "Error al enviar el correo electrónico. Vuelva a intentarlo más tarde.",
-        "emailsucess": "¡Correo electrónico enviado exitosamente!"
+        "emailsucess": "¡Correo electrónico enviado exitosamente!",
+        "cardTitle": "¿Te gustó mi trabajo? Envíame un mensaje",
+        "cardSubtitle": "Ponte en contacto enviando un mensaje o a través de mis redes sociales.",
+        "socialText": "O comunícate conmigo por",
+        "eyebrow": "Contacto",
+        "description": "Siéntete libre de contactarme completando el formulario abajo."
     },
     "NotFound": {
         "p": "Lo sentimos, no pudimos encontrar esta página.",
@@ -170,5 +176,22 @@
     "Unauthorized": {
         "title": "Acceso denegado",
         "p": "No tienes permiso para acceder a esta página."
+    },
+    "Articles": {
+        "h1": "Artículos y Publicaciones",
+        "h2": "Contenido técnico que he escrito recientemente",
+        "articletitle1": "Seguridad en Dispositivos Móviles: Estrategias Prácticas de Protección",
+        "articledescription1": "Una guía para proteger dispositivos móviles utilizando técnicas reales y prácticas seguras.",
+        "articlep1": "Incluye riesgos, estrategias de mitigación y recomendaciones para fortalecer entornos móviles.",
+        "articletitle2": "Autenticación Segura: Cookies, HTTP-only, JWT, LocalStorage y SessionStorage",
+        "articledescription2": "Comprende flujos de autenticación seguros y mecanismos de almacenamiento en aplicaciones modernas.",
+        "articlep2": "Explico buenas prácticas para tokens, cookies, seguridad de almacenamiento y reducción de superficies de ataque.",
+        "articletitle3": "Gestión Segura y Eficiente de Variables de Entorno (.env)",
+        "articledescription3": "Cómo manejar variables sensibles en desarrollo, CI/CD y entornos de producción.",
+        "articlep3": "Incluye gestión de secretos, separación de entornos, carga segura y flujos de trabajo DevOps.",
+        "articletitle4": "Optimización de Imágenes Docker: Buenas Prácticas para Builds Eficientes",
+        "articledescription4": "Técnicas reales para reducir el tamaño de las imágenes, mejorar el caching y acelerar despliegues.",
+        "articlep4": "Incluye multi-stage builds, imágenes base mínimas, optimización de caché y estrategias de limpieza.",
+        "year": "Año"
     }
 }

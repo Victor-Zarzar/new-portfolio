@@ -5,6 +5,7 @@
         "about": "Sobre",
         "services": "Serviços",
         "projects": "Projetos",
+        "articles": "Artigos",
         "contact": "Contato",
         "language": "Linguagem",
         "english": "Inglês",
@@ -86,6 +87,7 @@
         "projectdescription5": "Meu portfólio profissional.",
         "projecttitle6": "Gerador de Relatório de Despesas",
         "projectdescription6": "Gerador de despesas em PDF e Excel. (Automatizado)",
+        "projecttitle7": "PDF Reader (Leitor de PDF)",
         "projectdescription7": "Aplicativo para fazer leituras de arquivos PDF.",
         "projecttitle8": "App Calculadora CLT vs PJ",
         "projectdescription8": "Aplicativo ajuda você a comparar a diferença financeira entre trabalhar como CLT (funcionário) e PJ (freelancer/contratado) no Brasil."
@@ -149,7 +151,12 @@
         "subjectrequired": "Assunto obrigatório",
         "messagerequired": "Mensagem necessária",
         "emailerror": "Erro ao enviar o e-mail. Tente novamente mais tarde.",
-        "emailsucess": "E-mail enviado com sucesso!"
+        "emailsucess": "E-mail enviado com sucesso!",
+        "cardTitle": "Gostou do meu trabalho? Envie-me uma mensagem",
+        "cardSubtitle": "Entre em contato enviando uma mensagem ou pelas minhas redes sociais.",
+        "socialText": "Ou fale comigo por",
+        "eyebrow": "Contato",
+        "description": "Fique à vontade para entrar em contato preenchendo o formulário abaixo."
     },
     "NotFound": {
         "p": "Desculpe, não conseguimos encontrar esta página.",
@@ -169,5 +176,22 @@
     "Unauthorized": {
         "title": "Acesso negado",
         "p": "Você não tem permissão para acessar esta página."
+    },
+    "Articles": {
+        "h1": "Artigos & Publicações",
+        "h2": "Conteúdo técnico que escrevi recentemente",
+        "articletitle1": "Segurança em Dispositivos Móveis: Estratégias Práticas de Proteção",
+        "articledescription1": "Um guia para proteger dispositivos móveis com técnicas reais e práticas de segurança.",
+        "articlep1": "Abordo riscos, estratégias de mitigação e recomendações para fortalecer ambientes mobile.",
+        "articletitle2": "Autenticação Segura: Cookies, HTTP-only, JWT, LocalStorage e SessionStorage",
+        "articledescription2": "Entenda fluxos de autenticação seguros e mecanismos de armazenamento em aplicações modernas.",
+        "articlep2": "Explico boas práticas para tokens, cookies, segurança de armazenamento e redução de superfícies de ataque.",
+        "articletitle3": "Gerenciando Variáveis de Ambiente (.env) com Segurança e Eficiência",
+        "articledescription3": "Como lidar com variáveis sensíveis em desenvolvimento, CI/CD e produção.",
+        "articlep3": "Inclui gestão de segredos, separação de ambientes, carregamento seguro e fluxos DevOps.",
+        "articletitle4": "Otimizando Imagens Docker: Boas Práticas para Builds Eficientes",
+        "articledescription4": "Técnicas práticas para reduzir o tamanho das imagens, melhorar caching e acelerar deploys.",
+        "articlep4": "Inclui multi-stage builds, imagens base mínimas, otimização de cache e estratégias de limpeza.",
+        "year": "Ano"
     }
 }

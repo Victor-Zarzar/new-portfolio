@@ -5,6 +5,7 @@
         "about": "About",
         "services": "Services",
         "projects": "Projects",
+        "articles": "Articles",
         "contact": "Contact",
         "language": "Language",
         "english": "English",
@@ -150,7 +151,12 @@
         "subjectrequired": "Subject Required",
         "messagerequired": "Message Required",
         "emailerror": "Error sending the email. Please try again later.",
-        "emailsucess": "Email sent successfully!"
+        "emailsucess": "Email sent successfully!",
+        "cardTitle": "Enjoyed my work? Send me a message",
+        "cardSubtitle": "Contact me by sending a message or through my social networks.",
+        "socialText": "Or reach me through",
+        "eyebrow": "Contact",
+        "description": "Feel free to get in touch by filling out the form below."
     },
     "NotFound": {
         "p": "Sorry, we couldn´t find this page.",
@@ -167,5 +173,22 @@
     "Unauthorized": {
         "title": "Access denied",
         "p": "You don't have permission to access this page."
+    },
+    "Articles": {
+        "h1": "Articles & Publications",
+        "h2": "Technical content I've written recently",
+        "articletitle1": "Mobile Device Security: Practical Protection Strategies",
+        "articledescription1": "A guide to protecting mobile devices with real-world techniques and secure practices.",
+        "articlep1": "Covers risks, mitigation strategies, and recommendations for hardening mobile environments.",
+        "articletitle2": "Secure Authentication: Cookies, HTTP-only, JWT, LocalStorage and SessionStorage",
+        "articledescription2": "Understanding secure authentication flows and storage mechanisms in modern applications.",
+        "articlep2": "Explains best practices for tokens, cookies, storage security and reducing attack surface.",
+        "articletitle3": "Managing Environment Variables (.env) Safely and Effectively",
+        "articledescription3": "How to handle sensitive environment variables in development, CI/CD and production.",
+        "articlep3": "Covers secrets management, environment separation, secure loading and DevOps workflows.",
+        "articletitle4": "Optimizing Docker Images: Best Practices for Efficient Builds",
+        "articledescription4": "Real-world techniques to reduce image size, improve caching, and streamline deployments.",
+        "articlep4": "Includes multi-stage builds, minimal base images, cache optimization, and cleanup strategies.",
+        "year": "Year"
     }
 }

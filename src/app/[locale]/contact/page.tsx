@@ -15,7 +15,7 @@ export default function Contact() {
                 </header>
             </Fade>
 
-            <div className="mt-20 md:mt-28 mb-40 md:mb-36">
+            <div className="mt-10 md:mt-20 max-w-lg mx-auto mb-40 md:mb-36">
                 <ContactForm />
             </div>
         </section>

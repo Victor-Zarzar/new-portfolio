@@ -29,6 +29,10 @@ export default function Navbar() {
             link: 'projects',
         },
         {
+            label: t('articles'),
+            link: 'articles',
+        },
+        {
             label: t('contact'),
             link: 'contact',
         },
@@ -68,7 +72,7 @@ export default function Navbar() {
                                     <Link
                                         key={idx}
                                         href={item.link}
-                                        className={'block lg:inline-block hover:text-neutral-500cursor-pointer'}
+                                        className={'block lg:inline-block hover:text-neutral-500 cursor-pointer'}
                                         onClick={() => setNavbar(!navbar)}
                                     >
                                         {item.label}

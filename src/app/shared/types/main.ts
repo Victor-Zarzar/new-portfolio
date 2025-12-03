@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import type { IconType } from 'react-icons';
 
 type experience = {
@@ -10,14 +9,26 @@ type experience = {
 };
 
 type Project = {
+    id: number;
     androidLink: string;
     iosLink: string;
     webLink: string;
     title: string;
-    description: ReactNode;
+    description: string;
     photo: string;
     sourceCodeLink: string;
     sourceLinkPrivacy: string;
+    techStack: TechKey[];
+};
+
+type Articles = {
+    id: number;
+    title: string;
+    description: string;
+    p: string;
+    webLink: string;
+    photo: string;
+    year: number;
 };
 
 type NavItem = {
@@ -33,7 +44,7 @@ type TimelineItemType = {
     time: string;
 };
 
-type CardItemType = {
+type Services = {
     id: number;
     title: string;
     description: string;
@@ -75,6 +86,10 @@ type GetCourseDataParams = {
     t: (key: string) => string;
 };
 
+type GetArticlesParams = {
+    t: (key: string) => string;
+};
+
 type Locale = 'en' | 'es' | 'pt';
 
 type CookieConsentProps = {
@@ -83,12 +98,32 @@ type CookieConsentProps = {
     onDeclineCallback?: () => void;
 };
 
+type TechKey =
+    | 'flutter'
+    | 'dart'
+    | 'android'
+    | 'ios'
+    | 'xcode'
+    | 'androidstudio'
+    | 'html'
+    | 'react'
+    | 'typescript'
+    | 'tailwind'
+    | 'nextjs'
+    | 'docker'
+    | 'docker-compose'
+    | 'fastapi'
+    | 'python'
+    | 'reportlab'
+    | 'pandas';
+
 export type {
-    CardItemType,
+    Articles,
     ContactFormData,
     CookieConsentProps,
     CoursesType,
     experience,
+    GetArticlesParams,
     GetCourseDataParams,
     GetProjectsParams,
     GetServicesDataParams,
@@ -96,6 +131,8 @@ export type {
     Locale,
     NavItem,
     Project,
+    Services,
     SkillOutlineProps,
+    TechKey,
     TimelineItemType,
 };

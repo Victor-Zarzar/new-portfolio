@@ -7,29 +7,29 @@ import {
     SiDart,
     SiDjango,
     SiDocker,
+    SiElasticsearch,
     SiFastapi,
     SiFirebase,
     SiFlutter,
     SiGit,
     SiGithub,
     SiGitlab,
+    SiGrafana,
     SiHtml5,
     SiJavascript,
     SiLetsencrypt,
     SiLinux,
     SiMacos,
-    SiMantine,
     SiMui,
     SiMysql,
     SiNextdotjs,
     SiNginx,
-    SiNpm,
     SiOwasp,
     SiPortainer,
     SiPostman,
     SiPrisma,
     SiPython,
-    SiReact,
+    SiSentry,
     SiShadcnui,
     SiSqlite,
     SiSwagger,
@@ -51,10 +51,37 @@ export const skills = [
         text: 'JavaScript',
     },
     {
-        icon: SiReact,
-        text: 'React',
+        icon: SiPython,
+        text: 'Python',
     },
-
+    {
+        icon: SiFastapi,
+        text: 'FastAPI',
+    },
+    {
+        icon: SiDart,
+        text: 'Dart',
+    },
+    {
+        icon: SiFlutter,
+        text: 'Flutter',
+    },
+    {
+        icon: SiDocker,
+        text: 'Docker',
+    },
+    {
+        icon: SiGrafana,
+        text: 'Grafana',
+    },
+    {
+        icon: SiElasticsearch,
+        text: 'Elastic ELK',
+    },
+    {
+        icon: SiSentry,
+        text: 'Sentry',
+    },
     {
         icon: SiNextdotjs,
         text: 'Next',
@@ -76,10 +103,6 @@ export const skills = [
         text: 'CSS3',
     },
     {
-        icon: SiDocker,
-        text: 'Docker',
-    },
-    {
         icon: SiPortainer,
         text: 'Portainer.io',
     },
@@ -94,14 +117,6 @@ export const skills = [
     {
         icon: SiShadcnui,
         text: 'Shadcn UI',
-    },
-    {
-        icon: SiDart,
-        text: 'Dart',
-    },
-    {
-        icon: SiFlutter,
-        text: 'Flutter',
     },
     {
         icon: SiFirebase,
@@ -144,10 +159,6 @@ export const skills = [
         text: 'Android Studio',
     },
     {
-        icon: SiNpm,
-        text: 'NPM',
-    },
-    {
         icon: SiTrello,
         text: 'Trello',
     },
@@ -159,21 +170,10 @@ export const skills = [
         icon: FaAws,
         text: 'AWS',
     },
-    {
-        icon: SiMantine,
-        text: 'Mantine UI',
-    },
-    {
-        icon: SiPython,
-        text: 'Python',
-    },
+
     {
         icon: SiDjango,
         text: 'Django',
-    },
-    {
-        icon: SiFastapi,
-        text: 'FastAPI',
     },
     {
         icon: SiSqlite,

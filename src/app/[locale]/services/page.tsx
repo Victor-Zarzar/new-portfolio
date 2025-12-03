@@ -1,13 +1,14 @@
 'use client';
 
 import { getServicesData } from '@/app/shared/data/getServicesData';
+import type { Services } from '@/app/shared/types/main';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/app/shared/ui/card';
 import { useTranslations } from 'next-intl';
 import { Fade } from 'react-awesome-reveal';
 
 export default function ServicesPage() {
     const t = useTranslations('Services');
-    const projects = getServicesData({ t });
+    const services: Services[] = getServicesData({ t });
 
     return (
         <main className="services">
@@ -22,7 +23,7 @@ export default function ServicesPage() {
             </section>
 
             <section className="p-4 flex flex-col gap-4 items-center min-h-screen mb-12 md:mb-0">
-                {projects.map((item) => (
+                {services.map((item) => (
                     <Card
                         key={item.id}
                         className="w-3/4 max-w-md mb-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600 

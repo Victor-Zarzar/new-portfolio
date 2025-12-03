@@ -77,6 +77,9 @@ importers:
       rate-limiter-flexible:
         specifier: ^8.0.1
         version: 8.1.0
+      react:
+        specifier: 19.2.0
+        version: 19.2.0
       react-awesome-reveal:
         specifier: ^4.3.1
         version: 4.3.1(@emotion/react@11.14.0(@types/react@19.2.2)(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
