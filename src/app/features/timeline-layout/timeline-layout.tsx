@@ -1,5 +1,5 @@
 import { getTimelineData } from '@/app/shared/data/getTimelineData';
-import { type TimelineItemType } from '@/app/shared/types/main';
+import type { TimelineItemType } from '@/app/shared/types/main';
 import { Timeline, TimelineDescription, TimelineHeader, TimelineItem, TimelineTime, TimelineTitle } from '@/app/shared/ui/timeline';
 import { useTranslations } from 'next-intl';
 import { Fade } from 'react-awesome-reveal';
@@ -21,7 +21,10 @@ export const TimelineLayout = () => {
                     {timelineData.map((item) => (
                         <TimelineItem key={item.id}>
                             <TimelineHeader>
-                                <TimelineTime className="capitalize">{item.time}</TimelineTime>
+                                <TimelineTime className="capitalize flex-shrink-0 whitespace-nowrap overflow-hidden text-ellipsis min-w-[100px]">
+                                    {item.time}
+                                </TimelineTime>
+
                                 <TimelineTitle className="text-sm sm:text-2xl">{item.title}</TimelineTitle>
                             </TimelineHeader>
                             {item.description && (

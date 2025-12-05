@@ -1,7 +1,7 @@
 'use client';
 
 import Skills from '../entities/skills/Skills';
-import Header from '../widgets/header/Header';
+import Header from '../widgets/header/header-layout';
 
 export default function Home() {
     return (

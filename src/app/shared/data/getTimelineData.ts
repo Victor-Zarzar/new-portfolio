@@ -7,14 +7,14 @@ export function getTimelineData({ t }: GetTimelineDataParams): TimelineItemType[
             title: 'XLabs Security',
             description: t('p2'),
             local: t('p3'),
-            time: '2023 - Present',
+            time: 'Mar 2023 - Dec 2025',
         },
         {
             id: 2,
             title: 'Freelance',
             description: t('p5'),
             local: t('p6'),
-            time: '2022 - 2023',
+            time: 'Dec 2022 - Feb 2023',
         },
         {
             id: 3,

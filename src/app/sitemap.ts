@@ -1,40 +1,42 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+    const currentDate = new Date();
+
     return [
         {
             url: 'https://www.victorzarzar.com.br',
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'weekly',
             priority: 1,
         },
         {
             url: 'https://www.victorzarzar.com.br/about',
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: 'https://www.victorzarzar.com.br/services',
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: 'https://www.victorzarzar.com.br/contact',
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: 'https://www.victorzarzar.com.br/projects',
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: 'https://www.victorzarzar.com.br/privacypolicy',
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         },

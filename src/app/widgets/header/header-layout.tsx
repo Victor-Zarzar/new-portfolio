@@ -1,4 +1,5 @@
 'use client';
+
 import { Avatar, AvatarImage } from '@/app/shared/ui/avatar';
 import { Button } from '@/app/shared/ui/button';
 import { Skeleton } from '@/app/shared/ui/skeleton';
@@ -50,6 +51,7 @@ export default function Header() {
                                     <span className="font-semibold text-gray-500 whitespace-pre-line">{t('span')}</span>
                                 </p>
                             </Bounce>
+
                             <nav className="container-button mx-auto space-x-2 flex">
                                 <Link href="https://github.com/Victor-Zarzar" target="_blank" rel="noreferrer">
                                     <Button
