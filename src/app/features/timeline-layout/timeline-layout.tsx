@@ -21,7 +21,7 @@ export const TimelineLayout = () => {
                     {timelineData.map((item) => (
                         <TimelineItem key={item.id}>
                             <TimelineHeader>
-                                <TimelineTime className="capitalize flex-shrink-0 whitespace-nowrap overflow-hidden text-ellipsis min-w-[100px]">
+                                <TimelineTime className="capitalize shrink-0 whitespace-nowrap overflow-hidden text-ellipsis min-w-[100px]">
                                     {item.time}
                                 </TimelineTime>
 

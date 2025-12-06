@@ -50,7 +50,7 @@ function ActionCard({ article }: { article: Articles }) {
                         border-black dark:border-gray-400 dark:hover:shadow-stone-600 cursor-pointer"
         >
             <CardContent className="p-4">
-                <div className="relative aspect-video w-full overflow-hidden flex-shrink-0">
+                <div className="relative aspect-video w-full overflow-hidden shrink-0">
                     <Image
                         src={article.photo}
                         alt={article.title}

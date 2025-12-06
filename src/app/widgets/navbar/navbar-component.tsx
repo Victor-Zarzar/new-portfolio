@@ -45,7 +45,7 @@ export default function Navbar() {
                     <Link href="/">
                         <div className="container flex items-center space-x-2">
                             <h1
-                                className="text-2xl lg:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-500 to-gray-800
+                                className="text-2xl lg:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-linear-to-r from-gray-500 to-gray-800
                              dark:from-gray-300 dark:to-gray-500 drop-shadow-md transition-all duration-300 hover:scale-105 hover:text-gray-500
                               dark:hover:text-gray-300 font-mono animate-pulse"
                             >

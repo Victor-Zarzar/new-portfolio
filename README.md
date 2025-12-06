@@ -189,10 +189,10 @@ make clean
 
 ### Code Linting
 
-Run ESLint to check for code issues:
+Run Biomejs to check for code issues:
 
 ```bash
-pnpm run lint
+pnpm biome check
 ```
 
 ### Type Checking

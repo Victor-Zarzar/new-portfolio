@@ -50,7 +50,7 @@ const techIconMap: Record<TechKey, JSX.Element> = {
 
 function ProjectDescription({ description, techStack }: { description: string; techStack: TechKey[] }) {
     return (
-        <div className="mt-3 text-sm text-neutral-300">
+        <div className="mt-3 text-sm">
             <p className="mb-3 leading-relaxed">{description}</p>
 
             <div className="flex flex-wrap gap-2 mt-1">
@@ -104,7 +104,7 @@ function ProjectCard({ project }: { project: Project; index: number }) {
                         border-black dark:border-gray-400 dark:hover:shadow-stone-600 cursor-pointer"
         >
             <CardContent className="p-6 flex flex-col flex-1">
-                <div className="relative aspect-video w-full overflow-hidden flex-shrink-0">
+                <div className="relative aspect-video w-full overflow-hidden shrink-0">
                     <Image
                         src={project.photo}
                         alt={project.title}
@@ -115,7 +115,7 @@ function ProjectCard({ project }: { project: Project; index: number }) {
                     />
                 </div>
 
-                <h4 className="mt-4 text-lg font-semibold text-neutral-50 group-hover:text-primary transition-colors">{project.title}</h4>
+                <h4 className="mt-4 text-lg font-semibold group-hover:text-primary transition-colors">{project.title}</h4>
 
                 <ProjectDescription description={project.description} techStack={project.techStack} />
 

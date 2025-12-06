@@ -7,7 +7,7 @@ DOCKER_TAG = 1.0.0
 install:
 	pnpm install
 
-dev:
+dev: install
 	pnpm run dev
 
 prod:

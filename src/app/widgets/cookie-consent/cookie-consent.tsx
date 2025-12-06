@@ -62,7 +62,7 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback,
     return (
         <div
             className={cn(
-                'fixed z-[200] bottom-0 right-0 sm:right-4 sm:bottom-4 w-full sm:max-w-md duration-700',
+                'fixed z-200 bottom-0 right-0 sm:right-4 sm:bottom-4 w-full sm:max-w-md duration-700',
                 !isOpen ? 'transition-[opacity,transform] translate-y-8 opacity-0' : 'transition-[opacity,transform] translate-y-0 opacity-100',
                 hide && 'hidden',
             )}
