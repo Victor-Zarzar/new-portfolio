@@ -1,12 +1,16 @@
-export default function StripeIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const StripeIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
         <svg
-            width="800px"
-            height="800px"
+            width={size}
+            height={size}
             viewBox="0 -11 70 70"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px]"
+            className="hover:-translate-y-1"
+            {...props}
         >
             <rect x="0.5" y="0.5" width="69" height="47" rx="5.5" fill="white" stroke="#D9D9D9" />
             <path
@@ -29,4 +33,6 @@ export default function StripeIcon() {
             />
         </svg>
     );
-}
+};
+
+export default StripeIcon;

@@ -1,12 +1,9 @@
-export default function TypescriptIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const TypescriptIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
-        <svg
-            width="30px"
-            height="30px"
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
-        >
+        <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="hover:-translate-y-1" {...props}>
             <title>file_type_typescript_official</title>
             <rect x="2" y="2" width="28" height="28" rx="1.312" style={{ fill: '#3178c6' }} />
             <path
@@ -15,4 +12,6 @@ export default function TypescriptIcon() {
             />
         </svg>
     );
-}
+};
+
+export default TypescriptIcon;

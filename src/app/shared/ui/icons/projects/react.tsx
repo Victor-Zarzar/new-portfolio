@@ -1,14 +1,18 @@
-export default function ReactIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const ReactIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
         <svg
-            width="30px"
-            height="30px"
+            width={size}
+            height={size}
             viewBox="0 -14 256 256"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             preserveAspectRatio="xMidYMid"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
+            className="hover:-translate-y-1"
+            {...props}
         >
             <g>
                 <path
@@ -61,4 +65,6 @@ export default function ReactIcon() {
             </g>
         </svg>
     );
-}
+};
+
+export default ReactIcon;

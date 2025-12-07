@@ -1,14 +1,18 @@
-export default function TailwindIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const TailwindIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
         <svg
-            width="30px"
-            height="30px"
+            width={size}
+            height={size}
             viewBox="0 -51 256 256"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             preserveAspectRatio="xMidYMid"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
+            className="hover:-translate-y-1"
+            {...props}
         >
             <defs>
                 <linearGradient x1="-2.77777778%" y1="32%" x2="100%" y2="67.5555556%" id="linearGradient-1">
@@ -30,4 +34,6 @@ export default function TailwindIcon() {
             </g>
         </svg>
     );
-}
+};
+
+export default TailwindIcon;

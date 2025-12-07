@@ -1,12 +1,16 @@
-export default function IosIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const IosIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
         <svg
-            width="25px"
-            height="25px"
+            width={size}
+            height={size}
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
+            className="hover:-translate-y-1"
+            {...props}
         >
             <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
@@ -36,4 +40,6 @@ export default function IosIcon() {
             </g>
         </svg>
     );
-}
+};
+
+export default IosIcon;

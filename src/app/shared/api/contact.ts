@@ -1,4 +1,5 @@
 import type { ContactFormData } from '@/app/shared/types/main';
+import * as Sentry from '@sentry/nextjs';
 import { toast } from 'sonner';
 
 export const contactService = {
@@ -20,8 +21,8 @@ export const contactService = {
                 return false;
             }
         } catch (error) {
-            console.error('Error:', error);
             toast.error(errorMessage);
+            Sentry.captureException(error);
             return false;
         }
     },

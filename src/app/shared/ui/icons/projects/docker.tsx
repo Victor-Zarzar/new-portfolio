@@ -1,12 +1,9 @@
-export default function DockerIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const DockerIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
-        <svg
-            width="30px"
-            height="30px"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
-        >
+        <svg width={size} height={size} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="hover:-translate-y-1" {...props}>
             <path
                 fill="#0DB7ED"
                 fillRule="evenodd"
@@ -31,4 +28,6 @@ export default function DockerIcon() {
             />
         </svg>
     );
-}
+};
+
+export default DockerIcon;

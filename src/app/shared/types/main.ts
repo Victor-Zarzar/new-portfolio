@@ -1,11 +1,12 @@
+import type React from 'react';
 import type { IconType } from 'react-icons';
 
-type experience = {
-    company: string;
-    position: string;
-    startDate: string;
-    endDate: string;
-    desc: string[];
+type Experience = {
+    id: number;
+    title: string;
+    description?: string;
+    local: string;
+    time: string;
 };
 
 type Project = {
@@ -36,14 +37,6 @@ type NavItem = {
     link: string;
 };
 
-type TimelineItemType = {
-    id: number;
-    title: string;
-    description?: string;
-    local: string;
-    time: string;
-};
-
 type Services = {
     id: number;
     title: string;
@@ -69,6 +62,10 @@ type SkillOutlineProps = {
     Icon: IconType;
     text: string;
 };
+
+type SvgIconProps = {
+    size?: number;
+} & React.SVGProps<SVGSVGElement>;
 
 type GetProjectsParams = {
     t: (key: string) => string;
@@ -110,11 +107,17 @@ type TechKey =
     | 'typescript'
     | 'tailwind'
     | 'nextjs'
+    | 'sentry'
+    | 'kibana'
+    | 'loki'
+    | 'grafana'
     | 'docker'
     | 'docker-compose'
     | 'fastapi'
     | 'python'
     | 'reportlab'
+    | 'kotlin'
+    | 'swift'
     | 'pandas';
 
 export type {
@@ -122,7 +125,7 @@ export type {
     ContactFormData,
     CookieConsentProps,
     CoursesType,
-    experience,
+    Experience,
     GetArticlesParams,
     GetCourseDataParams,
     GetProjectsParams,
@@ -133,6 +136,6 @@ export type {
     Project,
     Services,
     SkillOutlineProps,
+    SvgIconProps,
     TechKey,
-    TimelineItemType,
 };

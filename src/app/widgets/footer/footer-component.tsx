@@ -27,7 +27,7 @@ export default function Footer() {
                         target="_blank"
                         className="hover:-translate-y-1 transition-transform cursor-pointer"
                     >
-                        <BiLogoDevTo size={30} />
+                        <BiLogoDevTo size={32} />
                     </a>
                     <a
                         href="https://twitter.com/victorzarzar1"
@@ -35,7 +35,7 @@ export default function Footer() {
                         target="_blank"
                         className="hover:-translate-y-1 transition-transform cursor-pointer"
                     >
-                        <FaSquareXTwitter size={30} />
+                        <FaSquareXTwitter size={28} />
                     </a>
                     <a
                         href="https://www.linkedin.com/in/victorzarzar"

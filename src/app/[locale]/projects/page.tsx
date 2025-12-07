@@ -7,16 +7,22 @@ import AndroidIcon from '@/app/shared/ui/icons/projects/android';
 import AndroidStudioIcon from '@/app/shared/ui/icons/projects/androidstudio';
 import DartIcon from '@/app/shared/ui/icons/projects/dart';
 import DockerIcon from '@/app/shared/ui/icons/projects/docker';
-import { DockerComposeIcon } from '@/app/shared/ui/icons/projects/docker-compose';
-import { FastAPIIcon } from '@/app/shared/ui/icons/projects/fastapi';
+import DockerComposeIcon from '@/app/shared/ui/icons/projects/docker-compose';
+import FastAPIIcon from '@/app/shared/ui/icons/projects/fastapi';
 import FlutterIcon from '@/app/shared/ui/icons/projects/flutter';
+import GrafanaIcon from '@/app/shared/ui/icons/projects/grafana';
 import HtmlIcon from '@/app/shared/ui/icons/projects/html';
 import IosIcon from '@/app/shared/ui/icons/projects/ios';
+import KibanaIcon from '@/app/shared/ui/icons/projects/kibana';
+import KotlinIcon from '@/app/shared/ui/icons/projects/kotlin';
+import LokiIcon from '@/app/shared/ui/icons/projects/loki';
 import NextjsIcon from '@/app/shared/ui/icons/projects/nextjs';
-import { PandasIcon } from '@/app/shared/ui/icons/projects/pandas';
-import { PythonIcon } from '@/app/shared/ui/icons/projects/python';
+import PandasIcon from '@/app/shared/ui/icons/projects/pandas';
+import PythonIcon from '@/app/shared/ui/icons/projects/python';
 import ReactIcon from '@/app/shared/ui/icons/projects/react';
-import { ReportLabIcon } from '@/app/shared/ui/icons/projects/reportlab';
+import ReportLabIcon from '@/app/shared/ui/icons/projects/reportlab';
+import SentryIcon from '@/app/shared/ui/icons/projects/sentry';
+import SwiftIcon from '@/app/shared/ui/icons/projects/swift';
 import TailwindIcon from '@/app/shared/ui/icons/projects/tailwindcss';
 import TypescriptIcon from '@/app/shared/ui/icons/projects/typescript';
 import XcodeIcon from '@/app/shared/ui/icons/projects/xcode';
@@ -46,6 +52,12 @@ const techIconMap: Record<TechKey, JSX.Element> = {
     python: <PythonIcon />,
     reportlab: <ReportLabIcon />,
     pandas: <PandasIcon />,
+    sentry: <SentryIcon />,
+    kibana: <KibanaIcon />,
+    loki: <LokiIcon />,
+    grafana: <GrafanaIcon />,
+    kotlin: <KotlinIcon />,
+    swift: <SwiftIcon />,
 };
 
 function ProjectDescription({ description, techStack }: { description: string; techStack: TechKey[] }) {

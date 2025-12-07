@@ -3,6 +3,7 @@
 import { cn } from '@/app/shared/lib/utils';
 import type { CookieConsentProps } from '@/app/shared/types/main';
 import { Button } from '@/app/shared/ui//button';
+import * as Sentry from '@sentry/nextjs';
 import { CookieIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -54,8 +55,9 @@ export default function CookieConsentComponent({ demo = false, onAcceptCallback,
                     }, 700);
                 }
             }
-        } catch (e) {
+        } catch (error) {
             toast.error(t('error'));
+            Sentry.captureException(error);
         }
     }, [demo, t]);
 

@@ -1,12 +1,9 @@
-export default function XcodeIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const XcodeIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
-            viewBox="0 0 48 48"
-            width="48px"
-            height="48px"
-        >
+        <svg width={size} height={size} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="hover:-translate-y-1" {...props}>
             <path fill="#03a9f4" d="M44 38L6.6 43.9 2 13.8 39.2 8.1z" />
             <path fill="#039be5" d="M39.2 8.1L44 38 6.6 43.9 6.2 41z" />
             <path fill="#29b6f6" d="M2 13.8L4.4 29.3 22.2 10.7z" />
@@ -48,4 +45,6 @@ export default function XcodeIcon() {
             <path fill="#424242" d="M31.8,21l-8.7,20.3c-0.5,1.3,0.2,2.9,1.6,3.3l0.9,0.3c1.4,0.4,2.8-0.4,3.1-1.4l6-21.6L31.8,21z" />
         </svg>
     );
-}
+};
+
+export default XcodeIcon;

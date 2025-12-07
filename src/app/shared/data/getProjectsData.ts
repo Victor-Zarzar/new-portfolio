@@ -10,7 +10,7 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
         androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
         iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
         webLink: '',
-        techStack: ['flutter', 'dart', 'android', 'ios', 'xcode', 'androidstudio'],
+        techStack: ['flutter', 'dart', 'android', 'ios', 'swift', 'kotlin', 'xcode', 'androidstudio', 'sentry'],
         id: 1,
     },
     {
@@ -22,7 +22,7 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
         androidLink: 'https://play.google.com/store/apps/details?id=YOUR_APP_ID',
         iosLink: 'https://apps.apple.com/us/app/YOUR_APP_ID',
         webLink: '',
-        techStack: ['flutter', 'dart', 'android', 'ios', 'xcode', 'androidstudio'],
+        techStack: ['flutter', 'dart', 'android', 'ios', 'swift', 'kotlin', 'xcode', 'androidstudio', 'sentry'],
         id: 2,
     },
 
@@ -35,7 +35,7 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
         androidLink: '',
         iosLink: '',
         webLink: 'http://victorzarzar.com.br',
-        techStack: ['html', 'react', 'typescript', 'tailwind', 'nextjs', 'docker'],
+        techStack: ['html', 'react', 'typescript', 'tailwind', 'nextjs', 'docker', 'sentry'],
         id: 7,
     },
     {
@@ -59,7 +59,7 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
         androidLink: '',
         iosLink: '',
         webLink: '',
-        techStack: ['fastapi', 'python', 'reportlab', 'pandas', 'docker', 'docker-compose'],
+        techStack: ['fastapi', 'python', 'reportlab', 'pandas', 'docker', 'docker-compose', 'grafana'],
         id: 5,
     },
     {
@@ -71,7 +71,7 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
         androidLink: '',
         iosLink: '',
         webLink: '',
-        techStack: ['fastapi', 'python', 'reportlab', 'pandas', 'docker', 'docker-compose'],
+        techStack: ['python', 'reportlab', 'pandas'],
         id: 8,
     },
     {

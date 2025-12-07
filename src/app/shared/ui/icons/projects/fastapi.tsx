@@ -1,24 +1,18 @@
-export function FastAPIIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const FastAPIIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
-        <svg
-            width="30px"
-            height="30px"
-            viewBox="0 0 256 256"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            preserveAspectRatio="xMidYMid"
-            className="h-[20px] w-[20px] md:h-[25px] md:w-[25px] hover:-translate-y-1"
-        >
-            <g>
-                <circle cx="128" cy="128" r="120" fill="#009688" />
-                <path d="M128 48 L168 88 L148 108 L128 88 L108 108 L88 88 L128 48 Z" fill="#FFFFFF" />
-                <path d="M88 128 L108 148 L128 128 L148 148 L168 128 L148 108 L128 128 L108 108 L88 128 Z" fill="#FFFFFF" />
-                <path d="M128 208 L88 168 L108 148 L128 168 L148 148 L168 168 L128 208 Z" fill="#FFFFFF" />
-                <text x="128" y="190" textAnchor="middle" fill="#FFFFFF" fontSize="16" fontWeight="bold">
-                    API
-                </text>
+        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 256 256" className="hover:-translate-y-1" {...props}>
+            <g fill="none">
+                <rect width="256" height="256" fill="#049789" rx="60" />
+                <path
+                    fill="#fff"
+                    d="M127.5 41C79.743 41 41 79.743 41 127.5S79.743 214 127.5 214s86.5-38.743 86.5-86.5S175.257 41 127.5 41Zm-4.507 155.839v-54.258H92.831l43.336-84.42v54.258h29.036l-42.21 84.42Z"
+                />
             </g>
         </svg>
     );
-}
+};
+
+export default FastAPIIcon;

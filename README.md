@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  Modern portfolio application built with Next.js 15, featuring internationalization, dark mode, and containerized deployment.
+  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, and containerized deployment.
 </p>
 
 ---
@@ -33,7 +33,7 @@
 
 -   🟦 **TypeScript** - Type-safe development
 -   ⚛️ **React 19** - Latest React features
--   🌐 **Next.js 15** - React framework with App Router
+-   🌐 **Next.js 16** - React framework with App Router
 -   🎨 **Tailwind CSS v4** - Utility-first CSS framework
 -   🐳 **Docker** - Containerized deployment
 
@@ -45,6 +45,7 @@
 -   🌍 **i18n** - Multi-language support (EN / PT-BR / ES) via Next Intl
 -   📬 **Nodemailer** - Email functionality
 -   📈 **Vercel Analytics** - Performance monitoring
+-   🔍 **Sentry** - Is an error tracking and performance monitoring tool
 
 ---
 
@@ -77,9 +78,15 @@ cd new-portfolio
 Create a `.env` file in the project root:
 
 ```env
-SMTP_EMAIL=your-email@gmail.com
-SMTP_PASSWORD=your-app-password
-NEXT_PUBLIC_DISABLE_DEVTOOLS=true
+NODE_ENV=production # Node.js runtime environment (usually "production" in deployed environments)
+SMTP_EMAIL=your-email@gmail.com # Email account used to send messages via SMTP
+SMTP_PASSWORD=your-app-password # App-specific password or token (e.g., Gmail App Password)
+NEXT_PUBLIC_DISABLE_DEVTOOLS=true # Disables DevTools in production (set true for production)
+NEXT_PUBLIC_SENTRY_DSN=https://examplePublicKey@o0.ingest.sentry.io/0 # Your Sentry DSN (Data Source Name)
+SENTRY_AUTH_TOKEN=example... # Sentry authentication token (required to upload source maps on build)
+SENTRY_RELEASE=example... # Example my-website@1.0.0
+SENTRY_ORG=exameple... # Sentry Organization slug
+SENTRY_PROJECT=example... # Sentry Project name
 ```
 
 > **Note:** For Gmail, you'll need to generate an [App Password](https://support.google.com/accounts/answer/185833).

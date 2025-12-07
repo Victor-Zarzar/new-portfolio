@@ -1,14 +1,18 @@
-export function DockerComposeIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const DockerComposeIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
         <svg
-            width="30px"
-            height="30px"
+            width={size}
+            height={size}
             viewBox="0 0 256 256"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             preserveAspectRatio="xMidYMid"
-            className="h-[30px] w-[30px] md:h-[35px] md:w-[35px] hover:-translate-y-1"
+            className="hover:-translate-y-1"
+            {...props}
         >
             <g>
                 <g transform="translate(20, 30)">
@@ -49,4 +53,6 @@ export function DockerComposeIcon() {
             </g>
         </svg>
     );
-}
+};
+
+export default DockerComposeIcon;

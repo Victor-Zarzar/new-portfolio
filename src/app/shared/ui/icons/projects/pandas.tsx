@@ -1,14 +1,18 @@
-export function PandasIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const PandasIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
         <svg
-            width="25px"
-            height="25px"
+            width={size}
+            height={size}
             viewBox="0 0 256 256"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             preserveAspectRatio="xMidYMid"
-            className="h-[20px] w-[20px] md:h-[25px] md:w-[25px] hover:-translate-y-1"
+            className="hover:-translate-y-1"
+            {...props}
         >
             <g>
                 <circle cx="128" cy="128" r="120" fill="#150458" />
@@ -42,4 +46,6 @@ export function PandasIcon() {
             </g>
         </svg>
     );
-}
+};
+
+export default PandasIcon;

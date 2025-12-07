@@ -1,12 +1,9 @@
-export default function FlutterIcon() {
+import type { SvgIconProps } from '@/app/shared/types/main';
+import React from 'react';
+
+const FlutterIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
     return (
-        <svg
-            width="30px"
-            height="30px"
-            viewBox="0 0 32 32"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-[25px] w-[25px] md:h-[30px] md:w-[30px] hover:-translate-y-1"
-        >
+        <svg width={size} height={size} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="hover:-translate-y-1" {...props}>
             <title>file_type_flutter</title>
             <polyline
                 points="15.383 18.316 18.744 15.042 27.093 15.042 19.697 22.438 15.383 18.316 15.383 18.316 15.383 18.316 15.383 18.316 15.383 18.316"
@@ -18,4 +15,6 @@ export default function FlutterIcon() {
             <polygon points="15.435 26.675 19.406 25.354 18.068 24.057 15.435 26.675" style={{ fill: '#0e5199' }} />
         </svg>
     );
-}
+};
+
+export default FlutterIcon;
