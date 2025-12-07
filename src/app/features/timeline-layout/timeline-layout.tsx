@@ -1,12 +1,12 @@
 import { getTimelineData } from '@/app/shared/data/getTimelineData';
-import type { TimelineItemType } from '@/app/shared/types/main';
+import type { Experience } from '@/app/shared/types/main';
 import { Timeline, TimelineDescription, TimelineHeader, TimelineItem, TimelineTime, TimelineTitle } from '@/app/shared/ui/timeline';
 import { useTranslations } from 'next-intl';
 import { Fade } from 'react-awesome-reveal';
 
 export const TimelineLayout = () => {
     const t = useTranslations('Experiences');
-    const timelineData: TimelineItemType[] = getTimelineData({ t });
+    const timelineData: Experience[] = getTimelineData({ t });
 
     return (
         <section className="mx-auto mt-28 mb-28 max-w-3xl">

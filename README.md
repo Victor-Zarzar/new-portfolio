@@ -78,12 +78,12 @@ cd new-portfolio
 Create a `.env` file in the project root:
 
 ```env
-NODE_ENV=production # Node.js runtime environment (usually "production" in deployed environments)
+NODE_ENV=production # Node.js runtime environment (usually "production")
 SMTP_EMAIL=your-email@gmail.com # Email account used to send messages via SMTP
-SMTP_PASSWORD=your-app-password # App-specific password or token (e.g., Gmail App Password)
-NEXT_PUBLIC_DISABLE_DEVTOOLS=true # Disables DevTools in production (set true for production)
-NEXT_PUBLIC_SENTRY_DSN=https://examplePublicKey@o0.ingest.sentry.io/0 # Your Sentry DSN (Data Source Name)
-SENTRY_AUTH_TOKEN=example... # Sentry authentication token (required to upload source maps on build)
+SMTP_PASSWORD=your-app-password # App-specific password or token
+NEXT_PUBLIC_DISABLE_DEVTOOLS=true # Disables DevTools in production
+NEXT_PUBLIC_SENTRY_DSN=https://examplePublickey # Your Sentry DSN (Data Source Name)
+SENTRY_AUTH_TOKEN=example... # Sentry authentication token
 SENTRY_RELEASE=example... # Example my-website@1.0.0
 SENTRY_ORG=exameple... # Sentry Organization slug
 SENTRY_PROJECT=example... # Sentry Project name
