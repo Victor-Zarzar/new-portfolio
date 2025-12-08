@@ -55,10 +55,11 @@
 
 Before starting, ensure you have the following installed:
 
--   [Node.js](https://nodejs.org/) (v18 or higher)
--   [pnpm](https://pnpm.io/) (v8 or higher)
--   [Docker](https://www.docker.com/) & Docker Compose (for containerized deployment)
+-   [Bun](https://bun.sh/docs) (v1 or higher) – primary runtime & package manager
+-   [Docker](https://www.docker.com/) – optional, for containerized deployment
 -   [Git](https://git-scm.com/)
+
+> Optional: [Node.js](https://nodejs.org/) (v22 or higher), if you prefer running the app with Node or using Node-based global tooling.
 
 ---
 
@@ -78,7 +79,7 @@ cd new-portfolio
 Create a `.env` file in the project root:
 
 ```env
-NODE_ENV=production # Node.js runtime environment (usually "production")
+NODE_ENV=production # Runtime environment (usually "production") or development in dev mode
 SMTP_EMAIL=your-email@gmail.com # Email account used to send messages via SMTP
 SMTP_PASSWORD=your-app-password # App-specific password or token
 NEXT_PUBLIC_DISABLE_DEVTOOLS=true # Disables DevTools in production
@@ -97,10 +98,10 @@ SENTRY_PROJECT=example... # Sentry Project name
 make install
 ```
 
-Or manually with pnpm:
+Or manually with bun:
 
 ```bash
-pnpm install
+bun install
 ```
 
 ---
@@ -177,7 +178,7 @@ make clean
 
 | Command        | Description                              |
 | -------------- | ---------------------------------------- |
-| `make install` | Install dependencies using pnpm          |
+| `make install` | Install dependencies using bun           |
 | `make dev`     | Run the app locally in development mode  |
 | `make prod`    | Run the app in production mode           |
 | `make build`   | Build the Docker image                   |
@@ -199,15 +200,7 @@ make clean
 Run Biomejs to check for code issues:
 
 ```bash
-pnpm biome check
-```
-
-### Type Checking
-
-Run TypeScript type checking:
-
-```bash
-pnpm run type-check
+bun biome check
 ```
 
 ### Build for Production

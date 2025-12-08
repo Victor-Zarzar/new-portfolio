@@ -5,13 +5,13 @@ PORT = 3000
 DOCKER_TAG = 1.0.0
 
 install:
-	pnpm install
+	bun install
 
 dev: install
-	pnpm run dev
+	bun run dev
 
 prod:
-	pnpm run build
+	bun run start
 
 build:
 	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) .

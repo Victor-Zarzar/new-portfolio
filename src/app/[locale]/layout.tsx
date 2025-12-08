@@ -2,8 +2,8 @@ import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { JetBrains_Mono } from 'next/font/google';
+import { notFound } from 'next/navigation';
 import LayoutProvider from '../widgets/layout-provider/layout-provider';
-import NotFound404 from './[rest...]/page';
 import './globals.css';
 
 const JetBrains = JetBrains_Mono({ subsets: ['latin'] });
@@ -28,10 +28,14 @@ export const metadata: Metadata = {
     },
 };
 
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     if (!hasLocale(routing.locales, locale)) {
-        return <NotFound404 />;
+        notFound();
     }
 
     return (
