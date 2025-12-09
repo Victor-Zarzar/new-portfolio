@@ -11,7 +11,7 @@ dev: install
 	bun run dev
 
 prod:
-	bun run start
+	bun run build
 
 build:
 	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) .
@@ -61,4 +61,3 @@ help:
 	@echo "  make logs             Show container logs"
 	@echo "  make shell            Access container shell"
 	@echo ""
-

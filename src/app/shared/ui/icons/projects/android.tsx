@@ -1,25 +1,35 @@
-import type { SvgIconProps } from '@/app/shared/types/main';
-import React from 'react';
+import type { SvgIconProps } from "@/app/shared/types/main";
+import React from "react";
 
 const AndroidIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
-    return (
-        <svg
-            width={size}
-            height={size}
-            viewBox="-3 0 48 48"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            className="hover:-translate-y-1"
-            {...props}
-        >
-            <title>Android-color</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
-            <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                <g id="Color-" transform="translate(-304.000000, -560.000000)" fill="#95CF00">
-                    <path
-                        d="M330.727009,569.600905 C329.935377,569.600905 329.294532,568.977195 329.294532,568.206729 C329.294532,567.436264 329.935377,566.815376 330.727009,566.815376 
+	return (
+		<svg
+			width={size}
+			height={size}
+			viewBox="-3 0 48 48"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlnsXlink="http://www.w3.org/1999/xlink"
+			className="hover:-translate-y-1"
+			{...props}
+		>
+			<title>Android-color</title>
+			<desc>Created with Sketch.</desc>
+			<defs></defs>
+			<g
+				id="Icons"
+				stroke="none"
+				strokeWidth="1"
+				fill="none"
+				fillRule="evenodd"
+			>
+				<g
+					id="Color-"
+					transform="translate(-304.000000, -560.000000)"
+					fill="#95CF00"
+				>
+					<path
+						d="M330.727009,569.600905 C329.935377,569.600905 329.294532,568.977195 329.294532,568.206729 C329.294532,567.436264 329.935377,566.815376 330.727009,566.815376 
                         C331.518641,566.815376 332.159486,567.436264 332.159486,568.206729 C332.159486,568.977195 331.518641,569.600905 330.727009,569.600905 L330.727009,569.600905 Z
                          M319.272991,569.600905 C318.481359,569.600905 317.840514,568.977195 317.840514,568.206729 C317.840514,567.436264 318.481359,566.815376 319.272991,566.815376 
                          C320.064623,566.815376 320.705468,567.436264 320.705468,568.206729 C320.705468,568.977195 320.064623,569.600905 319.272991,569.600905 L319.272991,569.600905 Z 
@@ -36,12 +46,12 @@ const AndroidIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
                               305.28169,592.669713 306.864954,592.669713 C308.445319,592.669713 309.727009,591.422293 309.727009,589.884184 L309.727009,577.960314 C309.727009,576.422205 308.445319,575.174785 306.864954,575.174785 
                               Z M343.137945,575.174785 C341.554681,575.174785 340.272991,576.422205 340.272991,577.960314 L340.272991,589.884184 C340.272991,591.422293 341.554681,592.669713 343.137945,592.669713 C344.71831,592.669713
                                346,591.422293 346,589.884184 L346,577.960314 C346,576.422205 344.71831,575.174785 343.137945,575.174785 Z"
-                        id="Android"
-                    ></path>
-                </g>
-            </g>
-        </svg>
-    );
+						id="Android"
+					></path>
+				</g>
+			</g>
+		</svg>
+	);
 };
 
 export default AndroidIcon;

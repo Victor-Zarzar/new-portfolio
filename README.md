@@ -44,8 +44,10 @@
 -   🌗 **Dark Mode** - Theme switching with Next Themes
 -   🌍 **i18n** - Multi-language support (EN / PT-BR / ES) via Next Intl
 -   📬 **Nodemailer** - Email functionality
+-   🧹 **Sanitize HTML** - XSS protection for user inputs
+-   ⏱️ **Rate Limiter Flexible** - API endpoint rate limiting and DDoS protection
 -   📈 **Vercel Analytics** - Performance monitoring
--   🔍 **Sentry** - Is an error tracking and performance monitoring tool
+-   🔍 **Sentry** - Error tracking and performance monitoring tool
 
 ---
 
@@ -76,21 +78,21 @@ cd new-portfolio
 
 ### 2. Environment Configuration
 
-Create a `.env` file in the project root:
+Copy the example environment file and configure your credentials:
 
-```env
-NODE_ENV=production # Runtime environment (usually "production") or development in dev mode
-SMTP_EMAIL=your-email@gmail.com # Email account used to send messages via SMTP
-SMTP_PASSWORD=your-app-password # App-specific password or token
-NEXT_PUBLIC_DISABLE_DEVTOOLS=true # Disables DevTools in production
-NEXT_PUBLIC_SENTRY_DSN=https://examplePublickey # Your Sentry DSN (Data Source Name)
-SENTRY_AUTH_TOKEN=example... # Sentry authentication token
-SENTRY_RELEASE=example... # Example my-website@1.0.0
-SENTRY_ORG=exameple... # Sentry Organization slug
-SENTRY_PROJECT=example... # Sentry Project name
+```bash
+cp .env-example .env
 ```
 
-> **Note:** For Gmail, you'll need to generate an [App Password](https://support.google.com/accounts/answer/185833).
+Then edit `.env` with your actual values. The `.env-example` file contains detailed comments explaining each variable and how to obtain the necessary credentials.
+
+**Key configurations needed:**
+
+- **SMTP**: Gmail account and [App Password](https://support.google.com/accounts/answer/185833)
+- **Sentry**: DSN and authentication token from your [Sentry project](https://sentry.io/)
+- **Website URL**: Your production domain or `http://localhost:3000` for development
+
+> **Important:** Never commit your `.env` file to version control. It's already in `.gitignore`.
 
 ### 3. Install Dependencies
 
@@ -195,13 +197,21 @@ make clean
 🛠️ Development
 </h2>
 
-### Code Linting
+### Code Linting & Formatting
 
-Run Biomejs to check for code issues:
+Check for code issues with Biomejs:
 
 ```bash
 bun biome check
 ```
+
+Format all files and apply linting fixes:
+
+```bash
+bunx biome format --write
+```
+
+This command will automatically format your code according to the project's style rules and fix any auto-fixable linting issues.
 
 ### Build for Production
 
@@ -222,7 +232,8 @@ new-portfolio/
 ├── lib/                 # Utility functions
 ├── public/              # Static assets
 ├── styles/              # Global styles
-├── .env                 # Environment variables
+├── .env-example         # Environment variables template
+├── .env                 # Environment variables (not in git)
 ├── Dockerfile           # Docker configuration
 ├── Makefile             # Build automation
 ├── next.config.js       # Next.js configuration
@@ -257,6 +268,8 @@ new-portfolio/
 ### Vercel (Recommended)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/new-portfolio)
+
+**Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings.
 
 ### Docker Production
 

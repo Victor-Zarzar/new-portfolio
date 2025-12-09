@@ -1,14 +1,14 @@
-import type { MetadataRoute } from 'next';
+import env from "@/env.mjs";
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://www.victorzarzar.com.br';
-
-    return {
-        rules: {
-            userAgent: '*',
-            allow: '/',
-            disallow: ['/api/', '/_next/'],
-        },
-        sitemap: `${baseUrl}/sitemap.xml`,
-    };
+	return {
+		rules: {
+			userAgent: "*",
+			allow: "/",
+			disallow: ["/api/", "/_next/"],
+		},
+		sitemap: `${env.NEXT_PUBLIC_WEBSITE_URL}/sitemap.xml`,
+		host: `${env.NEXT_PUBLIC_WEBSITE_URL}`,
+	};
 }

@@ -1,22 +1,30 @@
-import type { SvgIconProps } from '@/app/shared/types/main';
-import React from 'react';
+import type { SvgIconProps } from "@/app/shared/types/main";
+import React from "react";
 
 const StripeIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
-    return (
-        <svg
-            width={size}
-            height={size}
-            viewBox="0 -11 70 70"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="hover:-translate-y-1"
-            {...props}
-        >
-            <rect x="0.5" y="0.5" width="69" height="47" rx="5.5" fill="white" stroke="#D9D9D9" />
-            <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M37.6109 16.2838L34.055 17.047V14.164L37.6109 13.415V16.2838ZM45.0057 17.8808C43.6173 17.8808 42.7248 18.5308 42.229 
+	return (
+		<svg
+			width={size}
+			height={size}
+			viewBox="0 -11 70 70"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			className="hover:-translate-y-1"
+			{...props}
+		>
+			<rect
+				x="0.5"
+				y="0.5"
+				width="69"
+				height="47"
+				rx="5.5"
+				fill="white"
+				stroke="#D9D9D9"
+			/>
+			<path
+				fillRule="evenodd"
+				clipRule="evenodd"
+				d="M37.6109 16.2838L34.055 17.047V14.164L37.6109 13.415V16.2838ZM45.0057 17.8808C43.6173 17.8808 42.7248 18.5308 42.229 
                 18.9831L42.0448 18.1069H38.9281V34.5849L42.4698 33.8359L42.484 29.8365C42.994 30.2039 43.7448 30.7268 44.9915 30.7268C47.5273 
                 30.7268 49.8365 28.6918 49.8365 24.2119C49.8223 20.1136 47.4848 17.8808 45.0057 17.8808ZM44.1556 27.6177C43.3198 27.6177 42.8239 27.321
                 42.4839 26.9535L42.4698 21.7105C42.8381 21.3007 43.3481 21.0181 44.1556 21.0181C45.4448 21.0181 46.3373 22.4595 46.3373 24.3108C46.3373 
@@ -29,10 +37,10 @@ const StripeIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
                 20.9475 13.5842 21.1594 13.5842 21.7106C13.5842 22.3124 14.3644 22.5771 15.3323 22.9055C16.9102 23.4409 18.9871 24.1455 18.9959 26.7557C18.9959 29.2854 16.97 30.741 14.0234 30.741C12.805 30.741 11.4733 30.5007 10.1558
                 29.9355V26.572C11.3458 27.2221 12.8475 27.7026 14.0234 27.7026C14.8167 27.7026 15.3834 27.4906 15.3834 26.8405C15.3834 26.174 14.5376 25.8693 13.5166 25.5015C11.9616 24.9413 10 24.2346 10 21.8802C10 19.3788 11.9125
                 17.8808 14.7884 17.8808C15.9642 17.8808 17.1259 18.0645 18.3017 18.5309V21.8519C17.225 21.2725 15.865 20.9475 14.7884 20.9475Z"
-                fill="#6461FC"
-            />
-        </svg>
-    );
+				fill="#6461FC"
+			/>
+		</svg>
+	);
 };
 
 export default StripeIcon;

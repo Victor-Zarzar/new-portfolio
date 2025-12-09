@@ -1,14 +1,27 @@
-import type { SvgIconProps } from '@/app/shared/types/main';
-import React from 'react';
+import type { SvgIconProps } from "@/app/shared/types/main";
+import React from "react";
 
 const KibanaIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 256 328" className="hover:-translate-y-1" {...props}>
-            <path fill="#F04E98" d="M256 0H0v294.789z" />
-            <path fill="#343741" d="M0 122.88v171.91l122.194-140.71C85.862 134.277 44.288 122.88 0 122.88" />
-            <path fill="#00BFB3" d="M148.59 170.54L23.2 314.945l-11.069 12.738h238.736C237.77 263.13 200.302 207.496 148.59 170.54" />
-        </svg>
-    );
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={size}
+			height={size}
+			viewBox="0 0 256 328"
+			className="hover:-translate-y-1"
+			{...props}
+		>
+			<path fill="#F04E98" d="M256 0H0v294.789z" />
+			<path
+				fill="#343741"
+				d="M0 122.88v171.91l122.194-140.71C85.862 134.277 44.288 122.88 0 122.88"
+			/>
+			<path
+				fill="#00BFB3"
+				d="M148.59 170.54L23.2 314.945l-11.069 12.738h238.736C237.77 263.13 200.302 207.496 148.59 170.54"
+			/>
+		</svg>
+	);
 };
 
 export default KibanaIcon;

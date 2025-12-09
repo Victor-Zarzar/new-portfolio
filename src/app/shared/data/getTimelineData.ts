@@ -1,34 +1,37 @@
-import type { Experience, GetTimelineDataParams } from '@/app/shared/types/main';
+import type {
+	Experience,
+	GetTimelineDataParams,
+} from "@/app/shared/types/main";
 
 export function getTimelineData({ t }: GetTimelineDataParams): Experience[] {
-    return [
-        {
-            id: 1,
-            title: 'XLabs Security',
-            description: t('p2'),
-            local: t('p3'),
-            time: 'Mar 2023 - Dec 2025',
-        },
-        {
-            id: 2,
-            title: 'Freelance',
-            description: t('p5'),
-            local: t('p6'),
-            time: 'Dec 2022 - Feb 2023',
-        },
-        {
-            id: 3,
-            title: t('p7'),
-            description: t('p8'),
-            local: '',
-            time: '2024 - 2027',
-        },
-        {
-            id: 4,
-            title: t('p9'),
-            description: t('p10'),
-            local: '',
-            time: '2022 - 2024',
-        },
-    ];
+	return [
+		{
+			id: 1,
+			title: "XLabs Security",
+			description: t("p2"),
+			local: t("p3"),
+			time: "Mar 2023 - Dec 2025",
+		},
+		{
+			id: 2,
+			title: "Freelance",
+			description: t("p5"),
+			local: t("p6"),
+			time: "Dec 2022 - Feb 2023",
+		},
+		{
+			id: 3,
+			title: t("p7"),
+			description: t("p8"),
+			local: "",
+			time: "2024 - 2027",
+		},
+		{
+			id: 4,
+			title: t("p9"),
+			description: t("p10"),
+			local: "",
+			time: "2022 - 2024",
+		},
+	];
 }
