@@ -45,7 +45,6 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     ],
     id: 2,
   },
-
   {
     title: t("projecttitle5"),
     description: t("projectdescription5"),

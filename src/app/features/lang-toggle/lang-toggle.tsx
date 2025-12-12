@@ -13,12 +13,11 @@ import Image from "next/image";
 import { useTransition } from "react";
 
 export default function LangToggler() {
+  const t = useTranslations("Navbar");
+  const locale = useLocale();
 	const router = useRouter();
 	const [isPending, startTransition] = useTransition();
 	const pathname = usePathname();
-	const locale = useLocale();
-
-	const t = useTranslations("Navbar");
 
 	const en = "/en.svg";
 	const es = "/es.svg";

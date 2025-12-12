@@ -37,7 +37,7 @@ export default function ContactForm() {
 
 	const formSchema = z.object({
 		name: z.string().min(1, t("namerequired")),
-		email: z.string().email(t("invalidemail")),
+		email: z.email(t("invalidemail")),
 		subject: z.string().min(1, t("subjectrequired")),
 		message: z.string().min(1, t("messagerequired")),
 		company: z.string().optional(),

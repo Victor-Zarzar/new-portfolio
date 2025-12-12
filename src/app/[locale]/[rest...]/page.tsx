@@ -2,7 +2,7 @@
 
 import { Button } from "@/app/shared/ui/button";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Fade } from "react-awesome-reveal";
 
 export default function NotFound404() {

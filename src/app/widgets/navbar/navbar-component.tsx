@@ -3,7 +3,7 @@
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { type NavItem } from "@/app/shared/types/main";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 
@@ -18,23 +18,23 @@ export default function Navbar() {
     },
     {
       label: t("about"),
-      link: "about",
+      link: "/about",
     },
     {
       label: t("services"),
-      link: "services",
+      link: "/services",
     },
     {
       label: t("projects"),
-      link: "projects",
+      link: "/projects",
     },
     {
       label: t("articles"),
-      link: "articles",
+      link: "/articles",
     },
     {
       label: t("contact"),
-      link: "contact",
+      link: "/contact",
     },
   ];
 

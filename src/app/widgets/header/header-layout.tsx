@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Bounce } from "react-awesome-reveal";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiArrowDown } from "react-icons/hi";
+import { HiArrowCircleDown, HiArrowDown } from "react-icons/hi";
 
 export default function Header() {
 	const t = useTranslations("Header");
@@ -58,14 +58,16 @@ export default function Header() {
 								</p>
 							</Bounce>
 
-							<nav className="container-button mx-auto space-x-2 flex">
+							<nav className="container-button mx-auto mt-4 flex flex-col items-center gap-3 md:flex-row md:justify-start
+							  md:items-start max-w-fit">
 								<Link
 									href="https://github.com/Victor-Zarzar"
 									target="_blank"
 									rel="noreferrer"
+									className="w-40"
 								>
 									<Button
-										className="px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600 
+										className="w-full px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600
                         border-black dark:border-gray-400 cursor-pointer"
 										variant="outline"
 									>
@@ -76,9 +78,10 @@ export default function Header() {
 									href="https://www.linkedin.com/in/victorzarzar"
 									target="_blank"
 									rel="noreferrer"
+									className="w-40"
 								>
 									<Button
-										className="px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600 
+										className="w-full sm:w-auto px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600
                         border-black dark:border-gray-400 cursor-pointer"
 										variant="outline"
 									>
@@ -92,7 +95,7 @@ export default function Header() {
 			</header>
 
 			<div className="flex flex-row items-center text-center justify-center mt-0">
-				<HiArrowDown size={35} className="animate-bounce" />
+				<HiArrowCircleDown size={40} className="animate-bounce" />
 			</div>
 		</>
 	);

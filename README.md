@@ -16,7 +16,7 @@
 ---
 
 <h2 id="stack">
-🤖 Tech Stack
+  Tech Stack
 </h2>
 
 <p>
@@ -31,42 +31,42 @@
 
 ### Core Technologies
 
--   🟦 **TypeScript** - Type-safe development
--   ⚛️ **React 19** - Latest React features
--   🌐 **Next.js 16** - React framework with App Router
--   🎨 **Tailwind CSS v4** - Utility-first CSS framework
--   🐳 **Docker** - Containerized deployment
+- **TypeScript** - Type-safe development
+- **React 19** - Latest React features
+- **Next.js 16** - React framework with App Router
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **Docker** - Containerized deployment
 
 ### Features & Integrations
 
--   🛡️ **Zod & React Hook Form** - Form validation and management
--   🧩 **Shadcn UI** - Beautiful and accessible components
--   🌗 **Dark Mode** - Theme switching with Next Themes
--   🌍 **i18n** - Multi-language support (EN / PT-BR / ES) via Next Intl
--   📬 **Nodemailer** - Email functionality
--   🧹 **Sanitize HTML** - XSS protection for user inputs
--   ⏱️ **Rate Limiter Flexible** - API endpoint rate limiting and DDoS protection
--   📈 **Vercel Analytics** - Performance monitoring
--   🔍 **Sentry** - Error tracking and performance monitoring tool
+- **Zod & React Hook Form** - Form validation and management
+- **Shadcn UI** - Beautiful and accessible components
+- **Dark Mode** - Theme switching with Next Themes
+- **i18n** - Multi-language support (EN / PT-BR / ES) via Next Intl
+- **Nodemailer** - Email functionality
+- **Sanitize HTML** - XSS protection for user inputs
+- **Rate Limiter Flexible** - API endpoint rate limiting and DDoS protection
+- **Vercel Analytics** - Performance monitoring
+- **Sentry** - Error tracking and performance monitoring tool
 
 ---
 
 <h2 id="prerequisites">
-📋 Prerequisites
+  Prerequisites
 </h2>
 
 Before starting, ensure you have the following installed:
 
--   [Bun](https://bun.sh/docs) (v1 or higher) – primary runtime & package manager
--   [Docker](https://www.docker.com/) – optional, for containerized deployment
--   [Git](https://git-scm.com/)
+- [Bun](https://bun.sh/docs) (v1 or higher) – primary runtime & package manager
+- [Docker](https://www.docker.com/) – optional, for containerized deployment
+- [Git](https://git-scm.com/)
 
 > Optional: [Node.js](https://nodejs.org/) (v22 or higher), if you prefer running the app with Node or using Node-based global tooling.
 
 ---
 
 <h2 id="installation">
-⚙️ Installation & Setup
+  Installation & Setup
 </h2>
 
 ### 1. Clone the Repository
@@ -109,7 +109,7 @@ bun install
 ---
 
 <h2 id="usage">
-🚀 Usage
+  Usage
 </h2>
 
 ### Available Commands
@@ -175,7 +175,7 @@ make clean
 ---
 
 <h2 id="makefile-commands">
-📝 Makefile Commands Reference
+  Makefile Commands Reference
 </h2>
 
 | Command        | Description                              |
@@ -194,7 +194,7 @@ make clean
 ---
 
 <h2 id="development">
-🛠️ Development
+  Development
 </h2>
 
 ### Code Linting & Formatting
@@ -222,7 +222,7 @@ make prod
 ---
 
 <h2 id="project-structure">
-📁 Project Structure
+  Project Structure
 </h2>
 
 ```
@@ -244,7 +244,7 @@ new-portfolio/
 ---
 
 <h2 id="screenshots">
-📸 Screenshots
+  Screenshots
 </h2>
 
 <p align="center">
@@ -262,7 +262,7 @@ new-portfolio/
 ---
 
 <h2 id="deployment">
-🌐 Deployment
+   Deployment
 </h2>
 
 ### Vercel (Recommended)
@@ -281,7 +281,7 @@ docker run -d -p 3000:3000 --name new-portfolio-prod new-portfolio:production
 ---
 
 <h2 id="contributing">
-🤝 Contributing
+  Contributing
 </h2>
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -295,7 +295,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ---
 
 <h2 id="license">
-📄 License
+  License
 </h2>
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -303,7 +303,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <h2 id="contact">
-📧 Contact
+  Contact
 </h2>
 
 Victor Zarzar - [@Victor-Zarzar](https://github.com/Victor-Zarzar)
@@ -313,5 +313,5 @@ Project Link: [https://github.com/Victor-Zarzar/new-portfolio](https://github.co
 ---
 
 <p align="center">
-  Made with ❤️ by Victor Zarzar
+  Made with by Victor Zarzar
 </p>
