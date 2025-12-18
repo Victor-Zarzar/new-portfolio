@@ -22,7 +22,7 @@
 	},
 	"Header": {
 		"h1": "Bienvenido a mi portafolio,",
-		"span": "Soy desarrollador FullStack🖖🏻"
+		"span": "Soy Desarrollador de Software🖖🏻"
 	},
 	"Skills": {
 		"h1": "Habilidades",
@@ -62,7 +62,7 @@
 	"Experiences": {
 		"h1": "Experiencias Tecnología y Educación",
 		"p1": "Marzo de 2023 - Presente",
-		"p2": "Desarrolladora FullStack - Web y Flutter Mobile.",
+		"p2": "Desarrollador de Software - Web y Flutter Mobile.",
 		"p3": "São Leopoldo, RS, Brasil - Remoto",
 		"p4": "Diciembre 2022 - Marzo 2023",
 		"p5": "Probador de control de calidad: funcional, usabilidad, carga, localización, accesibilidad, regresión.",

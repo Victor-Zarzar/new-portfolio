@@ -59,12 +59,12 @@ export default function Header() {
 							</Bounce>
 
 							<nav className="container-button mx-auto mt-4 flex flex-col items-center gap-3 md:flex-row md:justify-start
-							  md:items-start max-w-fit">
+							  md:items-start max-w-96">
 								<Link
 									href="https://github.com/Victor-Zarzar"
 									target="_blank"
 									rel="noreferrer"
-									className="w-40"
+									className="w-32"
 								>
 									<Button
 										className="w-full px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600
@@ -78,7 +78,7 @@ export default function Header() {
 									href="https://www.linkedin.com/in/victorzarzar"
 									target="_blank"
 									rel="noreferrer"
-									className="w-40"
+									className="w-32"
 								>
 									<Button
 										className="w-full sm:w-auto px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600

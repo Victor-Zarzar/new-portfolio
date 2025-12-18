@@ -11,12 +11,16 @@ const JetBrains = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
-  title: "Victor Zarzar | Full Stack Developer",
+  title: "Victor Zarzar | Software Developer",
   description:
     "Portfólio profissional com projetos modernos e stacks atualizadas.",
-  keywords: ["full stack developer", "portfolio", "nextjs", "react"],
+    icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon.ico',
+      },
+  keywords: ["software developer", "portfolio", "nextjs", "react"],
   openGraph: {
-    title: "Victor Zarzar | Full Stack Developer",
+    title: "Victor Zarzar | Software Developer",
     description: "Projetos, experiência e contato.",
     url: env.NEXT_PUBLIC_WEBSITE_URL,
     siteName: "Victor Zarzar Portfolio",

@@ -22,7 +22,7 @@
 	},
 	"Header": {
 		"h1": "Bem-vindo ao meu portfólio,",
-		"span": "Sou Desenvolvedor FullStack🖖🏻"
+		"span": "Sou Desenvolvedor de Software🖖🏻"
 	},
 	"Skills": {
 		"h1": "Habilidades",
@@ -62,7 +62,7 @@
 	"Experiences": {
 		"h1": "Experiências Tech e Educação",
 		"p1": "Março de 2023 - Presente",
-		"p2": "Desenvolvedor FullStack - Web e Flutter Mobile.",
+		"p2": "Desenvolvedor de Software - Web e Flutter Mobile.",
 		"p3": "São Leopoldo, RS, Brasil - Remoto",
 		"p4": "Dezembro de 2022 - março de 2023",
 		"p5": "Testador QA - Funcional, Usabilidade, Carga, Localização, Acessibilidade, Regressão.",
