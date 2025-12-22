@@ -76,7 +76,13 @@ git clone https://github.com/Victor-Zarzar/new-portfolio
 cd new-portfolio
 ```
 
-### 2. Environment Configuration
+### 2. Open in your editor (example: Zed Editor)
+
+```bash
+zed .
+```
+
+### 3. Environment Configuration
 
 Copy the example environment file and configure your credentials:
 
@@ -94,7 +100,7 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 
 > **Important:** Never commit your `.env` file to version control. It's already in `.gitignore`.
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 make install
@@ -104,6 +110,18 @@ Or manually with bun:
 
 ```bash
 bun install
+```
+
+### 5. Run the automated tests (Isolated Docker container)
+
+```bash
+make test
+```
+
+Or manually with bun:
+
+```bash
+bun test
 ```
 
 ---
@@ -178,18 +196,19 @@ make clean
   Makefile Commands Reference
 </h2>
 
-| Command        | Description                              |
-| -------------- | ---------------------------------------- |
-| `make install` | Install dependencies using bun           |
-| `make dev`     | Run the app locally in development mode  |
-| `make prod`    | Run the app in production mode           |
-| `make build`   | Build the Docker image                   |
-| `make run`     | Build and run the Docker container       |
-| `make stop`    | Stop and remove the container            |
-| `make clean`   | Clean Docker environment and build files |
-| `make logs`    | Display container logs in real-time      |
-| `make shell`   | Access container shell (sh)              |
-| `make help`    | Show all available commands              |
+| Command        | Description                                         |
+| -------------- | --------------------------------------------------- |
+| `make install` | Install dependencies using bun                      |
+| `make dev`     | Run the app locally in development mode             |
+| `make prod`    | Run the app in production mode                      |
+| `make build`   | Build the Docker image                              |
+| `make run`     | Build and run the Docker container                  |
+| `make test`    | Run the automated tests (Isolated Docker container) |
+| `make stop`    | Stop and remove the container                       |
+| `make clean`   | Clean Docker environment and build files            |
+| `make logs`    | Display container logs in real-time                 |
+| `make shell`   | Access container shell (sh)                         |
+| `make help`    | Show all available commands                         |
 
 ---
 
@@ -232,11 +251,13 @@ new-portfolio/
 ├── lib/                 # Utility functions
 ├── public/              # Static assets
 ├── styles/              # Global styles
+├── tests/               # Automated tests
 ├── .env-example         # Environment variables template
 ├── .env                 # Environment variables (not in git)
 ├── Dockerfile           # Docker configuration
 ├── Makefile             # Build automation
 ├── next.config.js       # Next.js configuration
+├── bun.lock             # Bun package lock file
 ├── tailwind.config.ts   # Tailwind configuration
 └── tsconfig.json        # TypeScript configuration
 ```
@@ -248,7 +269,7 @@ new-portfolio/
 </h2>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/cab8f356-ae88-4d9f-bd90-dbc0c61e6265" width="1000" height="600" alt="Home Page">
+  <img src="https://github.com/user-attachments/assets/7e4f4cd9-8e49-4e57-8453-7a0bc8f7665b" width="1000" height="600" alt="Home Page">
 </p>
 
 <p align="center">

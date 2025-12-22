@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Bounce } from "react-awesome-reveal";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiArrowCircleDown, HiArrowDown } from "react-icons/hi";
+import { HiArrowCircleDown } from "react-icons/hi";
 
 export default function Header() {
 	const t = useTranslations("Header");
@@ -58,8 +58,7 @@ export default function Header() {
 								</p>
 							</Bounce>
 
-							<nav className="container-button mx-auto mt-4 flex flex-col items-center gap-3 md:flex-row md:justify-start
-							  md:items-start max-w-96">
+							<nav className="container-button mt-4 flex flex-col items-center gap-3 md:flex-row md:items-start md:justify-start">
 								<Link
 									href="https://github.com/Victor-Zarzar"
 									target="_blank"

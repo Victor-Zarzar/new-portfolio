@@ -41,6 +41,12 @@ logs:
 shell:
 	docker exec -it $(DOCKER_CONTAINER_NAME) sh
 
+test: build
+	docker run --rm \
+		--name $(DOCKER_CONTAINER_NAME)-test \
+		$(DOCKER_IMAGE_NAME):$(DOCKER_TAG) \
+		bun run test
+
 help:
 	@echo ""
 	@echo "New-Portfolio Makefile ($(DOCKER_TAG))"
@@ -57,6 +63,7 @@ help:
 	@echo "  make build            Build the Docker image"
 	@echo "  make run              Run the Docker container"
 	@echo "  make stop             Stop and remove the container"
+	@echo "  make test             Run the automated tests (Isolated Docker container)"
 	@echo "  make clean            Remove image and clean environment"
 	@echo "  make logs             Show container logs"
 	@echo "  make shell            Access container shell"
