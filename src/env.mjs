@@ -20,14 +20,18 @@ const env = createEnv({
       .string()
       .default("http://localhost:3000")
       .transform((url) => {
-        if (url.startsWith("http://localhost:3000")) return url;
+        if (url.startsWith("http://localhost:3000")) {
+          return url;
+        }
         return url.startsWith("http") ? url : `https://${url}`;
       }),
 
     NEXT_PUBLIC_DISABLE_DEVTOOLS: z
       .union([z.string(), z.boolean()])
       .transform((value) => {
-        if (typeof value === "boolean") return value;
+        if (typeof value === "boolean") {
+          return value;
+        }
         return value === "true";
       }),
 

@@ -1,11 +1,11 @@
 "use client";
 
+import { Terminal } from "lucide-react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Fade } from "react-awesome-reveal";
 import { getCoursesData } from "@/app/shared/data/getCoursesData";
 import { Card } from "@/app/shared/ui/card";
-import { Terminal } from "lucide-react";
-import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { Fade } from "react-awesome-reveal";
 
 export default function TerminalCourses() {
   const t = useTranslations("Courses");
@@ -42,13 +42,13 @@ export default function TerminalCourses() {
 
           <div className="px-4 py-3 text-sm md:text-base">
             <span className="text-neutral-800 dark:text-neutral-200 font-bold">
-             🧙‍♂️victorzarzar
+              🧙‍♂️victorzarzar
             </span>
-            <span className="text-green-700 dark:text-green-500">
-              @debian
-            </span>
+            <span className="text-green-700 dark:text-green-500">@debian</span>
             <span className="text-neutral-600 dark:text-neutral-400"> in </span>
-            <span className="text-blue-500 dark:text-blue-400">new-portfolio</span>
+            <span className="text-blue-500 dark:text-blue-400">
+              new-portfolio
+            </span>
             <span className="text-yellow-600 dark:text-yellow-400">
               {" "}
               v24.12.0

@@ -1,11 +1,11 @@
 "use client";
 
-import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
-import { type NavItem } from "@/app/shared/types/main";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
+import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
+import type { NavItem } from "@/app/shared/types/main";
+import { Link } from "@/i18n/navigation";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);

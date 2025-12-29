@@ -1,9 +1,9 @@
-import env from "@/env.mjs";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { RateLimiterMemory } from "rate-limiter-flexible";
 import sanitizeHtml from "sanitize-html";
 import { z } from "zod";
+import env from "@/env.mjs";
 
 const contactSchema = z.object({
   name: z.string().min(1).max(100),

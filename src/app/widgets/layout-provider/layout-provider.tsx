@@ -1,10 +1,11 @@
 "use client";
 
-import DevToolsGuard from "@/app/guard/disable-dev-tools";
-import { Toaster } from "@/app/shared/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "next-themes";
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
+import DevToolsGuard from "@/app/guard/disable-dev-tools";
+import { Toaster } from "@/app/shared/ui/sonner";
 import CookieConsentComponent from "../cookie-consent/cookie-consent";
 import Footer from "../footer/footer-component";
 import Navbar from "../navbar/navbar-component";

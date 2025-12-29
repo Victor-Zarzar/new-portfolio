@@ -1,6 +1,6 @@
+import * as React from "react";
 import { cn } from "@/app/shared/lib/utils";
 import { Badge } from "@/app/shared/ui/badge";
-import * as React from "react";
 
 const Timeline = React.forwardRef<
   HTMLDivElement,

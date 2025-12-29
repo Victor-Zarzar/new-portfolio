@@ -2,6 +2,7 @@ import type { GetProjectsParams, Project } from "@/app/shared/types/main";
 
 export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
   {
+    id: 1,
     title: t("projecttitle8"),
     description: t("projectdescription8"),
     photo: "/ctlxpj.png",
@@ -21,9 +22,9 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
       "androidstudio",
       "sentry",
     ],
-    id: 1,
   },
   {
+    id: 2,
     title: t("projecttitle7"),
     description: t("projectdescription7"),
     photo: "/pdf-reader.png",
@@ -43,9 +44,9 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
       "androidstudio",
       "sentry",
     ],
-    id: 2,
   },
   {
+    id: 7,
     title: t("projecttitle5"),
     description: t("projectdescription5"),
     photo: "/portfolio.png",
@@ -63,9 +64,9 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
       "docker",
       "sentry",
     ],
-    id: 7,
   },
   {
+    id: 4,
     title: t("projecttitle2"),
     description: t("projectdescription2"),
     photo: "/lawfirm.png",
@@ -75,9 +76,9 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     iosLink: "",
     webLink: "https://advocaciabaptista.vercel.app",
     techStack: ["html", "react", "typescript", "tailwind", "nextjs", "docker"],
-    id: 4,
   },
   {
+    id: 5,
     title: t("projecttitle3"),
     description: t("projectdescription3"),
     photo: "/task-track.png",
@@ -95,9 +96,9 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
       "docker-compose",
       "grafana",
     ],
-    id: 5,
   },
   {
+    id: 8,
     title: t("projecttitle6"),
     description: t("projectdescription6"),
     photo: "/expense-report.png",
@@ -107,9 +108,9 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     iosLink: "",
     webLink: "",
     techStack: ["python", "reportlab", "pandas"],
-    id: 8,
   },
   {
+    id: 3,
     title: t("projecttitle1"),
     description: t("projectdescription1"),
     photo: "/gasoline.png",
@@ -119,9 +120,9 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     iosLink: "https://apps.apple.com/us/app/YOUR_APP_ID",
     webLink: "",
     techStack: ["flutter", "dart", "android", "ios", "xcode", "androidstudio"],
-    id: 3,
   },
   {
+    id: 6,
     title: t("projecttitle4"),
     description: t("projectdescription4"),
     photo: "/agepet.png",
@@ -131,6 +132,5 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     iosLink: "https://apps.apple.com/us/app/YOUR_APP_ID",
     webLink: "",
     techStack: ["flutter", "dart", "android", "ios", "xcode", "androidstudio"],
-    id: 6,
   },
 ];

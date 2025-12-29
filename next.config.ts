@@ -1,7 +1,7 @@
-import env from "@/env.mjs";
 import { withSentryConfig } from "@sentry/nextjs";
-import { NextConfig } from "next";
+import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import env from "@/env.mjs";
 
 const nextConfig: NextConfig = {};
 

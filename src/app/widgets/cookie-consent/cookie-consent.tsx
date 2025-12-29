@@ -1,14 +1,14 @@
 "use client";
 
+import * as Sentry from "@sentry/nextjs";
+import { CookieIcon } from "lucide-react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import { cn } from "@/app/shared/lib/utils";
 import type { CookieConsentProps } from "@/app/shared/types/main";
 import { Button } from "@/app/shared/ui//button";
-import * as Sentry from "@sentry/nextjs";
-import { CookieIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
 
 export default function CookieConsentComponent({
   demo = false,
