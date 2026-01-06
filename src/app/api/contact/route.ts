@@ -25,6 +25,7 @@ export async function POST(request: Request) {
     "unknown";
 
   try {
+    await rateLimiter.consume(ip);
     const body = await request.json();
 
     if (body.company) {
@@ -32,7 +33,6 @@ export async function POST(request: Request) {
     }
 
     const { name, email, subject, message } = contactSchema.parse(body);
-    await rateLimiter.consume(ip);
 
     const sanitizedName = sanitizeHtml(name);
     const sanitizedEmail = sanitizeHtml(email);
@@ -64,12 +64,7 @@ export async function POST(request: Request) {
       { status: 200 },
     );
   } catch (error: unknown) {
-    if (
-      error &&
-      typeof error === "object" &&
-      "name" in error &&
-      error.name === "RateLimiterError"
-    ) {
+    if (error && typeof error === "object" && "msBeforeNext" in error) {
       return NextResponse.json(
         { message: "Too many requests. Please try again later." },
         { status: 429 },
