@@ -8,6 +8,8 @@ export const getArticlesData = ({ t }: GetArticlesParams): Articles[] =>
       description: t("articledescription1"),
       p: t("articlep1"),
       photo: "/article-1.png",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+      priority: true,
       webLink:
         "https://dev.to/victorzarzar/protecao-em-dispositivos-moveis-31ei",
       year: 2024,
@@ -18,6 +20,8 @@ export const getArticlesData = ({ t }: GetArticlesParams): Articles[] =>
       description: t("articledescription2"),
       p: t("articlep2"),
       photo: "/article-2.png",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+      priority: true,
       webLink:
         "https://dev.to/victorzarzar/autenticacao-cookies-http-http-only-jwt-localstorage-e-sessionstorage-4b73",
       year: 2024,
@@ -28,6 +32,8 @@ export const getArticlesData = ({ t }: GetArticlesParams): Articles[] =>
       description: t("articledescription3"),
       p: t("articlep3"),
       photo: "/article-4.png",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+      priority: true,
       webLink:
         "https://dev.to/victorzarzar/a-importancia-de-gerenciar-corretamente-variaveis-de-ambiente-env-4b5i",
       year: 2025,
@@ -38,6 +44,8 @@ export const getArticlesData = ({ t }: GetArticlesParams): Articles[] =>
       description: t("articledescription4"),
       p: t("articlep4"),
       photo: "/article-3.png",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+      priority: true,
       webLink:
         "https://dev.to/victorzarzar/-otimizando-imagens-docker-boas-praticas-para-builds-eficientes-5cj7",
       year: 2025,

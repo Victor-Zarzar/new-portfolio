@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { getArticlesData } from "@/app/shared/data/getArticlesData";
 import type { Articles } from "@/app/shared/types/main";
 import { Card, CardContent } from "@/app/shared/ui/card";
+import { Skeleton } from "@/app/shared/ui/skeleton";
 
 export default function Article() {
   const t = useTranslations("Articles");
@@ -47,6 +51,7 @@ function ArticleDescription({ description }: { description: string }) {
 
 function ActionCard({ article }: { article: Articles }) {
   const t = useTranslations("Articles");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <Card
@@ -55,24 +60,26 @@ function ActionCard({ article }: { article: Articles }) {
     >
       <CardContent className="p-4">
         <div className="relative aspect-video w-full overflow-hidden shrink-0">
+          {!isLoaded && (
+            <Skeleton className="w-full h-full absolute top-0 left-0 z-0" />
+          )}
           <Image
             src={article.photo}
             alt={article.title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover"
-            loading="lazy"
+            sizes={article.sizes}
+            priority={article.priority}
+            className={`object-cover ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            } transition-opacity duration-500`}
+            onLoad={() => setIsLoaded(true)}
           />
         </div>
-
         <p className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
           {t("year")}: {article.year}
         </p>
-
         <h4 className="mt-4 text-lg font-semibold">{article.title}</h4>
-
         <ArticleDescription description={article.description} />
-
         <div className="flex mt-4 justify-start items-center gap-3">
           <ActionLinks article={article} />
         </div>

@@ -48,6 +48,7 @@
 - **Sanitize HTML** - XSS protection for user inputs
 - **Rate Limiter Flexible** - API endpoint rate limiting and DDoS protection
 - **Vercel Analytics** - Performance monitoring
+- **Vercel Speed Insights** - Real-time performance metrics
 - **Sentry** - Error tracking and performance monitoring tool
 
 ---

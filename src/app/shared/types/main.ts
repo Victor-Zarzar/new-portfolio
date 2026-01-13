@@ -17,6 +17,8 @@ type Project = {
   title: string;
   description: string;
   photo: string;
+  priority: boolean;
+  sizes: string;
   sourceCodeLink: string;
   sourceLinkPrivacy: string;
   techStack: TechKey[];
@@ -29,6 +31,8 @@ type Articles = {
   p: string;
   webLink: string;
   photo: string;
+  priority: boolean;
+  sizes: string;
   year: number;
 };
 
@@ -120,6 +124,24 @@ type TechKey =
   | "swift"
   | "pandas";
 
+type ProfileLink = {
+  label: string;
+  href: string;
+  icon: "github" | "linkedin";
+};
+
+type ProfileData = {
+  name: string;
+  image: {
+    src: string;
+    alt: string;
+    quality: number;
+    priority: boolean;
+    sizes: string;
+  };
+  links: ProfileLink[];
+};
+
 export type {
   Articles,
   ContactFormData,
@@ -134,6 +156,8 @@ export type {
   Locale,
   NavItem,
   Project,
+  ProfileLink,
+  ProfileData,
   Services,
   SkillOutlineProps,
   SvgIconProps,

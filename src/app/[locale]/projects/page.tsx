@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import type { JSX } from "react";
+import { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { AiOutlineGithub, AiOutlineGlobal } from "react-icons/ai";
 import { FaAppStoreIos, FaGooglePlay } from "react-icons/fa";
@@ -33,6 +34,7 @@ import SwiftIcon from "@/app/shared/ui/icons/projects/swift";
 import TailwindIcon from "@/app/shared/ui/icons/projects/tailwindcss";
 import TypescriptIcon from "@/app/shared/ui/icons/projects/typescript";
 import XcodeIcon from "@/app/shared/ui/icons/projects/xcode";
+import { Skeleton } from "@/app/shared/ui/skeleton";
 
 const techIconMap: Record<TechKey, JSX.Element> = {
   flutter: <FlutterIcon />,
@@ -116,6 +118,8 @@ export default function Projects() {
 }
 
 function ProjectCard({ project }: { project: Project; index: number }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <Card
       className="max-w-2xl w-full mx-auto transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
@@ -123,13 +127,19 @@ function ProjectCard({ project }: { project: Project; index: number }) {
     >
       <CardContent className="p-6 flex flex-col flex-1">
         <div className="relative aspect-video w-full overflow-hidden shrink-0">
+          {!isLoaded && (
+            <Skeleton className="w-full h-full absolute top-0 left-0 z-0" />
+          )}
           <Image
             src={project.photo}
             alt={project.title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover"
-            loading="lazy"
+            sizes={project.sizes}
+            priority={project.priority}
+            className={`object-cover ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            } transition-opacity duration-500`}
+            onLoad={() => setIsLoaded(true)}
           />
         </div>
 

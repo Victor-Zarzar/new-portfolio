@@ -1,6 +1,7 @@
 "use client";
 
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "next-themes";
 import type React from "react";
 import { useEffect, useState } from "react";
@@ -39,6 +40,7 @@ export default function LayoutProvider({
         {children}
         <Toaster position="top-right" expand={true} />
         {hasConsented && <Analytics />}
+        <SpeedInsights />
         <CookieConsentComponent
           onAcceptCallback={handleAccept}
           onDeclineCallback={handleDecline}

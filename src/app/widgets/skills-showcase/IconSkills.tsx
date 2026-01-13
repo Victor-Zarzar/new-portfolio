@@ -12,6 +12,7 @@ import {
   SiFlutter,
   SiGit,
   SiGithub,
+  SiGithubactions,
   SiGitlab,
   SiGrafana,
   SiHtml5,
@@ -23,13 +24,13 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNginx,
-  SiOwasp,
   SiPortainer,
   SiPostman,
   SiPrisma,
   SiPython,
   SiSentry,
   SiShadcnui,
+  SiSqlalchemy,
   SiSqlite,
   SiSwagger,
   SiTailwindcss,
@@ -84,7 +85,7 @@ export const skills = [
   },
   {
     icon: SiNextdotjs,
-    text: "Next",
+    text: "NextJS",
   },
   {
     icon: SiVite,
@@ -167,8 +168,8 @@ export const skills = [
     text: "Vercel",
   },
   {
-    icon: FaAws,
-    text: "AWS",
+    icon: SiSqlalchemy,
+    text: "SQLAlchemy",
   },
 
   {
@@ -192,8 +193,8 @@ export const skills = [
     text: "Nginx",
   },
   {
-    icon: SiOwasp,
-    text: "OWASP",
+    icon: SiGithubactions,
+    text: "GitHub Actions",
   },
   {
     icon: SiMysql,
@@ -208,9 +209,9 @@ export const skills = [
 export default function SkillOutline({ Icon, text }: SkillOutlineProps) {
   return (
     <div
-      className="inline-flex items-center justify-center rounded-md text-[10px] sm:text-[10.5px] font-medium border 
+      className="inline-flex items-center justify-center rounded-md text-[10px] sm:text-[10.5px] font-medium border
             border-black dark:border-gray-400 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
-            dark:hover:shadow-stone-600 cursor-pointer hover:text-accent-foreground h-9 w-28 sm:w-36 
+            dark:hover:shadow-stone-600 cursor-pointer hover:text-accent-foreground h-9 w-28 sm:w-36
             px-1 sm:px-4 py-2 mr-2 hover:-translate-y-1"
     >
       <Icon className="h-3 w-3 mr-1 md:h-4 md:w-4" />

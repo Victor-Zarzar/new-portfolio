@@ -3,7 +3,11 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 import env from "@/env.mjs";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  images: {
+    qualities: [75, 90],
+  },
+};
 
 const withNextIntl = createNextIntlPlugin();
 
