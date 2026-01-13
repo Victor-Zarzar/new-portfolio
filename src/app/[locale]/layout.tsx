@@ -9,30 +9,91 @@ import "./globals.css";
 
 const JetBrains = JetBrains_Mono({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
-  title: "Victor Zarzar | Software Developer",
-  description:
-    "Portfólio profissional com projetos modernos e stacks atualizadas.",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+const translations: Record<
+  string,
+  { title: string; description: string; ogDescription: string }
+> = {
+  pt: {
+    title: "Victor Zarzar | Desenvolvedor de Software",
+    description:
+      "Desenvolvedor de Software com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuação em projetos web e mobile.",
+    ogDescription:
+      "Portfólio profissional com projetos modernos e tecnologias atualizadas.",
   },
-  keywords: ["software developer", "portfolio", "nextjs", "react"],
-  openGraph: {
+  en: {
     title: "Victor Zarzar | Software Developer",
-    description: "Projetos, experiência e contato.",
-    url: env.NEXT_PUBLIC_WEBSITE_URL,
-    siteName: "Victor Zarzar Portfolio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    description:
+      "Software Developer with experience in developing modern applications focused on front-end, SEO, accessibility, security, performance and best practices. Working on web and mobile projects.",
+    ogDescription:
+      "Professional portfolio with modern projects and updated technologies.",
+  },
+  es: {
+    title: "Victor Zarzar | Desarrollador de Software",
+    description:
+      "Desarrollador de Software con experiencia en el desarrollo de aplicaciones modernas enfocado en front-end, SEO, accesibilidad, seguridad, rendimiento y buenas prácticas. Actuación en proyectos web y mobile.",
+    ogDescription:
+      "Portafolio profesional con proyectos modernos y tecnologías actualizadas.",
   },
 };
+
+const ogLocaleMap: Record<string, string> = {
+  pt: "pt_BR",
+  en: "en_US",
+  es: "es_ES",
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const meta = translations[locale] || translations.en;
+
+  return {
+    metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.ogDescription,
+      url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}`,
+      siteName: "Victor Zarzar | Software Developer",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: ogLocaleMap[locale] ?? "en_US",
+      type: "website",
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        "pt-BR": "/pt",
+        "en-US": "/en",
+        "es-ES": "/es",
+      },
+    },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale: string) => ({ locale }));
@@ -52,9 +113,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body className={JetBrains.className}>
         <NextIntlClientProvider>
           <LayoutProvider>{children}</LayoutProvider>

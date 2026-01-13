@@ -50,4 +50,28 @@ export const getArticlesData = ({ t }: GetArticlesParams): Articles[] =>
         "https://dev.to/victorzarzar/-otimizando-imagens-docker-boas-praticas-para-builds-eficientes-5cj7",
       year: 2025,
     },
+    {
+      id: 5,
+      title: t("articletitle5"),
+      description: t("articledescription5"),
+      p: t("articlep5"),
+      photo: "/article-5.png",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+      priority: true,
+      webLink:
+        "https://dev.to/victorzarzar/-regra-de-seguranca-no-android-nativo-com-sharedpreferences-15m7",
+      year: 2025,
+    },
+    {
+      id: 6,
+      title: t("articletitle6"),
+      description: t("articledescription6"),
+      p: t("articlep6"),
+      photo: "/article-6.png",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+      priority: true,
+      webLink:
+        "https://dev.to/victorzarzar/certificados-tls-com-san-subject-alternative-name-e-suas-utilidades-em-aplicacoes-multidominio-i2j",
+      year: 2026,
+    },
   ].sort((a, b) => b.year - a.year);

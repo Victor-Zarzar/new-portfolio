@@ -193,9 +193,12 @@
     "articletitle4": "Otimizando Imagens Docker: Boas Práticas para Builds Eficientes",
     "articledescription4": "Técnicas práticas para reduzir o tamanho das imagens, melhorar caching e acelerar deploys.",
     "articlep4": "Inclui multi-stage builds, imagens base mínimas, otimização de cache e estratégias de limpeza.",
-    "year": "Ano"
-  },
-  "Spotify": {
-    "not-playing": "Nada tocando"
+    "year": "Ano",
+    "articletitle5": "Regra de segurança no Android nativo com SharedPreferences",
+    "articledescription5": "Um guia prático sobre como proteger dados sensíveis em aplicativos Android usando regras de backup personalizadas.",
+    "articlep5": "Aprenda a evitar restauração indevida de dados com Android Auto Backup e SharedPreferences.",
+    "articletitle6": "Certificados TLS com SAN (Subject Alternative Name) e suas utilidades em aplicações multidomínio",
+    "articledescription6": "Entenda como certificados SAN permitem proteger múltiplos domínios com um único certificado TLS/SSL.",
+    "articlep6": "Descubra as vantagens, casos de uso e considerações importantes ao utilizar Subject Alternative Name."
   }
 }

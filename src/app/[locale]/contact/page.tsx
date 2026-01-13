@@ -8,7 +8,7 @@ export default function Contact() {
   const t = useTranslations("Contact");
 
   return (
-    <section className="col-span-4 mx-auto p-6">
+    <section className="col-span-4 mx-auto p-6 md:min-h-screen">
       <Fade>
         <header className="text-center mt-20 md:mt-36">
           <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl">
