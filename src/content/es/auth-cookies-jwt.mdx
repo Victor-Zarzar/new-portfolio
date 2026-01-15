@@ -1,0 +1,97 @@
+---
+title: "Autenticación: Cookies HTTP, JWT, LocalStorage y SessionStorage"
+description: "Guía completa sobre métodos de autenticación web, incluyendo cookies HTTP, JWT, LocalStorage y SessionStorage, enfocándose en seguridad y mejores prácticas"
+year: "2024"
+date: "2024-07-20"
+photo: "/article-6.png"
+tags: ["authentication", "cookies", "jwt", "localStorage", "sessionStorage"]
+---
+
+## Autenticación: Cookies HTTP, HTTP Only, JWT, LocalStorage y SessionStorage
+
+### ¿Qué son las Cookies?
+
+Una cookie del navegador representa información de texto enviada por el servidor de una aplicación web y guardada en el navegador. De esta forma, un servidor puede, al recibir credenciales del usuario, generar un ID único "Token de acceso" y enviarlo a través de cookies.
+
+Las cookies se utilizan ampliamente para almacenar información en navegadores, pueden contener datos sensibles como su información de sesión, por eso debemos preocuparnos por su almacenamiento.
+
+Cada navegador almacena sus cookies de forma diferente, ya sea en una base de datos integrada, o en archivos de texto encriptados por el sistema operativo.
+
+### Cómo Visualizar Cookies
+
+Para visualizar las cookies de una aplicación que estamos accediendo, podemos usar las herramientas de desarrollador, utilizando la tecla **F12** o haciendo clic en **"inspeccionar"**, seleccione la pestaña **"Aplicación"** o **"Application"** y en el menú lateral, tendrá la parte de Cookies. Están separadas por dominio, donde su aplicación se aloja en el dominio X y envía una cookie de identificación de sesión.
+
+### Parámetros de las Cookies
+
+Las cookies poseen algunos parámetros importantes:
+
+**Expires**: Define la fecha y hora de expiración de la cookie. Si este parámetro no se define, se configurará por defecto como una cookie de sesión, expirando cuando se cierre el navegador.
+
+**Max-Age**: Similar a Expires, también define cuándo una cookie va a expirar, pero en segundos.
+
+**Domain**: Define para qué host será enviada la cookie por el navegador. Si este parámetro no se define, la cookie será enviada solo para el host de la URL actual, será enviada en las peticiones para example.com y todos sus subdominios.
+
+**Path**: Indica qué ruta debe existir en la URL para que la cookie sea enviada por el navegador. Si el valor es `/docs`, la cookie será enviada para URLs como `/docs`, `/docs/`, `/docs/web`, pero no será enviada para URLs como `/`, `/documentos`, `/es/docs`.
+
+**Secure**: Si este parámetro se define, la cookie solo será enviada en peticiones HTTPS.
+
+**HttpOnly**: Prohíbe el acceso a la cookie en cuestión a través de JavaScript con `document.cookie`. Se envían solo al servidor, ej: las cookies que persisten sesiones de servidor no necesitan estar disponibles para JavaScript, y por lo tanto la directiva HttpOnly debe ser configurada.
+
+**SameSite**: Con los posibles valores siendo Strict, Lax y None, controla si la cookie puede ser enviada en peticiones hechas desde otros sitios hacia el dominio de la cookie.
+
+- **Strict**: Solo se envían cookies para la dirección de la URL que está siendo accedida. Hace que la petición inicial a una aplicación no contenga las cookies con este parámetro, ya que están viniendo de otro dominio.
+
+- **Lax** (opción predeterminada): Similar a Strict, pero permite el envío de las cookies en la petición inicial. Esto permite que, por ejemplo, el usuario mantenga la sesión activa al llegar al sistema a través de un enlace externo.
+
+- **None**: Significa que las cookies serán enviadas incluso si la petición está viniendo de otra dirección. Para usar este método, las versiones más recientes de los navegadores exigen que el parámetro secure sea definido.
+
+### JWT (JSON Web Tokens)
+
+JWT es una estrategia de autenticación para APIs REST simple y segura. Se trata de un estándar abierto para autenticaciones web, y está totalmente basada en peticiones JSON entre el cliente y el servidor.
+
+El cliente hace una solicitud una única vez al enviar las credenciales de usuario y contraseña. El servidor valida las credenciales y, si todo está correcto, retorna al cliente un JSON con un token que codifica datos de un usuario conectado en el sistema, y después de recibir el token, el cliente puede almacenarlo de la forma que prefiera, ya sea por LocalStorage, SessionStorage, Cookies y HttpOnly.
+
+### LocalStorage
+
+Usan el localStorage para almacenar variables temporales. Los cambios solo están disponibles por ventana (o en navegadores como Chrome y Firefox). Los cambios realizados se guardan y se ponen a disposición de la página actual, así como futuras visitas al sitio en la misma ventana, después de que se cierra la ventana, el almacenamiento se elimina.
+
+Los datos están disponibles solo dentro de la ventana/pestaña en la cual fueron definidos, y los datos no persistentes se perderán cuando se cierre la ventana/pestaña. Como el localStorage funciona en la política del mismo origen, por lo tanto los datos almacenados solo estarán disponibles en el mismo origen.
+
+### SessionStorage
+
+Es similar al localStorage, la única diferencia es que mientras los datos almacenados en localStorage no expiran, los datos en sessionStorage tienen sus datos limpiados al expirar la sesión de la página.
+
+La sesión de la página dura mientras el navegador está abierto y se mantiene en la recarga de la página. Funciona en la política del mismo origen, por lo tanto los datos almacenados solo estarán disponibles en el mismo origen. Por último, los datos no serán enviados de vuelta al servidor para cada solicitud HTTP (HTML, imágenes, JavaScript, CSS, etc.), reduciendo la cantidad de tráfico entre el cliente y el servidor.
+
+### Vulnerabilidades del LocalStorage y SessionStorage
+
+Ambos métodos tienen problemas relacionados con la seguridad:
+
+- **Almacenamiento local XSS** - script entre sitios
+- **Cookies CSRF** - Falsificación de solicitud entre sitios
+- **Vulnerabilidad XSS** permitiendo que un atacante inyecte JavaScript en una aplicación
+- **Vulnerabilidad CSRF** permitiendo que un atacante ejecute acciones en un sitio a través de un usuario autenticado
+
+### Cómo Contrarrestar Vulnerabilidades
+
+Si el almacenamiento local puede ser explotado por scripts de terceros (como aquellos encontrados en las extensiones de navegadores) y si la autenticación puede ser falsificada con cookies, ¿dónde es aceptable colocar el estado del cliente?
+
+**Cifrado de Datos**: Cifre los datos sensibles antes de almacenarlos en localStorage o sessionStorage y descifre solo cuando sea necesario. Puede usar bibliotecas de cifrado confiables para hacer esto.
+
+**Validación de Entrada**: Siempre valide y sanitice (limpie) los datos antes de almacenarlos. Esto ayuda a evitar la inyección de código malicioso o datos corrompidos.
+
+**Lógica de Expiración**: Implemente una lógica de expiración para los datos almacenados, especialmente en localStorage. Defina plazos de validez para los datos y elimínelos automáticamente cuando expiren.
+
+**Mínimo Necesario**: Almacene solo la información estrictamente necesaria. No almacene datos sensibles o confidenciales en localStorage o sessionStorage, a menos que sea absolutamente necesario.
+
+**Utilice Cookies Seguras**: Si necesita funcionalidades de autenticación, considere el uso de cookies seguras (HTTPS) y HttpOnly. Esto ayuda a proteger las cookies contra acceso no autorizado por medio de scripts del lado del cliente.
+
+**Implemente un Modelo de Amenaza**: Considere todas las posibles amenazas a la seguridad al diseñar su sistema y aplique medidas de seguridad apropiadas. Esto puede incluir la restricción de acceso a ciertos datos, dependiendo del contexto y del usuario.
+
+**Gestión de Tokens**: Si está usando tokens de autenticación, como tokens JWT (JSON Web Tokens), siga las mejores prácticas de seguridad para gestionarlos. Esto incluye proteger los secretos del servidor y definir expiraciones apropiadas para los tokens.
+
+**Control de Acceso**: Implemente control de acceso adecuado en su aplicación para garantizar que solo usuarios autorizados tengan acceso a los datos almacenados en localStorage o sessionStorage.
+
+**Monitoreo y Auditoría**: Implemente registros y auditoría para rastrear quién accede y modifica los datos almacenados. Esto puede ayudar en la detección de actividades sospechosas.
+
+**Considerar Alternativas**: En algunos casos, puede ser más seguro almacenar datos sensibles en el lado del servidor y solo mantener referencias o tokens en el lado del cliente, reduciendo así la exposición de información confidencial.

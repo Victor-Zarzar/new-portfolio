@@ -5,7 +5,7 @@
     "about": "Sobre",
     "services": "Serviços",
     "projects": "Projetos",
-    "articles": "Artigos",
+    "blog": "Blog",
     "contact": "Contato",
     "language": "Linguagem",
     "english": "Inglês",
@@ -178,9 +178,10 @@
     "title": "Acesso negado",
     "p": "Você não tem permissão para acessar esta página."
   },
-  "Articles": {
+  "Blog": {
     "h1": "Artigos & Publicações",
     "h2": "Conteúdo técnico que escrevi recentemente",
+    "p": "Leia mais",
     "articletitle1": "Segurança em Dispositivos Móveis: Estratégias Práticas de Proteção",
     "articledescription1": "Um guia para proteger dispositivos móveis com técnicas reais e práticas de segurança.",
     "articlep1": "Abordo riscos, estratégias de mitigação e recomendações para fortalecer ambientes mobile.",

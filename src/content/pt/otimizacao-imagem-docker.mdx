@@ -1,0 +1,158 @@
+---
+title: "Otimizando Imagens Docker: Boas Práticas para Builds Eficientes"
+description: "Aprenda técnicas essenciais para reduzir o tamanho de imagens Docker e melhorar o desempenho de suas aplicações containerizadas"
+year: "2025"
+date: "2025-12-01"
+photo: "/article-3.png"
+tags: ["docker", "python", "javascript", "webdev"]
+---
+
+## O Impacto de Imagens Docker Ineficientes
+
+As imagens Docker são a base das aplicações containerizadas. No entanto, imagens grandes e ineficientes podem resultar em builds mais lentos, tempos maiores de implantação e aumento no uso de armazenamento. Otimizar imagens garante entregas mais rápidas, melhor desempenho e menor consumo de recursos.
+
+### Efeitos de Imagens Grandes na Implantação
+
+Imagens pesadas não apenas consomem mais espaço em disco, mas também aumentam o tempo de transferência na rede, o que é crítico em pipelines CI/CD e implantações em nuvem. Imagens eficientes tornam as operações mais ágeis e reduzem custos operacionais.
+
+## 1. Uso de Imagens Base Slim
+
+### Escolhendo Imagens Mínimas (Alpine, Variantes Slim)
+
+Comece com uma imagem base mínima ou "slim" para reduzir o excesso de pacotes. Por exemplo, em vez de usar `python:3.10`, considere `python:3.10-slim` ou `alpine`. Imagens mínimas removem pacotes e bibliotecas desnecessárias, resultando em imagens menores e mais seguras.
+
+### Reduzindo Dependências Desnecessárias
+
+Instale apenas os pacotes e bibliotecas indispensáveis para sua aplicação. Evite incluir ferramentas de build ou arquivos de documentação na imagem final de runtime.
+
+### Equilibrando Tamanho e Funcionalidade
+
+Embora imagens slim sejam pequenas, algumas aplicações podem exigir bibliotecas específicas. Escolha uma imagem base que equilibre tamanho reduzido e funcionalidade necessária, evitando erros em tempo de execução.
+
+## 2. Multi-Stage Builds
+
+### O Que São Multi-Stage Builds
+
+Multi-stage builds permitem separar o ambiente de build do ambiente de runtime. Essa técnica possibilita incluir ferramentas de compilação em uma etapa e copiar apenas os artefatos finais para a imagem final, reduzindo drasticamente o tamanho.
+
+### Separando Ambientes de Build e Runtime
+
+No multi-stage:
+
+- **Stage 1**: compila ou constrói a aplicação com todas as dependências necessárias
+- **Stage 2**: copia apenas o resultado final para uma imagem base menor, descartando ferramentas de build e arquivos intermediários
+
+### Exemplo prático (Node.js + pnpm)
+
+```dockerfile
+FROM node:22-alpine AS base
+
+WORKDIR /app
+
+COPY package*.json pnpm-lock.yaml* ./
+
+RUN npm install -g pnpm \
+    && pnpm install --frozen-lockfile
+
+EXPOSE 3000
+
+CMD ["pnpm", "run", "dev"]
+```
+
+Este modelo reduz bastante o tamanho final, eliminando ferramentas de build e reaproveitando cache de dependências via pnpm.
+
+### Exemplo com Python Slim
+
+```dockerfile
+FROM python:3.12-slim
+
+ENV PYTHONPATH=/app
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+COPY alembic.ini .
+
+COPY ./entrypoint.sh .
+
+COPY . .
+
+EXPOSE 8000
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+```
+
+A imagem final permanece extremamente pequena, contendo apenas o runtime necessário.
+
+## 3. Como as Camadas Docker Afetam o Tamanho da Imagem
+
+Cada instrução no Dockerfile (`RUN`, `COPY`, `ADD`) cria uma camada. Apesar do cache, muitas camadas pequenas podem aumentar o tamanho total da imagem.
+
+Uma forma de otimizar é combinar comandos relacionados em um único `RUN`:
+
+```dockerfile
+RUN apt-get update && \
+    apt-get install -y curl git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+```
+
+Isso gera uma única camada, mantendo a imagem menor.
+
+Além disso, sempre remova caches e arquivos temporários dentro do mesmo comando `RUN`. Caso contrário, eles permanecem nas camadas anteriores e aumentam o tamanho final.
+
+## 4. Otimização com .dockerignore
+
+O arquivo `.dockerignore` impede que arquivos desnecessários sejam enviados ao contexto de build.
+
+Exemplo básico:
+
+```
+node_modules
+.next
+.tests
+__pycache__
+__pytest__
+builds/
+venv
+logs
+```
+
+Isso reduz drasticamente o contexto enviado para o Docker, acelerando o build e evitando camadas desnecessárias.
+
+## 5. Cache de Forma Eficiente
+
+Podemos aproveitar o cache do Docker copiando primeiro os arquivos de dependências:
+
+### Para Node:
+
+```dockerfile
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
+```
+
+### Para Python:
+
+```dockerfile
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+```
+
+As dependências só serão reprocessadas quando realmente mudarem.
+
+## 6. Boas Práticas Gerais
+
+- Use tags como `DOCKER_TAG=1.0.0` ou `IMAGE_VERSION=1.0.0` para rastrear versões e evitar confusão entre builds
+- Faça auditorias periódicas com `docker image ls` e remova imagens antigas
+- Integre otimizações no pipeline CI/CD para garantir builds consistentes, menores e mais rápidos
+- Evite ferramentas de teste e documentação na imagem final de produção
+- Prefira imagens minimalistas sempre que possível
+
+## Conclusão
+
+Adotar essas boas práticas eleva o desempenho das aplicações, reduz custos operacionais e garante imagens compactas e eficientes para ambientes modernos e escaláveis. Multi-stage builds, uso de imagens slim, limpeza de camadas e `.dockerignore` são pilares essenciais para criar imagens com alta performance e fácil manutenção.

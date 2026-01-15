@@ -7,10 +7,11 @@
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
+  <img src="https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white" alt="MDX">
 </p>
 
 <p align="center">
-  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, and containerized deployment.
+  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, MDX blog, and containerized deployment.
 </p>
 
 ---
@@ -36,10 +37,12 @@
 - **React 19** - Latest React features
 - **Next.js 16** - React framework with App Router
 - **Tailwind CSS v4** - Utility-first CSS framework
-- **Docker** - Containerized deployment
+- **MDX** - Markdown with JSX for rich blog content
+- **Docker** - Optional containerized deployment
 
 ### Features & Integrations
 
+- **MDX Blog** - Write articles using Markdown with React components
 - **Zod & React Hook Form** - Form validation and management
 - **Shadcn UI** - Beautiful and accessible components
 - **Dark Mode** - Theme switching with Next Themes
@@ -60,7 +63,7 @@
 Before starting, ensure you have the following installed:
 
 - [Bun](https://bun.sh/docs) (v1 or higher) – primary runtime & package manager
-- [Docker](https://www.docker.com/) – optional, for containerized deployment
+- [Docker](https://www.docker.com/) – optional, for local containerized development
 - [Git](https://git-scm.com/)
 
 > Optional: [Node.js](https://nodejs.org/) (v22 or higher), if you prefer running the app with Node or using Node-based global tooling.
@@ -125,6 +128,60 @@ Or manually with bun:
 ```bash
 bun test
 ```
+
+---
+
+<h2 id="blog-architecture">
+  Blog Architecture
+</h2>
+
+The portfolio includes a multilingual blog system powered by MDX, allowing you to write rich content with embedded React components.
+
+### Content Structure
+
+```
+content/
+├── en/               # English articles
+│   ├── example.mdx
+│   └── another-post.mdx
+├── pt/               # Portuguese articles
+│   ├── exemplo.mdx
+│   └── outro-post.mdx
+└── es/               # Spanish articles
+    ├── ejemplo.mdx
+    └── otra-publicacion.mdx
+```
+
+### Creating Blog Posts
+
+Each MDX file should include frontmatter metadata at the top:
+
+```mdx
+---
+title: "Security Rule in Native Android with SharedPreferences"
+description: "How to control Android's automatic backup and protect sensitive data in SharedPreferences"
+year: "2025"
+date: "2025-12-16"
+photo: "/article-android-security.png"
+tags: ["android", "mobile", "security"]
+---
+
+# Your Article Content
+
+Write your content here using Markdown syntax.
+
+You can also use React components directly in your MDX files!
+```
+
+### Multilingual Support
+
+Create the same article in different languages by placing corresponding `.mdx` files in each language folder:
+
+- `content/en/my-article.mdx` - English version
+- `content/pt/my-article.mdx` - Portuguese version
+- `content/es/my-article.mdx` - Spanish version
+
+The blog automatically serves the correct language version based on the user's locale preference.
 
 ---
 
@@ -250,6 +307,10 @@ make prod
 new-portfolio/
 ├── app/                 # Next.js App Router
 ├── components/          # React components
+├── content/             # MDX blog articles
+│   ├── en/             # English articles
+│   ├── pt/             # Portuguese articles
+│   └── es/             # Spanish articles
 ├── lib/                 # Utility functions
 ├── public/              # Static assets
 ├── styles/              # Global styles
@@ -288,13 +349,17 @@ new-portfolio/
    Deployment
 </h2>
 
-### Vercel (Recommended)
+### Vercel (Recommended - Production)
+
+The application is deployed on Vercel for production use.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/new-portfolio)
 
 **Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings.
 
-### Docker Production
+### Docker (Optional - Local Development)
+
+Docker is available as an optional tool for local containerized development:
 
 ```bash
 docker build -t new-portfolio:production .

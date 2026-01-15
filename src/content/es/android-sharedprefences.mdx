@@ -1,0 +1,69 @@
+---
+title: "Regla de seguridad en Android nativo con SharedPreferences"
+description: "Cómo controlar la copia de seguridad automática de Android y proteger datos sensibles en SharedPreferences"
+year: "2025"
+date: "2025-12-16"
+photo: "/article-2.png"
+tags: ["android", "mobile", "security"]
+---
+
+## El problema del Auto Backup
+
+Cuando instalamos una aplicación Flutter en Android, SharedPreferences se utiliza como base de persistencia de datos. Sin embargo, existe un comportamiento que puede generar riesgos de seguridad: por defecto, determinados datos guardados en la app pueden ser restaurados automáticamente después de la reinstalación, incluso después de que el usuario limpie la caché o elimine completamente la aplicación.
+
+Este comportamiento ocurre debido al **Android Auto Backup**, que puede restaurar datos de la aplicación desde la cuenta de Google del usuario.
+
+### Ejemplo práctico
+
+La información previamente guardada permanece disponible después de la reinstalación de la aplicación, lo que puede ser problemático cuando manejamos datos sensibles como tokens de autenticación, identificadores únicos del dispositivo o credenciales.
+
+## Cómo solucionarlo
+
+Un enfoque simple y eficaz es controlar explícitamente qué archivos de SharedPreferences pueden o no participar en el proceso de copia de seguridad.
+
+### 1. Creando la regla de backup
+
+En el proyecto Android, navega hasta la siguiente ruta:
+
+```
+android/app/src/main/res
+```
+
+Dentro de `res`, crea una carpeta llamada `xml` y, dentro de ella, el archivo `backup_rules.xml`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="sharedpref" path="." />
+    <exclude domain="sharedpref" path="device.xml" />
+</full-backup-content>
+```
+
+En este ejemplo:
+
+- Todos los archivos de `SharedPreferences` se incluyen en la copia de seguridad
+- El archivo `device.xml` se excluye explícitamente, evitando que datos sensibles sean restaurados después de la reinstalación de la app
+
+### 2. Aplicando la regla en AndroidManifest
+
+A continuación, es necesario informar a Android que la aplicación debe usar esta regla personalizada. En el archivo `AndroidManifest.xml`, ajusta la etiqueta `<application>`:
+
+```xml
+<application
+    android:label="Android APP"
+    android:name="${applicationName}"
+    android:icon="@mipmap/ic_launcher"
+    android:allowBackup="true"
+    android:fullBackupContent="@xml/backup_rules">
+</application>
+```
+
+## Conclusión
+
+Al definir reglas explícitas de copia de seguridad, consigues:
+
+- Evitar la restauración indebida de datos sensibles
+- Aumentar el nivel de seguridad de la aplicación
+- Garantizar mayor control sobre el ciclo de vida de la información del usuario
+
+Esta práctica es altamente recomendada, especialmente en aplicaciones que manejan autenticación, tokens o identificadores únicos del dispositivo.

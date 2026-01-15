@@ -24,16 +24,17 @@ type Project = {
   techStack: TechKey[];
 };
 
-type Articles = {
-  id: number;
+type PostMetadata = {
   title: string;
   description: string;
-  p: string;
-  webLink: string;
+  year: string;
+  date: string;
   photo: string;
-  priority: boolean;
+  slug: string;
   sizes: string;
-  year: number;
+  content: string;
+  priority: boolean;
+  tags?: string[];
 };
 
 type NavItem = {
@@ -84,10 +85,6 @@ type GetServicesDataParams = {
 };
 
 type GetCourseDataParams = {
-  t: (key: string) => string;
-};
-
-type GetArticlesParams = {
   t: (key: string) => string;
 };
 
@@ -142,13 +139,48 @@ type ProfileData = {
   links: ProfileLink[];
 };
 
+type MdxHeadingProps = React.ComponentPropsWithoutRef<"h1">;
+type MdxParagraphProps = React.ComponentPropsWithoutRef<"p">;
+type MdxUlProps = React.ComponentPropsWithoutRef<"ul">;
+type MdxOlProps = React.ComponentPropsWithoutRef<"ol">;
+type MdxLiProps = React.ComponentPropsWithoutRef<"li">;
+type MdxAnchorProps = React.ComponentPropsWithoutRef<"a">;
+type MdxCodeProps = React.ComponentPropsWithoutRef<"code">;
+type MdxPreProps = React.ComponentPropsWithoutRef<"pre">;
+type MdxImgProps = React.ComponentPropsWithoutRef<"img">;
+
+type PageParams = {
+  locale: string;
+  slug: string;
+};
+
+type PageProps = {
+  params: Promise<PageParams>;
+};
+
+type BlogListProps = {
+  posts: PostMetadata[];
+  locale: string;
+};
+
 export type {
-  Articles,
+  BlogListProps,
+  MdxHeadingProps,
+  MdxParagraphProps,
+  MdxUlProps,
+  MdxOlProps,
+  MdxLiProps,
+  MdxAnchorProps,
+  MdxCodeProps,
+  MdxPreProps,
+  MdxImgProps,
+  PostMetadata,
   ContactFormData,
   CookieConsentProps,
   CoursesType,
   Experience,
-  GetArticlesParams,
+  PageParams,
+  PageProps,
   GetCourseDataParams,
   GetProjectsParams,
   GetServicesDataParams,

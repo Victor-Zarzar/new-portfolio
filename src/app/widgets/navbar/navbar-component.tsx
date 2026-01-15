@@ -29,8 +29,8 @@ export default function Navbar() {
       link: "/projects",
     },
     {
-      label: t("articles"),
-      link: "/articles",
+      label: t("blog"),
+      link: "/blog",
     },
     {
       label: t("contact"),

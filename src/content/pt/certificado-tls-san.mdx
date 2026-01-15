@@ -1,0 +1,132 @@
+---
+title: "Certificados TLS SAN"
+description: "Como o Subject Alternative Name (SAN) funciona em certificados TLS multidomínio."
+year: "2026"
+date: "2026-01-13"
+photo: "/article-1.png"
+tags: ["devops", "security", "webdev", "ssl"]
+---
+
+# Certificados TLS com SAN (Subject Alternative Name) e Suas Utilidades em Aplicações Multidomínio
+
+Ao solicitar ou emitir um certificado TLS/SSL atualmente, existe um campo obrigatório e fundamental chamado **Subject Alternative Name (SAN)** — Nome Alternativo do Sujeito.
+
+Na prática, o SAN define quais nomes de host, domínios ou endereços IP aquele certificado é autorizado a proteger. Desde a descontinuação do uso exclusivo do Common Name (CN) pelos navegadores modernos, o SAN passou a ser o **único mecanismo válido** para validação de domínio em certificados TLS.
+
+É justamente esse campo que viabiliza os chamados **certificados multidomínio**, permitindo que um único certificado proteja múltiplos domínios e subdomínios, inclusive domínios completamente distintos entre si.
+
+---
+
+## O Que Pode Ser Incluído em um SAN?
+
+Um certificado com SAN pode conter, por exemplo:
+
+- Domínios completos (`example.com`, `www.example.com`)
+- Subdomínios (`api.example.com`, `admin.example.com`)
+- Domínios diferentes no mesmo certificado (`example.com`, `example.net`)
+- Wildcards (`*.example.com`)
+- Endereços IP (menos comum, mas possível em ambientes internos)
+
+Isso torna o SAN extremamente útil em arquiteturas modernas, especialmente em ambientes com:
+
+- Reverse proxy
+- Containers
+- Cloud
+- Multi-tenant
+- Microserviços
+
+---
+
+## Principais Formas de Uso do Subject Alternative Name (SAN)
+
+### 1. Proteger Múltiplos Domínios Base com um Único Certificado
+
+Um erro comum é assumir que um certificado wildcard resolve todos os cenários. Na realidade:
+
+- `*.example.com` protege apenas subdomínios de primeiro nível
+- Ele **não cobre**:
+  - `example.com` (domínio raiz)
+  - Domínios diferentes como `example.net`
+
+Com um certificado SAN, você pode combinar tudo isso em um único artefato:
+
+- `example.com`
+- `www.example.com`
+- `api.example.com`
+- `example.net`
+- `www.example.net`
+
+Isso é extremamente útil para:
+
+- Aplicações white-label
+- Ambientes multi-tenant
+- Sistemas que atendem múltiplos clientes com domínios próprios
+
+---
+
+### 2. Hospedar Múltiplos Sites HTTPS no Mesmo IP (Virtual Hosts)
+
+Antes do SNI (Server Name Indication), cada site HTTPS exigia um IP exclusivo. Hoje, com SNI + certificados SAN:
+
+- É possível hospedar vários sites HTTPS no mesmo endereço IP
+- Um único servidor pode servir múltiplos domínios com segurança
+
+Servidores como Apache, Nginx e IIS lidam muito bem com certificados SAN, especialmente quando combinados com SNI.
+
+Esse cenário é comum em:
+
+- Servidores compartilhados
+- Ambientes cloud com IPs limitados
+- Gateways de entrada (Ingress, Load Balancers)
+
+---
+
+### 3. Simplificação Real da Gestão de TLS/SSL
+
+Menos certificados significa:
+
+- Menos renovações manuais ou automáticas
+- Menos risco de expiração inesperada
+- Menos configurações duplicadas
+- Menos erros operacionais
+
+Em vez de:
+
+- Vários IPs
+- Vários certificados
+- Várias cadeias TLS diferentes
+
+Você centraliza tudo em um único certificado SAN, mantendo a configuração mais limpa, previsível e fácil de automatizar (especialmente com ACME / Let's Encrypt).
+
+---
+
+## Observações Importantes (Pontos Críticos)
+
+- **Limite de SANs:** Autoridades certificadoras impõem limites (ex.: 100 SANs por certificado).
+- **Renovação impacta todos os domínios:** Se um domínio falhar na validação, a emissão inteira pode falhar.
+- **Revogação é global:** Se o certificado for comprometido, todos os domínios protegidos por ele são afetados.
+- **Nem sempre é a melhor escolha:** Em ambientes muito grandes, pode ser mais seguro separar certificados por contexto ou aplicação.
+
+---
+
+## Quando um Certificado SAN Faz Mais Sentido?
+
+Use SAN quando você tem:
+
+- Infraestrutura compartilhada
+- Vários domínios sob o mesmo controle
+- Reverse proxies ou API gateways
+- Aplicações SaaS ou multi-tenant
+- Forte automação de certificados
+
+Evite SAN quando:
+
+- Os domínios pertencem a donos diferentes
+- Você precisa de isolamento forte por aplicação
+- Existe risco operacional em falhas de renovação
+
+---
+
+## Conclusão
+
+O SAN (Subject Alternative Name) não é apenas um detalhe técnico, mas um elemento central na arquitetura TLS moderna. Ele permite reduzir complexidade, custos operacionais e pontos de falha, ao mesmo tempo em que se adapta perfeitamente a cenários de cloud, containers e aplicações distribuídas.

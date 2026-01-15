@@ -5,7 +5,7 @@
     "about": "About",
     "services": "Services",
     "projects": "Projects",
-    "articles": "Articles",
+    "blog": "Blog",
     "contact": "Contact",
     "language": "Language",
     "english": "English",
@@ -175,9 +175,10 @@
     "title": "Access denied",
     "p": "You don't have permission to access this page."
   },
-  "Articles": {
+  "Blog": {
     "h1": "Articles & Publications",
     "h2": "Technical content I've written recently",
+    "p": "Read more",
     "articletitle1": "Mobile Device Security: Practical Protection Strategies",
     "articledescription1": "A guide to protecting mobile devices with real-world techniques and secure practices.",
     "articlep1": "Covers risks, mitigation strategies, and recommendations for hardening mobile environments.",

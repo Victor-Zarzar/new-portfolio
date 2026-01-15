@@ -1,0 +1,69 @@
+---
+title: "Security Rule in Native Android with SharedPreferences"
+description: "How to control Android's automatic backup and protect sensitive data in SharedPreferences"
+year: "2025"
+date: "2025-12-16"
+photo: "/article-2.png"
+tags: ["android", "mobile", "security"]
+---
+
+## The Auto Backup Problem
+
+When we install a Flutter application on Android, SharedPreferences is used as the data persistence foundation. However, there's a behavior that can create security risks: by default, certain data saved in the app can be automatically restored after reinstallation, even after the user clears the cache or completely removes the application.
+
+This behavior occurs due to **Android Auto Backup**, which can restore application data from the user's Google account.
+
+### Practical Example
+
+Previously saved information remains available after app reinstallation, which can be problematic when dealing with sensitive data such as authentication tokens, unique device identifiers, or credentials.
+
+## How to Solve It
+
+A simple and effective approach is to explicitly control which SharedPreferences files can or cannot participate in the backup process.
+
+### 1. Creating the Backup Rule
+
+In your Android project, navigate to the following path:
+
+```
+android/app/src/main/res
+```
+
+Inside `res`, create a folder called `xml` and, within it, the file `backup_rules.xml`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="sharedpref" path="." />
+    <exclude domain="sharedpref" path="device.xml" />
+</full-backup-content>
+```
+
+In this example:
+
+- All `SharedPreferences` files are included in the backup
+- The `device.xml` file is explicitly excluded, preventing sensitive data from being restored after app reinstallation
+
+### 2. Applying the Rule in AndroidManifest
+
+Next, you need to inform Android that the application should use this custom rule. In the `AndroidManifest.xml` file, adjust the `<application>` tag:
+
+```xml
+<application
+    android:label="Android APP"
+    android:name="${applicationName}"
+    android:icon="@mipmap/ic_launcher"
+    android:allowBackup="true"
+    android:fullBackupContent="@xml/backup_rules">
+</application>
+```
+
+## Conclusion
+
+By defining explicit backup rules, you:
+
+- Prevent improper restoration of sensitive data
+- Increase the application's security level
+- Ensure greater control over the user information lifecycle
+
+This practice is highly recommended, especially in applications that handle authentication, tokens, or unique device identifiers.

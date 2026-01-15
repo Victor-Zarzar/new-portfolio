@@ -1,0 +1,97 @@
+---
+title: "Authentication: HTTP Cookies, JWT, LocalStorage and SessionStorage"
+description: "Complete guide on web authentication methods, including HTTP cookies, JWT, LocalStorage and SessionStorage, focusing on security and best practices"
+year: "2024"
+date: "2024-07-20"
+photo: "/article-6.png"
+tags: ["authentication", "cookies", "jwt", "localStorage", "sessionStorage"]
+---
+
+## Authentication: HTTP Cookies, HTTP Only, JWT, LocalStorage and SessionStorage
+
+### What are Cookies?
+
+A browser cookie represents text information sent by a web application server and saved in the browser. This way, a server can, upon receiving user credentials, generate a unique "Access Token" ID and send it through cookies.
+
+Cookies are widely used to store information in browsers and can contain sensitive data such as your session information, which is why we should be concerned about their storage.
+
+Each browser stores its cookies differently, either in an embedded database or in text files encrypted by the operating system.
+
+### How to View Cookies
+
+To view cookies from an application we're accessing, we can use developer tools by pressing **F12** or clicking **"inspect"**, select the **"Application"** tab and in the side menu, you'll find the Cookies section. They are separated by domain, where your application hosts on domain X and sends a session identification cookie.
+
+### Cookie Parameters
+
+Cookies have some important parameters:
+
+**Expires**: Defines the cookie's expiration date and time. If this parameter is not defined, it will be configured by default as a session cookie, expiring when the browser is closed.
+
+**Max-Age**: Similar to Expires, it also defines when a cookie will expire, but in seconds.
+
+**Domain**: Defines to which host the cookie will be sent by the browser. If this parameter is not defined, the cookie will be sent only to the current URL's host, it will be sent in requests to example.com and all its subdomains.
+
+**Path**: Indicates which path must exist in the URL for the cookie to be sent by the browser. If the value is `/docs`, the cookie will be sent for URLs like `/docs`, `/docs/`, `/docs/web`, but will not be sent for URLs like `/`, `/documents`, `/en-us/docs`.
+
+**Secure**: If this parameter is set, the cookie will only be sent in HTTPS requests.
+
+**HttpOnly**: Prohibits access to the cookie in question through JavaScript with `document.cookie`. They are sent only to the server, e.g.: cookies that persist server sessions don't need to be available to JavaScript, and therefore the HttpOnly directive should be configured.
+
+**SameSite**: With possible values being Strict, Lax and None, controls whether the cookie can be sent in requests made from other sites to the cookie's domain.
+
+- **Strict**: Only cookies for the URL address being accessed are sent. This causes the initial request to an application not to contain cookies with this parameter, since they're coming from another domain.
+
+- **Lax** (default option): Similar to Strict, but allows sending cookies in the initial request. This allows, for example, the user to maintain an active session when arriving at the system through an external link.
+
+- **None**: Means that cookies will be sent even if the request is coming from another address. To use this method, newer browser versions require the secure parameter to be set.
+
+### JWT (JSON Web Tokens)
+
+JWT is a simple and secure authentication strategy for REST APIs. It's an open standard for web authentication, and is entirely based on JSON requests between client and server.
+
+The client makes a single request by sending login and password credentials. The server validates the credentials and, if everything is correct, it returns to the client a JSON with a token that encodes data of a user logged into the system, and after receiving the token, the client can store it however they prefer, whether by LocalStorage, SessionStorage, Cookies and HttpOnly.
+
+### LocalStorage
+
+Uses localStorage to store temporary variables. Changes are only available per window (or in browsers like Chrome and Firefox). The changes made are saved and made available to the current page, as well as future visits to the site in the same window, after the window is closed, the storage is deleted.
+
+Data is available only within the window/tab in which it was set, and non-persistent data will be lost when the window/tab is closed. Since localStorage works on the same-origin policy, therefore stored data will only be available on the same origin.
+
+### SessionStorage
+
+It's similar to localStorage, the only difference is that while data stored in localStorage doesn't expire, data in sessionStorage has its data cleared when the page session expires.
+
+The page session lasts while the browser is open and persists on page reload. It works on the same-origin policy, therefore stored data will only be available on the same origin. Finally, data will not be sent back to the server for each HTTP request (HTML, images, JavaScript, CSS, etc.), reducing the amount of traffic between client and server.
+
+### LocalStorage and SessionStorage Vulnerabilities
+
+Both methods have security-related issues:
+
+- **Local storage XSS** - Cross-site scripting
+- **Cookies CSRF** - Cross-site request forgery
+- **XSS vulnerability** allowing an attacker to inject JavaScript into an application
+- **CSRF vulnerability** allowing an attacker to execute actions on a site through an authenticated user
+
+### How to Address Vulnerabilities
+
+If local storage can be exploited by third-party scripts (such as those found in browser extensions) and if authentication can be forged with cookies, where is it acceptable to place client state?
+
+**Data Encryption**: Encrypt sensitive data before storing it in localStorage or sessionStorage and decrypt it only when necessary. You can use trusted encryption libraries to do this.
+
+**Input Validation**: Always validate and sanitize data before storing it. This helps prevent injection of malicious code or corrupted data.
+
+**Expiration Logic**: Implement expiration logic for stored data, especially in localStorage. Set validity periods for data and automatically remove it when it expires.
+
+**Minimum Necessary**: Store only strictly necessary information. Don't store sensitive or confidential data in localStorage or sessionStorage unless absolutely necessary.
+
+**Use Secure Cookies**: If you need authentication functionalities, consider using secure cookies (HTTPS) and HttpOnly. This helps protect cookies against unauthorized access through client-side scripts.
+
+**Implement a Threat Model**: Consider all possible security threats when designing your system and apply appropriate security measures. This may include restricting access to certain data, depending on context and user.
+
+**Token Management**: If using authentication tokens, such as JWT (JSON Web Tokens), follow security best practices for managing them. This includes protecting server secrets and setting appropriate expirations for tokens.
+
+**Access Control**: Implement proper access control in your application to ensure only authorized users have access to data stored in localStorage or sessionStorage.
+
+**Monitoring and Auditing**: Implement logging and auditing to track who accesses and modifies stored data. This can help detect suspicious activities.
+
+**Consider Alternatives**: In some cases, it may be safer to store sensitive data on the server side and only keep references or tokens on the client side, thus reducing exposure of confidential information.

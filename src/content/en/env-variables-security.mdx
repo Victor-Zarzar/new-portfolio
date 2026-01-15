@@ -1,0 +1,142 @@
+---
+title: "The importance of properly managing environment variables (.env)"
+description: "Essential best practices to protect sensitive information in .env files and prevent critical security breaches"
+year: "2025"
+date: "2025-11-23"
+photo: "/article-4.png"
+tags: ["webdev", "mobiledev", "security", "development"]
+---
+
+## What makes the .env file so sensitive?
+
+The `.env` file is one of the most sensitive in any project. It typically stores critical information such as:
+
+- API tokens
+- Database URLs
+- JWT and Refresh Token authentication
+- Private keys
+- Build and deploy parameters
+
+Properly managing this file is essential for the security, organization, and sustainability of the project.
+
+## 1. Why versioning .env is extremely dangerous?
+
+Even if you remove the file later, Git keeps the history — both on GitHub and GitLab. In other words: if you commit a `.env` file just once, it will be exposed forever in the repository history.
+
+### The impact of this can be devastating
+
+An exposed `.env` allows:
+
+- Direct access to external services
+- Consumption of APIs with elevated permissions
+- Unauthorized login via JWT token
+- Full database access
+- Partial reconstruction of your infrastructure (reverse engineering)
+- Execution of internal backend routes, potentially resulting in a massive DDoS attack
+
+This type of leak is one of the most common incidents in public repositories — and also one of the most serious.
+
+## 2. Always use .gitignore to prevent possible data leaks
+
+A simple practice that prevents much damage is to insert in `.gitignore`:
+
+```
+.env
+*.env
+.env.*
+```
+
+This way, any environment variable file is protected against accidental versioning.
+
+## 3. Practical workflows using common technologies
+
+Here are two examples of best practices:
+
+### Flutter/Dart using --dart-define
+
+In Flutter, we can pass sensitive variables at build time using `--dart-define`. The workflow typically is:
+
+1. Before build, export variables in terminal
+2. CI/CD injects secrets dynamically
+3. Application receives everything via `--dart-define`
+
+Example:
+
+```bash
+flutter build apk \
+  --dart-define=API_URL=$API_URL \
+  --dart-define=ENV=production \
+  --dart-define=SENTRY_DSN=$SENTRY_DSN
+```
+
+This approach avoids exposing sensitive values. Additionally, it reduces chances of reverse engineering, as values only exist at runtime or in the obfuscated binary.
+
+### Python + FastAPI using Pydantic Settings v2
+
+Pydantic Settings v2 is a great way to handle environments via .env.
+
+It allows:
+
+- Env typing
+- Automatic validation
+- Safe defaults
+- Loading via Docker (env_file, environment, etc.)
+- Clean support for dev and prod environments
+
+Practical example (Dev + Prod):
+
+```python
+import os
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+def get_env_file():
+    env = os.getenv('ENVIRONMENT', 'development')
+    if env == 'production':
+        return '.env.prod'
+    return '.env.dev'
+
+
+class Settings(BaseSettings):
+
+    SECRET_KEY: str
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
+
+    MYSQL_DATABASE: str
+    MYSQL_USER: str
+
+    model_config = SettingsConfigDict(
+        env_file=get_env_file(),
+        env_file_encoding='utf-8'
+    )
+
+
+settings = Settings()
+```
+
+This pattern works very well with projects that need to run simultaneously in dev, staging, and production.
+
+## 4. Avoid reverse engineering and accidental exposure
+
+Versioning `.env` files exposes:
+
+- API structure
+- Private keys
+- Passwords
+- Internal configurations
+- Insights about project architecture
+
+### With this, a malicious actor can:
+
+- Identify used providers
+- Discover private endpoints
+- Simulate requests with valid authentication
+- Access internal services
+- Compromise other connected projects
+
+This type of leak can bring down the entire infrastructure, depending on what is exposed.
+
+## Conclusion
+
+Being cautious in the software development world is never too much. And this article only scratches the surface when it comes to secure development.
+
+Properly managing environment variables is extremely important: it's a fundamental part of security, organization, and project health — especially in modern environments using CI/CD, Docker, and multiple environments (dev, staging, prod).

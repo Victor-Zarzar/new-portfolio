@@ -1,0 +1,69 @@
+---
+title: "Regra de segurança no Android nativo com SharedPreferences"
+description: "Como controlar o backup automático do Android e proteger dados sensíveis no SharedPreferences"
+year: "2025"
+date: "2025-12-16"
+photo: "/article-2.png"
+tags: ["android", "mobile", "security"]
+---
+
+## O problema do Auto Backup
+
+Quando instalamos um aplicativo Flutter no Android, o SharedPreferences é usado como base de persistência de dados. Contudo, existe um comportamento que pode gerar riscos de segurança: por padrão, determinados dados salvos no app podem ser restaurados automaticamente após a reinstalação, mesmo depois de o usuário limpar o cache ou remover completamente o aplicativo.
+
+Esse comportamento acontece por conta do **Android Auto Backup**, que pode restaurar dados do aplicativo a partir da conta Google do usuário.
+
+### Exemplo prático
+
+Informações previamente salvas continuam disponíveis após a reinstalação do aplicativo, o que pode ser problemático quando lidamos com dados sensíveis como tokens de autenticação, identificadores únicos do dispositivo ou credenciais.
+
+## Como solucionar
+
+Uma abordagem simples e eficaz é controlar explicitamente quais arquivos do SharedPreferences podem ou não participar do processo de backup.
+
+### 1. Criando a regra de backup
+
+No projeto Android, navegue até o seguinte caminho:
+
+```
+android/app/src/main/res
+```
+
+Dentro de `res`, crie uma pasta chamada `xml` e, dentro dela, o arquivo `backup_rules.xml`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="sharedpref" path="." />
+    <exclude domain="sharedpref" path="device.xml" />
+</full-backup-content>
+```
+
+Nesse exemplo:
+
+- Todos os arquivos de `SharedPreferences` são incluídos no backup
+- O arquivo `device.xml` é explicitamente excluído, evitando que dados sensíveis sejam restaurados após a reinstalação do app
+
+### 2. Aplicando a regra no AndroidManifest
+
+Em seguida, é necessário informar ao Android que o aplicativo deve usar essa regra personalizada. No arquivo `AndroidManifest.xml`, ajuste a tag `<application>`:
+
+```xml
+<application
+    android:label="Android APP"
+    android:name="${applicationName}"
+    android:icon="@mipmap/ic_launcher"
+    android:allowBackup="true"
+    android:fullBackupContent="@xml/backup_rules">
+</application>
+```
+
+## Conclusão
+
+Ao definir regras explícitas de backup, você:
+
+- Evita a restauração indevida de dados sensíveis
+- Aumenta o nível de segurança do aplicativo
+- Garante maior controle sobre o ciclo de vida das informações do usuário
+
+Essa prática é altamente recomendada, especialmente em aplicativos que lidam com autenticação, tokens ou identificadores únicos do dispositivo.
