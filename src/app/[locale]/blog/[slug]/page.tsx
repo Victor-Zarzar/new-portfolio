@@ -14,6 +14,7 @@ import type {
   MdxUlProps,
   PageProps,
 } from "@/app/shared/types/main";
+import { HeroImageClient } from "@/app/shared/wrapper/hero-image-client";
 import env from "@/env.mjs";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 
@@ -171,13 +172,10 @@ export default async function BlogPostPage({ params }: PageProps) {
       />
       <header className="mb-8">
         <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-6">
-          <Image
+          <HeroImageClient
             src={post.metadata.photo}
             alt={post.metadata.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
-            className="object-cover"
           />
         </div>
         <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">

@@ -198,5 +198,11 @@
     "articletitle6": "TLS Certificates with SAN (Subject Alternative Name) and their utilities in multi-domain applications",
     "articledescription6": "Understand how SAN certificates allow protecting multiple domains with a single TLS/SSL certificate.",
     "articlep6": "Discover the advantages, use cases, and important considerations when using Subject Alternative Name."
+  },
+  "GlobalError": {
+    "title": "Application Error",
+    "description": "A critical error has occurred. Our team has been notified.",
+    "errorId": "Error ID: {id}",
+    "tryAgain": "Try again"
   }
 }

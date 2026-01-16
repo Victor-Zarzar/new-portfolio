@@ -1,3 +1,4 @@
+import type { ImageProps } from "next/image";
 import type React from "react";
 import type { IconType } from "react-icons";
 
@@ -163,7 +164,15 @@ type BlogListProps = {
   locale: string;
 };
 
+type HeroImageClientProps = {
+  src: ImageProps["src"];
+  alt: string;
+  priority?: boolean;
+  sizes?: string;
+};
+
 export type {
+  HeroImageClientProps,
   BlogListProps,
   MdxHeadingProps,
   MdxParagraphProps,

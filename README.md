@@ -158,8 +158,8 @@ Each MDX file should include frontmatter metadata at the top:
 
 ```mdx
 ---
-title: "Security Rule in Native Android with SharedPreferences"
-description: "How to control Android's automatic backup and protect sensitive data in SharedPreferences"
+title: "Android Security Rules"
+description: "Protecting SharedPreferences data"
 year: "2025"
 date: "2025-12-16"
 photo: "/article-android-security.png"
