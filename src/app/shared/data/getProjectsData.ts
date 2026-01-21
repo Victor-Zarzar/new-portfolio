@@ -12,7 +12,7 @@ export const getProjectsData = ({ t }: GetProjectsParams): Project[] => [
     sourceLinkPrivacy: "privacypolicy-apps",
     androidLink: "https://play.google.com/store/apps/details?id=YOUR_APP_ID",
     iosLink: "https://apps.apple.com/us/app/YOUR_APP_ID",
-    webLink: "",
+    webLink: "https://www.calculadoracltvspj.com.br",
     techStack: [
       "flutter",
       "dart",

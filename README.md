@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
   <img src="https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white" alt="MDX">
+  <img src="https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
 </p>
 
 <p align="center">
@@ -305,24 +306,29 @@ make prod
 
 ```
 new-portfolio/
-├── app/                 # Next.js App Router
-├── components/          # React components
-├── content/             # MDX blog articles
-│   ├── en/             # English articles
-│   ├── pt/             # Portuguese articles
-│   └── es/             # Spanish articles
-├── lib/                 # Utility functions
-├── public/              # Static assets
-├── styles/              # Global styles
-├── tests/               # Automated tests
-├── .env-example         # Environment variables template
-├── .env                 # Environment variables (not in git)
-├── Dockerfile           # Docker configuration
-├── Makefile             # Build automation
-├── next.config.js       # Next.js configuration
-├── bun.lock             # Bun package lock file
-├── tailwind.config.ts   # Tailwind configuration
-└── tsconfig.json        # TypeScript configuration
+├── .github/                        # GitHub configuration
+│   ├── workflows/                  # GitHub Actions workflows
+│   │   ├── main.yaml               # CI/CD pipeline
+│   │   └── codeql-analysis.yaml    # Code security analysis
+│   └── dependabot.yml              # Dependency updates configuration
+├── app/                            # Next.js App Router
+├── components/                     # React components
+├── content/                        # MDX blog articles
+│   ├── en/                         # English articles
+│   ├── pt/                         # Portuguese articles
+│   └── es/                         # Spanish articles
+├── lib/                            # Utility functions
+├── public/                         # Static assets
+├── styles/                         # Global styles
+├── tests/                          # Automated tests
+├── .env-example                    # Environment variables template
+├── .env                            # Environment variables (not in git)
+├── Dockerfile                      # Docker configuration
+├── Makefile                        # Build automation
+├── next.config.js                  # Next.js configuration
+├── bun.lock                        # Bun package lock file
+├── tailwind.config.ts              # Tailwind configuration
+└── tsconfig.json                   # TypeScript configuration
 ```
 
 ---
@@ -356,6 +362,9 @@ The application is deployed on Vercel for production use.
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/new-portfolio)
 
 **Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings.
+
+- **CI/CD Pipeline** - `.github/workflows/main.yaml` for automated checks and builds
+- **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
 
 ### Docker (Optional - Local Development)
 
