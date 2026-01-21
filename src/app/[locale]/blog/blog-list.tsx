@@ -92,10 +92,10 @@ function ActionCard({ post, locale }: { post: PostMetadata; locale: string }) {
 
             <ArticleDescription description={post.description} />
 
-            <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center justify-between mt-2 text-stone-50">
               <Tags tags={post.tags} />
 
-              <div className="flex items-center gap-2 text-sm transition-colors">
+              <div className="flex items-center gap-2 text-sm transition-colors text-stone-950 dark:text-stone-50">
                 <span>{t("p")}</span>
                 <HiArrowRight className="transition-transform group-hover:translate-x-1" />
               </div>
