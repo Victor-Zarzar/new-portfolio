@@ -1,7 +1,7 @@
 import type React from "react";
 import type { SvgIconProps } from "@/app/shared/types/main";
 
-const PrismaIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
+const PrismaIcon: React.FC<SvgIconProps> = ({ size = 29, ...props }) => {
   return (
     <svg
       width={size}
