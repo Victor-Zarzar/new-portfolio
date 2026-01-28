@@ -1,7 +1,7 @@
 import type React from "react";
 import type { SvgIconProps } from "@/app/shared/types/main";
 
-const DockerComposeIcon: React.FC<SvgIconProps> = ({ size = 28, ...props }) => {
+const DockerComposeIcon: React.FC<SvgIconProps> = ({ size = 30, ...props }) => {
   return (
     <svg
       width={size}

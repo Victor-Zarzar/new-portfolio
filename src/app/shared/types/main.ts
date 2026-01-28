@@ -12,9 +12,9 @@ type Experience = {
 
 type Project = {
   id: number;
-  androidLink: string;
-  iosLink: string;
-  webLink: string;
+  androidLink?: string;
+  iosLink?: string;
+  webLink?: string;
   title: string;
   description: string;
   photo: string;
@@ -23,6 +23,7 @@ type Project = {
   sourceCodeLink: string;
   sourceLinkPrivacy: string;
   techStack: TechKey[];
+  date: string;
 };
 
 type PostMetadata = {
@@ -120,7 +121,11 @@ type TechKey =
   | "reportlab"
   | "kotlin"
   | "swift"
-  | "pandas";
+  | "pandas"
+  | "postgres"
+  | "mysql"
+  | "nginx"
+  | "prisma";
 
 type ProfileLink = {
   label: string;

@@ -22,6 +22,7 @@ run: build
 		-p $(PORT):3000 \
 		-v $(PWD):/app \
 		-v /app/node_modules \
+		-v /app/.next \
 		$(DOCKER_IMAGE_NAME):$(DOCKER_TAG)
 
 stop:

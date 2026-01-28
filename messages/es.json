@@ -91,7 +91,11 @@
     "projecttitle7": "Aplicación de lectura de PDF",
     "projectdescription7": "Aplicación para leer archivos PDF.",
     "projecttitle8": "Aplicación de calculadora CLT vs PJ",
-    "projectdescription8": "La aplicación te ayuda a comparar la diferencia financiera entre trabajar como CLT (empleado) y PJ (autónomo/contratista) en Brasil."
+    "projectdescription8": "La aplicación te ayuda a comparar la diferencia financiera entre trabajar como CLT (empleado) y PJ (autónomo/contratista) en Brasil.",
+    "projecttitle9": "Blog Post",
+    "projectdescription9": "Aplicación full stack desarrollada con Next.js, React y TypeScript, utilizando PostgreSQL, Docker y Nginx.",
+    "projecttitle10": "API de mapa de costos",
+    "projectdescription10": "API para proporcionar datos sobre el costo de vida entre ciudades brasileñas."
   },
   "PrivacyPolicyApps": {
     "h1": "Política de privacidad",

@@ -37,7 +37,7 @@ export default function SettingsSwitcher() {
             <IoMdSettings size={27} />
           </button>
         </DialogTrigger>
-        <DialogContent className="max-w-[320px] sm:max-w-[425px] dark:bg-stone-950 bg-[#ffffff] border-black dark:border-gray-200">
+        <DialogContent className="max-w-[320px] sm:max-w-106.25 dark:bg-stone-950 bg-[#ffffff] border-black dark:border-gray-200">
           <DialogHeader>
             <DialogTitle>
               <div className="flex items-center">
@@ -52,7 +52,7 @@ export default function SettingsSwitcher() {
             <div className="flex items-center justify-between">
               <span>{t("toggle-theme")}</span>
               <Select value={theme} onValueChange={setTheme}>
-                <SelectTrigger className="w-[120px]">
+                <SelectTrigger className="w-30">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-[#ffffff]">

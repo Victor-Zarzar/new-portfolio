@@ -24,8 +24,12 @@ import IosIcon from "@/app/shared/ui/icons/projects/ios";
 import KibanaIcon from "@/app/shared/ui/icons/projects/kibana";
 import KotlinIcon from "@/app/shared/ui/icons/projects/kotlin";
 import LokiIcon from "@/app/shared/ui/icons/projects/loki";
+import MySqlIcon from "@/app/shared/ui/icons/projects/mysql";
 import NextjsIcon from "@/app/shared/ui/icons/projects/nextjs";
+import NginxIcon from "@/app/shared/ui/icons/projects/nginx";
 import PandasIcon from "@/app/shared/ui/icons/projects/pandas";
+import PostgresIcon from "@/app/shared/ui/icons/projects/postgres";
+import PrismaIcon from "@/app/shared/ui/icons/projects/prisma";
 import PythonIcon from "@/app/shared/ui/icons/projects/python";
 import ReactIcon from "@/app/shared/ui/icons/projects/react";
 import ReportLabIcon from "@/app/shared/ui/icons/projects/reportlab";
@@ -60,6 +64,10 @@ const techIconMap: Record<TechKey, JSX.Element> = {
   grafana: <GrafanaIcon />,
   kotlin: <KotlinIcon />,
   swift: <SwiftIcon />,
+  postgres: <PostgresIcon />,
+  mysql: <MySqlIcon />,
+  nginx: <NginxIcon />,
+  prisma: <PrismaIcon />,
 };
 
 function ProjectDescription({

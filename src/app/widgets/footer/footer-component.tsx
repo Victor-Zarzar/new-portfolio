@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="container-footer mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl mt-20 md:mt-40">
-      <hr className="w-full h-0.5 mx-auto mt-0 bg-neutral-200 dark:border-b dark:border-stone-600 border-0" />
+      <hr className="w-full h-0.5 mx-auto mt-0 bg-neutral-400 dark:border-b dark:border-stone-200 border-0" />
 
       <div className="p-4 flex flex-col text-center md:flex-row md:justify-between">
         <div className="flex flex-row items-center justify-center space-x-1">
