@@ -93,7 +93,7 @@ function ActionCard({ post, locale }: { post: PostMetadata; locale: string }) {
             <ArticleDescription description={post.description} />
 
             <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div className="min-w-0">
+              <div className="min-w-0 text-white">
                 <Tags tags={post.tags} />
               </div>
 
