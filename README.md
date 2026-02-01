@@ -342,11 +342,11 @@ new-portfolio/
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b67f4608-7ed5-468d-a67c-536e9ca05369" width="1000" height="600" alt="Projects Section">
+  <img src="https://github.com/user-attachments/assets/a08174cc-1e7b-4eb4-9b3a-3d85b7c449c1" width="1000" height="600" alt="Projects Section">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/86abbd0b-b2b5-4c5e-a952-261c5691834d" alt="Dark Mode" width="1000" height="500" alt="Mobile">
+  <img src="https://github.com/user-attachments/assets/516abd3b-abaf-4004-a26f-850578902d4c" alt="Dark Mode" width="1000" height="500" alt="Mobile">
 </p>
 
 ---

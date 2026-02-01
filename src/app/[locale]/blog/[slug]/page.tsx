@@ -162,7 +162,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   };
 
   return (
-    <article className="container max-w-4xl mx-auto px-4 py-12 md:py-20">
+    <article className="container max-w-4xl mx-auto px-4 py-3 md:py-4">
       <script
         type="application/ld+json"
         suppressHydrationWarning

@@ -101,7 +101,7 @@ export default function Projects() {
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
           <Fade>
-            <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">
+            <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-6 md:mt-10">
               {t("h1")}
             </h1>
           </Fade>

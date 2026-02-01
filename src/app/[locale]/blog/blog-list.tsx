@@ -19,7 +19,7 @@ export function BlogList({ posts, locale }: BlogListProps) {
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
           <Fade>
-            <h1 className="title-articles mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-20 md:mt-36">
+            <h1 className="title-articles mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-6 md:mt-10">
               {t("h1")}
             </h1>
           </Fade>
@@ -92,11 +92,18 @@ function ActionCard({ post, locale }: { post: PostMetadata; locale: string }) {
 
             <ArticleDescription description={post.description} />
 
-            <div className="flex items-center justify-between mt-2 text-stone-50">
-              <Tags tags={post.tags} />
+            <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <Tags tags={post.tags} />
+              </div>
 
-              <div className="flex items-center gap-2 text-sm transition-colors text-stone-950 dark:text-stone-50">
-                <span>{t("p")}</span>
+              <div
+                className="
+                flex items-center gap-2 text-sm
+                text-stone-950 dark:text-stone-50
+                self-end sm:self-auto sm:shrink-0"
+              >
+                <span className="leading-none whitespace-nowrap">{t("p")}</span>
                 <HiArrowRight className="transition-transform group-hover:translate-x-1" />
               </div>
             </div>
