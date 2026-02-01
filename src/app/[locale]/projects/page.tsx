@@ -169,6 +169,9 @@ function ProjectCard({ project }: { project: Project; index: number }) {
 }
 
 function ProjectLinks({ project }: { project: Project }) {
+  const cls =
+    "flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-100 hover:text-primary transition-colors";
+
   return (
     <>
       {project.sourceCodeLink && (
@@ -176,9 +179,9 @@ function ProjectLinks({ project }: { project: Project }) {
           href={project.sourceCodeLink}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 text-sm text-neutral-400 dark:text-neutral-100 hover:text-primary transition-colors"
+          className={cls}
         >
-          <AiOutlineGithub size={18} />
+          <AiOutlineGithub size={20} />
         </a>
       )}
       {project.sourceLinkPrivacy && (
@@ -186,9 +189,9 @@ function ProjectLinks({ project }: { project: Project }) {
           href={project.sourceLinkPrivacy}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 text-sm text-neutral-400 dark:text-neutral-100 hover:text-primary transition-colors"
+          className={cls}
         >
-          <MdPrivacyTip size={18} />
+          <MdPrivacyTip size={20} />
         </a>
       )}
       {project.androidLink && (
@@ -196,9 +199,9 @@ function ProjectLinks({ project }: { project: Project }) {
           href={project.androidLink}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 text-sm text-neutral-400 dark:text-neutral-100 hover:text-primary transition-colors"
+          className={cls}
         >
-          <FaGooglePlay size={18} />
+          <FaGooglePlay size={20} />
         </a>
       )}
       {project.iosLink && (
@@ -206,9 +209,9 @@ function ProjectLinks({ project }: { project: Project }) {
           href={project.iosLink}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 text-sm text-neutral-400 dark:text-neutral-100 hover:text-primary transition-colors"
+          className={cls}
         >
-          <FaAppStoreIos size={18} />
+          <FaAppStoreIos size={20} />
         </a>
       )}
       {project.webLink && (
@@ -216,9 +219,9 @@ function ProjectLinks({ project }: { project: Project }) {
           href={project.webLink}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2 text-sm text-neutral-400 dark:text-neutral-100 hover:text-primary transition-colors"
+          className={cls}
         >
-          <AiOutlineGlobal size={18} />
+          <AiOutlineGlobal size={20} />
         </a>
       )}
     </>

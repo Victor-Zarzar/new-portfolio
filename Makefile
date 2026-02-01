@@ -2,7 +2,7 @@
 DOCKER_IMAGE_NAME = new-portfolio
 DOCKER_CONTAINER_NAME = new-portfolio
 PORT = 3000
-DOCKER_TAG = 1.0.0
+DOCKER_TAG = 1.0.3
 
 install:
 	bun install

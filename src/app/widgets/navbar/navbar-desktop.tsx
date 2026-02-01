@@ -3,7 +3,6 @@
 import { BookOpen, Briefcase, FileText, Home, Mail, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
-import { useEffect, useRef, useState } from "react";
 import CommandPalette from "@/app/features/command-palette/command-palette";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { cn } from "@/app/shared/lib/utils";
@@ -75,40 +74,6 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     ];
 
     const links = navigationLinks ?? defaultNavigationLinks;
-    const [isMobile, setIsMobile] = useState(false);
-    const containerRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-      const checkWidth = () => {
-        if (containerRef.current) {
-          const width = containerRef.current.offsetWidth;
-          setIsMobile(width < 768);
-        }
-      };
-
-      checkWidth();
-
-      const resizeObserver = new ResizeObserver(checkWidth);
-      if (containerRef.current) {
-        resizeObserver.observe(containerRef.current);
-      }
-
-      return () => {
-        resizeObserver.disconnect();
-      };
-    }, []);
-
-    const combinedRef = React.useCallback(
-      (node: HTMLElement | null) => {
-        containerRef.current = node;
-        if (typeof ref === "function") {
-          ref(node);
-        } else if (ref) {
-          ref.current = node;
-        }
-      },
-      [ref],
-    );
 
     return (
       <header
@@ -116,18 +81,18 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
           "sticky top-0 z-50 w-full border-b backdrop-blur supports-backdrop-filter:bg-background/60 px-4 md:px-6 [&_*]:no-underline dark:bg-stone-950 bg-[#ffffff]",
           className,
         )}
-        ref={combinedRef}
+        ref={ref}
         {...props}
       >
         <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            {isMobile && (
+            <div className="md:hidden">
               <NavMobile
                 logo={logo}
                 logoHref={logoHref}
                 navigationLinks={links}
               />
-            )}
+            </div>
 
             <div className="flex items-center gap-6">
               <Link
@@ -137,27 +102,25 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                 <div className="text-2xl">{logo}</div>
               </Link>
 
-              {!isMobile && (
-                <NavigationMenu className="flex">
-                  <NavigationMenuList className="gap-1">
-                    {links.map((item, index) => (
-                      <NavigationMenuItem key={index}>
-                        <Link
-                          href={item.link}
-                          className={cn(
-                            "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
-                            item.active
-                              ? "bg-accent text-accent-foreground"
-                              : "text-foreground/80 hover:text-foreground",
-                          )}
-                        >
-                          {item.label}
-                        </Link>
-                      </NavigationMenuItem>
-                    ))}
-                  </NavigationMenuList>
-                </NavigationMenu>
-              )}
+              <NavigationMenu className="hidden md:flex">
+                <NavigationMenuList className="gap-1">
+                  {links.map((item, index) => (
+                    <NavigationMenuItem key={index}>
+                      <Link
+                        href={item.link}
+                        className={cn(
+                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
+                          item.active
+                            ? "bg-accent text-accent-foreground"
+                            : "text-foreground/80 hover:text-foreground",
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
             </div>
           </div>
 
