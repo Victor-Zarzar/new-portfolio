@@ -1,0 +1,237 @@
+---
+title: "Clean Architecture in Flutter"
+description: "A practical guide to Clean Architecture + MVVM in Flutter"
+year: "2026"
+date: "2026-02-01"
+photo: "/article-7.png"
+tags: ["mvvm", "mobile", "flutter", "architecture"]
+---
+
+## Why Clean Architecture matters in Flutter
+
+Flutter apps often start small, but they grow fast. Features multiply, APIs evolve, and suddenly a "quick fix" becomes a risky refactor. Clean Architecture helps you avoid that by separating your code into layers with clear responsibilities.
+
+At a high level, it encourages:
+
+- **Separation of concerns**: UI shouldn't contain business rules.
+- **Dependency inversion**: details depend on abstractions, not the other way around.
+- **Single responsibility**: each class does one job well.
+
+> Rule of thumb: **inner layers shouldn't know (or import) outer layers.**  
+> No UI types inside your domain. No API models leaking into your business rules.
+
+---
+
+## The classic Clean Architecture layers (in Flutter terms)
+
+You'll usually see three layers:
+
+### 1) Presentation layer (UI + state)
+
+This is where your Flutter widgets live and where state management happens.
+
+**Contains**
+
+- Pages / screens
+- Widgets
+- State management (BLoC, Riverpod, Provider, Cubit, etc.)
+
+**Goal**
+
+- Render UI
+- React to user input
+- Call **use cases** (domain)
+
+### 2) Domain layer (business rules)
+
+The "heart" of your app. It should not care about Flutter, HTTP, or local storage.
+
+**Contains**
+
+- Entities (core business objects)
+- Use cases (actions your app can do)
+- Repository contracts (interfaces)
+
+**Goal**
+
+- Encode business logic in a testable, framework-independent way
+
+### 3) Data layer (implementation details)
+
+This is where you talk to the outside world.
+
+**Contains**
+
+- API clients, database adapters
+- DTOs / models
+- Repository implementations
+- Data sources (remote/local)
+
+**Goal**
+
+- Fetch/store data
+- Map data models ↔ domain entities
+
+---
+
+## Where MVVM fits
+
+MVVM (Model–View–ViewModel) is a UI-oriented pattern. In Flutter, you don't get MVVM "for free" like in frameworks with automatic data-binding, but you can still apply the idea cleanly.
+
+A practical mapping is:
+
+- **View** → Presentation (Widgets)
+- **ViewModel** → Presentation logic / state holder (often still Presentation)
+- **Model** → Data models (Data layer) and/or domain Entities (Domain layer)
+
+So instead of saying "ViewModel is the Domain", a safer statement is:
+
+> **ViewModel is a presentation adapter** that talks to domain use cases and exposes UI-ready state.
+
+---
+
+## MVVM in Flutter (practical example)
+
+### Model (simple entity or domain object)
+
+```dart
+class User {
+  final String name;
+  final int age;
+
+  const User({required this.name, required this.age});
+
+  User copyWith({String? name, int? age}) {
+    return User(
+      name: name ?? this.name,
+      age: age ?? this.age,
+    );
+  }
+}
+```
+
+### View (widgets stay "dumb")
+
+```dart
+import 'package:flutter/material.dart';
+
+class UserTile extends StatelessWidget {
+  final User user;
+
+  const UserTile({super.key, required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(user.name),
+      subtitle: Text('Age: ${user.age}'),
+    );
+  }
+}
+```
+
+### ViewModel (holds UI state, calls domain logic)
+
+```dart
+import 'dart:async';
+
+class UserViewModel {
+  final _controller = StreamController<User>.broadcast();
+  Stream<User> get user$ => _controller.stream;
+
+  void updateUserAge(User user, int newAge) {
+    _controller.add(user.copyWith(age: newAge));
+  }
+
+  void dispose() {
+    _controller.close();
+  }
+}
+```
+
+### Connecting View ↔ ViewModel (Provider example)
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class UserPage extends StatelessWidget {
+  const UserPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final vm = context.watch<UserViewModel>();
+
+    return StreamBuilder<User>(
+      stream: vm.user$,
+      builder: (context, snapshot) {
+        final user = snapshot.data;
+        if (user == null) return const Center(child: CircularProgressIndicator());
+        return UserTile(user: user);
+      },
+    );
+  }
+}
+```
+
+---
+
+## A folder structure that scales (feature-first)
+
+A common approach in Flutter is feature-first, where each feature has its own three layers:
+
+```
+lib/
+  core/
+    network/
+    routes/
+    utils/
+    errors/
+  features/
+    auth/
+      presentation/
+      domain/
+      data/
+    profile/
+      presentation/
+      domain/
+      data/
+  shared/
+    widgets/
+    theme/
+```
+
+---
+
+## Dependency Injection (GetIt example)
+
+```dart
+final sl = GetIt.instance;
+
+Future<void> initInjections() async {
+  await initSharedPrefs();
+  await initNetwork();
+  await initAuth();
+  await initArticles();
+}
+```
+
+Then in `main.dart`:
+
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initInjections();
+  runApp(const App());
+}
+```
+
+---
+
+## Conclusion
+
+Clean Architecture is not about perfection, it is about making deliberate choices that help your Flutter app scale without becoming a maintenance nightmare. By separating presentation, domain, and data layers, you create code that's easier to test, easier to change, and easier for your team to understand.
+
+Start small: pick one feature and apply these principles. You'll quickly see the benefits when you need to swap out an API, add a new state management solution, or write unit tests without fighting your architecture.
+
+Remember: the goal is **sustainable development**, not dogmatic purity. Adapt these patterns to fit your team's needs, and your future self will thank you.

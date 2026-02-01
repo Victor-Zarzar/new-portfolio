@@ -1,0 +1,237 @@
+---
+title: "Clean Architecture en Flutter"
+description: "Una guía práctica sobre Clean Architecture + MVVM en Flutter"
+year: "2026"
+date: "2026-02-01"
+photo: "/article-7.png"
+tags: ["mvvm", "mobile", "flutter", "arquitectura"]
+---
+
+## Por qué Clean Architecture importa en Flutter
+
+Las aplicaciones Flutter a menudo comienzan pequeñas, pero crecen rápido. Las funcionalidades se multiplican, las APIs evolucionan y, de repente, una "corrección rápida" se convierte en una refactorización arriesgada. Clean Architecture te ayuda a evitar esto separando tu código en capas con responsabilidades claras.
+
+A alto nivel, fomenta:
+
+- **Separación de responsabilidades**: la UI no debe contener reglas de negocio.
+- **Inversión de dependencia**: los detalles dependen de abstracciones, no al revés.
+- **Responsabilidad única**: cada clase hace un trabajo bien hecho.
+
+> Regla práctica: **las capas internas no deben conocer (o importar) capas externas.**  
+> No debe haber tipos de UI dentro de tu dominio. No debe haber modelos de API filtrándose en tus reglas de negocio.
+
+---
+
+## Las capas clásicas de Clean Architecture (en términos de Flutter)
+
+Generalmente verás tres capas:
+
+### 1) Capa de Presentación (UI + estado)
+
+Aquí es donde viven tus widgets de Flutter y donde ocurre la gestión del estado.
+
+**Contiene**
+
+- Páginas / pantallas
+- Widgets
+- Gestión de estado (BLoC, Riverpod, Provider, Cubit, etc.)
+
+**Objetivo**
+
+- Renderizar UI
+- Reaccionar a la entrada del usuario
+- Llamar **casos de uso** (dominio)
+
+### 2) Capa de Dominio (reglas de negocio)
+
+El "corazón" de tu aplicación. No debe preocuparse por Flutter, HTTP o almacenamiento local.
+
+**Contiene**
+
+- Entidades (objetos de negocio principales)
+- Casos de uso (acciones que tu app puede hacer)
+- Contratos de repositorio (interfaces)
+
+**Objetivo**
+
+- Codificar lógica de negocio de forma testeable e independiente del framework
+
+### 3) Capa de Datos (detalles de implementación)
+
+Aquí es donde hablas con el mundo exterior.
+
+**Contiene**
+
+- Clientes de API, adaptadores de base de datos
+- DTOs / modelos
+- Implementaciones de repositorio
+- Fuentes de datos (remoto/local)
+
+**Objetivo**
+
+- Obtener/almacenar datos
+- Mapear modelos de datos ↔ entidades de dominio
+
+---
+
+## Dónde encaja MVVM
+
+MVVM (Model–View–ViewModel) es un patrón orientado a UI. En Flutter, no obtienes MVVM "gratis" como en frameworks con data-binding automático, pero aún puedes aplicar la idea de forma limpia.
+
+Un mapeo práctico es:
+
+- **View** → Presentación (Widgets)
+- **ViewModel** → Lógica de presentación / contenedor de estado (generalmente aún Presentación)
+- **Model** → Modelos de datos (capa de Datos) y/o Entidades de dominio (capa de Dominio)
+
+Entonces, en lugar de decir "ViewModel es el Dominio", una afirmación más segura es:
+
+> **ViewModel es un adaptador de presentación** que habla con casos de uso de dominio y expone estado listo para UI.
+
+---
+
+## MVVM en Flutter (ejemplo práctico)
+
+### Model (entidad simple u objeto de dominio)
+
+```dart
+class User {
+  final String name;
+  final int age;
+
+  const User({required this.name, required this.age});
+
+  User copyWith({String? name, int? age}) {
+    return User(
+      name: name ?? this.name,
+      age: age ?? this.age,
+    );
+  }
+}
+```
+
+### View (los widgets permanecen "tontos")
+
+```dart
+import 'package:flutter/material.dart';
+
+class UserTile extends StatelessWidget {
+  final User user;
+
+  const UserTile({super.key, required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(user.name),
+      subtitle: Text('Edad: ${user.age}'),
+    );
+  }
+}
+```
+
+### ViewModel (mantiene el estado de la UI, llama lógica de dominio)
+
+```dart
+import 'dart:async';
+
+class UserViewModel {
+  final _controller = StreamController<User>.broadcast();
+  Stream<User> get user$ => _controller.stream;
+
+  void updateUserAge(User user, int newAge) {
+    _controller.add(user.copyWith(age: newAge));
+  }
+
+  void dispose() {
+    _controller.close();
+  }
+}
+```
+
+### Conectando View ↔ ViewModel (ejemplo con Provider)
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class UserPage extends StatelessWidget {
+  const UserPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final vm = context.watch<UserViewModel>();
+
+    return StreamBuilder<User>(
+      stream: vm.user$,
+      builder: (context, snapshot) {
+        final user = snapshot.data;
+        if (user == null) return const Center(child: CircularProgressIndicator());
+        return UserTile(user: user);
+      },
+    );
+  }
+}
+```
+
+---
+
+## Una estructura de carpetas escalable (feature-first)
+
+Un enfoque común en Flutter es feature-first, donde cada funcionalidad tiene sus propias tres capas:
+
+```
+lib/
+  core/
+    network/
+    routes/
+    utils/
+    errors/
+  features/
+    auth/
+      presentation/
+      domain/
+      data/
+    profile/
+      presentation/
+      domain/
+      data/
+  shared/
+    widgets/
+    theme/
+```
+
+---
+
+## Inyección de Dependencias (ejemplo con GetIt)
+
+```dart
+final sl = GetIt.instance;
+
+Future<void> initInjections() async {
+  await initSharedPrefs();
+  await initNetwork();
+  await initAuth();
+  await initArticles();
+}
+```
+
+Luego en `main.dart`:
+
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initInjections();
+  runApp(const App());
+}
+```
+
+---
+
+## Conclusión
+
+Clean Architecture no se trata de perfección, se trata de tomar decisiones deliberadas que ayudan a tu aplicación Flutter a escalar sin convertirse en una pesadilla de mantenimiento. Al separar las capas de presentación, dominio y datos, creas código que es más fácil de probar, más fácil de modificar y más fácil de entender para tu equipo.
+
+Comienza pequeño: elige una funcionalidad y aplica estos principios. Rápidamente verás los beneficios cuando necesites cambiar una API, agregar una nueva solución de gestión de estado, o escribir pruebas unitarias sin luchar contra tu arquitectura.
+
+Recuerda: el objetivo es **desarrollo sostenible**, no pureza dogmática. Adapta estos patrones para satisfacer las necesidades de tu equipo, y tu yo futuro te lo agradecerá.

@@ -184,7 +184,7 @@
   },
   "Blog": {
     "h1": "Artigos & Publicações",
-    "h2": "Conteúdo técnico que escrevi recentemente",
+    "h2": "Conteúdo técnico que escrevi recentemente...",
     "p": "Leia mais",
     "articletitle1": "Segurança em Dispositivos Móveis: Estratégias Práticas de Proteção",
     "articledescription1": "Um guia para proteger dispositivos móveis com técnicas reais e práticas de segurança.",
@@ -211,5 +211,24 @@
     "description": "Ocorreu um erro crítico. Nossa equipe já foi notificada.",
     "errorId": "ID do erro: {id}",
     "tryAgain": "Tentar novamente"
+  },
+  "CommandPalette": {
+    "searchPlaceholder": "Buscar páginas...",
+    "pressToNavigate": "Pressione ⌘K para navegar",
+    "command": {
+      "navigate": "Navegação",
+      "settings": "Configurações",
+      "empty": "Nenhum resultado encontrado",
+      "description": "Descrição da página"
+    },
+    "nav": {
+      "home": "Início",
+      "about": "Sobre",
+      "services": "Serviços",
+      "projects": "Projetos",
+      "blog": "Blog",
+      "contact": "Contato",
+      "settings": "Configurações"
+    }
   }
 }

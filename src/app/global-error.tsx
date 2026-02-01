@@ -1,50 +1,25 @@
 "use client";
 
 import * as Sentry from "@sentry/nextjs";
-import { useLocale, useTranslations } from "next-intl";
+import NextError from "next/error";
 import { useEffect } from "react";
+import { routing } from "@/i18n/routing";
 
-export default function GlobalError({
-  error,
-  reset,
-}: {
+export default function GlobalError(props: {
   error: Error & { digest?: string };
-  reset: () => void;
 }) {
-  const t = useTranslations("GlobalError");
-  const locale = useLocale();
-
   useEffect(() => {
-    // Log the error to Sentry
-    Sentry.captureException(error);
-  }, [error]);
+    Sentry.captureException(props.error);
+  }, [props.error]);
 
   return (
-    <html lang={locale}>
+    <html lang={routing.defaultLocale}>
       <body>
-        <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-4 dark:bg-zinc-900">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-              {t("title")}
-            </h1>
-            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-              {t("description")}
-            </p>
-            {error.digest && (
-              <p className="mt-2 font-mono text-sm text-zinc-500 dark:text-zinc-400">
-                {t("errorId", { id: error.digest })}
-              </p>
-            )}
-            <div className="mt-8">
-              <button
-                onClick={reset}
-                className="rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500"
-              >
-                {t("tryAgain")}
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* `NextError` is the default Next.js error page component. Its type
+        definition requires a `statusCode` prop. However, since the App Router
+        does not expose status codes for errors, we simply pass 0 to render a
+        generic error message. */}
+        <NextError statusCode={0} />
       </body>
     </html>
   );

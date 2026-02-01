@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left">
+      <header className="flex flex-col text-center items-center justify-center py-0 sm:py-32 md:py-20 md:flex-row md:space-x-4 md:text-left">
         <section className="md:mt-2 md:w-1/2">
           <div className="w-40 h-40 md:w-72 md:h-72 rounded-full mb-4 mx-auto mt-2 relative overflow-hidden">
             {!isLoaded && (
@@ -83,7 +83,8 @@ export default function Header() {
                     >
                       <Button
                         variant="outline"
-                        className="w-full px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600 border-black dark:border-gray-400"
+                        className="w-full px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600
+                        border-black dark:border-gray-400 cursor-pointer"
                       >
                         <Icon className="mr-1" />
                         {link.label}
@@ -97,7 +98,7 @@ export default function Header() {
         </section>
       </header>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-20 md:mt-10">
         <HiArrowCircleDown size={40} className="animate-bounce" />
       </div>
     </>

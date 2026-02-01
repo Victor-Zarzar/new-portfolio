@@ -176,6 +176,31 @@ type HeroImageClientProps = {
   sizes?: string;
 };
 
+type CommandLink = {
+  id: string;
+  labelKey: string;
+  href: string;
+  keywords?: string;
+  icon?: React.ReactNode;
+};
+
+type NavbarNavLink = {
+  link: string;
+  label: string;
+  active?: boolean;
+  icon?: React.ReactNode;
+};
+
+type LogoProps = {
+  className?: string;
+};
+
+type NavMobileProps = {
+  logo?: React.ReactNode;
+  logoHref?: string;
+  navigationLinks: NavbarNavLink[];
+};
+
 export type {
   HeroImageClientProps,
   BlogListProps,
@@ -191,7 +216,9 @@ export type {
   PostMetadata,
   ContactFormData,
   CookieConsentProps,
+  NavMobileProps,
   CoursesType,
+  LogoProps,
   Experience,
   PageParams,
   PageProps,
@@ -203,6 +230,8 @@ export type {
   NavItem,
   Project,
   ProfileLink,
+  CommandLink,
+  NavbarNavLink,
   ProfileData,
   Services,
   SkillOutlineProps,

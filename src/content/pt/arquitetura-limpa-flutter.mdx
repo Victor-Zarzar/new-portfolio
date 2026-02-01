@@ -1,0 +1,237 @@
+---
+title: "Clean Architecture no Flutter"
+description: "Um guia prático sobre Clean Architecture + MVVM no Flutter"
+year: "2026"
+date: "2026-02-01"
+photo: "/article-7.png"
+tags: ["mvvm", "mobile", "flutter", "arquitetura"]
+---
+
+## Por que Clean Architecture importa no Flutter
+
+Apps Flutter frequentemente começam pequenos, mas crescem rápido. Funcionalidades se multiplicam, APIs evoluem e, de repente, uma "correção rápida" se torna uma refatoração arriscada. Clean Architecture ajuda você a evitar isso separando seu código em camadas com responsabilidades claras.
+
+Em alto nível, ela incentiva:
+
+- **Separação de responsabilidades**: a UI não deve conter regras de negócio.
+- **Inversão de dependência**: detalhes dependem de abstrações, não o contrário.
+- **Responsabilidade única**: cada classe faz um trabalho bem feito.
+
+> Regra prática: **camadas internas não devem conhecer (ou importar) camadas externas.**  
+> Nenhum tipo de UI dentro do seu domínio. Nenhum modelo de API vazando para suas regras de negócio.
+
+---
+
+## As camadas clássicas da Clean Architecture (em termos do Flutter)
+
+Você geralmente verá três camadas:
+
+### 1) Camada de Apresentação (UI + estado)
+
+É aqui que seus widgets Flutter vivem e onde o gerenciamento de estado acontece.
+
+**Contém**
+
+- Páginas / telas
+- Widgets
+- Gerenciamento de estado (BLoC, Riverpod, Provider, Cubit, etc.)
+
+**Objetivo**
+
+- Renderizar UI
+- Reagir à entrada do usuário
+- Chamar **casos de uso** (domínio)
+
+### 2) Camada de Domínio (regras de negócio)
+
+O "coração" do seu app. Ela não deve se importar com Flutter, HTTP ou armazenamento local.
+
+**Contém**
+
+- Entidades (objetos de negócio principais)
+- Casos de uso (ações que seu app pode fazer)
+- Contratos de repositório (interfaces)
+
+**Objetivo**
+
+- Codificar lógica de negócio de forma testável e independente de framework
+
+### 3) Camada de Dados (detalhes de implementação)
+
+É aqui que você conversa com o mundo externo.
+
+**Contém**
+
+- Clientes de API, adaptadores de banco de dados
+- DTOs / modelos
+- Implementações de repositório
+- Fontes de dados (remoto/local)
+
+**Objetivo**
+
+- Buscar/armazenar dados
+- Mapear modelos de dados ↔ entidades de domínio
+
+---
+
+## Onde o MVVM se encaixa
+
+MVVM (Model–View–ViewModel) é um padrão orientado a UI. No Flutter, você não obtém MVVM "de graça" como em frameworks com data-binding automático, mas ainda pode aplicar a ideia de forma limpa.
+
+Um mapeamento prático é:
+
+- **View** → Apresentação (Widgets)
+- **ViewModel** → Lógica de apresentação / detentor de estado (geralmente ainda Apresentação)
+- **Model** → Modelos de dados (camada de Dados) e/ou Entidades de domínio (camada de Domínio)
+
+Então, em vez de dizer "ViewModel é o Domínio", uma afirmação mais segura é:
+
+> **ViewModel é um adaptador de apresentação** que conversa com casos de uso de domínio e expõe estado pronto para UI.
+
+---
+
+## MVVM no Flutter (exemplo prático)
+
+### Model (entidade simples ou objeto de domínio)
+
+```dart
+class User {
+  final String name;
+  final int age;
+
+  const User({required this.name, required this.age});
+
+  User copyWith({String? name, int? age}) {
+    return User(
+      name: name ?? this.name,
+      age: age ?? this.age,
+    );
+  }
+}
+```
+
+### View (widgets permanecem "burros")
+
+```dart
+import 'package:flutter/material.dart';
+
+class UserTile extends StatelessWidget {
+  final User user;
+
+  const UserTile({super.key, required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(user.name),
+      subtitle: Text('Idade: ${user.age}'),
+    );
+  }
+}
+```
+
+### ViewModel (mantém estado da UI, chama lógica de domínio)
+
+```dart
+import 'dart:async';
+
+class UserViewModel {
+  final _controller = StreamController<User>.broadcast();
+  Stream<User> get user$ => _controller.stream;
+
+  void updateUserAge(User user, int newAge) {
+    _controller.add(user.copyWith(age: newAge));
+  }
+
+  void dispose() {
+    _controller.close();
+  }
+}
+```
+
+### Conectando View ↔ ViewModel (exemplo com Provider)
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class UserPage extends StatelessWidget {
+  const UserPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final vm = context.watch<UserViewModel>();
+
+    return StreamBuilder<User>(
+      stream: vm.user$,
+      builder: (context, snapshot) {
+        final user = snapshot.data;
+        if (user == null) return const Center(child: CircularProgressIndicator());
+        return UserTile(user: user);
+      },
+    );
+  }
+}
+```
+
+---
+
+## Uma estrutura de pastas escalável (feature-first)
+
+Uma abordagem comum no Flutter é feature-first, onde cada funcionalidade tem suas próprias três camadas:
+
+```
+lib/
+  core/
+    network/
+    routes/
+    utils/
+    errors/
+  features/
+    auth/
+      presentation/
+      domain/
+      data/
+    profile/
+      presentation/
+      domain/
+      data/
+  shared/
+    widgets/
+    theme/
+```
+
+---
+
+## Injeção de Dependência (exemplo com GetIt)
+
+```dart
+final sl = GetIt.instance;
+
+Future<void> initInjections() async {
+  await initSharedPrefs();
+  await initNetwork();
+  await initAuth();
+  await initArticles();
+}
+```
+
+Então no `main.dart`:
+
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initInjections();
+  runApp(const App());
+}
+```
+
+---
+
+## Conclusão
+
+Clean Architecture não é sobre perfeição, é sobre fazer escolhas deliberadas que ajudam seu app Flutter a escalar sem se tornar um pesadelo de manutenção. Ao separar as camadas de apresentação, domínio e dados, você cria código que é mais fácil de testar, mais fácil de modificar e mais fácil para sua equipe entender.
+
+Comece pequeno: escolha uma funcionalidade e aplique esses princípios. Você rapidamente verá os benefícios quando precisar trocar uma API, adicionar uma nova solução de gerenciamento de estado, ou escrever testes unitários sem lutar contra sua arquitetura.
+
+Lembre-se: o objetivo é **desenvolvimento sustentável**, não pureza dogmática. Adapte esses padrões para atender às necessidades da sua equipe, e seu eu futuro agradecerá.

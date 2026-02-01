@@ -181,7 +181,7 @@
   },
   "Blog": {
     "h1": "Articles & Publications",
-    "h2": "Technical content I've written recently",
+    "h2": "Technical content I've written recently...",
     "p": "Read more",
     "articletitle1": "Mobile Device Security: Practical Protection Strategies",
     "articledescription1": "A guide to protecting mobile devices with real-world techniques and secure practices.",
@@ -208,5 +208,24 @@
     "description": "A critical error has occurred. Our team has been notified.",
     "errorId": "Error ID: {id}",
     "tryAgain": "Try again"
+  },
+  "CommandPalette": {
+    "searchPlaceholder": "Search pages...",
+    "pressToNavigate": "Press ⌘K to navigate",
+    "command": {
+      "navigate": "Navigation",
+      "settings": "Settings",
+      "empty": "No results found",
+      "description": "Description of the page"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact",
+      "settings": "Settings"
+    }
   }
 }

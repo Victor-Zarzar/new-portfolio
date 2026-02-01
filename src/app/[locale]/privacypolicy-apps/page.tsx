@@ -8,7 +8,7 @@ export default function PrivacyPolicyApps() {
   const t = useTranslations("PrivacyPolicyApps");
 
   return (
-    <main className="mt-28 md:mt-40 mx-auto max-w-3xl">
+    <main className="mt-6 md:mt-10 mx-auto max-w-3xl">
       <section className="text-center mb-16">
         <Fade>
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-6">

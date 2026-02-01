@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section className="rounded-lg p-6">
       <Fade>
-        <header className="text-center mt-20 md:mt-36">
+        <header className="text-center mt-6 md:mt-10">
           <h1 className="title-about mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl">
             {t("h1")}
           </h1>

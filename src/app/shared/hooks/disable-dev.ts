@@ -1,8 +1,8 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import env from "@/env.mjs";
+import { usePathname, useRouter } from "@/i18n/navigation";
 
 export default function useDisableDevTools() {
   const router = useRouter();
