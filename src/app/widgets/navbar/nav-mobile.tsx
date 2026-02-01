@@ -1,10 +1,11 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useState } from "react";
 import { cn } from "@/app/shared/lib/utils";
-import type { NavbarNavLink, NavMobileProps } from "@/app/shared/types/main";
+import type { NavMobileProps } from "@/app/shared/types/main";
 import { Button } from "@/app/shared/ui/button";
 import { Link } from "@/i18n/navigation";
 
@@ -13,6 +14,7 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
     const closeMenu = () => setIsOpen(false);
+    const t = useTranslations("Navbar");
 
     return (
       <>
@@ -40,7 +42,7 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
         <div
           ref={ref}
           className={cn(
-            "fixed left-1/2 -translate-x-1/2 z-[60] w-[min(90vw,400px)] bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 dark:bg-stone-950 bg-[#ffffff] transition-all duration-300 ease-out overflow-hidden",
+            "fixed left-1/2 -translate-x-1/2 z-60 w-[min(90vw,400px)] backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 dark:bg-stone-950 bg-[#ffffff] transition-all duration-300 ease-out overflow-hidden",
             isOpen
               ? "top-20 opacity-100 scale-100"
               : "top-16 opacity-0 scale-95 pointer-events-none",
@@ -50,7 +52,7 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
             <div className="flex items-center gap-2">
               <Menu className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm font-medium text-muted-foreground">
-                Menu
+                {t("menu")}
               </span>
             </div>
             <Button
@@ -101,7 +103,7 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
             </ul>
           </nav>
 
-          <div className="h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-border/50 to-transparent" />
         </div>
       </>
     );

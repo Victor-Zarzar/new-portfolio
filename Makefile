@@ -45,6 +45,9 @@ shell:
 test: build
 	docker run --rm \
 		--name $(DOCKER_CONTAINER_NAME)-test \
+		-v $(PWD):/app \
+		-v /app/node_modules \
+		-w /app \
 		$(DOCKER_IMAGE_NAME):$(DOCKER_TAG) \
 		bun run test
 
