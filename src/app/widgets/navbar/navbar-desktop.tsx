@@ -46,7 +46,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     ref,
   ) => {
     const t = useTranslations("Navbar");
-    const iconCls = "h-5 w-5 text-muted-foreground";
+    const iconCls = "h-5 w-5";
 
     const defaultNavigationLinks: NavbarNavLink[] = [
       { link: "/", label: t("home"), icon: <Home className={iconCls} /> },
