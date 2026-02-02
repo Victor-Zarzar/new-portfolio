@@ -36,7 +36,7 @@ export default function CommandPalette() {
 
   const [open, setOpen] = React.useState(false);
 
-  const cls = "mr-0.5 h-4 w-4 text-muted-foreground";
+  const cls = "mr-0.5 h-4 w-4";
 
   const links: CommandLink[] = [
     {

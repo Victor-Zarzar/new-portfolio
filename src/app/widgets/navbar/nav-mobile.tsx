@@ -50,10 +50,8 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
         >
           <div className="flex items-center justify-between px-5 py-4 border-b border-border/50">
             <div className="flex items-center gap-2">
-              <Menu className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm font-medium text-muted-foreground">
-                {t("menu")}
-              </span>
+              <Menu className="h-4 w-4" />
+              <span className="text-sm font-medium">{t("menu")}</span>
             </div>
             <Button
               onClick={closeMenu}
@@ -76,9 +74,7 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
                     className={cn(
                       "flex items-center gap-3 px-5 py-3.5 text-base font-normal transition-all duration-200 cursor-pointer no-underline group relative",
                       "hover:bg-accent/50",
-                      item.active
-                        ? "text-foreground font-medium"
-                        : "text-foreground/70",
+                      item.active ? "text-foreground font-medium" : "text-base",
                     )}
                   >
                     {item.icon ? (

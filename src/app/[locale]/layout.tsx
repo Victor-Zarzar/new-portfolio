@@ -14,23 +14,23 @@ const translations: Record<
   { title: string; description: string; ogDescription: string }
 > = {
   pt: {
-    title: "Victor Zarzar | Desenvolvedor de Software",
+    title: "Victor Zarzar | Desenvolvedor Front-end",
     description:
-      "Desenvolvedor de Software com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuação em projetos web e mobile.",
+      "Desenvolvedor Front-end com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuação em projetos web e mobile.",
     ogDescription:
       "Portfólio profissional com projetos modernos e tecnologias atualizadas.",
   },
   en: {
-    title: "Victor Zarzar | Software Developer",
+    title: "Victor Zarzar | Front-end Developer",
     description:
-      "Software Developer with experience in developing modern applications focused on front-end, SEO, accessibility, security, performance and best practices. Working on web and mobile projects.",
+      "Front-end Developer with experience in developing modern applications focused on front-end, SEO, accessibility, security, performance and best practices. Working on web and mobile projects.",
     ogDescription:
       "Professional portfolio with modern projects and updated technologies.",
   },
   es: {
-    title: "Victor Zarzar | Desarrollador de Software",
+    title: "Victor Zarzar | Desarrollador Front-end",
     description:
-      "Desarrollador de Software con experiencia en el desarrollo de aplicaciones modernas enfocado en front-end, SEO, accesibilidad, seguridad, rendimiento y buenas prácticas. Actuación en proyectos web y mobile.",
+      "Desarrollador Front-end con experiencia en el desarrollo de aplicaciones modernas enfocado en front-end, SEO, accesibilidad, seguridad, rendimiento y buenas prácticas. Actuación en proyectos web y mobile.",
     ogDescription:
       "Portafolio profesional con proyectos modernos y tecnologías actualizadas.",
   },
@@ -58,7 +58,7 @@ export async function generateMetadata({
       title: meta.title,
       description: meta.ogDescription,
       url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}`,
-      siteName: "Victor Zarzar | Software Developer",
+      siteName: "Victor Zarzar | Front-end Developer",
       images: [
         {
           url: "/og-image.png",

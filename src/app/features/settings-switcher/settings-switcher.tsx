@@ -30,7 +30,7 @@ export default function SettingsSwitcher() {
   const t = useTranslations("Navbar");
 
   React.useEffect(() => {
-    const handler = () => setOpen(true); // ou a função que abre teu dialog
+    const handler = () => setOpen(true);
     window.addEventListener("app:open-settings", handler as EventListener);
     return () =>
       window.removeEventListener("app:open-settings", handler as EventListener);

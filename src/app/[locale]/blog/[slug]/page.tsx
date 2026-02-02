@@ -112,7 +112,7 @@ export async function generateMetadata({
       title: post.metadata.title,
       description: post.metadata.description,
       url: canonicalUrl,
-      siteName: "Victor Zarzar | Software Developer",
+      siteName: "Victor Zarzar | Front-end Developer",
       images: [
         {
           url: post.metadata.photo,
