@@ -30,7 +30,7 @@ type PostMetadata = {
   title: string;
   description: string;
   year: string;
-  date: string;
+  publishedAt: string;
   photo: string;
   slug: string;
   sizes: string;

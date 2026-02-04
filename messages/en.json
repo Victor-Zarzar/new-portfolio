@@ -146,7 +146,7 @@
     "website": "Website: www.victorzarzar.com.br"
   },
   "Contact": {
-    "h1": "Contact Me ;)",
+    "h1": "Did you like my work?",
     "name": "Name",
     "email": "Email",
     "subject": "Subject",
@@ -209,6 +209,11 @@
     "description": "A critical error has occurred. Our team has been notified.",
     "errorId": "Error ID: {id}",
     "tryAgain": "Try again"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred while loading this page. Don't worry — we've been notified and you can continue browsing normally.",
+    "return-home": "Back to Homepage"
   },
   "CommandPalette": {
     "searchPlaceholder": "Search pages...",

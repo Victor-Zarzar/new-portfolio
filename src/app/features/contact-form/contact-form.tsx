@@ -72,7 +72,6 @@ export default function ContactForm() {
             dark:hover:shadow-stone-600 border-black dark:border-gray-400"
     >
       <CardHeader className="pb-4">
-        <CardTitle className="text-xl md:text-2xl">{t("cardTitle")}</CardTitle>
         <CardDescription className="text-sm md:text-base">
           {t("cardSubtitle")}
         </CardDescription>

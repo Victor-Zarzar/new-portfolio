@@ -31,9 +31,8 @@ stop:
 
 clean:
 	docker stop $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
-	docker rm $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
-	docker rmi -f $(DOCKER_IMAGE_NAME) >/dev/null 2>&1 || true
-	docker system prune -af >/dev/null 2>&1 || true
+	docker rm -f $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
+	docker rmi -f $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) >/dev/null 2>&1 || true
 	sudo rm -rf node_modules .next >/dev/null 2>&1 || true
 
 logs:
