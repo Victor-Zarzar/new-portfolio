@@ -146,7 +146,7 @@
     "website": "Sitio web: www.victorzarzar.com.br"
   },
   "Contact": {
-    "h1": "Contáctame ;)",
+    "h1": "¿Te gustó mi trabajo?",
     "name": "Nombre",
     "email": "Correo electrónico",
     "subject": "Asunto",
@@ -212,6 +212,11 @@
     "description": "Se ha producido un error crítico. Nuestro equipo ha sido notificado.",
     "errorId": "ID del error: {id}",
     "tryAgain": "Intentar de nuevo"
+  },
+  "Error": {
+    "title": "Algo deu errado",
+    "description": "Ocurrió un error inesperado al cargar esta página. No te preocupes — ya hemos sido notificados y puedes continuar navegando con normalidad.",
+    "return-home": "Volver a la página principal"
   },
   "CommandPalette": {
     "searchPlaceholder": "Buscar páginas...",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image, { type ImageProps } from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { parseISODateOnlyToUTC } from "@/app/shared/helpers/format-date";
 import type {
   MdxAnchorProps,
   MdxCodeProps,
@@ -16,7 +17,8 @@ import type {
 } from "@/app/shared/types/main";
 import { HeroImageClient } from "@/app/shared/wrapper/hero-image-client";
 import env from "@/env.mjs";
-import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import { routing } from "@/i18n/routing";
+import { getAllPosts, getPostBySlug } from "@/lib/blog";
 
 const components = {
   h1: (props: MdxHeadingProps) => (
@@ -75,7 +77,7 @@ const components = {
 export async function generateStaticParams(): Promise<
   Array<{ locale: string; slug: string }>
 > {
-  const locales = ["pt", "en", "es"] as const;
+  const locales = routing.locales;
 
   return locales.flatMap((locale) => {
     const posts = getAllPosts(locale);
@@ -147,7 +149,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     description: post.metadata.description,
     image: `${env.NEXT_PUBLIC_WEBSITE_URL}${post.metadata.photo}`,
     url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/blog/${slug}`,
-    datePublished: post.metadata.date,
+    datePublished: post.metadata.publishedAt,
+    dateModified: post.metadata.publishedAt,
     author: {
       "@type": "Person",
       name: "Victor Zarzar",
@@ -179,11 +182,15 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
         <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-          {new Date(post.metadata.date).toLocaleDateString(locale, {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
+          {parseISODateOnlyToUTC(post.metadata.publishedAt).toLocaleDateString(
+            locale,
+            {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              timeZone: "UTC",
+            },
+          )}
         </p>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           {post.metadata.title}

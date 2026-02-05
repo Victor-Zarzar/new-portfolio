@@ -47,7 +47,10 @@ export function getAllPosts(locale: string): PostMetadata[] {
         content,
       } as PostMetadata;
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    );
 
   return posts;
 }
