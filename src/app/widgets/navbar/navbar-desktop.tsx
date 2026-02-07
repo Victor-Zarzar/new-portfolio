@@ -84,9 +84,9 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
         ref={ref}
         {...props}
       >
-        <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between gap-4">
+        <div className="container mx-auto flex h-16 items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="md:hidden">
+            <div className="md:flex lg:hidden">
               <NavMobile
                 logo={logo}
                 logoHref={logoHref}
@@ -124,11 +124,12 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="items-center gap-3 md:hidden lg:flex">
             <CommandPalette />
-            <div className="md:hidden">
-              <SettingsSwitcher />
-            </div>
+          </div>
+
+          <div className="md:flex lg:hidden">
+            <SettingsSwitcher />
           </div>
         </div>
       </header>

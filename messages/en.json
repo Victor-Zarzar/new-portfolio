@@ -23,7 +23,7 @@
   },
   "Header": {
     "h1": "Welcome to my portfolio,",
-    "span": "I´am Front-end Developer🖖🏻"
+    "span": "I´am Front-End Developer🖖🏻"
   },
   "Skills": {
     "h1": "Skills",
@@ -31,7 +31,7 @@
   },
   "About": {
     "h1": "About",
-    "p": "My first contact with programming was in 2009, using SQL-SERVER 2000 & My SQL technologies, creating, restoring and editing databases, and creating sites in PHP.Always looking to improve my knowledge daily, Im not afraid of the unknown, I try to evolve every day, new challenges are welcome. I love learning about new technologies and solving problems. In love with coffee, my vinyl records & Rock n Roll 🤘🏻.",
+    "p": "My first contact with programming was in 2009, using SQL Server 2000 and MySQL technologies, creating, restoring, and managing databases, as well as building websites with PHP. Always striving to improve my knowledge on a daily basis, I’m not afraid of the unknown and aim to evolve every day. New challenges are always welcome—I love learning new technologies and solving problems. Passionate about coffee, my vinyl records, and Rock ’n’ Roll, and a guitar enthusiast.🤘🏻🎸",
     "h2": "Language",
     "span1": "English - Basic Tech",
     "span2": "PT-BR - Native Speaker",
@@ -77,26 +77,15 @@
   "Projects": {
     "h1": "Projects",
     "h2": "Featured projects",
-    "projecttitle1": "Alcohol or Gasoline App",
-    "projectdescription1": "App Alcohol or Gasoline Flutter.",
-    "projecttitle2": "Law Firm",
-    "projectdescription2": "Web site application Law Firm.",
-    "projecttitle3": "Task Tracker API",
-    "projectdescription3": "API for task management with email/Slack notifications",
-    "projecttitle4": "Age Pet App",
-    "projectdescription4": "Age Pet App Flutter.",
-    "projecttitle5": "My Portfolio",
-    "projectdescription5": "My professional portfolio website.",
-    "projecttitle6": "Expense Report Generate",
-    "projectdescription6": "Generator expense PDF and Excel. (Automated)",
-    "projecttitle7": "PDF Reader App",
-    "projectdescription7": "Application for reading PDF files.",
-    "projecttitle8": "CLT vs PJ Calculator App",
-    "projectdescription8": "Application helps you compare the financial difference between working as a CLT (employee) and PJ (freelancer/contractor) in Brazil.",
-    "projecttitle9": "Blog Post",
-    "projectdescription9": "Full-stack application built with Next.js, React, and TypeScript, using PostgreSQL, Docker, and Nginx.",
-    "projecttitle10": "Cost Map API",
-    "projectdescription10": "API for providing data on the cost of living between Brazilian cities."
+    "seeAll": "All Projects",
+    "title": "My GitHub Stats",
+    "totalStars": "Total Stars Earned",
+    "totalCommits": "Total Commits",
+    "totalPrs": "Total PRs",
+    "totalIssues": "Total Issues",
+    "contributedTo": "Contributed to",
+    "topLanguages": "Top Languages",
+    "repo": "Webiste"
   },
   "PrivacyPolicyApps": {
     "h1": "Privacy Policy",

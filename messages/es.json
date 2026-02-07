@@ -23,7 +23,7 @@
   },
   "Header": {
     "h1": "Bienvenido a mi portafolio,",
-    "span": "Soy Desarrollador de Software🖖🏻"
+    "span": "Soy un Desarrollador Front-End🖖🏻"
   },
   "Skills": {
     "h1": "Habilidades",
@@ -31,7 +31,7 @@
   },
   "About": {
     "h1": "Acerca de",
-    "p": "Mi primer contacto con la programación fue en el año 2009, utilizando tecnologías SQL-SERVER 2000 y My SQL, creando, restaurando y editando bases de datos, y creando sitios en PHP. Siempre buscando mejorar mis conocimientos a diario, no tengo miedo de desconocido, trato de evolucionar cada día, los nuevos desafíos son bienvenidos. Me encanta aprender sobre nuevas tecnologías y resolver problemas. Enamorada del café, mis discos de vinilo y el Rock n Roll 🤘🏻.",
+    "p": "Mi primer contacto con la programación fue en 2009, utilizando las tecnologías SQL Server 2000 y MySQL, creando, restaurando y gestionando bases de datos, además de desarrollar sitios web en PHP. Siempre buscando mejorar mis conocimientos día a día, no le tengo miedo a lo desconocido y procuro evolucionar constantemente. Los nuevos desafíos son bienvenidos; me encanta aprender nuevas tecnologías y resolver problemas. Apasionado por el café, mis discos de vinilo y el Rock and Roll, y entusiasta de la guitarra.🤘🏻🎸",
     "h2": "Idioma",
     "span1": "Inglés - Tecnología básica",
     "span2": "PT-BR - Hablante nativo",
@@ -77,26 +77,15 @@
   "Projects": {
     "h1": "Proyectos",
     "h2": "Proyectos destacados",
-    "projecttitle1": "Aplicación de alcohol o gasolina",
-    "projectdescription1": "Aplicación Flutter de alcohol o gasolina.",
-    "projecttitle2": "Bufete de abogados",
-    "projectdescription2": "Solicitud de sitio web para bufete de abogados.",
-    "projecttitle3": "Task Tracker API",
-    "projectdescription3": "API para la gestión de tareas con notificaciones por correo electrónico/Slack",
-    "projecttitle4": "Aplicación Edad de la mascota",
-    "projectdescription4": "Aplicación Edad de la mascota Flutter.",
-    "projecttitle5": "Mi Portafolio",
-    "projectdescription5": "Sitio web de mi portafolio profesional.",
-    "projecttitle6": "Generar informe de gastos",
-    "projectdescription6": "Generador de gastos en PDF y Excel (automatizado)",
-    "projecttitle7": "Aplicación de lectura de PDF",
-    "projectdescription7": "Aplicación para leer archivos PDF.",
-    "projecttitle8": "Aplicación de calculadora CLT vs PJ",
-    "projectdescription8": "La aplicación te ayuda a comparar la diferencia financiera entre trabajar como CLT (empleado) y PJ (autónomo/contratista) en Brasil.",
-    "projecttitle9": "Blog Post",
-    "projectdescription9": "Aplicación full stack desarrollada con Next.js, React y TypeScript, utilizando PostgreSQL, Docker y Nginx.",
-    "projecttitle10": "API de mapa de costos",
-    "projectdescription10": "API para proporcionar datos sobre el costo de vida entre ciudades brasileñas."
+    "seeAll": "Ver todos los proyectos",
+    "title": "Mis estadísticas de GitHub",
+    "totalStars": "Total de estrellas",
+    "totalCommits": "Total de commits",
+    "totalPrs": "Total de PRs",
+    "totalIssues": "Total de issues",
+    "contributedTo": "Contribuciones",
+    "topLanguages": "Lenguajes principales",
+    "repo": "Sitio Web"
   },
   "PrivacyPolicyApps": {
     "h1": "Política de privacidad",

@@ -1,6 +1,6 @@
 {
   "name": "new-portfolio",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "test:watch": "bun test --watch",
-    "test:update": "bun test --update-snapshots"
+    "test:update": "bun test --update-snapshots",
+    "prod": "bun run build && bun run start"
   },
   "dependencies": {
     "@happy-dom/global-registrator": "^20.4.0",

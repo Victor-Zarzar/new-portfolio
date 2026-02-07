@@ -23,7 +23,7 @@
   },
   "Header": {
     "h1": "Bem-vindo ao meu portfólio,",
-    "span": "Sou Desenvolvedor Front-end🖖🏻"
+    "span": "Sou Desenvolvedor Front-End🖖🏻"
   },
   "Skills": {
     "h1": "Habilidades",
@@ -31,7 +31,7 @@
   },
   "About": {
     "h1": "Sobre",
-    "p": "Meu primeiro contato com programação foi em 2009, utilizando as tecnologias SQL-SERVER 2000 & My SQL, criando, restaurando e editando bancos de dados, e criando sites em PHP. Sempre buscando aprimorar meus conhecimentos diariamente, não tenho medo do desconhecido, procuro evoluir a cada dia, novos desafios são bem vindos adoro aprender sobre novas tecnologias e resolver problemas. Apaixonada por café, meus discos de vinil & Rock n Roll 🤘🏻.",
+    "p": "Meu primeiro contato com programação foi em 2009, utilizando as tecnologias SQL-SERVER 2000 & My SQL, criando, restaurando e editando bancos de dados, e criando sites em PHP. Sempre buscando aprimorar meus conhecimentos diariamente, não tenho medo do desconhecido, procuro evoluir a cada dia, novos desafios são bem vindos adoro aprender sobre novas tecnologias e resolver problemas. Apaixonado por café, meus discos de vinil & Rock n Roll, e entusiasta de guitarra.🤘🏻🎸",
     "h2": "Linguagem",
     "span1": "Inglês - Técnico Básico",
     "span2": "PT-BR - Língua Nativa",
@@ -76,27 +76,15 @@
   },
   "Projects": {
     "h1": "Projetos",
-    "h2": "Projetos em destaque",
-    "projecttitle1": "App álcool ou gasolina ?",
-    "projectdescription1": "App Álcool ou Gasolina Flutter.",
-    "projecttitle2": "Escritório de Advocacia",
-    "projectdescription2": "Website escritório de advocacia.",
-    "projecttitle3": "Task Tracker API",
-    "projectdescription3": "API para gerenciamento de tarefas com notificações por e-mail/Slack",
-    "projecttitle4": "App Idade do Pet",
-    "projectdescription4": "App Idade do Pet Flutter.",
-    "projecttitle5": "Meu portfólio",
-    "projectdescription5": "Meu portfólio profissional.",
-    "projecttitle6": "Gerador de Relatório de Despesas",
-    "projectdescription6": "Gerador de despesas em PDF e Excel. (Automatizado)",
-    "projecttitle7": "PDF Reader (Leitor de PDF)",
-    "projectdescription7": "Aplicativo para fazer leituras de arquivos PDF.",
-    "projecttitle8": "App Calculadora CLT vs PJ",
-    "projectdescription8": "Aplicativo ajuda você a comparar a diferença financeira entre trabalhar como CLT (funcionário) e PJ (freelancer/contratado) no Brasil.",
-    "projecttitle9": "Blog Post",
-    "projectdescription9": "Plataforma de blog full stack desenvolvida com Next.js, React e TypeScript, utilizando PostgreSQL para dados e Docker + Nginx para infraestrutura.",
-    "projecttitle10": "Cost Map API",
-    "projectdescription10": "API para fornecer dados sobre o custo de vida entre cidades brasileiras."
+    "seeAll": "Ver todos os projetos",
+    "title": "Minhas estatísticas no GitHub",
+    "totalStars": "Total de estrelas",
+    "totalCommits": "Total de commits",
+    "totalPrs": "Total de PRs",
+    "totalIssues": "Total de issues",
+    "contributedTo": "Contribuições",
+    "topLanguages": "Linguagens mais utilizadas",
+    "repo": "Website"
   },
   "PrivacyPolicyApps": {
     "h1": "Política de Privacidade",

@@ -10,22 +10,6 @@ type Experience = {
   time: string;
 };
 
-type Project = {
-  id: number;
-  androidLink?: string;
-  iosLink?: string;
-  webLink?: string;
-  title: string;
-  description: string;
-  photo: string;
-  priority: boolean;
-  sizes: string;
-  sourceCodeLink: string;
-  sourceLinkPrivacy: string;
-  techStack: TechKey[];
-  date: string;
-};
-
 type PostMetadata = {
   title: string;
   description: string;
@@ -97,35 +81,6 @@ type CookieConsentProps = {
   onAcceptCallback?: () => void;
   onDeclineCallback?: () => void;
 };
-
-type TechKey =
-  | "flutter"
-  | "dart"
-  | "android"
-  | "ios"
-  | "xcode"
-  | "androidstudio"
-  | "html"
-  | "react"
-  | "typescript"
-  | "tailwind"
-  | "nextjs"
-  | "sentry"
-  | "kibana"
-  | "loki"
-  | "grafana"
-  | "docker"
-  | "docker-compose"
-  | "fastapi"
-  | "python"
-  | "reportlab"
-  | "kotlin"
-  | "swift"
-  | "pandas"
-  | "postgres"
-  | "mysql"
-  | "nginx"
-  | "prisma";
 
 type ProfileLink = {
   label: string;
@@ -201,6 +156,30 @@ type NavMobileProps = {
   navigationLinks: NavbarNavLink[];
 };
 
+type GithubProject = {
+  name: string;
+  url: string;
+  description: string | null;
+  homepageUrl: string | null;
+  stargazerCount: number;
+  primaryLanguage: { name: string; color: string | null } | null;
+};
+
+type GithubTopLanguage = {
+  name: string;
+  count: number;
+  color: string | null;
+};
+
+type GithubStats = {
+  stars: number;
+  totalCommits: number;
+  prs: number;
+  issues: number;
+  contributions: number;
+  topLanguages: GithubTopLanguage[];
+};
+
 export type {
   HeroImageClientProps,
   BlogListProps,
@@ -228,7 +207,6 @@ export type {
   GetTimelineDataParams,
   Locale,
   NavItem,
-  Project,
   ProfileLink,
   CommandLink,
   NavbarNavLink,
@@ -236,5 +214,7 @@ export type {
   Services,
   SkillOutlineProps,
   SvgIconProps,
-  TechKey,
+  GithubProject,
+  GithubTopLanguage,
+  GithubStats,
 };

@@ -1,13 +1,14 @@
 <h1 align="center" id="header">
-  New Portfolio - Full Stack Application (NextJS)
+  New Portfolio - (NextJS)
 </h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white" alt="MDX">
+  <img src="https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white" alt="Bun">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
 </p>
 
@@ -49,11 +50,13 @@
 - **Dark Mode** - Theme switching with Next Themes
 - **i18n** - Multi-language support (EN / PT-BR / ES) via Next Intl
 - **Nodemailer** - Email functionality
+- **WebHook Slack** - Slack notifications
 - **Sanitize HTML** - XSS protection for user inputs
 - **Rate Limiter Flexible** - API endpoint rate limiting and DDoS protection
 - **Vercel Analytics** - Performance monitoring
 - **Vercel Speed Insights** - Real-time performance metrics
 - **Sentry** - Error tracking and performance monitoring tool
+- **GitHub Actions** - Continuous integration and deployment
 
 ---
 
@@ -342,11 +345,11 @@ new-portfolio/
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a08174cc-1e7b-4eb4-9b3a-3d85b7c449c1" width="1000" height="600" alt="Projects Section">
+  <img src="https://github.com/user-attachments/assets/0ef7bc20-8bb1-46fb-b360-b013ccdd4a12" width="1000" height="600" alt="Projects Section">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/516abd3b-abaf-4004-a26f-850578902d4c" alt="Dark Mode" width="1000" height="500" alt="Mobile">
+  <img src="https://github.com/user-attachments/assets/4284ef66-c192-4985-9eb1-ac2d5758f23d" alt="Dark Mode" width="1000" height="500" alt="Mobile">
 </p>
 
 ---

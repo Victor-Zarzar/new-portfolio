@@ -75,10 +75,7 @@ function ActionCard({ post, locale }: { post: PostMetadata; locale: string }) {
 
   return (
     <Link href={`/${locale}/blog/${post.slug}`}>
-      <Card
-        className="w-full transition-all duration-300 hover:scale-[1.01] hover:shadow-lg dark:hover:shadow-stone-600
-                  border-black dark:border-gray-400 cursor-pointer group"
-      >
+      <Card className="w-full group">
         <CardContent className="p-6">
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">

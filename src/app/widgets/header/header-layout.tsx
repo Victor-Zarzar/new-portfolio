@@ -63,7 +63,7 @@ export default function Header() {
                 </h1>
 
                 <p className="text-lg mt-4 mb-6 md:text-2xl">
-                  <span className="font-semibold text-gray-500 whitespace-pre-line">
+                  <span className="font-semibold text-neutral-600 dark:text-neutral-400">
                     {t("span")}
                   </span>
                 </p>

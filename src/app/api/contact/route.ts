@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/nextjs";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { RateLimiterMemory } from "rate-limiter-flexible";
@@ -17,6 +18,34 @@ const rateLimiter = new RateLimiterMemory({
   points: 3,
   duration: 60,
 });
+
+async function sendSlackMessage(payload: {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}) {
+  if (!env.SLACK_WEBHOOK_URL) {
+    return;
+  }
+
+  const text =
+    `*New portfolio contact*\n` +
+    `*Name:* ${payload.name}\n` +
+    `*Email:* ${payload.email}\n` +
+    `*Subject:* ${payload.subject}\n` +
+    `*Message:*\n${payload.message}`;
+
+  const res = await fetch(env.SLACK_WEBHOOK_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Slack webhook failed: ${res.status} ${res.statusText}`);
+  }
+}
 
 export async function POST(request: Request) {
   const ip =
@@ -59,6 +88,18 @@ export async function POST(request: Request) {
 
     await transporter.sendMail(mailOptions);
 
+    try {
+      await sendSlackMessage({
+        name: sanitizedName,
+        email: sanitizedEmail,
+        subject: sanitizedSubject,
+        message: sanitizedMessage,
+      });
+    } catch (error) {
+      console.error("Error sending Slack message:", error);
+      Sentry.captureException(error);
+    }
+
     return NextResponse.json(
       { message: "Email sent successfully!" },
       { status: 200 },
@@ -76,6 +117,8 @@ export async function POST(request: Request) {
     }
 
     console.error("Error sending email:", error);
+    Sentry.captureException(error);
+
     return NextResponse.json(
       { message: "Failed to send email" },
       { status: 500 },

@@ -34,7 +34,7 @@ export function Logo({ className }: LogoProps) {
         )}
       >
         <span
-          className="md:text-lg 2xl:text-xl font-extrabold tracking-wide text-transparent
+          className="lg:hidden xl:flex lg:text-2xl font-extrabold tracking-wide text-transparent
           bg-clip-text bg-linear-to-r from-gray-500 to-gray-800 dark:from-gray-300 dark:to-gray-500
           drop-shadow-md transition-all duration-300 hover:scale-105 hover:text-gray-500 dark:hover:text-gray-300 font-mono animate-pulse mb-2"
         >
