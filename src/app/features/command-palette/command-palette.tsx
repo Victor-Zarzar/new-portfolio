@@ -34,7 +34,7 @@ export default function CommandPalette() {
   const t = useTranslations("CommandPalette");
   const router = useRouter();
 
-  const [open, setOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const cls = "mr-0.5 h-4 w-4";
 
@@ -78,25 +78,25 @@ export default function CommandPalette() {
   ];
 
   React.useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      const isK = e.key.toLowerCase() === "k";
-      const isCmdOrCtrl = e.metaKey || e.ctrlKey;
+    function onKeyDown(event: KeyboardEvent) {
+      if (
+        (event.key === "k" && (event.metaKey || event.ctrlKey)) ||
+        (event.code === "scape" && isOpen)
+      ) {
+        event.preventDefault();
 
-      if (isCmdOrCtrl && isK) {
-        e.preventDefault();
-        setOpen((v) => !v);
+        setIsOpen(!isOpen);
       }
-      if (e.key === "Escape") {
-        setOpen(false);
-      }
-    };
-
+    }
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isOpen]);
 
   const go = (href: string) => {
-    setOpen(false);
+    setIsOpen(false);
     router.push(href);
   };
 
@@ -106,8 +106,8 @@ export default function CommandPalette() {
         type="button"
         variant="outline"
         size="sm"
-        className="hidden h-9 w-65 justify-start gap-2 px-3 text-sm md:flex"
-        onClick={() => setOpen(true)}
+        className="hidden h-9 w-65 justify-start gap-2 px-3 text-sm md:flex border-black dark:border-gray-400"
+        onClick={() => setIsOpen(true)}
       >
         <span className="text-muted-foreground text-xs">
           {t("pressToNavigate")}
@@ -122,7 +122,7 @@ export default function CommandPalette() {
         </span>
       </Button>
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="p-0 overflow-hidden">
           <DialogTitle className="sr-only">{t("command.navigate")}</DialogTitle>
           <DialogDescription className="sr-only">
@@ -151,7 +151,7 @@ export default function CommandPalette() {
               <CommandGroup heading={t("command.settings")}>
                 <CommandItem
                   onSelect={() => {
-                    setOpen(false);
+                    setIsOpen(false);
                     window.dispatchEvent(new CustomEvent("app:open-settings"));
                   }}
                 >

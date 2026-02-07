@@ -1,42 +1,27 @@
-import { FaAws, FaFigma } from "react-icons/fa";
+import { FaFigma } from "react-icons/fa";
 import { IoTerminal } from "react-icons/io5";
 import {
   SiAndroidstudio,
-  SiCss3,
   SiDart,
-  SiDjango,
   SiDocker,
-  SiElasticsearch,
-  SiFastapi,
   SiFirebase,
   SiFlutter,
-  SiGit,
-  SiGithub,
   SiGithubactions,
-  SiGitlab,
   SiGrafana,
-  SiHtml5,
+  SiGraphql,
   SiJavascript,
-  SiLetsencrypt,
-  SiLinux,
-  SiMacos,
   SiMui,
   SiMysql,
   SiNextdotjs,
   SiNginx,
   SiPortainer,
-  SiPostman,
   SiPrisma,
-  SiPython,
+  SiReact,
   SiSentry,
   SiShadcnui,
-  SiSqlalchemy,
   SiSqlite,
-  SiSwagger,
   SiTailwindcss,
-  SiTrello,
   SiTypescript,
-  SiVercel,
   SiVite,
   SiXcode,
 } from "react-icons/si";
@@ -52,12 +37,36 @@ export const skills = [
     text: "JavaScript",
   },
   {
-    icon: SiPython,
-    text: "Python",
+    icon: SiNextdotjs,
+    text: "NextJS",
   },
   {
-    icon: SiFastapi,
-    text: "FastAPI",
+    icon: SiVite,
+    text: "Vite",
+  },
+  {
+    icon: SiReact,
+    text: "React",
+  },
+  {
+    icon: SiTailwindcss,
+    text: "Tailwind",
+  },
+  {
+    icon: SiMui,
+    text: "MUI",
+  },
+  {
+    icon: SiShadcnui,
+    text: "Shadcn UI",
+  },
+  {
+    icon: SiGraphql,
+    text: "GraphQL",
+  },
+  {
+    icon: FaFigma,
+    text: "Figma",
   },
   {
     icon: SiDart,
@@ -76,32 +85,8 @@ export const skills = [
     text: "Grafana",
   },
   {
-    icon: SiElasticsearch,
-    text: "Elastic ELK",
-  },
-  {
     icon: SiSentry,
     text: "Sentry",
-  },
-  {
-    icon: SiNextdotjs,
-    text: "NextJS",
-  },
-  {
-    icon: SiVite,
-    text: "Vite",
-  },
-  {
-    icon: SiTailwindcss,
-    text: "Tailwind",
-  },
-  {
-    icon: SiHtml5,
-    text: "HTML5",
-  },
-  {
-    icon: SiCss3,
-    text: "CSS3",
   },
   {
     icon: SiPortainer,
@@ -112,44 +97,8 @@ export const skills = [
     text: "Prisma",
   },
   {
-    icon: SiMui,
-    text: "MUI",
-  },
-  {
-    icon: SiShadcnui,
-    text: "Shadcn UI",
-  },
-  {
     icon: SiFirebase,
     text: "Firebase",
-  },
-  {
-    icon: SiGit,
-    text: "Git",
-  },
-  {
-    icon: SiGithub,
-    text: "GitHub",
-  },
-  {
-    icon: SiGitlab,
-    text: "Gitlab",
-  },
-  {
-    icon: SiPostman,
-    text: "Postman",
-  },
-  {
-    icon: SiSwagger,
-    text: "Swagger",
-  },
-  {
-    icon: SiMacos,
-    text: "macOS",
-  },
-  {
-    icon: SiLinux,
-    text: "Linux",
   },
   {
     icon: SiXcode,
@@ -160,33 +109,12 @@ export const skills = [
     text: "Android Studio",
   },
   {
-    icon: SiTrello,
-    text: "Trello",
-  },
-  {
-    icon: SiVercel,
-    text: "Vercel",
-  },
-  {
-    icon: SiSqlalchemy,
-    text: "SQLAlchemy",
-  },
-
-  {
-    icon: SiDjango,
-    text: "Django",
-  },
-  {
     icon: SiSqlite,
     text: "SQLite",
   },
   {
     icon: IoTerminal,
     text: "OpenSSH",
-  },
-  {
-    icon: FaFigma,
-    text: "Figma",
   },
   {
     icon: SiNginx,
@@ -199,10 +127,6 @@ export const skills = [
   {
     icon: SiMysql,
     text: "MySQL",
-  },
-  {
-    icon: SiLetsencrypt,
-    text: "Let's Encrypt",
   },
 ];
 

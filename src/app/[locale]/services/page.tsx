@@ -30,21 +30,23 @@ export default function ServicesPage() {
 
       <section className="p-4 flex flex-col gap-4 items-center min-h-screen mb-12 md:mb-0">
         {services.map((item) => (
-          <Card
-            key={item.id}
-            className="w-3/4 max-w-md mb-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600
-                        border-black dark:border-gray-400 cursor-pointer"
-          >
+          <Card key={item.id} className="w-4/5 max-w-lg mb-4">
             <CardHeader>
               <CardTitle className="text-sm sm:text-2xl">
                 {item.title}
               </CardTitle>
-              <CardDescription className="text-xs sm:text-xl">
+              <CardDescription className="text-xs sm:text-base text-neutral-600 dark:text-neutral-400">
                 {item.description}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm md:text-xl">{item.p}</p>
+              <p
+                className="text-sm font-medium
+              text-neutral-600 dark:text-neutral-400
+              transition-colors"
+              >
+                {item.p}
+              </p>
             </CardContent>
           </Card>
         ))}

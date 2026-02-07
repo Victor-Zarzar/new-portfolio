@@ -42,7 +42,7 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
         <div
           ref={ref}
           className={cn(
-            "fixed left-1/2 -translate-x-1/2 z-60 w-[min(90vw,400px)] backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 dark:bg-stone-950 bg-[#ffffff] transition-all duration-300 ease-out overflow-hidden",
+            "fixed left-1/2 -translate-x-1/2 z-60 w-[min(90vw,900px)] backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 dark:bg-stone-950 bg-[#ffffff] transition-all duration-300 ease-out overflow-hidden",
             isOpen
               ? "top-20 opacity-100 scale-100"
               : "top-16 opacity-0 scale-95 pointer-events-none",

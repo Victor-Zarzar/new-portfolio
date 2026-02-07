@@ -1,229 +1,201 @@
-"use client";
-
-import Image from "next/image";
-import { useTranslations } from "next-intl";
-import type { JSX } from "react";
-import { useState } from "react";
-import { Fade } from "react-awesome-reveal";
-import { AiOutlineGithub, AiOutlineGlobal } from "react-icons/ai";
-import { FaAppStoreIos, FaGooglePlay } from "react-icons/fa";
-import { MdPrivacyTip } from "react-icons/md";
-import { getProjectsData } from "@/app/shared/data/getProjectsData";
-import type { Project, TechKey } from "@/app/shared/types/main";
+import { Bug, GitBranch, GitCommit, GitPullRequest, Star } from "lucide-react";
+import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { VscGithub } from "react-icons/vsc";
+import { getProjects, getStats } from "@/app/shared/api/github";
 import { Card, CardContent } from "@/app/shared/ui/card";
-import AndroidIcon from "@/app/shared/ui/icons/projects/android";
-import AndroidStudioIcon from "@/app/shared/ui/icons/projects/androidstudio";
-import DartIcon from "@/app/shared/ui/icons/projects/dart";
-import DockerIcon from "@/app/shared/ui/icons/projects/docker";
-import DockerComposeIcon from "@/app/shared/ui/icons/projects/docker-compose";
-import FastAPIIcon from "@/app/shared/ui/icons/projects/fastapi";
-import FlutterIcon from "@/app/shared/ui/icons/projects/flutter";
-import GrafanaIcon from "@/app/shared/ui/icons/projects/grafana";
-import HtmlIcon from "@/app/shared/ui/icons/projects/html";
-import IosIcon from "@/app/shared/ui/icons/projects/ios";
-import KibanaIcon from "@/app/shared/ui/icons/projects/kibana";
-import KotlinIcon from "@/app/shared/ui/icons/projects/kotlin";
-import LokiIcon from "@/app/shared/ui/icons/projects/loki";
-import MySqlIcon from "@/app/shared/ui/icons/projects/mysql";
-import NextjsIcon from "@/app/shared/ui/icons/projects/nextjs";
-import NginxIcon from "@/app/shared/ui/icons/projects/nginx";
-import PandasIcon from "@/app/shared/ui/icons/projects/pandas";
-import PostgresIcon from "@/app/shared/ui/icons/projects/postgres";
-import PrismaIcon from "@/app/shared/ui/icons/projects/prisma";
-import PythonIcon from "@/app/shared/ui/icons/projects/python";
-import ReactIcon from "@/app/shared/ui/icons/projects/react";
-import ReportLabIcon from "@/app/shared/ui/icons/projects/reportlab";
-import SentryIcon from "@/app/shared/ui/icons/projects/sentry";
-import SwiftIcon from "@/app/shared/ui/icons/projects/swift";
-import TailwindIcon from "@/app/shared/ui/icons/projects/tailwindcss";
-import TypescriptIcon from "@/app/shared/ui/icons/projects/typescript";
-import XcodeIcon from "@/app/shared/ui/icons/projects/xcode";
-import { Skeleton } from "@/app/shared/ui/skeleton";
+import SeeAllProjects from "@/app/widgets/seall-projects/see-all-projects";
+import { Link } from "@/i18n/navigation";
 
-const techIconMap: Record<TechKey, JSX.Element> = {
-  flutter: <FlutterIcon />,
-  dart: <DartIcon />,
-  android: <AndroidIcon />,
-  ios: <IosIcon />,
-  xcode: <XcodeIcon />,
-  androidstudio: <AndroidStudioIcon />,
-  html: <HtmlIcon />,
-  react: <ReactIcon />,
-  typescript: <TypescriptIcon />,
-  tailwind: <TailwindIcon />,
-  nextjs: <NextjsIcon />,
-  docker: <DockerIcon />,
-  "docker-compose": <DockerComposeIcon />,
-  fastapi: <FastAPIIcon />,
-  python: <PythonIcon />,
-  reportlab: <ReportLabIcon />,
-  pandas: <PandasIcon />,
-  sentry: <SentryIcon />,
-  kibana: <KibanaIcon />,
-  loki: <LokiIcon />,
-  grafana: <GrafanaIcon />,
-  kotlin: <KotlinIcon />,
-  swift: <SwiftIcon />,
-  postgres: <PostgresIcon />,
-  mysql: <MySqlIcon />,
-  nginx: <NginxIcon />,
-  prisma: <PrismaIcon />,
-};
-
-function ProjectDescription({
-  description,
-  techStack,
+export default async function ProjectsPage({
+  params,
 }: {
-  description: string;
-  techStack: TechKey[];
+  params: Promise<{ locale: string }>;
 }) {
-  return (
-    <div className="mt-3 text-sm">
-      <p className="mb-3 leading-relaxed">{description}</p>
+  const { locale } = await params;
+  const nf = new Intl.NumberFormat(locale);
 
-      <div className="flex flex-wrap gap-2 mt-1">
-        {techStack.map((key) => (
-          <span key={key} className="inline-flex items-center justify-center">
-            {techIconMap[key]}
-          </span>
-        ))}
-      </div>
-    </div>
+  const [stats, reposRaw, t] = await Promise.all([
+    getStats(),
+    getProjects(),
+    getTranslations({ locale, namespace: "Projects" }),
+  ]);
+
+  if (!stats || !reposRaw || !t) {
+    notFound();
+  }
+
+  const repos = reposRaw.filter(
+    (r) => r.description || r.homepageUrl || r.stargazerCount > 0,
   );
-}
-
-export default function Projects() {
-  const t = useTranslations("Projects");
-  const projects: Project[] = getProjectsData({ t });
 
   return (
     <main className="container-projects">
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
-          <Fade>
-            <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-6 md:mt-10">
-              {t("h1")}
-            </h1>
-          </Fade>
+          <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-6 md:mt-10">
+            {t("h1")}
+          </h1>
         </header>
       </section>
 
-      <section className="my-4 mt-8 md:mt-6" id="projects">
-        <h2 className="title-skills font-extrabold leading-10 tracking-tight text-sm md:text-2xl lg:text-2xl mt-8 md:mt-4 mb-8 text-center">
-          {t("h2")}
-        </h2>
-      </section>
+      <section className="max-w-3xl mx-auto grid grid-cols-1 gap-6 px-4 mb-52 md:mb-72 my-4 mt-8 md:mt-6">
+        {stats ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="w-full">
+              <CardContent className="p-6">
+                <h2 className="font-semibold text-base mb-4">{t("title")}</h2>
 
-      <section className="px-4 md:px-40 mb-52 md:mb-72">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </div>
+                <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+                  <StatRow
+                    icon={<Star className="h-4 w-4 text-yellow-500" />}
+                    label={t("totalStars")}
+                    value={nf.format(stats.stars)}
+                  />
+                  <StatRow
+                    icon={<GitCommit className="h-4 w-4" />}
+                    label={t("totalCommits")}
+                    value={nf.format(stats.totalCommits)}
+                  />
+                  <StatRow
+                    icon={
+                      <GitPullRequest className="h-4 w-4 text-indigo-500" />
+                    }
+                    label={t("totalPrs")}
+                    value={nf.format(stats.prs)}
+                  />
+                  <StatRow
+                    icon={<Bug className="h-4 w-4 text-rose-500" />}
+                    label={t("totalIssues")}
+                    value={nf.format(stats.issues)}
+                  />
+                  <StatRow
+                    icon={<GitBranch className="h-4 w-4 text-emerald-500" />}
+                    label={t("contributedTo")}
+                    value={nf.format(stats.contributions)}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="w-full">
+              <CardContent className="p-6">
+                <h2 className="font-semibold text-base mb-4">
+                  {t("topLanguages")}
+                </h2>
+
+                <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                  {stats.topLanguages.map((l) => (
+                    <div
+                      key={l.name}
+                      className="flex items-center justify-between"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        <span
+                          className="h-2.5 w-2.5 rounded-full"
+                          style={{
+                            backgroundColor: l.color ?? "currentColor",
+                            opacity: 0.9,
+                          }}
+                          aria-hidden="true"
+                        />
+                        <span>{l.name}</span>
+                      </span>
+
+                      <span className="tabular-nums">{nf.format(l.count)}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        ) : null}
+
+        {repos.map((repo) => (
+          <Card key={repo.url} className="w-full max-w-3xl h-36 mx-auto">
+            <CardContent className="p-6">
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <a
+                    href={repo.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-lg hover:underline underline-offset-4"
+                  >
+                    {repo.name}
+                  </a>
+
+                  {repo.description ? (
+                    <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                      {repo.description}
+                    </p>
+                  ) : null}
+
+                  <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400">
+                    {repo.primaryLanguage?.name ? (
+                      <span className="inline-flex items-center gap-2">
+                        <span
+                          className="h-2.5 w-2.5 rounded-full"
+                          style={{
+                            backgroundColor:
+                              repo.primaryLanguage?.color ?? "currentColor",
+                            opacity: 0.9,
+                          }}
+                          aria-hidden="true"
+                        />
+                        <span>{repo.primaryLanguage.name}</span>
+                      </span>
+                    ) : null}
+
+                    <span className="inline-flex items-center gap-1">
+                      <Star className="h-4 w-4 text-yellow-500" />
+                      <span>{nf.format(repo.stargazerCount)}</span>
+                    </span>
+
+                    {repo.homepageUrl ? (
+                      <Link
+                        href={repo.homepageUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:underline underline-offset-4"
+                      >
+                        {t("repo")}
+                      </Link>
+                    ) : null}
+                  </div>
+                </div>
+
+                <Link
+                  href={repo.url}
+                  target="blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                >
+                  <VscGithub className="default-transition default-focus relative inline-flex h-10 w-10" />
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+
+        <SeeAllProjects />
       </section>
     </main>
   );
 }
 
-function ProjectCard({ project }: { project: Project; index: number }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-
+function StatRow(props: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}) {
   return (
-    <Card
-      className="max-w-2xl w-full mx-auto transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
-                        border-black dark:border-gray-400 dark:hover:shadow-stone-600 cursor-pointer"
-    >
-      <CardContent className="p-6 flex flex-col flex-1">
-        <div className="relative aspect-video w-full overflow-hidden shrink-0">
-          {!isLoaded && (
-            <Skeleton className="w-full h-full absolute top-0 left-0 z-0" />
-          )}
-          <Image
-            src={project.photo}
-            alt={project.title}
-            fill
-            sizes={project.sizes}
-            priority={project.priority}
-            className={`object-cover ${
-              isLoaded ? "opacity-100" : "opacity-0"
-            } transition-opacity duration-500`}
-            onLoad={() => setIsLoaded(true)}
-          />
-        </div>
-
-        <h4 className="mt-4 text-lg font-semibold group-hover:text-primary transition-colors">
-          {project.title}
-        </h4>
-
-        <ProjectDescription
-          description={project.description}
-          techStack={project.techStack}
-        />
-
-        <div className="flex mt-4 justify-start items-center gap-4">
-          <ProjectLinks project={project} />
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-function ProjectLinks({ project }: { project: Project }) {
-  const cls =
-    "flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-100 hover:text-primary transition-colors";
-
-  return (
-    <>
-      {project.sourceCodeLink && (
-        <a
-          href={project.sourceCodeLink}
-          target="_blank"
-          rel="noreferrer"
-          className={cls}
-        >
-          <AiOutlineGithub size={20} />
-        </a>
-      )}
-      {project.sourceLinkPrivacy && (
-        <a
-          href={project.sourceLinkPrivacy}
-          target="_blank"
-          rel="noreferrer"
-          className={cls}
-        >
-          <MdPrivacyTip size={20} />
-        </a>
-      )}
-      {project.androidLink && (
-        <a
-          href={project.androidLink}
-          target="_blank"
-          rel="noreferrer"
-          className={cls}
-        >
-          <FaGooglePlay size={20} />
-        </a>
-      )}
-      {project.iosLink && (
-        <a
-          href={project.iosLink}
-          target="_blank"
-          rel="noreferrer"
-          className={cls}
-        >
-          <FaAppStoreIos size={20} />
-        </a>
-      )}
-      {project.webLink && (
-        <a
-          href={project.webLink}
-          target="_blank"
-          rel="noreferrer"
-          className={cls}
-        >
-          <AiOutlineGlobal size={20} />
-        </a>
-      )}
-    </>
+    <div className="flex items-center justify-between gap-4">
+      <span className="inline-flex items-center gap-2">
+        {props.icon}
+        <span>{props.label}</span>
+      </span>
+      <span className="tabular-nums font-medium">{props.value}</span>
+    </div>
   );
 }
