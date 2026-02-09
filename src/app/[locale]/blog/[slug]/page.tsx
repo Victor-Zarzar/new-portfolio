@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image, { type ImageProps } from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
-import { parseISODateOnlyToUTC } from "@/app/shared/helpers/format-date";
+import { toISODateUTC } from "@/app/shared/helpers/format-date";
 import type {
   MdxAnchorProps,
   MdxCodeProps,
@@ -74,25 +74,14 @@ const components = {
   },
 };
 
-export async function generateStaticParams(): Promise<
-  Array<{ locale: string; slug: string }>
-> {
-  const locales = routing.locales;
-
-  return locales.flatMap((locale) => {
-    const posts = getAllPosts(locale);
-    return posts.map((post) => ({
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    getAllPosts(locale).map((post) => ({
       locale,
       slug: post.slug,
-    }));
-  });
+    })),
+  );
 }
-
-const ogLocaleMap: Record<string, string> = {
-  pt: "pt_BR",
-  en: "en_US",
-  es: "es_ES",
-};
 
 export async function generateMetadata({
   params,
@@ -103,33 +92,31 @@ export async function generateMetadata({
   if (!post) {
     return {};
   }
-  const canonicalPath = `/${locale}/blog/${slug}`;
-  const canonicalUrl = `${env.NEXT_PUBLIC_WEBSITE_URL}${canonicalPath}`;
+
+  const { title, description, publishedAt, photo, tags } = post.metadata;
+
+  const canonical = `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/blog/${slug}`;
+  const ogImage = photo.startsWith("http")
+    ? photo
+    : `${env.NEXT_PUBLIC_WEBSITE_URL}${photo}`;
+
+  const publishedTime = toISODateUTC(publishedAt);
 
   return {
-    metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
-    title: post.metadata.title,
-    description: post.metadata.description,
-    openGraph: {
-      title: post.metadata.title,
-      description: post.metadata.description,
-      url: canonicalUrl,
-      siteName: "Victor Zarzar | Front-end Developer",
-      images: [
-        {
-          url: post.metadata.photo,
-        },
-      ],
-      locale: ogLocaleMap[locale] ?? "en_US",
-      type: "article",
-    },
+    title,
+    description,
     alternates: {
-      canonical: canonicalPath,
-      languages: {
-        "pt-BR": `/pt/blog/${slug}`,
-        "en-US": `/en/blog/${slug}`,
-        "es-ES": `/es/blog/${slug}`,
-      },
+      canonical,
+    },
+    keywords: tags,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime,
+      url: canonical,
+      images: [{ url: ogImage }],
+      tags,
     },
   };
 }
@@ -164,6 +151,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     inLanguage: locale,
   };
 
+  const publishedDate = new Date(`${post.metadata.publishedAt}T00:00:00Z`);
+
   return (
     <article className="container max-w-4xl mx-auto px-4 py-3 md:py-4">
       <script
@@ -182,15 +171,12 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
         <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-          {parseISODateOnlyToUTC(post.metadata.publishedAt).toLocaleDateString(
-            locale,
-            {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              timeZone: "UTC",
-            },
-          )}
+          {publishedDate.toLocaleDateString(locale, {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            timeZone: "UTC",
+          })}
         </p>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           {post.metadata.title}
