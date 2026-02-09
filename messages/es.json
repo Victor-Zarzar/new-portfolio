@@ -30,6 +30,7 @@
     "p": "Algunas de las tecnologías que uso en mi vida diaria"
   },
   "About": {
+    "title": "Victor Zarzar | Acerca de",
     "h1": "Acerca de",
     "p": "Mi primer contacto con la programación fue en 2009, utilizando las tecnologías SQL Server 2000 y MySQL, creando, restaurando y gestionando bases de datos, además de desarrollar sitios web en PHP. Siempre buscando mejorar mis conocimientos día a día, no le tengo miedo a lo desconocido y procuro evolucionar constantemente. Los nuevos desafíos son bienvenidos; me encanta aprender nuevas tecnologías y resolver problemas. Apasionado por el café, mis discos de vinilo y el Rock and Roll, y entusiasta de la guitarra.🤘🏻🎸",
     "h2": "Idioma",
@@ -50,6 +51,7 @@
     "course8": "Testing Automatizado + Curso COMPLETO de Testing de Software"
   },
   "Services": {
+    "title": "Victor Zarzar | Servicios",
     "h1": "Servicios",
     "cardtitle1": "Desarrollo web",
     "carddescription1": "Sitios web y aplicaciones web modernos y responsivos",
@@ -75,10 +77,11 @@
     "p10": "Análisis y desarrollo de sistemas"
   },
   "Projects": {
+    "title": "Victor Zarzar | Proyectos",
     "h1": "Proyectos",
     "h2": "Proyectos destacados",
     "seeAll": "Ver todos los proyectos",
-    "title": "Mis estadísticas de GitHub",
+    "titleCard": "Mis estadísticas de GitHub",
     "totalStars": "Total de estrellas",
     "totalCommits": "Total de commits",
     "totalPrs": "Total de PRs",
@@ -133,6 +136,7 @@
     "website": "Sitio web: www.victorzarzar.com.br"
   },
   "Contact": {
+    "title": "Victor Zarzar | Contacto",
     "h1": "¿Te gustó mi trabajo?",
     "name": "Nombre",
     "email": "Correo electrónico",
@@ -144,6 +148,7 @@
     "subjectrequired": "Asunto requerido",
     "messagerequired": "Mensaje requerido",
     "emailerror": "Error al enviar el correo electrónico. Vuelva a intentarlo más tarde.",
+    "loading": "Enviando...",
     "emailsucess": "¡Correo electrónico enviado exitosamente!",
     "cardTitle": "¿Te gustó mi trabajo? Envíame un mensaje",
     "cardSubtitle": "Ponte en contacto enviando un mensaje o a través de mis redes sociales.",
@@ -171,6 +176,7 @@
     "p": "No tienes permiso para acceder a esta página."
   },
   "Blog": {
+    "title": "Victor Zarzar | Blog",
     "h1": "Artículos y Publicaciones",
     "h2": "Contenido técnico que he escrito recientemente...",
     "p": "Leer más",

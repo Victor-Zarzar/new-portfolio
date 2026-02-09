@@ -17,7 +17,8 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Contact" });
 
   return {
-    title: t("h1"),
+    title: t("title"),
+    description: t("h1"),
   };
 }
 
@@ -34,7 +35,7 @@ export default async function Contact() {
         </header>
       </FadeWrapper>
 
-      <div className="mt-10 md:mt-20 max-w-lg mx-auto mb-40 md:mb-36">
+      <div className="mt-10 md:mt-14 max-w-lg mx-auto mb-6 md:mb-10">
         <ContactForm />
       </div>
     </section>

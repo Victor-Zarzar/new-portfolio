@@ -30,6 +30,7 @@
     "p": "Some of the technologies I use in my daily life"
   },
   "About": {
+    "title": "Victor Zarzar | About",
     "h1": "About",
     "p": "My first contact with programming was in 2009, using SQL Server 2000 and MySQL technologies, creating, restoring, and managing databases, as well as building websites with PHP. Always striving to improve my knowledge on a daily basis, I’m not afraid of the unknown and aim to evolve every day. New challenges are always welcome—I love learning new technologies and solving problems. Passionate about coffee, my vinyl records, and Rock ’n’ Roll, and a guitar enthusiast.🤘🏻🎸",
     "h2": "Language",
@@ -50,6 +51,7 @@
     "course8": "Automated Testing + COMPLETE Software Testing Course"
   },
   "Services": {
+    "title": "Victor Zarzar | Services",
     "h1": "Services",
     "cardtitle1": "Web Development",
     "carddescription1": "Modern, responsive websites and web applications",
@@ -75,10 +77,11 @@
     "p10": "Analysis and systems development"
   },
   "Projects": {
+    "title": "Victor Zarzar | Projects",
     "h1": "Projects",
     "h2": "Featured projects",
     "seeAll": "All Projects",
-    "title": "My GitHub Stats",
+    "titleCard": "My GitHub Stats",
     "totalStars": "Total Stars Earned",
     "totalCommits": "Total Commits",
     "totalPrs": "Total PRs",
@@ -130,6 +133,7 @@
     "website": "Website: www.victorzarzar.com.br"
   },
   "Contact": {
+    "title": "Victor Zarzar | Contact",
     "h1": "Did you like my work?",
     "name": "Name",
     "email": "Email",
@@ -141,6 +145,7 @@
     "subjectrequired": "Subject Required",
     "messagerequired": "Message Required",
     "emailerror": "Error sending the email. Please try again later.",
+    "loading": "Sending...",
     "emailsucess": "Email sent successfully!",
     "cardTitle": "Enjoyed my work? Send me a message",
     "cardSubtitle": "Contact me by sending a message or through my social networks.",
@@ -165,6 +170,7 @@
     "p": "You don't have permission to access this page."
   },
   "Blog": {
+    "title": "Victor Zarzar | Blog",
     "h1": "Articles & Publications",
     "h2": "Technical content I've written recently...",
     "p": "Read more",

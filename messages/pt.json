@@ -30,6 +30,7 @@
     "p": "Algumas das tecnologias que utilizo no meu dia a dia"
   },
   "About": {
+    "title": "Victor Zarzar | Sobre",
     "h1": "Sobre",
     "p": "Meu primeiro contato com programação foi em 2009, utilizando as tecnologias SQL-SERVER 2000 & My SQL, criando, restaurando e editando bancos de dados, e criando sites em PHP. Sempre buscando aprimorar meus conhecimentos diariamente, não tenho medo do desconhecido, procuro evoluir a cada dia, novos desafios são bem vindos adoro aprender sobre novas tecnologias e resolver problemas. Apaixonado por café, meus discos de vinil & Rock n Roll, e entusiasta de guitarra.🤘🏻🎸",
     "h2": "Linguagem",
@@ -50,6 +51,7 @@
     "course8": "Testes Automatizados + Curso COMPLETO de Teste de Software"
   },
   "Services": {
+    "title": "Victor Zarzar | Serviços",
     "h1": "Serviços",
     "cardtitle1": "Desenvolvimento Web",
     "carddescription1": "Sites e aplicações web modernos e responsivos",
@@ -75,9 +77,10 @@
     "p10": "Análise e desenvolvimento de sistemas"
   },
   "Projects": {
+    "title": "Victor Zarzar | Projetos",
     "h1": "Projetos",
     "seeAll": "Ver todos os projetos",
-    "title": "Minhas estatísticas no GitHub",
+    "titleCard": "Minhas estatísticas no GitHub",
     "totalStars": "Total de estrelas",
     "totalCommits": "Total de commits",
     "totalPrs": "Total de PRs",
@@ -129,6 +132,7 @@
     "website": "Website: www.victorzarzar.com.br"
   },
   "Contact": {
+    "title": "Victor Zarzar | Contato",
     "h1": "Gostou do meu trabalho?",
     "name": "Nome",
     "email": "Email",
@@ -140,6 +144,7 @@
     "subjectrequired": "Assunto obrigatório",
     "messagerequired": "Mensagem necessária",
     "emailerror": "Erro ao enviar o e-mail. Tente novamente mais tarde.",
+    "loading": "Enviando...",
     "emailsucess": "E-mail enviado com sucesso!",
     "cardTitle": "Gostou do meu trabalho? Envie-me uma mensagem",
     "cardSubtitle": "Entre em contato enviando uma mensagem ou pelas minhas redes sociais.",
@@ -167,6 +172,7 @@
     "p": "Você não tem permissão para acessar esta página."
   },
   "Blog": {
+    "title": "Victor Zarzar | Blog",
     "h1": "Artigos & Publicações",
     "h2": "Conteúdo técnico que escrevi recentemente...",
     "p": "Leia mais",

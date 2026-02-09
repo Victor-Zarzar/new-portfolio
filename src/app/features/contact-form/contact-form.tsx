@@ -19,7 +19,6 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/app/shared/ui/card";
 import {
   Form,
@@ -57,8 +56,11 @@ export default function ContactForm() {
   async function handleSubmit(values: z.infer<typeof formSchema>) {
     const success = await contactService.sendContactForm(
       values as ContactFormData,
-      t("emailsucess"),
-      t("emailerror"),
+      {
+        loading: t("loading"),
+        success: t("emailsucess"),
+        error: t("emailerror"),
+      },
     );
 
     if (success) {
