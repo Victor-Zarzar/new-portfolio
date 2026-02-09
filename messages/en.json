@@ -90,10 +90,7 @@
   "PrivacyPolicyApps": {
     "h1": "Privacy Policy",
     "p": "Introduction",
-    "h2": "This privacy policy will help you understand what information we collect in applications developed by me, Victor Zarzar, how I use them, and what choices you have. I, Victor Zarzar, have created the following apps as free apps:",
-    "app1": "Alcohol or Gasoline?",
-    "app2": "Grocery List",
-    "app3": "Finance App",
+    "h2": "This privacy policy will help you understand what information is collected in the applications developed by me, Victor Zarzar, how it is used, and what choices you have. I, Victor Zarzar, do not collect personal data in any of my developed projects.",
     "service": "This service is provided by me, Victor Zarzar, at no cost and is intended for use as is. If you choose to use our Service, then you consent to the collection and use of information in connection with this policy. However, I inform you that none of my applications collect personal data from its users.",
     "informationcollected": "Information Collected",
     "infocollected": "I do not collect any personally identifiable information from users while they use my applications.",
@@ -114,9 +111,7 @@
   "PrivacyPolicy": {
     "h1": "Privacy Policy",
     "p": "Introduction",
-    "h2": "This privacy policy will help you understand what information we collect in applications developed by me, Victor Zarzar, how I use them, and what choices you have. I, Victor Zarzar, created these web applications:",
-    "app1": "Law Firm",
-    "app2": "My Portfolio",
+    "h2": "This privacy policy will help you understand what information is collected in the applications developed by me, Victor Zarzar, how it is used, and what choices you have. I, Victor Zarzar, do not collect any data from any of my developed projects.",
     "service": "This service is provided by me, Victor Zarzar, at no charge and is intended for use as is. If you choose to use our Service, then you consent to the collection and use of information in connection with this policy. However, I inform you that none of the applications collect personal data from their users.",
     "informationcollected": "Information Collected",
     "infocollected": "I do not collect any personally identifiable information from users while they use my applications.",

@@ -22,10 +22,6 @@ export default async function PrivacyPolicy() {
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
           {t("h2")}
         </h2>
-        <ul className="list-disc list-inside mx-auto max-w-md">
-          <li className="mb-3">{t("app1")}</li>
-          <li>{t("app2")}</li>
-        </ul>
       </section>
 
       {privacyPolicySections.map((section, index) => (

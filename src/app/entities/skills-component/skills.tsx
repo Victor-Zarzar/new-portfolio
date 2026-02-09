@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Fade } from "react-awesome-reveal";
-import SkillOutline, { skills } from "@/app/widgets/skills-showcase/IconSkills";
+import SkillOutline, { skills } from "@/app/widgets/skills-showcase/icon-skills";
 
 export default function Skills() {
   const t = useTranslations("Skills");
