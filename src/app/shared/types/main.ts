@@ -41,6 +41,7 @@ type ContactFormData = {
   subject: string;
   message: string;
   company?: string;
+  loading?: string;
 };
 
 type CoursesType = {

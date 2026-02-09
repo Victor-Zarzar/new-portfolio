@@ -4,12 +4,16 @@ import * as Sentry from "@sentry/nextjs";
 import { toast } from "sonner";
 import { contactService } from "@/app/shared/api/contact";
 
-type ToastMock = Mock<(message: string) => void>;
+type ToastLoadingMock = Mock<(message: string) => string | number>;
+type ToastMsgMock = Mock<
+  (message: string, opts?: { id?: string | number }) => void
+>;
 
 mock.module("sonner", () => ({
   toast: {
     success: mock(() => undefined),
     error: mock(() => undefined),
+    loading: mock(() => "toast-id"),
   },
 }));
 
@@ -19,11 +23,13 @@ mock.module("@sentry/nextjs", () => ({
 
 describe("contactService", () => {
   beforeEach(() => {
-    (toast.success as unknown as ToastMock).mockClear();
-    (toast.error as unknown as ToastMock).mockClear();
+    (toast.loading as unknown as ToastLoadingMock).mockClear();
+    (toast.success as unknown as ToastMsgMock).mockClear();
+    (toast.error as unknown as ToastMsgMock).mockClear();
     (
-      Sentry.captureException as unknown as Mock<(error: Error) => void>
+      Sentry.captureException as unknown as Mock<(error: unknown) => void>
     ).mockClear();
+
     global.fetch = mock(() => undefined) as unknown as typeof fetch;
   });
 
@@ -42,20 +48,23 @@ describe("contactService", () => {
       message: "Test message",
     };
 
-    const result = await contactService.sendContactForm(
-      data,
-      "Success!",
-      "Error!",
-    );
+    const messages = {
+      loading: "Sending...",
+      success: "Success!",
+      error: "Error!",
+    };
+
+    const result = await contactService.sendContactForm(data, messages);
 
     expect(result).toBe(true);
-    expect(toast.success).toHaveBeenCalledWith("Success!");
+
+    expect(toast.loading).toHaveBeenCalledWith("Sending...");
+    expect(toast.success).toHaveBeenCalledWith("Success!", { id: "toast-id" });
     expect(toast.error).not.toHaveBeenCalled();
+
     expect(global.fetch).toHaveBeenCalledWith("/api/contact", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
   });
@@ -75,14 +84,20 @@ describe("contactService", () => {
       message: "Test message",
     };
 
-    const result = await contactService.sendContactForm(
-      data,
-      "Success!",
-      "Failed to send!",
-    );
+    const messages = {
+      loading: "Sending...",
+      success: "Success!",
+      error: "Failed to send!",
+    };
+
+    const result = await contactService.sendContactForm(data, messages);
 
     expect(result).toBe(false);
-    expect(toast.error).toHaveBeenCalledWith("Failed to send!");
+
+    expect(toast.loading).toHaveBeenCalledWith("Sending...");
+    expect(toast.error).toHaveBeenCalledWith("Failed to send!", {
+      id: "toast-id",
+    });
     expect(toast.success).not.toHaveBeenCalled();
   });
 
@@ -97,14 +112,20 @@ describe("contactService", () => {
       message: "Test message",
     };
 
-    const result = await contactService.sendContactForm(
-      data,
-      "Success!",
-      "Network error!",
-    );
+    const messages = {
+      loading: "Sending...",
+      success: "Success!",
+      error: "Network error!",
+    };
+
+    const result = await contactService.sendContactForm(data, messages);
 
     expect(result).toBe(false);
-    expect(toast.error).toHaveBeenCalledWith("Network error!");
+
+    expect(toast.loading).toHaveBeenCalledWith("Sending...");
+    expect(toast.error).toHaveBeenCalledWith("Network error!", {
+      id: "toast-id",
+    });
     expect(Sentry.captureException).toHaveBeenCalledWith(error);
     expect(toast.success).not.toHaveBeenCalled();
   });

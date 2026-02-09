@@ -35,6 +35,7 @@ describe("POST /api/contact", () => {
         email: "john@example.com",
         subject: "Test Subject",
         message: "Test message",
+        loading: "Sending...",
       }),
     });
 
@@ -108,6 +109,7 @@ describe("POST /api/contact", () => {
           email: "john@example.com",
           subject: "Test",
           message: "Test message",
+          loading: "Sending...",
         }),
       });
 

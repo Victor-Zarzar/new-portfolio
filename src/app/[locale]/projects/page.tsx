@@ -23,7 +23,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Projects" });
 
   return {
-    title: t("h1"),
+    title: t("title"),
   };
 }
 
@@ -66,7 +66,9 @@ export default async function ProjectsPage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="w-full">
               <CardContent className="p-6">
-                <h2 className="font-semibold text-base mb-4">{t("title")}</h2>
+                <h2 className="font-semibold text-base mb-4">
+                  {t("titleCard")}
+                </h2>
 
                 <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
                   <StatRow
