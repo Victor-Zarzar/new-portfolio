@@ -1,9 +1,9 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "@/i18n/navigation";
 
-export default function SeeAllProjects() {
-  const t = useTranslations("Projects");
+export default async function SeeAllProjects() {
+  const t = await getTranslations("Projects");
 
   return (
     <div className="pt-6 flex">

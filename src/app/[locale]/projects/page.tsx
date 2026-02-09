@@ -50,7 +50,7 @@ export default async function ProjectsPage({
   );
 
   return (
-    <main className="container-projects">
+    <main className="container-projects min-h-screen">
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
           <FadeWrapper>

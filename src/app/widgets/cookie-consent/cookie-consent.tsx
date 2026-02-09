@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { cn } from "@/app/shared/lib/utils";
 import type { CookieConsentProps } from "@/app/shared/types/main";
-import { Button } from "@/app/shared/ui//button";
+import { Button } from "@/app/shared/ui/button";
 
 export default function CookieConsentComponent({
   demo = false,

@@ -90,7 +90,7 @@
   "PrivacyPolicyApps": {
     "h1": "Política de privacidad",
     "p": "Introducción",
-    "h2": "Esta política de privacidad le ayudará a comprender qué información recopilamos en las aplicaciones desarrolladas por mí, Victor Zarzar, cómo las uso y qué opciones tiene. Yo, Victor Zarzar, he creado las siguientes aplicaciones como aplicaciones gratuitas:",
+    "h2": "Esta política de privacidad le ayudará a comprender qué información se recopila en las aplicaciones desarrolladas por mí, Victor Zarzar, cómo se utiliza y qué opciones tiene. Yo, Victor Zarzar, no recopilo datos personales en ninguno de mis proyectos desarrollados.",
     "app1": "¿Alcohol o gasolina?",
     "app2": "Lista de compras",
     "app3": "Aplicación de finanzas",
@@ -114,9 +114,7 @@
   "PrivacyPolicy": {
     "h1": "Política de privacidad",
     "p": "Introducción",
-    "h2": "Esta política de privacidad le ayudará a comprender qué información recopilamos en las aplicaciones desarrolladas por mí, Victor Zarzar, cómo las uso y qué opciones tiene. Yo, Victor Zarzar, creé estas aplicaciones web:",
-    "app1": "Bufete de abogados",
-    "app2": "Mi Portafolio",
+    "h2": "Esta política de privacidad le ayudará a comprender qué información se recopila en las aplicaciones desarrolladas por mí, Victor Zarzar, cómo se utiliza y qué opciones tiene. Yo, Victor Zarzar, no recopilo datos de ninguno de mis proyectos desarrollados.",
     "service": "Este servicio lo proporciono yo, Víctor Zarzar, sin costo alguno y está diseñado para usarse tal como está. Si elige utilizar nuestro Servicio, acepta la recopilación y el uso de información en relación con esta política. Sin embargo, les informo que ninguna de las aplicaciones recopila datos personales de sus usuarios.",
     "informationcollected": "Información recopilada",
     "infocollected": "No recopilo ninguna información de identificación personal de los usuarios mientras usan mis aplicaciones.",
