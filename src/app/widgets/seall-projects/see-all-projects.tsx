@@ -1,6 +1,6 @@
+import { getTranslations } from "next-intl/server";
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
 
 export default async function SeeAllProjects() {
   const t = await getTranslations("Projects");
