@@ -1,3 +1,3 @@
-export function parseISODateOnlyToUTC(dateStr: string): Date {
-  return new Date(`${dateStr}T00:00:00.000Z`);
+export function toISODateUTC(date: string) {
+  return new Date(`${date}T00:00:00Z`).toISOString();
 }

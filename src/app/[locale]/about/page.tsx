@@ -1,23 +1,41 @@
-"use client";
-
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+import type { Metadata } from "next/types";
+import { getTranslations } from "next-intl/server";
 import { TimelineLayout } from "@/app/features/timeline-layout/timeline-layout";
-import TerminalCourses from "@/app/widgets/terminal-courses/terminal-coursex";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
+import TerminalCourses from "@/app/widgets/terminal-courses/terminal-courses";
+import { routing } from "@/i18n/routing";
 
-export default function About() {
-  const t = useTranslations("About");
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "About" });
+
+  return {
+    title: t("p"),
+  };
+}
+
+export default async function About() {
+  const t = await getTranslations("About");
 
   return (
     <section className="rounded-lg p-6">
-      <Fade>
+      <FadeWrapper>
         <header className="text-center mt-6 md:mt-10">
           <h1 className="title-about mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl">
             {t("h1")}
           </h1>
         </header>
-      </Fade>
+      </FadeWrapper>
+
       <p className="text-sm leading-relaxed text-center max-w-3xl mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter mt-10">
         {t("p")}
       </p>
@@ -27,13 +45,13 @@ export default function About() {
       <TerminalCourses />
 
       <section className="rounded-lg p-6 mt-4">
-        <Fade>
+        <FadeWrapper>
           <header className="text-center mt-4">
             <h2 className="title-about mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl">
               {t("h2")}
             </h2>
           </header>
-        </Fade>
+        </FadeWrapper>
 
         <div className="flex flex-col items-center mt-10 space-y-5">
           <div className="flex items-center">

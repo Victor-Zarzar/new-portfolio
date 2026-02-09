@@ -1,7 +1,5 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+import type { Metadata } from "next/types";
+import { getTranslations } from "next-intl/server";
 import { getServicesData } from "@/app/shared/data/getServicesData";
 import type { Services } from "@/app/shared/types/main";
 import {
@@ -11,20 +9,39 @@ import {
   CardHeader,
   CardTitle,
 } from "@/app/shared/ui/card";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
+import { routing } from "@/i18n/routing";
 
-export default function ServicesPage() {
-  const t = useTranslations("Services");
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Services" });
+
+  return {
+    title: t("h1"),
+  };
+}
+
+export default async function ServicesPage() {
+  const t = await getTranslations("Services");
   const services: Services[] = getServicesData({ t });
 
   return (
     <main className="services">
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
-          <Fade>
+          <FadeWrapper>
             <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-6 md:mt-10">
               {t("h1")}
             </h1>
-          </Fade>
+          </FadeWrapper>
         </header>
       </section>
 

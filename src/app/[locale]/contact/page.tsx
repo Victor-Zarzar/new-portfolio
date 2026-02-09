@@ -1,21 +1,38 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+import type { Metadata } from "next/types";
+import { getTranslations } from "next-intl/server";
 import ContactForm from "@/app/features/contact-form/contact-form";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
+import { routing } from "@/i18n/routing";
 
-export default function Contact() {
-  const t = useTranslations("Contact");
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Contact" });
+
+  return {
+    title: t("h1"),
+  };
+}
+
+export default async function Contact() {
+  const t = await getTranslations("Contact");
 
   return (
     <section className="col-span-4 mx-auto p-6 md:min-h-screen">
-      <Fade>
+      <FadeWrapper>
         <header className="text-center mt-6 md:mt-10">
           <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl">
             {t("h1")}
           </h1>
         </header>
-      </Fade>
+      </FadeWrapper>
 
       <div className="mt-10 md:mt-20 max-w-lg mx-auto mb-40 md:mb-36">
         <ContactForm />

@@ -109,16 +109,22 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 
 > **Important:** Never commit your `.env` file to version control. It's already in `.gitignore`.
 
-### 4. Install Dependencies
+### 4. Install Dependencies & Build (Local)
 
 ```bash
-make install
+make install && make dev
 ```
 
 Or manually with bun:
 
 ```bash
-bun install
+bun install && bun run dev
+```
+
+Optional: Docker + Build:
+
+```bash
+make run
 ```
 
 ### 5. Run the automated tests (Isolated Docker container)

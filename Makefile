@@ -54,7 +54,7 @@ test: build
 help:
 	@echo ""
 	@echo "$(PROJECT_NAME) v$(DOCKER_TAG)"
-	@echo "====================================="
+	@echo "──────────────────────────────────────────────"
 	@echo ""
 	@echo "Local Commands:"
 	@echo "  make install          Install dependencies using bun"

@@ -1,14 +1,14 @@
-import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+import { getTranslations } from "next-intl/server";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 
-export default function UnauthorizedPage() {
-  const t = useTranslations("Unauthorized");
+export default async function UnauthorizedPage() {
+  const t = await getTranslations("Unauthorized");
 
   return (
     <main className="flex items-center justify-center min-h-screen">
       <section className="text-center">
         <div className="max-w-md mx-auto px-4 py-8">
-          <Fade>
+          <FadeWrapper>
             <h1 className="text-4xl md:text-7xl lg:text-9xl font-extrabold text-primary-600 dark:text-primary-500">
               403
             </h1>
@@ -18,7 +18,7 @@ export default function UnauthorizedPage() {
             <p className="mt-4 text-lg md:text-xl font-light text-gray-500 dark:text-gray-400">
               {t("p")}
             </p>
-          </Fade>
+          </FadeWrapper>
         </div>
       </section>
     </main>

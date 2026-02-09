@@ -1,20 +1,18 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+import { getTranslations } from "next-intl/server";
 import { privacyPolicySections } from "@/app/shared/data/getPrivacyData";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 
-export default function PrivacyPolicy() {
-  const t = useTranslations("PrivacyPolicy");
+export default async function PrivacyPolicy() {
+  const t = await getTranslations("PrivacyPolicy");
 
   return (
     <main className="mt-6 md:mt-10 mx-auto max-w-3xl">
       <section className="text-center mb-16">
-        <Fade>
+        <FadeWrapper>
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-6">
             {t("h1")}
           </h1>
-        </Fade>
+        </FadeWrapper>
         <p className="text-lg md:text-xl font-semibold leading-relaxed">
           {t("p")}
         </p>

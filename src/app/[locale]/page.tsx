@@ -1,5 +1,3 @@
-"use client";
-
 import Skills from "@/app/entities/skills-component/skills";
 import Header from "@/app/widgets/header/header-layout";
 
