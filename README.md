@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, MDX blog, and containerized deployment.
+  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, MDX blog.
 </p>
 
 ---
@@ -67,7 +67,7 @@
 Before starting, ensure you have the following installed:
 
 - [Bun](https://bun.sh/docs) (v1 or higher) – primary runtime & package manager
-- [Docker](https://www.docker.com/) – optional, for local containerized development
+- [Docker](https://www.docker.com/) – optional, for local containerized development (Development and Testing)
 - [Git](https://git-scm.com/)
 
 > Optional: [Node.js](https://nodejs.org/) (v22 or higher), if you prefer running the app with Node or using Node-based global tooling.
@@ -139,6 +139,20 @@ Or manually with bun:
 bun test
 ```
 
+### 6. Code Quality Check
+
+Before starting development, run the linter to ensure code quality:
+
+```bash
+bunx biome check
+```
+
+This command will check for code style issues and potential errors. To automatically fix issues and format your code:
+
+```bash
+bunx biome format --write
+```
+
 ---
 
 <h2 id="blog-architecture">
@@ -171,7 +185,7 @@ Each MDX file should include frontmatter metadata at the top:
 title: "Android Security Rules"
 description: "Protecting SharedPreferences data"
 year: "2025"
-date: "2025-12-16"
+publishedAt: "2025-12-16"
 photo: "/article-android-security.png"
 tags: ["android", "mobile", "security"]
 ---
@@ -265,47 +279,19 @@ make clean
   Makefile Commands Reference
 </h2>
 
-| Command        | Description                                         |
-| -------------- | --------------------------------------------------- |
-| `make install` | Install dependencies using bun                      |
-| `make dev`     | Run the app locally in development mode             |
-| `make prod`    | Run the app in production mode                      |
-| `make build`   | Build the Docker image                              |
-| `make run`     | Build and run the Docker container                  |
-| `make test`    | Run the automated tests (Isolated Docker container) |
-| `make stop`    | Stop and remove the container                       |
-| `make clean`   | Clean Docker environment and build files            |
-| `make logs`    | Display container logs in real-time                 |
-| `make shell`   | Access container shell (sh)                         |
-| `make help`    | Show all available commands                         |
-
----
-
-<h2 id="development">
-  Development
-</h2>
-
-### Code Linting & Formatting
-
-Check for code issues with Biomejs:
-
-```bash
-bun biome check
-```
-
-Format all files and apply linting fixes:
-
-```bash
-bunx biome format --write
-```
-
-This command will automatically format your code according to the project's style rules and fix any auto-fixable linting issues.
-
-### Build for Production
-
-```bash
-make prod
-```
+| Command        | Description                                                                 |
+| -------------- | --------------------------------------------------------------------------- |
+| `make install` | Install dependencies using bun                                              |
+| `make dev`     | Run the app locally in development mode                                     |
+| `make prod`    | Run the app in production mode (Mode Build Prod - Test local - Preview)     |
+| `make build`   | Build the Docker image                                                      |
+| `make run`     | Build and run the Docker container (Docker Run + Build - Development local) |
+| `make test`    | Run the automated tests (Isolated Docker container)                         |
+| `make stop`    | Stop and remove the container                                               |
+| `make clean`   | Clean Docker environment and build files                                    |
+| `make logs`    | Display container logs in real-time                                         |
+| `make shell`   | Access container shell (sh)                                                 |
+| `make help`    | Show all available commands                                                 |
 
 ---
 
@@ -350,7 +336,7 @@ new-portfolio/
   <img src="https://github.com/user-attachments/assets/7e4f4cd9-8e49-4e57-8453-7a0bc8f7665b" width="1000" height="600" alt="Architecture">
 </p>
 
-<p align="center">
+<p align="center">ff
   <img src="https://github.com/user-attachments/assets/0ef7bc20-8bb1-46fb-b360-b013ccdd4a12" width="1000" height="600" alt="Projects Section">
 </p>
 
@@ -374,17 +360,6 @@ The application is deployed on Vercel for production use.
 
 - **CI/CD Pipeline** - `.github/workflows/main.yaml` for automated checks and builds
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
-
-### Docker (Optional - Local Development)
-
-Docker is available as an optional tool for local containerized development:
-
-```bash
-docker build -t new-portfolio:production .
-docker run -d -p 3000:3000 --name new-portfolio-prod new-portfolio:production
-```
-
----
 
 <h2 id="contributing">
   Contributing

@@ -1,4 +1,9 @@
 {
+  "Layout": {
+    "title": "Victor Zarzar | Front-end Developer",
+    "description": "Front-end Developer with experience in developing modern applications focused on front-end, SEO, accessibility, security, performance and best practices. Working on web and mobile projects.",
+    "ogDescription": "Professional portfolio with modern projects and updated technologies."
+  },
   "Navbar": {
     "titlenavbar": "Victor Zarzar",
     "menu": "Menu",

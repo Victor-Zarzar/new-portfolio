@@ -6,35 +6,9 @@ import env from "@/env.mjs";
 import { routing } from "@/i18n/routing";
 import LayoutProvider from "../widgets/layout-provider/layout-provider";
 import "./globals.css";
+import { getTranslations } from "next-intl/server";
 
 const JetBrains = JetBrains_Mono({ subsets: ["latin"] });
-
-const translations: Record<
-  string,
-  { title: string; description: string; ogDescription: string }
-> = {
-  pt: {
-    title: "Victor Zarzar | Desenvolvedor Front-end",
-    description:
-      "Desenvolvedor Front-end com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuação em projetos web e mobile.",
-    ogDescription:
-      "Portfólio profissional com projetos modernos e tecnologias atualizadas.",
-  },
-  en: {
-    title: "Victor Zarzar | Front-end Developer",
-    description:
-      "Front-end Developer with experience in developing modern applications focused on front-end, SEO, accessibility, security, performance and best practices. Working on web and mobile projects.",
-    ogDescription:
-      "Professional portfolio with modern projects and updated technologies.",
-  },
-  es: {
-    title: "Victor Zarzar | Desarrollador Front-end",
-    description:
-      "Desarrollador Front-end con experiencia en el desarrollo de aplicaciones modernas enfocado en front-end, SEO, accesibilidad, seguridad, rendimiento y buenas prácticas. Actuación en proyectos web y mobile.",
-    ogDescription:
-      "Portafolio profesional con proyectos modernos y tecnologías actualizadas.",
-  },
-};
 
 const ogLocaleMap: Record<string, string> = {
   pt: "pt_BR",
@@ -48,15 +22,19 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const meta = translations[locale] || translations.en;
+  const t = await getTranslations({ locale, namespace: "Layout" });
+
+  const title = t("title");
+  const description = t("description");
+  const ogDescription = t("ogDescription");
 
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_WEBSITE_URL),
-    title: meta.title,
-    description: meta.description,
+    title: title,
+    description: description,
     openGraph: {
-      title: meta.title,
-      description: meta.ogDescription,
+      title: title,
+      description: ogDescription,
       url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}`,
       siteName: "Victor Zarzar | Front-end Developer",
       images: [
