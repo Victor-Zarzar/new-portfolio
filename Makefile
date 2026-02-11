@@ -18,7 +18,7 @@ build:
 	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) .
 
 run: build
-	docker run -d \
+	docker run --rm -it \
 		--name $(DOCKER_CONTAINER_NAME) \
 		-p $(PORT):3000 \
 		-v $(PWD):/app \
@@ -30,9 +30,7 @@ stop:
 	docker stop $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
 	docker rm $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
 
-clean:
-	docker stop $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
-	docker rm -f $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
+clean: stop
 	docker rmi -f $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) >/dev/null 2>&1 || true
 	rm -rf node_modules .next >/dev/null 2>&1 || true
 
