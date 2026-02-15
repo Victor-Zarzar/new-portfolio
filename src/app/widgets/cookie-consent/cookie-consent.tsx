@@ -4,7 +4,7 @@ import * as Sentry from "@sentry/nextjs";
 import { CookieIcon } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "sonner";
 import { cn } from "@/app/shared/lib/utils";
 import type { CookieConsentProps } from "@/app/shared/types/main";
@@ -12,8 +12,8 @@ import { Button } from "@/app/shared/ui/button";
 
 export default function CookieConsentComponent({
   demo = false,
-  onAcceptCallback,
-  onDeclineCallback,
+  onAcceptAction,
+  onDeclineAction,
 }: CookieConsentProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hide, setHide] = useState(false);
@@ -47,7 +47,7 @@ export default function CookieConsentComponent({
     setTimeout(() => {
       setHide(true);
     }, 180);
-    onAcceptCallback?.();
+    onAcceptAction?.();
   }
 
   function decline() {
@@ -57,10 +57,10 @@ export default function CookieConsentComponent({
     setTimeout(() => {
       setHide(true);
     }, 180);
-    onDeclineCallback?.();
+    onDeclineAction?.();
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     try {
       setIsOpen(true);
       const cookies = document.cookie;

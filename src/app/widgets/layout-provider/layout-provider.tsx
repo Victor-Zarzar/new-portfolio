@@ -42,8 +42,8 @@ export default function LayoutProvider({
         {hasConsented && <Analytics />}
         <SpeedInsights />
         <CookieConsentComponent
-          onAcceptCallback={handleAccept}
-          onDeclineCallback={handleDecline}
+          onAcceptAction={handleAccept}
+          onDeclineAction={handleDecline}
         />
         <Footer />
       </ThemeProvider>

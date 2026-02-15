@@ -1,43 +1,22 @@
-"use client";
-
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+import { getTranslations } from "next-intl/server";
 import { HiArrowRight } from "react-icons/hi";
 import {
   calculateReadingTime,
   formatReadingTime,
 } from "@/app/shared/helpers/reading-time";
-import type { BlogListProps, PostMetadata } from "@/app/shared/types/main";
+import type { BlogContentProps, PostMetadata } from "@/app/shared/types/main";
 import { Card, CardContent } from "@/app/shared/ui/card";
 
-export function BlogList({ posts, locale }: BlogListProps) {
-  const t = useTranslations("Blog");
+export default async function BlogContent({ locale, posts }: BlogContentProps) {
+  const t = await getTranslations("Blog");
 
   return (
-    <main className="container-articles">
-      <section className="col-span-4 mx-auto">
-        <header className="h1 p-6">
-          <Fade>
-            <h1 className="title-articles mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center mt-6 md:mt-10">
-              {t("h1")}
-            </h1>
-          </Fade>
-        </header>
-      </section>
-
-      <section className="my-4 mt-8 md:mt-6" id="blog">
-        <h2 className="title-skills font-extrabold leading-10 tracking-tight text-sm md:text-2xl lg:text-2xl mt-8 md:mt-4 mb-8 text-center">
-          {t("h2")}
-        </h2>
-      </section>
-
-      <section className="max-w-3xl mx-auto grid grid-cols-1 gap-6 px-4 mb-52 md:mb-72">
-        {posts.map((post, index) => (
-          <ActionCard key={index} post={post} locale={locale} />
-        ))}
-      </section>
-    </main>
+    <section className="max-w-3xl mx-auto grid grid-cols-1 gap-6 px-4 mb-52 md:mb-72">
+      {posts.map((post) => (
+        <ActionCard key={post.slug} post={post} locale={locale} t={t} />
+      ))}
+    </section>
   );
 }
 
@@ -50,7 +29,7 @@ function ArticleDescription({ description }: { description: string }) {
 }
 
 function Tags({ tags }: { tags?: string[] }) {
-  if (!tags || tags.length === 0) {
+  if (!tags?.length) {
     return null;
   }
 
@@ -68,8 +47,15 @@ function Tags({ tags }: { tags?: string[] }) {
   );
 }
 
-function ActionCard({ post, locale }: { post: PostMetadata; locale: string }) {
-  const t = useTranslations("Blog");
+function ActionCard({
+  post,
+  locale,
+  t,
+}: {
+  post: PostMetadata;
+  locale: string;
+  t: (key: string) => string;
+}) {
   const readingTime = calculateReadingTime(post.content || post.description);
   const formattedReadingTime = formatReadingTime(readingTime, locale);
 
@@ -94,12 +80,7 @@ function ActionCard({ post, locale }: { post: PostMetadata; locale: string }) {
                 <Tags tags={post.tags} />
               </div>
 
-              <div
-                className="
-                flex items-center gap-2 text-sm
-                text-stone-950 dark:text-stone-50
-                self-end sm:self-auto sm:shrink-0"
-              >
+              <div className="flex items-center gap-2 text-sm text-stone-950 dark:text-stone-50 self-end sm:self-auto sm:shrink-0">
                 <span className="leading-none whitespace-nowrap">{t("p")}</span>
                 <HiArrowRight className="transition-transform group-hover:translate-x-1" />
               </div>
