@@ -141,16 +141,16 @@ bun test
 
 ### 6. Code Quality Check
 
-Before starting development, run the linter to ensure code quality:
+Before starting development, run the linter to ensure code quality (bunx biome check):
 
 ```bash
-bunx biome check
+bun lint
 ```
 
-This command will check for code style issues and potential errors. To automatically fix issues and format your code:
+This command will check for code style issues and potential errors. To automatically fix issues and format your code (bunx biome format --write):
 
 ```bash
-bunx biome format --write
+bun formart
 ```
 
 ---

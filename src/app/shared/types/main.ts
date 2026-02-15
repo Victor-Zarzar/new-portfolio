@@ -79,8 +79,8 @@ type Locale = "en" | "es" | "pt";
 
 type CookieConsentProps = {
   demo?: boolean;
-  onAcceptCallback?: () => void;
-  onDeclineCallback?: () => void;
+  onAcceptAction?: () => void;
+  onDeclineAction?: () => void;
 };
 
 type ProfileLink = {
@@ -181,6 +181,17 @@ type GithubStats = {
   topLanguages: GithubTopLanguage[];
 };
 
+type SocialLink = {
+  icon: IconType;
+  href: string;
+  label: string;
+};
+
+type BlogContentProps = {
+  locale: string;
+  posts: PostMetadata[];
+};
+
 export type {
   HeroImageClientProps,
   BlogListProps,
@@ -195,6 +206,7 @@ export type {
   MdxImgProps,
   PostMetadata,
   ContactFormData,
+  BlogContentProps,
   CookieConsentProps,
   NavMobileProps,
   CoursesType,
@@ -211,6 +223,7 @@ export type {
   ProfileLink,
   CommandLink,
   NavbarNavLink,
+  SocialLink,
   ProfileData,
   Services,
   SkillOutlineProps,
