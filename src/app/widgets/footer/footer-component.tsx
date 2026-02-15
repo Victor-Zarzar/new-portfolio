@@ -30,17 +30,17 @@ export default function Footer() {
     },
     {
       icon: AiOutlineLinkedin,
-      href: "https://linkedin.com/in/victor-zarzar",
+      href: "https://www.linkedin.com/in/victorzarzar",
       label: "LinkedIn",
     },
     {
       icon: AiOutlineInstagram,
-      href: "https://instagram.com/victorzarzar",
+      href: "https://instagram.com/victorzarzar7",
       label: "Instagram",
     },
     {
       icon: AiOutlineFacebook,
-      href: "https://facebook.com/victorzarzar",
+      href: "https://www.facebook.com/victorzarzar58",
       label: "Facebook",
     },
   ];
