@@ -42,7 +42,7 @@ export async function getStats(): Promise<GithubStats | null> {
       next: { revalidate: 3600 },
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
+        Authorization: `Bearer ${env.GH_API_TOKEN}`,
       },
       body: JSON.stringify({
         query: `
@@ -166,7 +166,7 @@ export async function getProjects(perPage = 20): Promise<GithubProject[]> {
       next: { revalidate: 3600 },
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
+        Authorization: `Bearer ${env.GH_API_TOKEN}`,
       },
       body: JSON.stringify({
         query: `

@@ -18,6 +18,7 @@ env:
   SENTRY_RELEASE: ${{ secrets.SENTRY_RELEASE }}
   SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
   SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+  GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
 
 jobs:
   build:

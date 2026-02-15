@@ -22,6 +22,6 @@ describe("env.mjs loading .env", () => {
     expect(env.NODE_ENV).toBe("test");
     expect(env.SMTP_EMAIL).toBeTruthy();
     expect(env.SMTP_PASSWORD).toBeTruthy();
-    expect(env.GITHUB_API_TOKEN).toBeTruthy();
+    expect(env.GH_API_TOKEN).toBeTruthy();
   });
 });
