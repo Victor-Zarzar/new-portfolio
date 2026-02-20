@@ -84,7 +84,7 @@ export default function Header() {
                       <Button
                         variant="outline"
                         className="w-full px-2 md:px-4 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-stone-600
-                        border-black dark:border-gray-400 cursor-pointer"
+                        border-black dark:border-gray-400"
                       >
                         <Icon className="mr-1" />
                         {link.label}

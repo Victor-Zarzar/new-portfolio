@@ -97,7 +97,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
             <div className="flex items-center gap-6">
               <Link
                 href={logoHref ?? "/"}
-                className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
+                className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors"
               >
                 <div className="text-2xl">{logo}</div>
               </Link>
@@ -109,10 +109,11 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                       <Link
                         href={item.link}
                         className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer no-underline",
+                          "relative inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 no-underline pb-1",
+                          "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:transition-all after:duration-300",
                           item.active
-                            ? "bg-accent text-accent-foreground"
-                            : "text-foreground/80 hover:text-foreground",
+                            ? "text-foreground after:w-full after:bg-foreground"
+                            : "text-foreground/80 hover:text-foreground after:bg-foreground hover:after:w-full",
                         )}
                       >
                         {item.label}

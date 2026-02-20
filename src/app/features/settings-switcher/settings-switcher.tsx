@@ -90,11 +90,7 @@ export default function SettingsSwitcher() {
             </div>
           </div>
           <DialogFooter>
-            <Button
-              type="button"
-              className="cursor-pointer"
-              onClick={() => setOpen(false)}
-            >
+            <Button type="button" onClick={() => setOpen(false)}>
               {t("close")}
               <FaArrowRight className="ml-1 animate-pulse" />
             </Button>

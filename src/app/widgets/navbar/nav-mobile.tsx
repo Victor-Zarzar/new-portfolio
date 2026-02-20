@@ -72,7 +72,7 @@ export const NavMobile = React.forwardRef<HTMLDivElement, NavMobileProps>(
                     href={item.link}
                     onClick={closeMenu}
                     className={cn(
-                      "flex items-center gap-3 px-5 py-3.5 text-base font-normal transition-all duration-200 cursor-pointer no-underline group relative",
+                      "flex items-center gap-3 px-5 py-3.5 text-base font-normal transition-all duration-200 no-underline group relative",
                       "hover:bg-accent/50",
                       item.active ? "text-foreground font-medium" : "text-base",
                     )}

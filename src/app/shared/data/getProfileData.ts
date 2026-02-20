@@ -6,8 +6,8 @@ export function getProfileData(): ProfileData {
     image: {
       src: "/profile.jpg",
       alt: "victorzarzar",
-      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
-      quality: 90,
+      sizes: "(max-width: 640px) 160px, (max-width: 1024px) 220px, 280px",
+      quality: 75,
       priority: true,
     },
     links: [

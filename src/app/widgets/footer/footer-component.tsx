@@ -60,7 +60,7 @@ export default function Footer() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:-translate-y-1 transition-transform cursor-pointer"
+              className="hover:-translate-y-1 transition-transform"
               aria-label={social.label}
             >
               <social.icon className="h-6 w-6 md:h-7 md:w-7" />
