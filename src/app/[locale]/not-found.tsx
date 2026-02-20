@@ -21,7 +21,7 @@ export default function NotFound404() {
             </p>
           </FadeWrapper>
           <Link href="/">
-            <Button className="mt-6 px-4 py-2 md:px-6 md:py-3 font-semibold cursor-pointer">
+            <Button className="mt-6 px-4 py-2 md:px-6 md:py-3 font-semibold">
               {t("button")}
             </Button>
           </Link>

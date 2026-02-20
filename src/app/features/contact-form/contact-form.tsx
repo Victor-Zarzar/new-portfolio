@@ -208,7 +208,7 @@ export default function ContactForm() {
                 type="submit"
                 className="w-full font-medium border border-black dark:border-gray-400
                                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg
-                                dark:hover:shadow-stone-600 cursor-pointer hover:text-accent-foreground"
+                                dark:hover:shadow-stone-600 hover:text-accent-foreground"
                 variant="outline"
               >
                 {t("submit")}

@@ -8,7 +8,7 @@ export default function ErrorPage() {
   const t = useTranslations("Error");
 
   return (
-    <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center min-h-screen">
+    <main className="mx-auto mb-16 flex max-w-96 md:max-w-3xl flex-col items-start justify-center min-h-screen">
       <h1 className="mb-4 font-bold tracking-tight text-4xl md:text-5xl lg:text-7xl">
         {t("title")}
       </h1>
@@ -16,10 +16,10 @@ export default function ErrorPage() {
         {t("description")}
       </p>
       <Link href="/">
-        <Button className="mt-6 px-4 py-2 md:px-6 md:py-3 font-semibold cursor-pointer">
+        <Button className="mt-6 px-4 py-2 md:px-6 md:py-3 font-semibold">
           {t("return-home")}
         </Button>
       </Link>
-    </div>
+    </main>
   );
 }
