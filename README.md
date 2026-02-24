@@ -337,7 +337,7 @@ new-portfolio/
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b435f27f-dbab-4b97-bae9-de8e5d0a5763" width="1000" height="600" alt="Projects Section">
+  <img src="https://github.com/user-attachments/assets/9d25f174-aba9-4505-a84b-27d3b7e13958" width="1000" height="600" alt="Projects Section">
 </p>
 
 <p align="center">

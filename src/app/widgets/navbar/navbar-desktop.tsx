@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, Briefcase, FileText, Mail, User } from "lucide-react";
+import { BookOpen, Briefcase, FileText, Home, Mail, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import CommandPalette from "@/app/features/command-palette/command-palette";
@@ -51,6 +51,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     const iconCls = "h-5 w-5";
 
     const defaultNavigationLinks: NavbarNavLink[] = [
+      { link: "/", label: t("home"), icon: <Home className={iconCls} /> },
       { link: "/about", label: t("about"), icon: <User className={iconCls} /> },
       {
         link: "/services",
