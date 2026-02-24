@@ -19,9 +19,15 @@ export default function LangToggler() {
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
 
-  const en = "/en.svg";
-  const es = "/es.svg";
-  const pt = "/pt.svg";
+  const en = "/static/en.svg";
+  const es = "/static/es.svg";
+  const pt = "/static/pt.svg";
+
+  const LOCALES: Array<{ value: string; label: string; image: string }> = [
+    { value: "en", label: t("english"), image: en },
+    { value: "es", label: t("spanish"), image: es },
+    { value: "pt", label: t("portuguese"), image: pt },
+  ];
 
   function onSelectChange(newLocale: string) {
     startTransition(() => {
@@ -39,24 +45,19 @@ export default function LangToggler() {
         <SelectValue />
       </SelectTrigger>
       <SelectContent className="dark:bg-stone-950 bg-[#ffffff]">
-        <SelectItem value="en">
-          <div className="flex items-center gap-2">
-            <Image src={en} alt="English" width={20} height={20} />
-            {t("english")}
-          </div>
-        </SelectItem>
-        <SelectItem value="es">
-          <div className="flex items-center gap-2">
-            <Image src={es} alt="Español" width={20} height={20} />
-            {t("spanish")}
-          </div>
-        </SelectItem>
-        <SelectItem value="pt">
-          <div className="flex items-center gap-2">
-            <Image src={pt} alt="Português" width={20} height={20} />
-            {t("portuguese")}
-          </div>
-        </SelectItem>
+        {LOCALES.map((locale) => (
+          <SelectItem key={locale.value} value={locale.value}>
+            <div className="flex items-center gap-2">
+              <Image
+                src={locale.image}
+                alt={locale.label}
+                width={20}
+                height={20}
+              />
+              {locale.label}
+            </div>
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   );

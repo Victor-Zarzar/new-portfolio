@@ -4,8 +4,8 @@ import {
   SiAndroidstudio,
   SiDart,
   SiDocker,
+  SiExpo,
   SiFirebase,
-  SiFlutter,
   SiGithubactions,
   SiGrafana,
   SiGraphql,
@@ -69,12 +69,12 @@ export const skills = [
     text: "Figma",
   },
   {
-    icon: SiDart,
-    text: "Dart",
+    icon: SiExpo,
+    text: "Expo",
   },
   {
-    icon: SiFlutter,
-    text: "Flutter",
+    icon: SiReact,
+    text: "React Native",
   },
   {
     icon: SiDocker,

@@ -1,10 +1,12 @@
 "use client";
 
-import { BookOpen, Briefcase, FileText, Home, Mail, User } from "lucide-react";
+import { BookOpen, Briefcase, FileText, Mail, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import CommandPalette from "@/app/features/command-palette/command-palette";
+import { LocaleLink } from "@/app/features/locale-link/locale-link";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
+import { ModeToggle } from "@/app/features/toggle-mode/toggle-mode";
 import { cn } from "@/app/shared/lib/utils";
 import type { NavbarNavLink } from "@/app/shared/types/main";
 import { Logo } from "@/app/shared/ui/logo";
@@ -49,7 +51,6 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     const iconCls = "h-5 w-5";
 
     const defaultNavigationLinks: NavbarNavLink[] = [
-      { link: "/", label: t("home"), icon: <Home className={iconCls} /> },
       { link: "/about", label: t("about"), icon: <User className={iconCls} /> },
       {
         link: "/services",
@@ -84,7 +85,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
         ref={ref}
         {...props}
       >
-        <div className="container mx-auto flex h-16 items-center justify-between gap-4">
+        <div className="container relative mx-auto flex h-16 items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <div className="md:flex lg:hidden">
               <NavMobile
@@ -102,7 +103,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
                 <div className="text-2xl">{logo}</div>
               </Link>
 
-              <NavigationMenu className="hidden md:flex">
+              <NavigationMenu className="hidden md:flex absolute left-1/2 -translate-x-1/2">
                 <NavigationMenuList className="gap-1">
                   {links.map((item, index) => (
                     <NavigationMenuItem key={index}>
@@ -127,6 +128,8 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
 
           <div className="items-center gap-3 md:hidden lg:flex">
             <CommandPalette />
+            <ModeToggle />
+            <LocaleLink />
           </div>
 
           <div className="md:flex lg:hidden">

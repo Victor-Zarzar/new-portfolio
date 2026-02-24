@@ -1,0 +1,306 @@
+---
+title: "Expo + React Native i18n Exemplo prático"
+description: "Como usar i18n no React Native para internacionalização."
+year: "2026"
+publishedAt: "2026-02-24"
+photo: "/articles/article-8.png"
+tags: ["react native", "mobile", "ios", "android", "web"]
+---
+
+# Como internacionalizar seu aplicativo React Native com Expo e i18n
+
+## Introdução
+
+i18n é uma abreviação para "Internationalization" (internacionalização). É o processo de preparar um aplicativo para ser adaptado a diferentes idiomas e regiões — isso envolve separar o conteúdo do código, localizar strings e estruturar o projeto para suportar múltiplos locales.
+
+## Passo a passo
+
+### 1. Instalação dos pacotes
+
+Instale as dependências necessárias com o Expo:
+
+```bash
+npx expo install expo-localization react-i18next i18next
+npx expo install @react-native-async-storage/async-storage
+```
+
+### 2. Configuração do i18n
+
+Crie o arquivo `./i18n/index.ts` com o seguinte conteúdo:
+
+```ts
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import * as Localization from "expo-localization";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import translationEn from "./locales/en-US/translation.json";
+import translationPt from "./locales/pt-BR/translation.json";
+import translationEs from "./locales/es-ES/translation.json";
+import { Locale } from "@/shared/types/locale";
+
+export const resources = {
+  "pt-BR": { translation: translationPt },
+  "en-US": { translation: translationEn },
+  "es-ES": { translation: translationEs },
+} as const;
+
+const initI18n = async () => {
+  let savedLanguage = (await AsyncStorage.getItem("language")) as Locale | null;
+
+  if (!savedLanguage) {
+    savedLanguage = Localization.locale as Locale;
+  }
+
+  i18n.use(initReactI18next).init({
+    compatibilityJSON: "v3",
+    resources,
+    lng: savedLanguage,
+    fallbackLng: "en-US",
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+};
+
+initI18n();
+
+export default i18n;
+```
+
+### 3. Importar no Root Layout
+
+No arquivo `_layout.tsx` raiz, importe o i18n antes de qualquer coisa:
+
+```tsx
+import "@/shared/global.css";
+import { ThemeProvider } from "@react-navigation/native";
+import { PortalHost } from "@rn-primitives/portal";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { useColorScheme } from "nativewind";
+import { NAV_THEME } from "@/shared/lib/theme";
+import "../../i18n";
+
+export { ErrorBoundary } from "expo-router";
+
+export default function RootLayout() {
+  const { colorScheme } = useColorScheme();
+
+  return (
+    <ThemeProvider value={NAV_THEME[colorScheme ?? "light"]}>
+      <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
+      <Stack />
+      <PortalHost />
+    </ThemeProvider>
+  );
+}
+```
+
+### 4. Criando os arquivos de tradução
+
+Estrutura de pastas sugerida:
+
+```
+./i18n/locales/
+  en-US/translation.json
+  pt-BR/translation.json
+  es-ES/translation.json
+```
+
+**`pt-BR/translation.json`**
+
+```json
+{
+  "appName": "React Native i18n",
+  "appDescription": "Seu boilerplate está pronto. Comece a construir algo incrível.",
+  "step1": "Edite app/index.tsx para começar",
+  "step2": "Salve para ver as mudanças instantaneamente",
+  "step3": "Construa suas funcionalidades em cima disso",
+  "browseDocs": "Ver Documentação",
+  "viewGithub": "Ver no GitHub",
+  "language": "Idioma",
+  "home": {
+    "title": "Início",
+    "welcome": "Bem-vindo",
+    "subtitle": "App de Exemplo com i18n!",
+    "description": "Este é um exemplo de aplicativo React Native que demonstra como implementar internacionalização (i18n) usando react-i18next.",
+    "exploringLanguages": "Explorando Idiomas",
+    "exploringLanguagesDescription": "Clique nas bandeiras dos países para explorar o conteúdo do aplicativo em diferentes idiomas.",
+    "learnMore": "Quer Saber Mais?",
+    "repositoryLinkText": "O repositório do projeto no GitHub",
+    "articlesLinkText": "Mais artigos"
+  },
+  "features": {
+    "title": "Funcionalidades",
+    "collapsibles": {
+      "i18n": {
+        "title": "Internacionalização com i18next",
+        "description": "Utiliza react-i18next para gerenciamento de idiomas, permitindo que o aplicativo seja localizado para diferentes idiomas."
+      },
+      "persistent": {
+        "title": "Seleção de Idioma Persistente",
+        "description": "Utiliza AsyncStorage para armazenar persistentemente o idioma preferido do usuário, proporcionando uma experiência consistente ao reiniciar o aplicativo."
+      },
+      "fallback": {
+        "title": "Fallback de Idioma",
+        "description": "Padrão para o idioma do dispositivo se nenhuma preferência de idioma for salva."
+      },
+      "switching": {
+        "title": "Troca Fácil de Idioma",
+        "description": "Os usuários podem trocar de idioma tocando nas bandeiras dos países."
+      }
+    }
+  }
+}
+```
+
+### 5. Usando nos componentes
+
+O hook `useTranslation` do `react-i18next` é tudo que você precisa:
+
+```tsx
+import { useTranslation } from "react-i18next";
+
+export default function Screen() {
+  const { t } = useTranslation();
+
+  return <Text>{t("home.welcome")}</Text>;
+}
+```
+
+Exemplo completo com componente de tela:
+
+```tsx
+import { Link, Stack } from "expo-router";
+import {
+  MoonStarIcon,
+  SunIcon,
+  ArrowRightIcon,
+  BookOpenIcon,
+} from "lucide-react-native";
+import { useColorScheme } from "nativewind";
+import * as React from "react";
+import { View } from "react-native";
+import { useTranslation } from "react-i18next";
+import { Button } from "@/shared/components/ui/button";
+import { Icon } from "@/shared/components/ui/icon";
+import { Text } from "@/shared/components/ui/text";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/shared/components/ui/avatar";
+
+const THEME_ICONS = {
+  light: SunIcon,
+  dark: MoonStarIcon,
+};
+
+function ThemeToggle() {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+  return (
+    <Button
+      onPressIn={toggleColorScheme}
+      size="icon"
+      variant="ghost"
+      className="ios:size-9 rounded-full web:mr-1"
+    >
+      <Icon as={THEME_ICONS[colorScheme ?? "light"]} className="size-5" />
+    </Button>
+  );
+}
+
+function HeaderRight() {
+  return (
+    <View className="flex-row items-center gap-1 web:mr-2">
+      <ThemeToggle />
+    </View>
+  );
+}
+
+const SCREEN_OPTIONS = {
+  title: "",
+  headerTransparent: true,
+  headerRight: () => <HeaderRight />,
+};
+
+export default function Screen() {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Stack.Screen options={SCREEN_OPTIONS} />
+      <View className="flex-1 items-center justify-center gap-12 p-8">
+        <View className="items-center gap-3">
+          <Avatar alt="Avatar">
+            <AvatarImage
+              source={{ uri: "https://github.com/mrzachnugent.png" }}
+            />
+            <AvatarFallback>
+              <Text>RN</Text>
+            </AvatarFallback>
+          </Avatar>
+          <Text className="text-2xl font-bold tracking-tight">
+            {t("appName")}
+          </Text>
+          <Text className="text-center text-sm text-muted-foreground">
+            {t(
+              "appDescription",
+              "Seu boilerplate está pronto. Comece a construir algo incrível.",
+            )}
+          </Text>
+        </View>
+
+        <View className="w-full max-w-sm gap-3">
+          {[
+            {
+              step: "01",
+              label: t("step1", "Edite app/index.tsx para começar"),
+            },
+            {
+              step: "02",
+              label: t("step2", "Salve para ver as mudanças instantaneamente"),
+            },
+            {
+              step: "03",
+              label: t("step3", "Construa suas funcionalidades em cima disso"),
+            },
+          ].map(({ step, label }) => (
+            <View
+              key={step}
+              className="flex-row items-center gap-4 rounded-xl border border-border bg-card p-4"
+            >
+              <Text className="font-mono text-xs font-semibold text-muted-foreground">
+                {step}
+              </Text>
+              <Text className="flex-1 text-sm">{label}</Text>
+            </View>
+          ))}
+        </View>
+
+        <View className="w-full max-w-sm gap-3">
+          <Link href="https://reactnativereusables.com" asChild>
+            <Button className="w-full">
+              <Icon as={BookOpenIcon} className="size-4" />
+              <Text>{t("browseDocs")}</Text>
+            </Button>
+          </Link>
+          <Link
+            href="https://github.com/founded-labs/react-native-reusables"
+            asChild
+          >
+            <Button variant="outline" className="w-full">
+              <Text>{t("viewGithub")}</Text>
+              <Icon as={ArrowRightIcon} className="size-4" />
+            </Button>
+          </Link>
+        </View>
+      </View>
+    </>
+  );
+}
+```
+
+## Conclusão
+
+Pronto! Com esses passos, seu aplicativo React Native com Expo está configurado para suportar múltiplos idiomas de forma persistente e com fallback automático para o idioma do dispositivo. Simples, escalável e fácil de manter.
