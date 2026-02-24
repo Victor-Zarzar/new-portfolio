@@ -62,16 +62,16 @@
     "carddescription1": "Modern, responsive websites and web applications",
     "p1": "Creation of personalized websites and web applications, focusing on performance, SEO, and user experience.",
     "cardtitle2": "Android Mobile Development",
-    "carddescription2": "Android apps with Flutter",
-    "p2": "Development of Android applications with Flutter, ensuring a native and high-performance experience.",
+    "carddescription2": "Android apps with React Native",
+    "p2": "Development of Android applications with React Native, ensuring a native and high-performance experience.",
     "cardtitle3": "iOS Mobile Development",
-    "carddescription3": "iOS apps with Flutter",
-    "p3": "Building iOS apps using Flutter, leveraging a single codebase for multiple platforms."
+    "carddescription3": "iOS apps with React Native",
+    "p3": "Building iOS apps using React Native, leveraging a single codebase for multiple platforms."
   },
   "Experiences": {
     "h1": "Experiences Tech & Education",
     "p1": "March 2023 - Present",
-    "p2": "Software Developer - Web and Flutter Mobile.",
+    "p2": "Front-End Developer - Web and Mobile.",
     "p3": "São Leopoldo, RS, Brazil - Remote",
     "p4": "December 2022 - March 2023",
     "p5": "QA Tester - Functional, Usability, Load, Localization, Accessibility, Regression.",

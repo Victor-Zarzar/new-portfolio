@@ -336,12 +336,12 @@ new-portfolio/
   <img src="https://github.com/user-attachments/assets/7e4f4cd9-8e49-4e57-8453-7a0bc8f7665b" width="1000" height="600" alt="Architecture">
 </p>
 
-<p align="center">ff
-  <img src="https://github.com/user-attachments/assets/0ef7bc20-8bb1-46fb-b360-b013ccdd4a12" width="1000" height="600" alt="Projects Section">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b435f27f-dbab-4b97-bae9-de8e5d0a5763" width="1000" height="600" alt="Projects Section">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4284ef66-c192-4985-9eb1-ac2d5758f23d" alt="Dark Mode" width="1000" height="500" alt="Mobile">
+  <img src="https://github.com/user-attachments/assets/7afc36b1-d4eb-4dcb-b077-1ccd28c068b5" alt="Dark Mode" width="1000" height="500" alt="Mobile">
 </p>
 
 ---

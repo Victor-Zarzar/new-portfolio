@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaLaptopCode } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
@@ -29,7 +29,7 @@ export default function SettingsSwitcher() {
 
   const t = useTranslations("Navbar");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handler = () => setOpen(true);
     window.addEventListener("app:open-settings", handler as EventListener);
     return () =>

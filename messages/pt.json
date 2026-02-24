@@ -62,16 +62,16 @@
     "carddescription1": "Sites e aplicações web modernos e responsivos",
     "p1": "Criação de sites e aplicações web personalizados, com foco em performance, SEO e experiência do usuário.",
     "cardtitle2": "Desenvolvimento móvel Android",
-    "carddescription2": "Aplicativos Android com Flutter",
-    "p2": "Desenvolvimento de aplicações Android com Flutter, garantindo uma experiência nativa e de alto desempenho.",
+    "carddescription2": "Aplicativos Android com React Native",
+    "p2": "Desenvolvimento de aplicações Android com React Native, garantindo uma experiência nativa e de alto desempenho.",
     "cardtitle3": "Desenvolvimento Móvel iOS",
-    "carddescription3": "Aplicativos iOS com Flutter",
-    "p3": "Construindo aplicativos iOS usando Flutter, aproveitando uma única base de código para múltiplas plataformas."
+    "carddescription3": "Aplicativos iOS com React Native",
+    "p3": "Construindo aplicativos iOS usando React Native, aproveitando uma única base de código para múltiplas plataformas."
   },
   "Experiences": {
     "h1": "Experiências Tech e Educação",
     "p1": "Março de 2023 - Presente",
-    "p2": "Desenvolvedor de Software - Web e Flutter Mobile.",
+    "p2": "Desenvolvedor Front-End - Web e Mobile.",
     "p3": "São Leopoldo, RS, Brasil - Remoto",
     "p4": "Dezembro de 2022 - março de 2023",
     "p5": "Testador QA - Funcional, Usabilidade, Carga, Localização, Acessibilidade, Regressão.",

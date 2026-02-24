@@ -4,7 +4,7 @@ export function getProfileData(): ProfileData {
   return {
     name: "Victor Zarzar",
     image: {
-      src: "/profile.jpg",
+      src: "/static/profile.jpg",
       alt: "victorzarzar",
       sizes: "(max-width: 640px) 160px, (max-width: 1024px) 220px, 280px",
       quality: 75,

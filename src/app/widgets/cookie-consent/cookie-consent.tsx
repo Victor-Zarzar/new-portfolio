@@ -4,7 +4,7 @@ import * as Sentry from "@sentry/nextjs";
 import { CookieIcon } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { cn } from "@/app/shared/lib/utils";
 import type { CookieConsentProps } from "@/app/shared/types/main";
@@ -60,7 +60,7 @@ export default function CookieConsentComponent({
     onDeclineAction?.();
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     try {
       setIsOpen(true);
       const cookies = document.cookie;

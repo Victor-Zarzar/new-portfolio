@@ -6,11 +6,14 @@ import {
   FolderKanban,
   Home,
   Mail,
+  SearchIcon,
   Settings,
   User,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
+import { useEffect } from "react";
+import { cn } from "@/app/shared/lib/utils";
 import type { CommandLink } from "@/app/shared/types/main";
 import { Button } from "@/app/shared/ui/button";
 import {
@@ -77,7 +80,7 @@ export default function CommandPalette() {
     },
   ];
 
-  React.useEffect(() => {
+  useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (
         (event.key === "k" && (event.metaKey || event.ctrlKey)) ||
@@ -103,23 +106,19 @@ export default function CommandPalette() {
   return (
     <>
       <Button
-        type="button"
-        variant="outline"
-        size="sm"
-        className="hidden h-9 w-65 justify-start gap-2 px-3 text-sm md:flex border-black dark:border-gray-400"
+        variant="secondary"
+        size="icon"
+        aria-label={t("command.navigate")}
+        className={cn(
+          "h-10 w-10 rounded-md",
+          "border border-transparent",
+          "hover:bg-accent/50",
+          "dark:bg-input/40 dark:hover:bg-input/30",
+          "focus-visible:ring-0 focus-visible:ring-offset-0 hidden md:flex",
+        )}
         onClick={() => setIsOpen(true)}
       >
-        <span className="text-muted-foreground text-xs">
-          {t("pressToNavigate")}
-        </span>
-        <span className="ml-auto flex items-center gap-1">
-          <kbd
-            className="pointer-events-none inline-flex h-5 select-none items-center gap-1
-            rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground"
-          >
-            <span className="text-[11px]">⌘</span>K
-          </kbd>
-        </span>
+        <SearchIcon size={20} />
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>

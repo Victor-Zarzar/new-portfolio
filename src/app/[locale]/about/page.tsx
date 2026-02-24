@@ -56,7 +56,7 @@ export default async function About() {
         <div className="flex flex-col items-center mt-10 space-y-5">
           <div className="flex items-center">
             <Image
-              src="/en.svg"
+              src="/static/en.svg"
               alt="us"
               width={20}
               height={20}
@@ -70,7 +70,7 @@ export default async function About() {
 
           <div className="flex items-center">
             <Image
-              src="/pt.svg"
+              src="/static/pt.svg"
               alt="br"
               width={20}
               height={20}
@@ -84,7 +84,7 @@ export default async function About() {
 
           <div className="flex items-center mb-20">
             <Image
-              src="/es.svg"
+              src="/static/es.svg"
               alt="es"
               width={20}
               height={20}
