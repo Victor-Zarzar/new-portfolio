@@ -19,7 +19,7 @@ export default async function PrivacyPolicy() {
       </section>
 
       <section className="text-center mt-10">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+        <h2 className="text-lg md:text-3xl font-semibold tracking-tight mb-4">
           {t("h2")}
         </h2>
       </section>

@@ -5,7 +5,7 @@ export default async function UnauthorizedPage() {
   const t = await getTranslations("Unauthorized");
 
   return (
-    <main className="flex items-center justify-center min-h-screen">
+    <main className="flex items-center justify-center">
       <section className="text-center">
         <div className="max-w-md mx-auto px-4 py-8">
           <FadeWrapper>
