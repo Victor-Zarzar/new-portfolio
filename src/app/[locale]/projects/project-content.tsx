@@ -90,7 +90,7 @@ export default async function ProjectsContent({ locale }: { locale: string }) {
       </div>
 
       {repos.map((repo) => (
-        <Card key={repo.url} className="w-full max-w-3xl h-36 mx-auto">
+        <Card key={repo.url} className="w-full max-w-3xl h-auto mx-auto">
           <CardContent className="p-6">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
