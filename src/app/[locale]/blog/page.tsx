@@ -31,7 +31,7 @@ export default async function BlogPage({ params }: PageProps) {
   const posts = getAllPosts(locale);
 
   return (
-    <main className="container-articles min-h-screen">
+    <main className="container-articles">
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
           <FadeWrapper>

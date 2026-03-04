@@ -31,7 +31,7 @@ export default async function ProjectsPage({
   const t = await getTranslations("Projects");
 
   return (
-    <main className="container-projects min-h-screen">
+    <main className="container-projects">
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
           <FadeWrapper>

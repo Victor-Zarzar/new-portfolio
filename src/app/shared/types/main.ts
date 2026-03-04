@@ -1,5 +1,6 @@
 import type { ImageProps } from "next/image";
 import type React from "react";
+import type { ComponentType } from "react";
 import type { IconType } from "react-icons";
 
 type Experience = {
@@ -50,9 +51,15 @@ type CoursesType = {
   url: string;
 };
 
-type SkillOutlineProps = {
-  Icon: IconType;
+type Skill = {
+  icon: ComponentType<{ className?: string }>;
   text: string;
+};
+
+type SkillCategory = {
+  icon: ComponentType<{ className?: string }>;
+  title: string;
+  skills: Skill[];
 };
 
 type SvgIconProps = {
@@ -226,7 +233,8 @@ export type {
   SocialLink,
   ProfileData,
   Services,
-  SkillOutlineProps,
+  Skill,
+  SkillCategory,
   SvgIconProps,
   GithubProject,
   GithubTopLanguage,

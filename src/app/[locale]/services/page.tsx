@@ -45,7 +45,7 @@ export default async function ServicesPage() {
         </header>
       </section>
 
-      <section className="p-4 flex flex-col gap-4 items-center min-h-screen mb-12 md:mb-0">
+      <section className="p-4 flex flex-col gap-4 items-center mb-12 md:mb-0">
         {services.map((item) => (
           <Card key={item.id} className="w-4/5 max-w-lg mb-4">
             <CardHeader>
