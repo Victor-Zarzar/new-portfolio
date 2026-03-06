@@ -3,7 +3,7 @@ title: "Expo + React Native i18n Exemplo prático"
 description: "Como usar i18n no React Native para internacionalização."
 year: "2026"
 publishedAt: "2026-02-24"
-photo: "/articles/article-8.png"
+photo: "/articles/article-7.png"
 tags: ["react native", "mobile", "ios", "android", "web"]
 ---
 
@@ -29,14 +29,14 @@ npx expo install @react-native-async-storage/async-storage
 Crie o arquivo `./i18n/index.ts` com o seguinte conteúdo:
 
 ```ts
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Localization from "expo-localization";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import * as Localization from "expo-localization";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import type { Locale } from "@/shared/types/locale";
 import translationEn from "./locales/en-US/translation.json";
-import translationPt from "./locales/pt-BR/translation.json";
 import translationEs from "./locales/es-ES/translation.json";
-import { Locale } from "@/shared/types/locale";
+import translationPt from "./locales/pt-BR/translation.json";
 
 export const resources = {
   "pt-BR": { translation: translationPt },
@@ -48,11 +48,11 @@ const initI18n = async () => {
   let savedLanguage = (await AsyncStorage.getItem("language")) as Locale | null;
 
   if (!savedLanguage) {
-    savedLanguage = Localization.locale as Locale;
+    savedLanguage = Localization.getLocales()[0]?.languageTag as Locale;
   }
 
   i18n.use(initReactI18next).init({
-    compatibilityJSON: "v3",
+    compatibilityJSON: "v4",
     resources,
     lng: savedLanguage,
     fallbackLng: "en-US",
