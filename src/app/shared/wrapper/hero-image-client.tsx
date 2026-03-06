@@ -9,12 +9,12 @@ export function HeroImageClient({
   src,
   alt,
   priority,
-  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 896px, 896px",
 }: HeroImageClientProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-6">
+    <>
       {!isLoaded && <Skeleton className="absolute inset-0 z-0" />}
 
       <Image
@@ -23,12 +23,13 @@ export function HeroImageClient({
         fill
         sizes={sizes}
         priority={priority}
+        quality={90}
         className={[
-          "object-cover transition-opacity duration-300",
+          "object-contain transition-opacity duration-300",
           isLoaded ? "opacity-100" : "opacity-0",
         ].join(" ")}
         onLoad={() => setIsLoaded(true)}
       />
-    </div>
+    </>
   );
 }

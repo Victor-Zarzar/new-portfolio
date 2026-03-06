@@ -154,7 +154,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const publishedDate = new Date(`${post.metadata.publishedAt}T00:00:00Z`);
 
   return (
-    <article className="container max-w-4xl mx-auto px-4 py-3 md:py-4">
+    <article className="container max-w-5xl mx-auto px-4 py-3 md:py-4">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -168,6 +168,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             src={post.metadata.photo}
             alt={post.metadata.title}
             priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 896px, 896px"
           />
         </div>
         <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">

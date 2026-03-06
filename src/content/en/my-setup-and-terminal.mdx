@@ -1,0 +1,401 @@
+---
+title: "My Terminal Setup + Zed Editor configs"
+description: "A deep dive into my development environment: Zsh, Starship, iTerm2, and Zed Editor configured from scratch on macOS."
+year: "2026"
+publishedAt: "2026-03-06"
+photo: "/articles/article-8.png"
+tags: ["zsh", "macOS", "starship", "zed", "iterm2"]
+---
+
+## Overview
+
+This is my complete terminal setup for macOS, covering everything from shell tools to prompt configuration. I use **iTerm2** as my terminal emulator, **Zsh** as my shell, and **Starship** as my prompt. Below you'll find everything you need to replicate this setup.
+
+---
+
+## Installation
+
+### Option 1 — Automated Script (Recommended)
+
+I maintain a modular setup script that automates the entire environment from scratch. It installs Homebrew, shell tools, development tools, fonts, and applications in one go.
+
+```bash
+git clone https://github.com/Victor-Zarzar/script-setup-macOS
+cd script-setup-macOS
+chmod +x setup.sh
+./setup.sh
+```
+
+The script includes an interactive menu where you can run a full setup or install individual components. It handles Homebrew, Starship, Zsh Autosuggestions, Eza, Zoxide, Bat, Zed Editor, iTerm2, NVM, Bun, Pyenv, FVM, JetBrains Mono Nerd Font, and much more.
+
+### Option 2 — Manual Installation
+
+If you prefer to install only what's needed for the configs below, run:
+
+```bash
+brew install starship zoxide zsh-autosuggestions eza bat nvm pyenv
+brew install --cask iterm2 zed
+```
+
+---
+
+## Zsh Configuration (`~/.zshrc`)
+
+```zsh
+# Paths
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH=$HOME/.local/bin:$PATH
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# Flutter
+export PATH="$HOME/fvm/default/bin:$PATH"
+
+# Chrome
+export CHROME_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+# Java
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Alias
+alias cat="bat"
+alias ls="eza"
+alias ll="eza -l"
+alias la="eza -la"
+alias gs="git status"
+alias ga="git add -A"
+alias gl="git log"
+alias gd='git diff'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+```
+
+---
+
+## Starship Prompt (`~/.config/starship.toml`)
+
+Create the config directory and file:
+
+```bash
+mkdir -p ~/.config
+nano ~/.config/starship.toml
+```
+
+Then paste the configuration:
+
+```toml
+# Format
+format = """
+$username\
+$directory\
+$git_branch\
+$git_status\
+$docker_context\
+$python\
+$nodejs\
+$dart\
+$package\
+$cmd_duration\
+$line_break\
+$character"""
+
+[username]
+show_always = true
+format = "🧙‍♂️ [$user]($style) "
+style_user = "bold purple"
+
+[hostname]
+disabled = true
+
+[directory]
+format = "in [$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+read_only = " "
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+# Git
+[git_branch]
+format = "on [$symbol$branch]($style) "
+style = "bold green"
+symbol = " "
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold yellow"
+conflicted = "⚡"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+untracked = "…"
+stashed = "≡"
+modified = "✎"
+staged = "✔"
+renamed = "»"
+deleted = "✘"
+
+# Docker
+[docker_context]
+format = "via [$symbol$context]($style) "
+style = "bold blue"
+symbol = " "
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile", "filebeat.yml", "promtail-config.yml"]
+
+# Python
+[python]
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+symbol = " "
+pyenv_version_name = true
+detect_extensions = ["py"]
+detect_files = ["requirements.txt", "pyproject.toml", "Pipfile", ".python-version"]
+
+# Node.js
+[nodejs]
+format = "via [$symbol($version )]($style)"
+style = "bold green"
+symbol = "󰎙 "
+detect_extensions = ["js", "mjs", "cjs", "ts"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+
+# Bun
+[bun]
+format = "via [$symbol($version )]($style)"
+style = "bold yellow"
+symbol = " "
+detect_extensions = ["js", "mjs", "cjs", "ts"]
+detect_files = ["bun.lockb", "bunfig.toml"]
+
+# Dart/Flutter
+[dart]
+format = "via [$symbol($version )]($style)"
+style = "bold blue"
+symbol = " "
+detect_extensions = ["dart"]
+detect_files = ["pubspec.yaml", "pubspec.lock", ".fvm/fvm_config.json"]
+
+# Duration
+[cmd_duration]
+min_time = 1_000
+format = "took [$duration]($style) "
+style = "bold yellow"
+show_milliseconds = true
+
+# Package manager
+[package]
+format = "is [$symbol$version]($style) "
+symbol = " "
+style = "bold 208"
+disabled = false
+
+# YAML configs
+[custom.yaml]
+command = "ls *.yml *.yaml 2>/dev/null | head -1"
+when = """ test -f "filebeat.yml" || test -f "promtail-config.yml" || test -f "loki-config.yml" """
+format = "with [  yaml]($style) "
+style = "bold cyan"
+shell = ["bash", "-c"]
+
+# Databases
+[custom.mysql]
+command = "echo mysql"
+when = """ test -f "my.cnf" || test -f ".my.cnf" """
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold blue"
+shell = ["bash", "-c"]
+
+[custom.sqlite]
+command = "ls *.db *.sqlite *.sqlite3 2>/dev/null | wc -l | tr -d ' '"
+when = """ ls *.db *.sqlite *.sqlite3 2>/dev/null """
+format = "with [ sqlite]($style) "
+style = "bold yellow"
+shell = ["bash", "-c"]
+
+# Stats
+[memory_usage]
+disabled = false
+threshold = 75
+symbol = "󱇯 "
+format = "via $symbol[$ram]($style) "
+style = "bold dimmed red"
+
+# Battery
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+disabled = false
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+[[battery.display]]
+threshold = 60
+style = "bold yellow"
+
+# Line Break
+[line_break]
+disabled = false
+
+# Jobs in Background
+[jobs]
+symbol = "✦"
+number_threshold = 1
+format = "[$symbol$number]($style) "
+style = "bold blue"
+```
+
+---
+
+## What Each Tool Does
+
+**Starship** — a fast, cross-shell prompt written in Rust. It shows context-aware info like git status, current language version, and command duration.
+
+**Zoxide** — a smarter `cd` that learns your most-used directories. After a few uses, `z project` jumps straight to your folder.
+
+**Zsh Autosuggestions** — shows ghost-text suggestions based on your history as you type. Press `→` to accept.
+
+**Eza** — a modern replacement for `ls` with color support, icons, and git integration.
+
+**Bat** — a `cat` clone with syntax highlighting and line numbers.
+
+**iTerm2** — feature-rich terminal emulator for macOS with split panes, search, and profiles.
+
+**Zed Editor** — a high-performance, GPU-accelerated code editor built in Rust. Fast, minimal, and collaborative.
+
+---
+
+## Zed Editor (`~/.config/zed/settings.json`)
+
+Zed stores its configuration at `~/.config/zed/settings.json`. To open it directly from the editor, press `cmd-shift-p` and run `zed: open settings`.
+
+```json
+{
+  // UI
+  "icon_theme": "VSCode Icons for Zed (Dark Angular)",
+  "ui_font_size": 15,
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 15,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "One Dark - Darkened"
+  },
+  "project_panel": {
+    "auto_fold_dirs": false
+  },
+
+  // Global formatting
+  "format_on_save": "on",
+  "languages": {
+    "Python": {
+      "language_servers": [
+        "ruff",
+        "basedpyright",
+        "!pylsp",
+        "!python-refactoring"
+      ],
+      "formatter": {
+        "language_server": { "name": "ruff" }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.ruff": true,
+        "source.organizeImports.ruff": true
+      }
+    },
+    "JavaScript": {
+      "formatter": {
+        "language_server": { "name": "biome" }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "language_server": { "name": "biome" }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
+    },
+    "TSX": {
+      "formatter": {
+        "language_server": { "name": "biome" }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      }
+    },
+    "JSON": {
+      "formatter": {
+        "language_server": { "name": "biome" }
+      }
+    },
+    "JSONC": {
+      "formatter": {
+        "language_server": { "name": "biome" }
+      }
+    },
+    "CSS": {
+      "formatter": {
+        "language_server": { "name": "biome" }
+      }
+    }
+  },
+
+  // Terminal
+  "terminal": {
+    "shell": { "program": "/bin/zsh" },
+    "env": { "TERM_PROGRAM": "iTerm.app" }
+  }
+}
+```
+
+**Language servers used:**
+
+- **Ruff** — extremely fast Python linter and formatter written in Rust. Replaces pylsp for formatting and import sorting.
+- **basedpyright** — a community fork of Pyright with stricter type checking for Python.
+- **Biome** — an all-in-one fast formatter and linter for JS, TS, JSON, and CSS. Replaces Prettier + ESLint in a single tool.
+
+---
+
+## Font
+
+The prompt uses **JetBrains Mono Nerd Font** for icon rendering. Install it via Homebrew:
+
+```bash
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+Then set it in iTerm2: `Preferences → Profiles → Text → Font → JetBrainsMonoNF-Regular`.
