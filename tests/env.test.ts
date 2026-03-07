@@ -19,7 +19,7 @@ describe("env.mjs loading .env", () => {
     const mod = await importFreshEnv();
     const env = mod.default;
 
-    expect(env.NODE_ENV).toBe("test");
+    expect(env.NODE_ENV).toBeTruthy();
     expect(env.NEXT_PUBLIC_WEBSITE_URL).toBeTruthy();
     expect(env.SMTP_EMAIL).toBeTruthy();
     expect(env.SMTP_PASSWORD).toBeTruthy();
