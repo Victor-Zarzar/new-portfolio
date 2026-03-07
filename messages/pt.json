@@ -145,7 +145,6 @@
     "message": "Menssagem",
     "submit": "Enviar",
     "namerequired": "Nome obrigatório",
-    "invalidemail": "E-mail inválido",
     "subjectrequired": "Assunto obrigatório",
     "messagerequired": "Mensagem necessária",
     "emailerror": "Erro ao enviar o e-mail. Tente novamente mais tarde.",
@@ -155,7 +154,9 @@
     "cardSubtitle": "Entre em contato enviando uma mensagem ou pelas minhas redes sociais.",
     "socialText": "Ou fale comigo por",
     "eyebrow": "Contato",
-    "description": "Fique à vontade para entrar em contato preenchendo o formulário abaixo."
+    "description": "Fique à vontade para entrar em contato preenchendo o formulário abaixo.",
+    "emailrequired": "Informe seu e-mail.",
+    "invalidemail": "Digite um e-mail válido."
   },
   "NotFound": {
     "p": "Desculpe, não conseguimos encontrar esta página.",

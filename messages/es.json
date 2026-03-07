@@ -149,7 +149,6 @@
     "message": "Mensaje",
     "submit": "Enviar",
     "namerequired": "Nombre requerido",
-    "invalidemail": "Correo electrónico no válido",
     "subjectrequired": "Asunto requerido",
     "messagerequired": "Mensaje requerido",
     "emailerror": "Error al enviar el correo electrónico. Vuelva a intentarlo más tarde.",
@@ -159,7 +158,9 @@
     "cardSubtitle": "Ponte en contacto enviando un mensaje o a través de mis redes sociales.",
     "socialText": "O comunícate conmigo por",
     "eyebrow": "Contacto",
-    "description": "Siéntete libre de contactarme completando el formulario abajo."
+    "description": "Siéntete libre de contactarme completando el formulario abajo.",
+    "emailrequired": "Ingresa tu correo electrónico.",
+    "invalidemail": "Ingresa una dirección de correo válida."
   },
   "NotFound": {
     "p": "Lo sentimos, no pudimos encontrar esta página.",
