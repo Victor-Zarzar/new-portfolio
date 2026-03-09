@@ -24,7 +24,8 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System",
-    "close": "Close"
+    "close": "Close",
+    "open-settings": "Open settings"
   },
   "Header": {
     "h1": "Welcome to my portfolio,",

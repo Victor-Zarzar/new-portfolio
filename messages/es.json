@@ -24,7 +24,8 @@
     "light": "Claro",
     "dark": "Oscuro",
     "system": "Sistema",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "open-settings": "Abrir configuración"
   },
   "Header": {
     "h1": "Bienvenido a mi portafolio,",

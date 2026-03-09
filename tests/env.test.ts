@@ -1,11 +1,21 @@
-import { describe, expect, test } from "bun:test";
+import { afterEach, beforeEach, describe, expect, test } from "bun:test";
+
+const originalWindow = globalThis.window;
+const originalDocument = globalThis.document;
+const originalNavigator = globalThis.navigator;
 
 function forceServerRuntime(): void {
   const g = globalThis as Record<string, unknown>;
-
   delete g.window;
   delete g.document;
   delete g.navigator;
+}
+
+function restoreRuntime(): void {
+  const g = globalThis as Record<string, unknown>;
+  g.window = originalWindow;
+  g.document = originalDocument;
+  g.navigator = originalNavigator;
 }
 
 async function importFreshEnv(): Promise<typeof import("../src/env.mjs")> {
@@ -13,9 +23,15 @@ async function importFreshEnv(): Promise<typeof import("../src/env.mjs")> {
 }
 
 describe("env.mjs loading .env", () => {
-  test("reads variables from the .env file (via process.env)", async () => {
+  beforeEach(() => {
     forceServerRuntime();
+  });
 
+  afterEach(() => {
+    restoreRuntime();
+  });
+
+  test("reads variables from the .env file (via process.env)", async () => {
     const mod = await importFreshEnv();
     const env = mod.default;
 

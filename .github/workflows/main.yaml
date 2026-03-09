@@ -37,11 +37,11 @@ jobs:
       - name: Typegen
         run: bun run typegen
 
-      - name: Lint
-        run: bun run lint
-
       - name: Typecheck
         run: bun run typecheck
+
+      - name: Lint
+        run: bun run lint
 
       - name: Tests
         run: bun run test

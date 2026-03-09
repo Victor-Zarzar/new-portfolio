@@ -40,17 +40,22 @@ export default function SettingsSwitcher() {
     <div className="container-settings">
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <button className="p-1 rounded-xl" onClick={() => setOpen(true)}>
-            <IoMdSettings size={27} />
-          </button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="rounded-xl"
+            onClick={() => setOpen(true)}
+            aria-label={t("open-settings")}
+          >
+            <IoMdSettings size={27} aria-hidden="true" />
+          </Button>
         </DialogTrigger>
         <DialogContent className="max-w-[320px] sm:max-w-106.25 dark:bg-stone-950 bg-[#ffffff] border-black dark:border-gray-200">
           <DialogHeader>
-            <DialogTitle>
-              <div className="flex items-center">
-                <IoMdSettings size={20} />
-                {t("settings")}
-              </div>
+            <DialogTitle className="flex items-center gap-2">
+              <IoMdSettings size={20} aria-hidden="true" />
+              <span>{t("settings")}</span>
             </DialogTitle>
             <DialogDescription>{t("dialog-description")}</DialogDescription>
           </DialogHeader>

@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { useTransition } from "react";
 import { cn } from "@/app/shared/lib/utils";
 import type { Locale } from "@/app/shared/types/main";
+import { Button } from "@/app/shared/ui/button";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 const order: Locale[] = ["en", "es", "pt"];
@@ -35,8 +36,9 @@ export function LocaleLink({ className }: { className?: string }) {
   }
 
   return (
-    <button
+    <Button
       type="button"
+      variant="ghost"
       disabled={isPending}
       onClick={handleClick}
       aria-label={`Change language to ${to.toUpperCase()}`}
@@ -49,6 +51,6 @@ export function LocaleLink({ className }: { className?: string }) {
       )}
     >
       {label}
-    </button>
+    </Button>
   );
 }
