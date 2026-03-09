@@ -36,7 +36,12 @@ export default function ContactForm() {
 
   const formSchema = z.object({
     name: z.string().min(1, t("namerequired")),
-    email: z.email(t("invalidemail")),
+    email: z
+      .string()
+      .trim()
+      .toLowerCase()
+      .min(1, t("emailrequired"))
+      .email(t("invalidemail")),
     subject: z.string().min(1, t("subjectrequired")),
     message: z.string().min(1, t("messagerequired")),
     company: z.string().optional(),
@@ -154,7 +159,8 @@ export default function ContactForm() {
                   <FormControl>
                     <Input
                       placeholder={t("email")}
-                      type="email"
+                      type="text"
+                      inputMode="email"
                       {...field}
                       className="dark:bg-stone-950 dark:border-b dark:border-stone-600"
                       autoComplete="email"
