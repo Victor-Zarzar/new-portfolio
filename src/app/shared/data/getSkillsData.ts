@@ -26,7 +26,7 @@ import {
   SiVite,
   SiXcode,
 } from "react-icons/si";
-import type { SkillCategory } from "@/app/shared/types/main";
+import type { SkillCategory } from "@/app/shared/types/skills/skills";
 
 export function getSkillsData(): SkillCategory[] {
   return [

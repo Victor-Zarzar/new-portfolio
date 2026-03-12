@@ -1,7 +1,7 @@
 import type {
   Experience,
   GetTimelineDataParams,
-} from "@/app/shared/types/main";
+} from "@/app/shared/types/get-data/get-data";
 
 export function getTimelineData({ t }: GetTimelineDataParams): Experience[] {
   return [

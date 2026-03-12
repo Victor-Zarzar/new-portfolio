@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useState } from "react";
 import { cn } from "@/app/shared/lib/utils";
-import type { NavMobileProps } from "@/app/shared/types/main";
+import type { NavMobileProps } from "@/app/shared/types/navbar/nav";
 import { Button } from "@/app/shared/ui/button";
 import { Link } from "@/i18n/navigation";
 

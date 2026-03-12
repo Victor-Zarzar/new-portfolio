@@ -11,7 +11,7 @@ import {
 } from "react-icons/ai";
 import * as z from "zod";
 import { contactService } from "@/app/shared/api/contact";
-import type { ContactFormData } from "@/app/shared/types/main";
+import type { ContactFormData } from "@/app/shared/types/form/form";
 import { Button } from "@/app/shared/ui/button";
 import {
   Card,

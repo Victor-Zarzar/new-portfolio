@@ -1,5 +1,5 @@
 import type React from "react";
-import type { SvgIconProps } from "@/app/shared/types/main";
+import type { SvgIconProps } from "@/app/shared/types/svg/svg";
 
 const NginxIcon: React.FC<SvgIconProps> = ({
   size = 29,

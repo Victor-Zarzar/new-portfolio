@@ -4,6 +4,8 @@ import nodemailer from "nodemailer";
 import { RateLimiterMemory } from "rate-limiter-flexible";
 import sanitizeHtml from "sanitize-html";
 import { z } from "zod";
+import { formatDateTimeBR } from "@/app/shared/helpers/format-date";
+import type { SlackContactPayload } from "@/app/shared/types/form/form";
 import env from "@/env.mjs";
 
 const contactSchema = z.object({
@@ -19,27 +21,67 @@ const rateLimiter = new RateLimiterMemory({
   duration: 60,
 });
 
-async function sendSlackMessage(payload: {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}) {
+async function sendSlackMessage(payload: SlackContactPayload) {
   if (!env.SLACK_WEBHOOK_URL) {
     return;
   }
 
-  const text =
-    `*New portfolio contact*\n` +
-    `*Name:* ${payload.name}\n` +
-    `*Email:* ${payload.email}\n` +
-    `*Subject:* ${payload.subject}\n` +
-    `*Message:*\n${payload.message}`;
+  const text = `New portfolio contact from ${payload.name} <${payload.email}>`;
 
   const res = await fetch(env.SLACK_WEBHOOK_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      text,
+      blocks: [
+        {
+          type: "header",
+          text: {
+            type: "plain_text",
+            text: "My Portfolio contact",
+            emoji: true,
+          },
+        },
+        {
+          type: "section",
+          fields: [
+            {
+              type: "mrkdwn",
+              text: `*Name:*\n${payload.name}`,
+            },
+            {
+              type: "mrkdwn",
+              text: `*Email:*\n<mailto:${payload.email}|${payload.email}>`,
+            },
+            {
+              type: "mrkdwn",
+              text: `*Subject:*\n${payload.subject}`,
+            },
+          ],
+        },
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: `*Message:*\n>${payload.message.replace(/\n/g, "\n>")}`,
+          },
+        },
+        {
+          type: "context",
+          elements: [
+            {
+              type: "mrkdwn",
+              text: `My Portfolio contact form • ${formatDateTimeBR(new Date())}`,
+            },
+          ],
+        },
+        {
+          type: "divider",
+        },
+      ],
+    }),
   });
 
   if (!res.ok) {
@@ -79,11 +121,64 @@ export async function POST(request: Request) {
     });
 
     const mailOptions = {
-      from: env.SMTP_EMAIL,
-      replyTo: sanitizedEmail,
+      from: `"Portfolio Contact" <${env.SMTP_EMAIL}>`,
       to: env.SMTP_EMAIL,
-      subject: `Contact: ${sanitizedSubject}`,
-      text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`,
+      replyTo: sanitizedEmail,
+      subject: `My portfolio contact — ${sanitizedSubject}`,
+      text: [
+        "My portfolio contact",
+        "",
+        `Name: ${sanitizedName}`,
+        `Email: ${sanitizedEmail}`,
+        `Subject: ${sanitizedSubject}`,
+        "",
+        "Message:",
+        sanitizedMessage,
+      ].join("\n"),
+      html: `
+        <div style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #111827; max-width: 640px; margin: 0 auto; padding: 24px;">
+          <div style="border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
+            <div style="background: #111827; color: #ffffff; padding: 20px 24px;">
+              <h1 style="margin: 0; font-size: 20px;">New portfolio contact</h1>
+              <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.9;">
+                A new message was submitted through your contact form.
+              </p>
+            </div>
+
+            <div style="padding: 24px;">
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 700; width: 100px;">Name</td>
+                  <td style="padding: 8px 0;">${sanitizedName}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 700;">Email</td>
+                  <td style="padding: 8px 0;">
+                    <a href="mailto:${sanitizedEmail}" style="color: #2563eb; text-decoration: none;">
+                      ${sanitizedEmail}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0; font-weight: 700;">Subject</td>
+                  <td style="padding: 8px 0;">${sanitizedSubject}</td>
+                </tr>
+              </table>
+
+              <div style="margin-top: 24px;">
+                <h2 style="margin: 0 0 12px; font-size: 16px; color: #111827;">Message</h2>
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; white-space: pre-wrap;">
+                  ${sanitizedMessage}
+                </div>
+              </div>
+            </div>
+
+            <div style="padding: 16px 24px; background: #f9fafb; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
+              My Portfolio contact form
+            </div>
+          </div>
+        </div>
+      `,
     };
 
     await transporter.sendMail(mailOptions);

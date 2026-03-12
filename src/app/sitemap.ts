@@ -6,14 +6,7 @@ import { getAllPosts } from "@/lib/blog";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = env.NEXT_PUBLIC_WEBSITE_URL;
   const locales = routing.locales;
-  const pages = [
-    "",
-    "about",
-    "services",
-    "contact",
-    "projects",
-    "privacypolicy",
-  ];
+  const pages = ["", "about", "contact", "projects", "privacypolicy"];
 
   const routes = locales.flatMap((locale) =>
     pages.map((page) => ({

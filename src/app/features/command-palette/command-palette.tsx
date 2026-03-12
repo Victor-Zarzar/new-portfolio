@@ -2,7 +2,6 @@
 
 import {
   BookOpen,
-  Briefcase,
   FolderKanban,
   Home,
   Mail,
@@ -14,7 +13,7 @@ import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useEffect } from "react";
 import { cn } from "@/app/shared/lib/utils";
-import type { CommandLink } from "@/app/shared/types/main";
+import type { CommandLink } from "@/app/shared/types/command/command";
 import { Button } from "@/app/shared/ui/button";
 import {
   Command,
@@ -53,12 +52,6 @@ export default function CommandPalette() {
       labelKey: "nav.about",
       href: "/about",
       icon: <User className={cls} />,
-    },
-    {
-      id: "services",
-      labelKey: "nav.services",
-      href: "/services",
-      icon: <Briefcase className={cls} />,
     },
     {
       id: "projects",

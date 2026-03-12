@@ -1,7 +1,7 @@
 import type { Metadata } from "next/types";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
-import type { PageProps } from "@/app/shared/types/main";
+import type { PageProps } from "@/app/shared/types/post/post";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 import LoadingSkeleton from "@/app/widgets/loading-skeleton/loading-skeleton";
 import { routing } from "@/i18n/routing";

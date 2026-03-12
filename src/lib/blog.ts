@@ -1,7 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import type { PostMetadata } from "@/app/shared/types/main";
+import type { PostMetadata } from "@/app/shared/types/post/post";
 
 const contentDirectory = path.join(process.cwd(), "src/content");
 

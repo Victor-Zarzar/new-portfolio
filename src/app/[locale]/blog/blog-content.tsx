@@ -5,7 +5,10 @@ import {
   calculateReadingTime,
   formatReadingTime,
 } from "@/app/shared/helpers/reading-time";
-import type { BlogContentProps, PostMetadata } from "@/app/shared/types/main";
+import type {
+  BlogContentProps,
+  PostMetadata,
+} from "@/app/shared/types/post/post";
 import { Card, CardContent } from "@/app/shared/ui/card";
 
 export default async function BlogContent({ locale, posts }: BlogContentProps) {

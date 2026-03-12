@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, mock } from "bun:test";
 mock.module("@/env.mjs", () => ({
   default: {
     GITHUB_API_TOKEN: "test_token",
+    GITHUB_USERNAME: "fake-user",
   },
 }));
 
@@ -52,7 +53,7 @@ describe("shared/api/github.ts", () => {
           expect(headers.Authorization).toBe("Bearer test_token");
 
           const payload = JSON.parse(String(init?.body ?? "{}"));
-          expect(payload.variables.login).toBe("victor-zarzar");
+          expect(payload.variables.login).toBe("fake-user");
 
           return jsonResponse({
             data: {
@@ -140,7 +141,7 @@ describe("shared/api/github.ts", () => {
       fetchMock.mockImplementationOnce(
         async (_url: RequestInfo | URL, init?: RequestInit) => {
           const payload = JSON.parse(String(init?.body ?? "{}"));
-          expect(payload.variables.login).toBe("victor-zarzar");
+          expect(payload.variables.login).toBe("fake-user");
           expect(payload.variables.perPage).toBe(30);
 
           return jsonResponse({
@@ -150,7 +151,7 @@ describe("shared/api/github.ts", () => {
                   nodes: [
                     {
                       name: "repo-1",
-                      url: "https://github.com/victor-zarzar/repo-1",
+                      url: "https://github.com/fake-user/repo-1",
                       description: "desc",
                       homepageUrl: "https://example.com",
                       stargazerCount: 2,

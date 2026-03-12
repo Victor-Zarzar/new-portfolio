@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import type { HeroImageClientProps } from "@/app/shared/types/main";
+import type { HeroImageClientProps } from "@/app/shared/types/image/image";
 import { Skeleton } from "@/app/shared/ui/skeleton";
 
 export function HeroImageClient({
