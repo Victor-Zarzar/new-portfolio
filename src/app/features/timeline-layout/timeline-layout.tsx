@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Fade } from "react-awesome-reveal";
 import { getTimelineData } from "@/app/shared/data/getTimelineData";
-import type { Experience } from "@/app/shared/types/main";
+import type { Experience } from "@/app/shared/types/get-data/get-data";
 import {
   Timeline,
   TimelineDescription,

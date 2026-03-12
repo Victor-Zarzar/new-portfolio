@@ -14,7 +14,7 @@ import type {
   MdxPreProps,
   MdxUlProps,
   PageProps,
-} from "@/app/shared/types/main";
+} from "@/app/shared/types/post/post";
 import { HeroImageClient } from "@/app/shared/wrapper/hero-image-client";
 import env from "@/env.mjs";
 import { routing } from "@/i18n/routing";

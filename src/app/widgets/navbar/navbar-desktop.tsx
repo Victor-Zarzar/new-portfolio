@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, Briefcase, FileText, Home, Mail, User } from "lucide-react";
+import { BookOpen, FileText, Home, Mail, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import CommandPalette from "@/app/features/command-palette/command-palette";
@@ -8,7 +8,7 @@ import { LocaleLink } from "@/app/features/locale-link/locale-link";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { ModeToggle } from "@/app/features/toggle-mode/toggle-mode";
 import { cn } from "@/app/shared/lib/utils";
-import type { NavbarNavLink } from "@/app/shared/types/main";
+import type { NavbarNavLink } from "@/app/shared/types/navbar/nav";
 import { Logo } from "@/app/shared/ui/logo";
 import {
   NavigationMenu,
@@ -53,11 +53,6 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     const defaultNavigationLinks: NavbarNavLink[] = [
       { link: "/", label: t("home"), icon: <Home className={iconCls} /> },
       { link: "/about", label: t("about"), icon: <User className={iconCls} /> },
-      {
-        link: "/services",
-        label: t("services"),
-        icon: <Briefcase className={iconCls} />,
-      },
       {
         link: "/projects",
         label: t("projects"),

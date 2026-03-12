@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import { BiLogoDevTo } from "react-icons/bi";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import type { SocialLink } from "@/app/shared/types/main";
+import type { SocialLink } from "@/app/shared/types/social/social";
 import { Link } from "@/i18n/navigation";
 
 export default function Footer() {

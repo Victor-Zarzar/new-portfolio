@@ -1,4 +1,7 @@
-import type { GithubProject, GithubStats } from "@/app/shared/types/main";
+import type {
+  GithubProject,
+  GithubStats,
+} from "@/app/shared/types/github/github";
 import env from "@/env.mjs";
 
 type RepoResponse = {
@@ -80,7 +83,7 @@ export async function getStats(): Promise<GithubStats | null> {
           }
         `,
         variables: {
-          login: "victor-zarzar",
+          login: env.GITHUB_USERNAME,
         },
       }),
     });
@@ -191,7 +194,7 @@ export async function getProjects(perPage = 20): Promise<GithubProject[]> {
           }
         `,
         variables: {
-          login: "victor-zarzar",
+          login: env.GITHUB_USERNAME,
           perPage,
         },
       }),

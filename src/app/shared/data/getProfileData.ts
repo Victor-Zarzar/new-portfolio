@@ -1,4 +1,4 @@
-import type { ProfileData } from "@/app/shared/types/main";
+import type { ProfileData } from "@/app/shared/types/profile/profile";
 
 export function getProfileData(): ProfileData {
   return {

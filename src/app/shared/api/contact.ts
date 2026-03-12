@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/nextjs";
 import { toast } from "sonner";
-import type { ContactFormData } from "@/app/shared/types/main";
+import type { ContactFormData } from "@/app/shared/types/form/form";
 
 export const contactService = {
   async sendContactForm(

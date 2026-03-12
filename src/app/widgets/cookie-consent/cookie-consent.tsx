@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { cn } from "@/app/shared/lib/utils";
-import type { CookieConsentProps } from "@/app/shared/types/main";
+import type { CookieConsentProps } from "@/app/shared/types/cookies/cookies";
 import { Button } from "@/app/shared/ui/button";
 
 export default function CookieConsentComponent({

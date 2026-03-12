@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { cn } from "@/app/shared/lib/utils";
-import type { LogoProps } from "../types/main";
+import type { LogoProps } from "@/app/shared/types/logo/logo";
 
 export function Logo({ className }: LogoProps) {
   const t = useTranslations("Navbar");

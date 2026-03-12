@@ -3,7 +3,7 @@
 import { useLocale } from "next-intl";
 import { useTransition } from "react";
 import { cn } from "@/app/shared/lib/utils";
-import type { Locale } from "@/app/shared/types/main";
+import type { Locale } from "@/app/shared/types/locale/locale";
 import { Button } from "@/app/shared/ui/button";
 import { usePathname, useRouter } from "@/i18n/navigation";
 

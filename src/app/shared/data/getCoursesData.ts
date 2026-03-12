@@ -1,4 +1,7 @@
-import type { CoursesType, GetCourseDataParams } from "@/app/shared/types/main";
+import type {
+  CoursesType,
+  GetCourseDataParams,
+} from "@/app/shared/types/get-data/get-data";
 
 export function getCoursesData({ t }: GetCourseDataParams): CoursesType[] {
   return [
