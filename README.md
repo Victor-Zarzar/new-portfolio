@@ -6,8 +6,10 @@
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white" alt="MDX">
   <img src="https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white" alt="Bun">
+  <img src="https://img.shields.io/badge/DrizzleORM-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black" alt="Drizzle ORM">
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/BetterAuth-000000?style=for-the-badge" alt="Better Auth">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
 </p>
@@ -361,38 +363,28 @@ The application is deployed on Vercel for production use.
 - **CI/CD Pipeline** - `.github/workflows/main.yaml` for automated checks and builds
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
 
-<h2 id="contributing">
-  Contributing
-</h2>
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+<h2 id="contributing">Contributing</h2>
 
 1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
 5. Open a Pull Request
+
+Report issues at: https://github.com/Victor-Zarzar/my-portoflio/issues
 
 ---
 
-<h2 id="license">
-  License
-</h2>
+<h2 id="license">License</h2>
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-<h2 id="contact">
-  Contact
-</h2>
+<h2 id="author">Author</h2>
 
 Victor Zarzar - [@Victor-Zarzar](https://github.com/Victor-Zarzar)
 
-Project Link: [https://github.com/Victor-Zarzar/new-portfolio](https://github.com/Victor-Zarzar/new-portfolio)
+Project Link: [https://github.com/Victor-Zarzar/my-portoflio](https://github.com/Victor-Zarzar/my-portoflio)
 
 ---
-
-<p align="center">
-  Made with by Victor Zarzar
-</p>

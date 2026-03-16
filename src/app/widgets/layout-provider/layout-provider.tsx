@@ -9,7 +9,6 @@ import DevToolsGuard from "@/app/guard/disable-dev-tools";
 import { Toaster } from "@/app/shared/ui/sonner";
 import CookieConsentComponent from "../cookie-consent/cookie-consent";
 import Footer from "../footer/footer-component";
-import { NavbarComponent } from "../navbar/navbar-desktop";
 
 export default function LayoutProvider({
   children,
@@ -35,7 +34,6 @@ export default function LayoutProvider({
   return (
     <>
       <ThemeProvider enableSystem={true} attribute="class">
-        <NavbarComponent />
         <DevToolsGuard />
         <main className="min-h-screen">{children}</main>
         <Toaster position="top-right" expand={true} />

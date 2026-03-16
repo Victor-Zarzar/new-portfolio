@@ -1,3 +1,3 @@
-export default function PostsIdPage() {
-  return <div></div>;
+export default function EditPostPage() {
+  return <div className="container mx-auto px-4"></div>;
 }

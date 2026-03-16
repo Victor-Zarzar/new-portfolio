@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { AdminNavbar } from "@/app/widgets/navbar-admin/navbar-admin";
 import { auth } from "@/lib/auth";
 
 export default async function AdminLayout({
@@ -15,5 +16,10 @@ export default async function AdminLayout({
     redirect("/auth/signin");
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      <AdminNavbar user={session.user} />
+      <main className="min-h-screen">{children}</main>
+    </>
+  );
 }

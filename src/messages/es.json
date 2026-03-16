@@ -9,6 +9,10 @@
     "shortName": "Victor Portfolio",
     "description": "Portafolio profesional con proyectos modernos y tecnologías actualizadas."
   },
+  "AdminNavbar": {
+    "hello": "Hola,",
+    "signOut": "Cerrar sesión"
+  },
   "Navbar": {
     "titlenavbar": "Victor Zarzar",
     "menu": "Menú",
