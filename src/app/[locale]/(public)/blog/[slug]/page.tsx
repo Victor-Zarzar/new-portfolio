@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image, { type ImageProps } from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
-import { toISODateUTC } from "@/app/shared/helpers/format-date";
 import type {
   MdxAnchorProps,
   MdxCodeProps,
@@ -17,8 +16,7 @@ import type {
 } from "@/app/shared/types/post/post";
 import { HeroImageClient } from "@/app/shared/wrapper/hero-image-client";
 import env from "@/env.mjs";
-import { routing } from "@/i18n/routing";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAllPostsForSitemap, getPostBySlug } from "@/lib/db/queries/blog";
 
 const components = {
   h1: (props: MdxHeadingProps) => (
@@ -54,7 +52,6 @@ const components = {
       {...props}
     />
   ),
-
   img: ({ src, alt }: MdxImgProps) => {
     if (!src) {
       return null;
@@ -74,20 +71,21 @@ const components = {
   },
 };
 
-export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    getAllPosts(locale).map((post) => ({
-      locale,
-      slug: post.slug,
-    })),
-  );
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const posts = await getAllPostsForSitemap();
+  return posts.map((post) => ({
+    locale: post.locale,
+    slug: post.slug,
+  }));
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = getPostBySlug(locale, slug);
+  const post = await getPostBySlug(locale, slug);
 
   if (!post) {
     return {};
@@ -96,11 +94,10 @@ export async function generateMetadata({
   const { title, description, publishedAt, photo, tags } = post.metadata;
 
   const canonical = `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/blog/${slug}`;
-  const ogImage = photo.startsWith("http")
-    ? photo
-    : `${env.NEXT_PUBLIC_WEBSITE_URL}${photo}`;
-
-  const publishedTime = toISODateUTC(publishedAt);
+  const ogImage =
+    photo && photo.startsWith("http")
+      ? photo
+      : `${env.NEXT_PUBLIC_WEBSITE_URL}${photo ?? ""}`;
 
   return {
     title,
@@ -113,9 +110,9 @@ export async function generateMetadata({
       title,
       description,
       type: "article",
-      publishedTime,
+      publishedTime: publishedAt?.toISOString(),
       url: canonical,
-      images: [{ url: ogImage }],
+      images: photo ? [{ url: ogImage }] : [],
       tags,
     },
   };
@@ -123,21 +120,29 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { locale, slug } = await params;
-  const post = getPostBySlug(locale, slug);
+  const post = await getPostBySlug(locale, slug);
 
   if (!post) {
     notFound();
   }
+
+  const publishedDate = post.metadata.publishedAt
+    ? new Date(post.metadata.publishedAt)
+    : null;
+
+  const imageUrl = post.metadata.photo?.startsWith("http")
+    ? post.metadata.photo
+    : `${env.NEXT_PUBLIC_WEBSITE_URL}${post.metadata.photo ?? ""}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.metadata.title,
     description: post.metadata.description,
-    image: `${env.NEXT_PUBLIC_WEBSITE_URL}${post.metadata.photo}`,
+    image: imageUrl,
     url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/blog/${slug}`,
-    datePublished: post.metadata.publishedAt,
-    dateModified: post.metadata.publishedAt,
+    datePublished: post.metadata.publishedAt?.toISOString(),
+    dateModified: post.metadata.updatedAt?.toISOString(),
     author: {
       "@type": "Person",
       name: "Victor Zarzar",
@@ -151,8 +156,6 @@ export default async function BlogPostPage({ params }: PageProps) {
     inLanguage: locale,
   };
 
-  const publishedDate = new Date(`${post.metadata.publishedAt}T00:00:00Z`);
-
   return (
     <article className="container max-w-5xl mx-auto px-4 py-3 md:py-4">
       <script
@@ -162,26 +165,34 @@ export default async function BlogPostPage({ params }: PageProps) {
           __html: JSON.stringify(jsonLd),
         }}
       />
+
       <header className="mb-8">
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-6">
-          <HeroImageClient
-            src={post.metadata.photo}
-            alt={post.metadata.title}
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 896px, 896px"
-          />
-        </div>
-        <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-          {publishedDate.toLocaleDateString(locale, {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            timeZone: "UTC",
-          })}
-        </p>
+        {post.metadata.photo ? (
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-6">
+            <HeroImageClient
+              src={post.metadata.photo}
+              alt={post.metadata.title}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 896px, 896px"
+            />
+          </div>
+        ) : null}
+
+        {publishedDate ? (
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
+            {publishedDate.toLocaleDateString(locale, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              timeZone: "UTC",
+            })}
+          </p>
+        ) : null}
+
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           {post.metadata.title}
         </h1>
+
         <p className="text-xl text-neutral-600 dark:text-neutral-300">
           {post.metadata.description}
         </p>

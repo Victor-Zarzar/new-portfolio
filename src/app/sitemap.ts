@@ -1,30 +1,33 @@
 import type { MetadataRoute } from "next";
 import env from "@/env.mjs";
 import { routing } from "@/i18n/routing";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPostsForSitemap } from "@/lib/db/queries/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const STATIC_PAGES = ["", "about", "contact", "projects", "privacypolicy"];
+
+const BUILD_DATE = new Date().toISOString().split("T")[0];
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = env.NEXT_PUBLIC_WEBSITE_URL;
   const locales = routing.locales;
-  const pages = ["", "about", "contact", "projects", "privacypolicy"];
 
-  const routes = locales.flatMap((locale) =>
-    pages.map((page) => ({
+  const staticRoutes: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    STATIC_PAGES.map((page) => ({
       url: `${baseUrl}/${locale}${page ? `/${page}` : ""}`,
-      lastModified: new Date().toISOString().split("T")[0],
+      lastModified: BUILD_DATE,
+      changeFrequency: "monthly" as const,
+      priority: page === "" ? 1.0 : 0.7,
     })),
   );
 
-  const blogRoutes: MetadataRoute.Sitemap = locales.flatMap((locale) => {
-    const posts = getAllPosts(locale);
+  const allPosts = await getAllPostsForSitemap();
 
-    return posts.map((post) => ({
-      url: `${baseUrl}/${locale}/blog/${post.slug}`,
-      lastModified: post.publishedAt,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    }));
-  });
+  const blogRoutes: MetadataRoute.Sitemap = allPosts.map((post) => ({
+    url: `${baseUrl}/${post.locale}/blog/${post.slug}`,
+    lastModified: post.updatedAt ?? post.publishedAt ?? BUILD_DATE,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
-  return [...routes, ...blogRoutes];
+  return [...staticRoutes, ...blogRoutes];
 }

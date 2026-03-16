@@ -1,5 +1,5 @@
 <h1 align="center" id="header">
-  New Portfolio - (NextJS)
+    My Portfolio (BFF Application)
 </h1>
 
 <p align="center">

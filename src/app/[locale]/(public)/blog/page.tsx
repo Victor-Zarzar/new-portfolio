@@ -5,8 +5,10 @@ import type { PageProps } from "@/app/shared/types/post/post";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 import LoadingSkeleton from "@/app/widgets/loading-skeleton/loading-skeleton";
 import { routing } from "@/i18n/routing";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts } from "@/lib/db/queries/blog";
 import BlogContent from "./blog-content";
+
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -28,7 +30,7 @@ export async function generateMetadata({
 export default async function BlogPage({ params }: PageProps) {
   const { locale } = await params;
   const t = await getTranslations("Blog");
-  const posts = getAllPosts(locale);
+  const posts = await getAllPosts(locale);
 
   return (
     <main className="container-articles">

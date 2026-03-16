@@ -1,24 +1,37 @@
-export type PostMetadata = {
+export type BlogListItem = {
+  slug: string;
   title: string;
   description: string;
-  year: string;
-  publishedAt: string;
-  photo: string;
-  slug: string;
-  sizes: string;
   content: string;
-  priority: boolean;
-  tags?: string[];
-};
-
-export type BlogListProps = {
-  posts: PostMetadata[];
-  locale: string;
+  year: number | null;
+  photo: string | null;
+  publishedAt: Date | null;
+  isPublished: boolean;
+  updatedAt: Date | null;
+  tags: string[];
 };
 
 export type BlogContentProps = {
   locale: string;
-  posts: PostMetadata[];
+  posts: BlogListItem[];
+};
+
+export type BlogListProps = {
+  posts: BlogListItem[];
+  locale: string;
+};
+
+export type DbPostMetadata = {
+  slug: string;
+  title: string;
+  description: string;
+  content: string;
+  year: number | null;
+  photo: string | null;
+  publishedAt: Date | null;
+  isPublished: boolean;
+  updatedAt: Date | null;
+  tags: string[];
 };
 
 export type MdxHeadingProps = React.ComponentPropsWithoutRef<"h1">;

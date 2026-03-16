@@ -237,5 +237,31 @@
       "contact": "Contato",
       "settings": "Configurações"
     }
+  },
+  "Login": {
+    "title": "Entrar na sua conta",
+    "subtitle": "Informe seu e-mail abaixo para entrar na sua conta",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "m@exemplo.com",
+    "passwordLabel": "Senha",
+    "forgotPassword": "Esqueceu sua senha?",
+    "submit": "Entrar",
+    "orContinueWith": "Ou continue com",
+    "github": "Entrar com GitHub",
+    "noAccount": "Não tem uma conta?",
+    "signup": "Criar conta",
+    "invalidemail": "E-mail inválido",
+    "passwordrequired": "A senha é obrigatória",
+    "emailrequired": "Informe seu e-mail.",
+    "passwordmin": "A senha deve ter pelo menos 6 caracteres",
+    "passwordmax": "A senha deve ter no máximo 100 caracteres",
+    "backToHome": "Voltar para Home"
+  },
+  "twoFactor": {
+    "title": "Verificação em duas etapas",
+    "codeLabel": "Código do Google Authenticator",
+    "verify": "Verificar",
+    "codeLength": "O código deve conter 6 dígitos",
+    "invalidCode": "Código de autenticação inválido"
   }
 }

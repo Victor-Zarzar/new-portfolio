@@ -7,7 +7,7 @@ import {
 } from "@/app/shared/helpers/reading-time";
 import type {
   BlogContentProps,
-  PostMetadata,
+  BlogListItem,
 } from "@/app/shared/types/post/post";
 import { Card, CardContent } from "@/app/shared/ui/card";
 
@@ -55,7 +55,7 @@ function ActionCard({
   locale,
   t,
 }: {
-  post: PostMetadata;
+  post: BlogListItem;
   locale: string;
   t: (key: string) => string;
 }) {
