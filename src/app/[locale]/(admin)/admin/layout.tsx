@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import DevToolsGuard from "@/app/guard/disable-dev-tools";
 import { AdminNavbar } from "@/app/widgets/navbar-admin/navbar-admin";
 import { auth } from "@/lib/auth";
 
@@ -19,6 +20,7 @@ export default async function AdminLayout({
   return (
     <>
       <AdminNavbar user={session.user} />
+      <DevToolsGuard unauthorizedPath="/admin/unauthorized" />
       <main className="min-h-screen">{children}</main>
     </>
   );
