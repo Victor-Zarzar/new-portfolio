@@ -269,6 +269,7 @@
   },
   "Login": {
     "title": "Inicia sesión en tu cuenta",
+    "title-card": "Inicia sesión en tu cuenta",
     "subtitle": "Ingresa tu correo abajo para iniciar sesión",
     "emailLabel": "Correo",
     "emailPlaceholder": "m@ejemplo.com",

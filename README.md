@@ -1,5 +1,5 @@
 <h1 align="center" id="header">
-    My Portfolio (BFF Application)
+    My Portfolio (Back for Front application)
 </h1>
 
 <p align="center">
@@ -132,10 +132,12 @@ bun run db:migrate
 bun run dev
 ```
 
-Optional: Docker + Build:
+Optional: Docker + Build (Local dev):
 
 ```bash
 make run
+make generate
+make migrate
 ```
 
 ### 5. Run the automated tests (Isolated Docker container)
