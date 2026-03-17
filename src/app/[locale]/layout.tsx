@@ -58,6 +58,7 @@ export async function generateMetadata({
     icons: {
       icon: "/static/favicon.ico",
       shortcut: "/static/favicon.ico",
+      apple: "/static/favicon.ico",
     },
     robots: {
       index: true,

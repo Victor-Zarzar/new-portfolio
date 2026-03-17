@@ -79,17 +79,38 @@
     "p3": "Construindo aplicativos iOS usando React Native, aproveitando uma única base de código para múltiplas plataformas."
   },
   "Experiences": {
-    "h1": "Experiências Tech e Educação",
-    "p1": "Março de 2023 - Presente",
-    "p2": "Desenvolvedor Front-End - Web e Mobile.",
-    "p3": "São Leopoldo, RS, Brasil - Remoto",
-    "p4": "Dezembro de 2022 - março de 2023",
-    "p5": "Testador QA - Funcional, Usabilidade, Carga, Localização, Acessibilidade, Regressão.",
-    "p6": "Novo Hamburgo, RS, Brasil - Remoto",
-    "p7": "Faculdade Ahanguera",
-    "p8": "Engenharia de Software",
-    "p9": "Faculdade Ahanguera",
-    "p10": "Análise e desenvolvimento de sistemas"
+    "h1": "Experiências Tech & Educação",
+    "type": {
+      "work": "trabalho",
+      "education": "educação",
+      "freelance": "freelance"
+    },
+    "xlabs": {
+      "time": "Mar 2023 – Dez 2025",
+      "title": "XLabs Security",
+      "role": "Desenvolvedor de Software Júnior",
+      "achievements": "Principais Demandas e Realizações:",
+      "description": "Desenvolvi dashboard completo com autenticação, notificações agendadas e painel administrativo. Frontend com React, TypeScript, Vite, Tailwind, MUI e Shadcn/UI com dark mode. Tabelas com exportação PDF/Excel e gráficos operacionais. App mobile multiplataforma em Flutter (Android, iOS e Web) com i18n, Provider, Sentry e notificações configuráveis. API REST em FastAPI do zero com Docker, Nginx, HTTPS, OWASP CRS, rate limiting, ELK Stack e Pytest. Manutenção de APIs FastAPI + MariaDB + Redis com migrations via Alembic.",
+      "local": "São Leopoldo, RS, Brasil · Remoto"
+    },
+    "freelance": {
+      "time": "Dez 2022 – Mar 2023",
+      "title": "Freelance",
+      "role": "Testador QA",
+      "achievements": "Principais Demandas & Realizações:",
+      "description": "Testes Funcional, Usabilidade, Carga, Localização, Acessibilidade, Regressão.",
+      "local": "Novo Hamburgo, RS, Brasil · Remoto"
+    },
+    "ahanguera1": {
+      "time": "2024 – 2027",
+      "title": "Faculdade Ahanguera",
+      "description": "Engenharia de Software"
+    },
+    "ahanguera2": {
+      "time": "2022 – 2024",
+      "title": "Faculdade Ahanguera",
+      "description": "Análise e Desenvolvimento de Sistemas"
+    }
   },
   "Projects": {
     "title": "Victor Zarzar | Projetos",
@@ -263,9 +284,83 @@
   },
   "twoFactor": {
     "title": "Verificação em duas etapas",
+    "subtitle": "Insira o código do seu app Google Authenticator abaixo",
     "codeLabel": "Código do Google Authenticator",
+    "codeLength": "O código deve ter exatamente 6 dígitos",
     "verify": "Verificar",
-    "codeLength": "O código deve conter 6 dígitos",
-    "invalidCode": "Código de autenticação inválido"
+    "secureNote": "Sua conta está protegida com autenticação de dois fatores",
+    "backToLogin": "Voltar ao login",
+    "codeExpires": "O código expira em 30 segundos"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "stats": {
+      "totalPosts": "Total de posts",
+      "published": "Publicados",
+      "drafts": "Rascunhos"
+    },
+    "recentPosts": {
+      "title": "Posts recentes",
+      "viewAll": "Ver todos →",
+      "untitled": "Sem título"
+    },
+    "posts": {
+      "title": "Posts",
+      "new": "Novo post"
+    },
+    "posts-form": {
+      "actions": {
+        "publish": "Publicar",
+        "unpublish": "Despublicar",
+        "delete": "Excluir",
+        "edit": "Editar"
+      },
+      "toast": {
+        "published": "Post publicado",
+        "unpublished": "Post despublicado",
+        "deleted": "Post excluído",
+        "created": "Post criado",
+        "updated": "Post atualizado"
+      },
+      "dialog": {
+        "title": "Excluir post?",
+        "description": "Isso irá excluir permanentemente {title} e todas as suas traduções. Esta ação não pode ser desfeita.",
+        "cancel": "Cancelar",
+        "confirm": "Excluir"
+      },
+      "empty": {
+        "title": "Nenhum post ainda.",
+        "cta": "Crie seu primeiro post"
+      },
+      "table": {
+        "title": "Título",
+        "tags": "Tags",
+        "year": "Ano",
+        "created": "Criado",
+        "status": "Status",
+        "actions": "Ações"
+      },
+      "status": {
+        "published": "Publicado",
+        "draft": "Rascunho"
+      },
+      "form": {
+        "slug": "Slug",
+        "slugPlaceholder": "meu-post",
+        "year": "Ano",
+        "photo": "URL da imagem de capa",
+        "photoPlaceholder": "https://...",
+        "title": "Título",
+        "titlePlaceholder": "Título em {locale}",
+        "description": "Descrição",
+        "descriptionPlaceholder": "Descrição curta em {locale}",
+        "content": "Conteúdo",
+        "tags": "Tags",
+        "cancel": "Cancelar",
+        "create": "Criar post",
+        "save": "Salvar alterações"
+      }
+    },
+    "editPost": "Editar post"
   }
 }

@@ -1,7 +1,9 @@
 import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { PostForm } from "@/app/features/posts/post-form";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { posts, tags } from "@/lib/db/schema";
@@ -11,15 +13,12 @@ export default async function EditPostPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const session = await auth.api.getSession({ headers: await headers() });
-  if (!session) {
-    redirect("/auth/signin");
-  }
-
   const { id } = await params;
   const postId = Number(id);
+  const t = await getTranslations("dashboard");
 
-  const [post, availableTags] = await Promise.all([
+  const [session, post, availableTags] = await Promise.all([
+    auth.api.getSession({ headers: await headers() }),
     db.query.posts.findFirst({
       where: eq(posts.id, postId),
       with: {
@@ -35,10 +34,12 @@ export default async function EditPostPage({
   }
 
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="text-2xl font-bold mb-8">Edit post</h1>
+    <div className="container mx-auto px-4 py-8">
+      <FadeWrapper>
+        <h1 className="text-center text-2xl font-bold mb-8">{t("editPost")}</h1>
+      </FadeWrapper>
       <PostForm
-        authorId={session.user.id}
+        authorId={session!.user.id}
         postId={post.id}
         availableTags={availableTags}
         defaultValues={{

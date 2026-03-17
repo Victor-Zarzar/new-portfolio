@@ -7,5 +7,9 @@ export default function FadeWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  return <Fade>{children}</Fade>;
+  return (
+    <Fade triggerOnce direction="up" duration={600}>
+      {children}
+    </Fade>
+  );
 }
