@@ -265,6 +265,7 @@
   },
   "Login": {
     "title": "Entrar na sua conta",
+    "title-card": "Faça login na sua conta",
     "subtitle": "Informe seu e-mail abaixo para entrar na sua conta",
     "emailLabel": "E-mail",
     "emailPlaceholder": "m@exemplo.com",

@@ -40,6 +40,15 @@ logs:
 shell:
 	docker exec -it $(DOCKER_CONTAINER_NAME) sh
 
+generate:
+	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit generate
+
+migrate:
+	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit migrate
+
+studio:
+	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit studio
+
 test: build
 	docker run --rm \
 		--name $(DOCKER_CONTAINER_NAME)-test \
@@ -64,6 +73,9 @@ help:
 	@echo "Docker Commands:"
 	@echo "  make build            Build the Docker image"
 	@echo "  make run              Run the Docker container"
+	@echo "  make generate         Generate database schema"
+	@echo "  make migrate          Run database migrations"
+	@echo "  make studio           Open Drizzle Studio"
 	@echo "  make stop             Stop and remove the container"
 	@echo "  make test             Run the automated tests (Isolated Docker container)"
 	@echo "  make clean            Remove image and clean environment"
