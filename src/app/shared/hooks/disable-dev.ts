@@ -4,12 +4,21 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import env from "@/env.mjs";
 
-export default function useDisableDevTools() {
+export default function useDisableDevTools(
+  unauthorizedPath: string = "/unauthorized",
+) {
   const router = useRouter();
   const pathname = usePathname();
   const redirectedRef = useRef(false);
 
   useEffect(() => {
+    const redirect = () => {
+      if (!redirectedRef.current && pathname !== unauthorizedPath) {
+        redirectedRef.current = true;
+        router.push(unauthorizedPath);
+      }
+    };
+
     const preventKeys = (e: KeyboardEvent) => {
       if (
         e.key === "F12" ||
@@ -17,26 +26,16 @@ export default function useDisableDevTools() {
         (e.ctrlKey && e.key === "U")
       ) {
         e.preventDefault();
-
-        if (!redirectedRef.current && pathname !== "/unauthorized") {
-          redirectedRef.current = true;
-          router.push("/unauthorized");
-        }
+        redirect();
       }
     };
 
     const preventContextMenu = (e: MouseEvent) => {
       e.preventDefault();
-
-      if (!redirectedRef.current && pathname !== "/unauthorized") {
-        redirectedRef.current = true;
-        router.push("/unauthorized");
-      }
+      redirect();
     };
 
-    const shouldDisableDevTools = env.NEXT_PUBLIC_DISABLE_DEVTOOLS;
-
-    if (shouldDisableDevTools) {
+    if (env.NEXT_PUBLIC_DISABLE_DEVTOOLS) {
       document.addEventListener("keydown", preventKeys);
       document.addEventListener("contextmenu", preventContextMenu);
     }
@@ -45,11 +44,11 @@ export default function useDisableDevTools() {
       document.removeEventListener("keydown", preventKeys);
       document.removeEventListener("contextmenu", preventContextMenu);
     };
-  }, [router, pathname]);
+  }, [router, pathname, unauthorizedPath]);
 
   useEffect(() => {
-    if (pathname !== "/unauthorized") {
+    if (pathname !== unauthorizedPath) {
       redirectedRef.current = false;
     }
-  }, [pathname]);
+  }, [pathname, unauthorizedPath]);
 }

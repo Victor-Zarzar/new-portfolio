@@ -1,7 +1,7 @@
-# Makefile - New-Portfolio
-PROJECT_NAME= New Portfolio
-DOCKER_IMAGE_NAME = new-portfolio
-DOCKER_CONTAINER_NAME = new-portfolio
+# Makefile - My-Portfolio
+PROJECT_NAME= My Portfolio
+DOCKER_IMAGE_NAME = my-portfolio
+DOCKER_CONTAINER_NAME = my-portfolio
 PORT = 3000
 DOCKER_TAG = 1.0.5
 

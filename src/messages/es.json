@@ -9,6 +9,10 @@
     "shortName": "Victor Portfolio",
     "description": "Portafolio profesional con proyectos modernos y tecnologías actualizadas."
   },
+  "AdminNavbar": {
+    "hello": "Hola,",
+    "signOut": "Cerrar sesión"
+  },
   "Navbar": {
     "titlenavbar": "Victor Zarzar",
     "menu": "Menú",
@@ -241,5 +245,31 @@
       "contact": "Contacto",
       "settings": "Configuración"
     }
+  },
+  "Login": {
+    "title": "Inicia sesión en tu cuenta",
+    "subtitle": "Ingresa tu correo abajo para iniciar sesión",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "m@ejemplo.com",
+    "passwordLabel": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "submit": "Iniciar sesión",
+    "orContinueWith": "O continúa con",
+    "github": "Iniciar con GitHub",
+    "noAccount": "¿No tienes una cuenta?",
+    "signup": "Regístrate",
+    "invalidemail": "Correo inválido",
+    "passwordrequired": "La contraseña es obligatoria",
+    "emailrequired": "Ingresa tu correo electrónico.",
+    "passwordmin": "La contraseña debe tener al menos 6 caracteres",
+    "passwordmax": "La contraseña debe tener como máximo 100 caracteres",
+    "backToHome": "Volver al inicio"
+  },
+  "twoFactor": {
+    "title": "Verificación en dos pasos",
+    "codeLabel": "Código de Google Authenticator",
+    "verify": "Verificar",
+    "codeLength": "El código debe tener 6 dígitos",
+    "invalidCode": "Código de autenticación inválido"
   }
 }

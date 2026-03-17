@@ -18,6 +18,10 @@ env:
   SENTRY_RELEASE: ${{ secrets.SENTRY_RELEASE }}
   SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
   SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+  POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+  BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
+  BETTER_AUTH_URL: "http://localhost:3000"
+  ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
 
 jobs:
   build:

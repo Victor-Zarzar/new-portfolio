@@ -8,7 +8,7 @@ import { LocaleLink } from "@/app/features/locale-link/locale-link";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { ModeToggle } from "@/app/features/toggle-mode/toggle-mode";
 import { cn } from "@/app/shared/lib/utils";
-import type { NavbarNavLink } from "@/app/shared/types/navbar/nav";
+import type { NavbarNavLink, NavbarProps } from "@/app/shared/types/navbar/nav";
 import { Logo } from "@/app/shared/ui/logo";
 import {
   NavigationMenu,
@@ -17,18 +17,6 @@ import {
 } from "@/app/shared/ui/navigation-menu";
 import { Link } from "@/i18n/navigation";
 import { NavMobile } from "./nav-mobile";
-
-export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
-  logo?: React.ReactNode;
-  logoHref?: string;
-  navigationLinks?: NavbarNavLink[];
-  signInText?: string;
-  signInHref?: string;
-  ctaText?: string;
-  ctaHref?: string;
-  onSignInClick?: () => void;
-  onCtaClick?: () => void;
-}
 
 export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
   (

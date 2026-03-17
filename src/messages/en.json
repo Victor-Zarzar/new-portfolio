@@ -9,6 +9,10 @@
     "shortName": "Victor Portfolio",
     "description": "Professional portfolio with modern projects and updated technologies."
   },
+  "AdminNavbar": {
+    "hello": "Hello,",
+    "signOut": "Sign out"
+  },
   "Navbar": {
     "titlenavbar": "Victor Zarzar",
     "menu": "Menu",
@@ -235,5 +239,31 @@
       "contact": "Contact",
       "settings": "Settings"
     }
+  },
+  "Login": {
+    "title": "Login to your account",
+    "subtitle": "Enter your email below to login to your account",
+    "emailLabel": "Email",
+    "emailPlaceholder": "m@example.com",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot your password?",
+    "submit": "Login",
+    "orContinueWith": "Or continue with",
+    "github": "Login with GitHub",
+    "noAccount": "Don't have an account?",
+    "signup": "Sign up",
+    "invalidemail": "Invalid email",
+    "passwordrequired": "Password is required",
+    "emailrequired": "Please enter your email.",
+    "passwordmin": "Password must be at least 6 characters",
+    "passwordmax": "Password must be at most 100 characters",
+    "backToHome": "Back to Home"
+  },
+  "twoFactor": {
+    "title": "Two-step verification",
+    "codeLabel": "Google Authenticator code",
+    "verify": "Verify",
+    "codeLength": "Code must contain 6 digits",
+    "invalidCode": "Invalid authentication code"
   }
 }
