@@ -3,6 +3,7 @@
 import { format } from "date-fns";
 import { Edit, Eye, EyeOff, Loader2, Trash2 } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { toast } from "sonner";
 import { deletePost, togglePublish } from "@/app/features/posts/actions";
@@ -23,6 +24,7 @@ import { Button } from "@/app/shared/ui/button";
 
 function PostRowActions({ post }: { post: PostRow }) {
   const [isPending, startTransition] = useTransition();
+  const t = useTranslations("dashboard.posts-form");
 
   function handleTogglePublish() {
     startTransition(async () => {
@@ -31,7 +33,9 @@ function PostRowActions({ post }: { post: PostRow }) {
         toast.error(result.error);
         return;
       }
-      toast.success(post.isPublished ? "Post unpublished" : "Post published");
+      toast.success(
+        post.isPublished ? t("toast.unpublished") : t("toast.published"),
+      );
     });
   }
 
@@ -42,7 +46,7 @@ function PostRowActions({ post }: { post: PostRow }) {
         toast.error(result.error);
         return;
       }
-      toast.success("Post deleted");
+      toast.success(t("toast.deleted"));
     });
   }
 
@@ -53,7 +57,7 @@ function PostRowActions({ post }: { post: PostRow }) {
         size="icon"
         onClick={handleTogglePublish}
         disabled={isPending}
-        title={post.isPublished ? "Unpublish" : "Publish"}
+        title={post.isPublished ? t("actions.unpublish") : t("actions.publish")}
       >
         {isPending ? (
           <Loader2 className="h-4 w-4 animate-spin" />
@@ -78,20 +82,20 @@ function PostRowActions({ post }: { post: PostRow }) {
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete post?</AlertDialogTitle>
+            <AlertDialogTitle>{t("dialog.title")}</AlertDialogTitle>
             <AlertDialogDescription>
-              This will permanently delete{" "}
-              <strong>{post.translations[0]?.title ?? post.slug}</strong> and
-              all its translations. This action cannot be undone.
+              {t("dialog.description", {
+                title: post.translations[0]?.title ?? post.slug,
+              })}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{t("dialog.cancel")}</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDelete}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Delete
+              {t("dialog.confirm")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
@@ -101,15 +105,17 @@ function PostRowActions({ post }: { post: PostRow }) {
 }
 
 export function PostsTable({ posts }: PostsTableProps) {
+  const t = useTranslations("dashboard.posts-form");
+
   if (posts.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center rounded-lg border border-dashed py-16 text-center">
-        <p className="text-muted-foreground text-sm">No posts yet.</p>
+        <p className="text-muted-foreground text-sm">{t("empty.title")}</p>
         <Link
           href="/admin/posts/new"
           className="mt-4 text-sm font-medium underline underline-offset-4"
         >
-          Create your first post
+          {t("empty.cta")}
         </Link>
       </div>
     );
@@ -121,22 +127,22 @@ export function PostsTable({ posts }: PostsTableProps) {
         <thead className="border-b bg-muted/50">
           <tr>
             <th className="px-4 py-3 text-left font-medium text-muted-foreground">
-              Title
+              {t("table.title")}
             </th>
             <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden sm:table-cell">
-              Tags
+              {t("table.tags")}
             </th>
             <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">
-              Year
+              {t("table.year")}
             </th>
             <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">
-              Created
+              {t("table.created")}
             </th>
             <th className="px-4 py-3 text-left font-medium text-muted-foreground">
-              Status
+              {t("table.status")}
             </th>
             <th className="px-4 py-3 text-right font-medium text-muted-foreground">
-              Actions
+              {t("table.actions")}
             </th>
           </tr>
         </thead>
@@ -176,7 +182,7 @@ export function PostsTable({ posts }: PostsTableProps) {
 
               <td className="px-4 py-3">
                 <Badge variant={post.isPublished ? "default" : "outline"}>
-                  {post.isPublished ? "Published" : "Draft"}
+                  {post.isPublished ? t("status.published") : t("status.draft")}
                 </Badge>
               </td>
 

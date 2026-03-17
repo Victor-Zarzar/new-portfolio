@@ -79,17 +79,38 @@
     "p3": "Building iOS apps using React Native, leveraging a single codebase for multiple platforms."
   },
   "Experiences": {
-    "h1": "Experiences Tech & Education",
-    "p1": "March 2023 - Present",
-    "p2": "Front-End Developer - Web and Mobile.",
-    "p3": "São Leopoldo, RS, Brazil - Remote",
-    "p4": "December 2022 - March 2023",
-    "p5": "QA Tester - Functional, Usability, Load, Localization, Accessibility, Regression.",
-    "p6": "Novo Hamburgo, RS, Brazil - Remote",
-    "p7": "Ahanguera College",
-    "p8": "Software Engineering",
-    "p9": "Ahanguera College",
-    "p10": "Analysis and systems development"
+    "h1": "Tech Experiences & Education",
+    "type": {
+      "work": "work",
+      "education": "education",
+      "freelance": "freelance"
+    },
+    "xlabs": {
+      "time": "Mar 2023 – Dec 2025",
+      "title": "XLabs Security",
+      "role": "Junior Software Developer",
+      "achievements": "Main Demands & Achievements:",
+      "description": "Developed a full dashboard with authentication, scheduled notifications and admin panel. Frontend with React, TypeScript, Vite, Tailwind, MUI and Shadcn/UI including dark mode. Tables with PDF/Excel export and operational charts. Cross-platform Flutter app (Android, iOS and Web) with i18n, Provider, Sentry and configurable notifications. REST API in FastAPI from scratch with Docker, Nginx, HTTPS, OWASP CRS, rate limiting, ELK Stack and Pytest. Maintained FastAPI + MariaDB + Redis APIs with Alembic migrations.",
+      "local": "São Leopoldo, RS, Brazil · Remote"
+    },
+    "freelance": {
+      "time": "Dec 2022 – Mar 2023",
+      "title": "Freelance",
+      "role": "QA Tester",
+      "achievements": "Main Demands & Achievements:",
+      "description": "Tester Functional, Usability, Load, Localization, Accessibility, Regression.",
+      "local": "Novo Hamburgo, RS, Brazil · Remote"
+    },
+    "ahanguera1": {
+      "time": "2024 – 2027",
+      "title": "Ahanguera College",
+      "description": "Software Engineering"
+    },
+    "ahanguera2": {
+      "time": "2022 – 2024",
+      "title": "Ahanguera College",
+      "description": "Analysis and Systems Development"
+    }
   },
   "Projects": {
     "title": "Victor Zarzar | Projects",
@@ -241,7 +262,8 @@
     }
   },
   "Login": {
-    "title": "Login to your account",
+    "title": "Login in Admin account",
+    "title-card": "Login to your account",
     "subtitle": "Enter your email below to login to your account",
     "emailLabel": "Email",
     "emailPlaceholder": "m@example.com",
@@ -261,9 +283,83 @@
   },
   "twoFactor": {
     "title": "Two-step verification",
+    "subtitle": "Enter the code from your Google Authenticator app below",
     "codeLabel": "Google Authenticator code",
+    "codeLength": "Code must be exactly 6 digits",
     "verify": "Verify",
-    "codeLength": "Code must contain 6 digits",
-    "invalidCode": "Invalid authentication code"
+    "secureNote": "Your account is protected with two-factor authentication",
+    "backToLogin": "Back to login",
+    "codeExpires": "Code expires in 30 seconds"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "stats": {
+      "totalPosts": "Total posts",
+      "published": "Published",
+      "drafts": "Drafts"
+    },
+    "recentPosts": {
+      "title": "Recent posts",
+      "viewAll": "View all →",
+      "untitled": "Untitled"
+    },
+    "posts": {
+      "title": "Posts",
+      "new": "New post"
+    },
+    "posts-form": {
+      "actions": {
+        "publish": "Publish",
+        "unpublish": "Unpublish",
+        "delete": "Delete",
+        "edit": "Edit"
+      },
+      "toast": {
+        "published": "Post published",
+        "unpublished": "Post unpublished",
+        "deleted": "Post deleted",
+        "created": "Post created",
+        "updated": "Post updated"
+      },
+      "dialog": {
+        "title": "Delete post?",
+        "description": "This will permanently delete {title} and all its translations. This action cannot be undone.",
+        "cancel": "Cancel",
+        "confirm": "Delete"
+      },
+      "empty": {
+        "title": "No posts yet.",
+        "cta": "Create your first post"
+      },
+      "table": {
+        "title": "Title",
+        "tags": "Tags",
+        "year": "Year",
+        "created": "Created",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "status": {
+        "published": "Published",
+        "draft": "Draft"
+      },
+      "form": {
+        "slug": "Slug",
+        "slugPlaceholder": "my-post-slug",
+        "year": "Year",
+        "photo": "Cover image URL",
+        "photoPlaceholder": "https://...",
+        "title": "Title",
+        "titlePlaceholder": "Title in {locale}",
+        "description": "Description",
+        "descriptionPlaceholder": "Short description in {locale}",
+        "content": "Content",
+        "tags": "Tags",
+        "cancel": "Cancel",
+        "create": "Create post",
+        "save": "Save changes"
+      }
+    },
+    "editPost": "Edit post"
   }
 }

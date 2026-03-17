@@ -10,6 +10,7 @@ import { HiArrowCircleDown } from "react-icons/hi";
 import { getProfileData } from "@/app/shared/data/getProfileData";
 import { Button } from "@/app/shared/ui/button";
 import { Skeleton } from "@/app/shared/ui/skeleton";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 
 const ICON_MAP = {
   github: FaGithub,
@@ -57,7 +58,7 @@ export default function Header() {
             </div>
           ) : (
             <>
-              <Bounce>
+              <FadeWrapper>
                 <h1 className="text-4xl font-bold mt-6 md:mt-0 md:text-5xl">
                   {t("h1")}
                 </h1>
@@ -67,7 +68,7 @@ export default function Header() {
                     {t("span")}
                   </span>
                 </p>
-              </Bounce>
+              </FadeWrapper>
 
               <nav className="mt-4 flex flex-col items-center gap-3 md:flex-row md:items-start md:justify-start">
                 {profile.links.map((link) => {

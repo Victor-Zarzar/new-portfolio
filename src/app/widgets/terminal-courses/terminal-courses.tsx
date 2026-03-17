@@ -3,9 +3,11 @@
 import { Terminal } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
 import { getCoursesData } from "@/app/shared/data/getCoursesData";
 import { Card } from "@/app/shared/ui/card";
+import BunIcon from "@/app/shared/ui/icons/bun";
+import NodeIcon from "@/app/shared/ui/icons/node";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 
 export default function TerminalCourses() {
   const t = useTranslations("Courses");
@@ -15,11 +17,11 @@ export default function TerminalCourses() {
     <main className="courses">
       <section className="col-span-4 mx-auto">
         <header className="h1 p-6">
-          <Fade>
+          <FadeWrapper>
             <h1 className="title-projects mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl text-center">
               {t("h1")}
             </h1>
-          </Fade>
+          </FadeWrapper>
         </header>
       </section>
 
@@ -40,25 +42,22 @@ export default function TerminalCourses() {
             </span>
           </div>
 
-          <div className="px-4 py-3 text-sm md:text-base">
+          <div className="px-4 py-3 text-sm md:text-base flex flex-wrap items-center gap-x-2">
             <span className="text-neutral-800 dark:text-neutral-200 font-bold">
               🧙‍♂️victorzarzar
             </span>
-            <span className="text-green-700 dark:text-green-500">@debian</span>
-            <span className="text-neutral-600 dark:text-neutral-400"> in </span>
+            <span className="text-neutral-600 dark:text-neutral-400">in</span>
             <span className="text-blue-500 dark:text-blue-400">
-              new-portfolio
+              my-portfolio
             </span>
-            <span className="text-yellow-600 dark:text-yellow-400">
-              {" "}
-              v24.12.0
+            <span className="text-yellow-600 dark:text-yellow-400 flex items-center gap-2">
+              <NodeIcon /> v24.14.0
             </span>
-            <span className="text-neutral-600 dark:text-neutral-500">
-              {" "}
-              took
+            <span className="text-yellow-600 dark:text-orange-400 flex items-center gap-2">
+              <BunIcon /> v1.3.10
             </span>
+            <span className="text-neutral-600 dark:text-neutral-500">took</span>
           </div>
-
           <div className="px-4 text-sm md:text-base text-neutral-800 dark:text-neutral-200">
             ${" "}
             <span className="text-neutral-800 dark:text-neutral-200">

@@ -80,7 +80,7 @@ export function LoginForm({
       dark:hover:shadow-stone-600 border-black dark:border-gray-400"
     >
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">{t("title")}</CardTitle>
+        <CardTitle className="text-2xl">{t("title-card")}</CardTitle>
       </CardHeader>
 
       <CardContent>

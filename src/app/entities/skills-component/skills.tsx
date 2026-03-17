@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 import CardSkills from "@/app/widgets/skills-showcase/card-skills";
 
 export default function Skills() {
@@ -10,11 +10,11 @@ export default function Skills() {
   return (
     <section className="space-y-6 max-w-lg md:max-w-5xl mt-28 mb-16">
       <header className="text-center mb-20">
-        <Fade>
+        <FadeWrapper>
           <h1 className="title-skills mb-4 font-extrabold leading-10 tracking-tight text-3xl md:text-4xl">
             {t("h1")}
           </h1>
-        </Fade>
+        </FadeWrapper>
         <p className="text-sm leading-relaxed mx-auto md:text-2xl lg:text-2xl font-semibold tracking-tighter">
           {t("p")}
         </p>

@@ -29,8 +29,11 @@ export type Services = {
 
 export type Experience = {
   id: number;
-  title: string;
-  description?: string;
-  local: string;
+  type?: "work" | "education" | "freelance";
   time: string;
+  title: string;
+  role?: string;
+  achievements?: string;
+  description?: string;
+  local?: string;
 };

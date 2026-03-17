@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -53,6 +54,7 @@ export function PostForm({
   availableTags,
 }: PostFormProps) {
   const router = useRouter();
+  const t = useTranslations("dashboard.posts-form");
   const [isPending, startTransition] = useTransition();
   const isEditing = !!postId;
 
@@ -93,7 +95,7 @@ export function PostForm({
         return;
       }
 
-      toast.success(isEditing ? "Post updated!" : "Post created!");
+      toast.success(isEditing ? t("toast.updated") : t("toast.created"));
       router.push("/admin/posts");
       router.refresh();
     });
@@ -106,15 +108,19 @@ export function PostForm({
     >
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="slug">Slug</Label>
-          <Input id="slug" placeholder="my-post-slug" {...register("slug")} />
+          <Label htmlFor="slug">{t("form.slug")}</Label>
+          <Input
+            id="slug"
+            placeholder={t("form.slugPlaceholder")}
+            {...register("slug")}
+          />
           {errors.slug && (
             <p className="text-sm text-destructive">{errors.slug.message}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="year">Year</Label>
+          <Label htmlFor="year">{t("form.year")}</Label>
           <Input
             id="year"
             type="number"
@@ -124,8 +130,12 @@ export function PostForm({
         </div>
 
         <div className="space-y-2 sm:col-span-2">
-          <Label htmlFor="photo">Cover image URL</Label>
-          <Input id="photo" placeholder="https://..." {...register("photo")} />
+          <Label htmlFor="photo">{t("form.photo")}</Label>
+          <Input
+            id="photo"
+            placeholder={t("form.photoPlaceholder")}
+            {...register("photo")}
+          />
           {errors.photo && (
             <p className="text-sm text-destructive">{errors.photo.message}</p>
           )}
@@ -146,7 +156,7 @@ export function PostForm({
           return (
             <TabsContent key={locale} value={locale} className="space-y-6 pt-4">
               <div className="space-y-2">
-                <Label>Title</Label>
+                <Label>{t("form.title")}</Label>
                 <Input
                   placeholder={`Title in ${locale}`}
                   {...register(`translations.${i}.title`)}
@@ -159,7 +169,7 @@ export function PostForm({
               </div>
 
               <div className="space-y-2">
-                <Label>Description</Label>
+                <Label>{t("form.description")}</Label>
                 <Input
                   placeholder={`Short description in ${locale}`}
                   {...register(`translations.${i}.description`)}
@@ -172,7 +182,7 @@ export function PostForm({
               </div>
 
               <div className="space-y-2">
-                <Label>Content</Label>
+                <Label>{t("form.content")}</Label>
                 <MDEditor
                   value={watch(`translations.${i}.content`)}
                   onChange={(val) =>
@@ -195,8 +205,8 @@ export function PostForm({
       </Tabs>
 
       <div className="space-y-2">
-        <Label>Tags</Label>
-        <div className="flex flex-wrap gap-2">
+        <Label>{t("form.tags")}</Label>
+        <div className="flex flex-wrap gap-2 mt-3">
           {availableTags?.map((tag) => {
             const selected = watch("tagIds") ?? [];
             const isChecked = selected.includes(tag.id);
@@ -233,11 +243,11 @@ export function PostForm({
           onClick={() => router.back()}
           disabled={isPending}
         >
-          Cancel
+          {t("form.cancel")}
         </Button>
         <Button type="submit" disabled={isPending}>
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {isEditing ? "Save changes" : "Create post"}
+          {isEditing ? t("form.save") : t("form.create")}
         </Button>
       </div>
     </form>
