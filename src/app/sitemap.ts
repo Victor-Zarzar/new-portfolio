@@ -20,14 +20,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   );
 
-  const allPosts = await getAllPostsForSitemap();
+  try {
+    const allPosts = await getAllPostsForSitemap();
+    const blogRoutes: MetadataRoute.Sitemap = allPosts.map((post) => ({
+      url: `${baseUrl}/${post.locale}/blog/${post.slug}`,
+      lastModified: post.updatedAt ?? post.publishedAt ?? BUILD_DATE,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    }));
 
-  const blogRoutes: MetadataRoute.Sitemap = allPosts.map((post) => ({
-    url: `${baseUrl}/${post.locale}/blog/${post.slug}`,
-    lastModified: post.updatedAt ?? post.publishedAt ?? BUILD_DATE,
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  return [...staticRoutes, ...blogRoutes];
+    return [...staticRoutes, ...blogRoutes];
+  } catch {
+    return staticRoutes;
+  }
 }
