@@ -52,3 +52,18 @@ export type PageParams = {
 export type PageProps = {
   params: Promise<PageParams>;
 };
+
+export type PostRow = {
+  id: number;
+  slug: string;
+  year: number | null;
+  isPublished: boolean;
+  publishedAt: Date | null;
+  createdAt: Date;
+  translations: { title: string; description: string }[];
+  postTags: { tag: { name: string } }[];
+};
+
+export type PostsTableProps = {
+  posts: PostRow[];
+};

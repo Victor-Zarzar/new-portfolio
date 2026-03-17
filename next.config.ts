@@ -6,6 +6,20 @@ import env from "@/env.mjs";
 const nextConfig: NextConfig = {
   images: {
     qualities: [75, 90],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.dev.to",
+      },
+      {
+        protocol: "https",
+        hostname: "**.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.victorzarzar.com.br",
+      },
+    ],
   },
 };
 
