@@ -9,13 +9,14 @@
   <img src="https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white" alt="Bun">
   <img src="https://img.shields.io/badge/DrizzleORM-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black" alt="Drizzle ORM">
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Neon-000000?style=for-the-badge&logo=neon&logoColor=white" alt="Neon">
   <img src="https://img.shields.io/badge/BetterAuth-000000?style=for-the-badge" alt="Better Auth">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
 </p>
 
 <p align="center">
-  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, MDX blog.
+  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, MDX blog powered by PostgreSQL.
 </p>
 
 ---
@@ -33,6 +34,7 @@
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Vercel-Dark.svg" width="48" title="Vercel">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" width="48" title="Docker">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sentry.svg" width="48" title="Sentry">
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/PostgreSQL-Dark.svg" width="48" title="PostgreSQL">
 </p>
 
 ### Core Technologies
@@ -41,12 +43,15 @@
 - **React 19** - Latest React features
 - **Next.js 16** - React framework with App Router
 - **Tailwind CSS v4** - Utility-first CSS framework
-- **MDX** - Markdown with JSX for rich blog content
+- **Drizzle ORM** - Type-safe ORM for PostgreSQL
+- **PostgreSQL** - Serverless PostgreSQL database for blog content
 - **Docker** - Optional containerized deployment
 
 ### Features & Integrations
 
-- **MDX Blog** - Write articles using Markdown with React components
+- **Blog powered by PostgreSQL** - Articles stored and served via Neon serverless database
+- **Drizzle ORM + Drizzle Kit** - Database schema management and migrations
+- **Better Auth** - Authentication
 - **Zod & React Hook Form** - Form validation and management
 - **Shadcn UI** - Beautiful and accessible components
 - **Dark Mode** - Theme switching with Next Themes
@@ -57,7 +62,7 @@
 - **Rate Limiter Flexible** - API endpoint rate limiting and DDoS protection
 - **Vercel Analytics** - Performance monitoring
 - **Vercel Speed Insights** - Real-time performance metrics
-- **Sentry** - Error tracking and performance monitoring tool
+- **Sentry** - Error tracking and performance monitoring
 - **GitHub Actions** - Continuous integration and deployment
 
 ---
@@ -83,8 +88,8 @@ Before starting, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Victor-Zarzar/new-portfolio
-cd new-portfolio
+git clone https://github.com/Victor-Zarzar/my-portfolio
+cd my-portfolio
 ```
 
 ### 2. Open in your editor (example: Zed Editor)
@@ -107,11 +112,12 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 
 - **SMTP**: Gmail account and [App Password](https://support.google.com/accounts/answer/185833)
 - **Sentry**: DSN and authentication token from your [Sentry project](https://sentry.io/)
+- **Database**: Neon PostgreSQL connection string from [Neon Console](https://neon.tech/)
 - **Website URL**: Your production domain or `http://localhost:3000` for development
 
 > **Important:** Never commit your `.env` file to version control. It's already in `.gitignore`.
 
-### 4. Install Dependencies & Build (Local)
+### 4. Install Dependencies & Run Migrations (Local)
 
 ```bash
 make install && make dev
@@ -120,7 +126,10 @@ make install && make dev
 Or manually with bun:
 
 ```bash
-bun install && bun run dev
+bun install
+bun run db:generate
+bun run db:migrate
+bun run dev
 ```
 
 Optional: Docker + Build:
@@ -152,62 +161,37 @@ bun lint
 This command will check for code style issues and potential errors. To automatically fix issues and format your code (bunx biome format --write):
 
 ```bash
-bun formart
+bun format
 ```
 
 ---
 
-<h2 id="blog-architecture">
-  Blog Architecture
+<h2 id="database">
+  Database
 </h2>
 
-The portfolio includes a multilingual blog system powered by MDX, allowing you to write rich content with embedded React components.
+The blog content is stored in a **PostgreSQL database** via [Neon](https://neon.tech/) serverless infrastructure, managed through **Drizzle ORM**.
 
-### Content Structure
+### Available DB Commands
+
+| Command               | Description                              |
+| --------------------- | ---------------------------------------- |
+| `bun run db:generate` | Generate SQL migrations from schema      |
+| `bun run db:migrate`  | Apply pending migrations to the database |
+| `bun run db:push`     | Push schema changes directly (dev only)  |
+| `bun run db:studio`   | Open Drizzle Studio (visual DB explorer) |
+
+### Schema Location
 
 ```
-content/
-├── en/               # English articles
-│   ├── example.mdx
-│   └── another-post.mdx
-├── pt/               # Portuguese articles
-│   ├── exemplo.mdx
-│   └── outro-post.mdx
-└── es/               # Spanish articles
-    ├── ejemplo.mdx
-    └── otra-publicacion.mdx
+lib/
+└── db/
+    ├── migrations/       # Auto-generated SQL migration files
+    │   └── meta/
+    └── queries/
+        ├── blog.ts       # Blog post queries
+        └── index.ts
 ```
-
-### Creating Blog Posts
-
-Each MDX file should include frontmatter metadata at the top:
-
-```mdx
----
-title: "Android Security Rules"
-description: "Protecting SharedPreferences data"
-year: "2025"
-publishedAt: "2025-12-16"
-photo: "/article-android-security.png"
-tags: ["android", "mobile", "security"]
----
-
-# Your Article Content
-
-Write your content here using Markdown syntax.
-
-You can also use React components directly in your MDX files!
-```
-
-### Multilingual Support
-
-Create the same article in different languages by placing corresponding `.mdx` files in each language folder:
-
-- `content/en/my-article.mdx` - English version
-- `content/pt/my-article.mdx` - Portuguese version
-- `content/es/my-article.mdx` - Spanish version
-
-The blog automatically serves the correct language version based on the user's locale preference.
 
 ---
 
@@ -295,38 +279,26 @@ make clean
 | `make shell`   | Access container shell (sh)                                                 |
 | `make help`    | Show all available commands                                                 |
 
----
+### NPM / Bun Scripts Reference
 
-<h2 id="project-structure">
-  Project Structure
-</h2>
-
-```
-new-portfolio/
-├── .github/                        # GitHub configuration
-│   ├── workflows/                  # GitHub Actions workflows
-│   │   ├── main.yaml               # CI/CD pipeline
-│   │   └── codeql-analysis.yaml    # Code security analysis
-│   └── dependabot.yml              # Dependency updates configuration
-├── app/                            # Next.js App Router
-├── components/                     # React components
-├── content/                        # MDX blog articles
-│   ├── en/                         # English articles
-│   ├── pt/                         # Portuguese articles
-│   └── es/                         # Spanish articles
-├── lib/                            # Utility functions
-├── public/                         # Static assets
-├── styles/                         # Global styles
-├── tests/                          # Automated tests
-├── .env-example                    # Environment variables template
-├── .env                            # Environment variables (not in git)
-├── Dockerfile                      # Docker configuration
-├── Makefile                        # Build automation
-├── next.config.js                  # Next.js configuration
-├── bun.lock                        # Bun package lock file
-├── tailwind.config.ts              # Tailwind configuration
-└── tsconfig.json                   # TypeScript configuration
-```
+| Script                | Description                        |
+| --------------------- | ---------------------------------- |
+| `bun run dev`         | Start development server           |
+| `bun run build`       | Build for production               |
+| `bun run start`       | Start production server            |
+| `bun run lint`        | Run Biome linter                   |
+| `bun run format`      | Format code with Biome             |
+| `bun run typecheck`   | TypeScript type check (no emit)    |
+| `bun run typegen`     | Generate Next.js types             |
+| `bun test`            | Run tests                          |
+| `bun run test:watch`  | Run tests in watch mode            |
+| `bun run test:update` | Update test snapshots              |
+| `bun run prod`        | Build and start in production mode |
+| `bun run clean`       | Remove node_modules and .next      |
+| `bun run db:generate` | Generate Drizzle migrations        |
+| `bun run db:migrate`  | Run database migrations            |
+| `bun run db:push`     | Push schema to database (dev)      |
+| `bun run db:studio`   | Open Drizzle Studio                |
 
 ---
 
@@ -343,7 +315,7 @@ new-portfolio/
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7afc36b1-d4eb-4dcb-b077-1ccd28c068b5" alt="Dark Mode" width="1000" height="500" alt="Mobile">
+  <img src="https://github.com/user-attachments/assets/7afc36b1-d4eb-4dcb-b077-1ccd28c068b5" alt="Dark Mode" width="1000" height="500">
 </p>
 
 ---
@@ -354,14 +326,16 @@ new-portfolio/
 
 ### Vercel (Recommended - Production)
 
-The application is deployed on Vercel for production use.
+The application is deployed on Vercel for production use, with Neon PostgreSQL as the database backend.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/new-portfolio)
 
-**Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings.
+**Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings, including your Neon database connection string.
 
 - **CI/CD Pipeline** - `.github/workflows/main.yaml` for automated checks and builds
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
+
+---
 
 <h2 id="contributing">Contributing</h2>
 
