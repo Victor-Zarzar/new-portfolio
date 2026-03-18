@@ -268,7 +268,7 @@ make clean
 </h2>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7e4f4cd9-8e49-4e57-8453-7a0bc8f7665b" width="1000" height="600" alt="Architecture">
+  <img src="https://github.com/user-attachments/assets/9bd52cf3-50a3-4a88-b669-6351d5c47f5a" width="1000" height="600" alt="Architecture">
 </p>
 
 <p align="center">
