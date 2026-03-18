@@ -1,7 +1,7 @@
 {
   "Layout": {
-    "title": "Victor Zarzar | Desenvolvedor Front-end",
-    "description": "Desenvolvedor Front-end com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuação em projetos web e mobile.",
+    "title": "Victor Zarzar | Desenvolvedor Full Stack",
+    "description": "Desenvolvedor Full Stack com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuação em projetos web e mobile.",
     "ogDescription": "Portfólio profissional com projetos modernos e tecnologias atualizadas."
   },
   "Manifest": {
@@ -37,8 +37,9 @@
     "open-settings": "Abrir configurações"
   },
   "Header": {
-    "h1": "Bem-vindo ao meu portfólio,",
-    "span": "Sou Desenvolvedor Front-End🖖🏻"
+    "h1": "Victor Zarzar",
+    "h2": "Desenvolvedor Full Stack",
+    "span": "Construindo aplicações web limpas, performáticas e fáceis de usar."
   },
   "Skills": {
     "h1": "Habilidades",
@@ -90,7 +91,7 @@
       "title": "XLabs Security",
       "role": "Desenvolvedor de Software Júnior",
       "achievements": "Principais Demandas e Realizações:",
-      "description": "Desenvolvi dashboard completo com autenticação, notificações agendadas e painel administrativo. Frontend com React, TypeScript, Vite, Tailwind, MUI e Shadcn/UI com dark mode. Tabelas com exportação PDF/Excel e gráficos operacionais. App mobile multiplataforma em Flutter (Android, iOS e Web) com i18n, Provider, Sentry e notificações configuráveis. API REST em FastAPI do zero com Docker, Nginx, HTTPS, OWASP CRS, rate limiting, ELK Stack e Pytest. Manutenção de APIs FastAPI + MariaDB + Redis com migrations via Alembic.",
+      "description": "Desenvolvi dashboard completo com autenticação, notificações agendadas e painel administrativo. Frontend com React, TypeScript, Vite, Tailwind, MUI e Shadcn/UI com dark mode. Tabelas com exportação PDF/Excel e gráficos operacionais. App mobile multiplataforma em Flutter (Android, iOS e Web) com i18n, Provider, Sentry e notificações configuráveis. API REST em FastAPI do zero com Docker, Nginx, HTTPS, rate limiting, ELK Stack e Pytest. Manutenção de APIs FastAPI + MariaDB + Redis com migrations via Alembic.",
       "local": "São Leopoldo, RS, Brasil · Remoto"
     },
     "freelance": {
@@ -102,12 +103,12 @@
       "local": "Novo Hamburgo, RS, Brasil · Remoto"
     },
     "ahanguera1": {
-      "time": "2024 – 2027",
+      "time": "JUL 2024 – OUT 2027",
       "title": "Faculdade Ahanguera",
       "description": "Engenharia de Software"
     },
     "ahanguera2": {
-      "time": "2022 – 2024",
+      "time": "JUL 2022 – JUL 2024",
       "title": "Faculdade Ahanguera",
       "description": "Análise e Desenvolvimento de Sistemas"
     }
@@ -213,25 +214,7 @@
     "h1": "Artigos & Publicações",
     "h2": "Conteúdo técnico que escrevi recentemente...",
     "p": "Leia mais",
-    "articletitle1": "Segurança em Dispositivos Móveis: Estratégias Práticas de Proteção",
-    "articledescription1": "Um guia para proteger dispositivos móveis com técnicas reais e práticas de segurança.",
-    "articlep1": "Abordo riscos, estratégias de mitigação e recomendações para fortalecer ambientes mobile.",
-    "articletitle2": "Autenticação Segura: Cookies, HTTP-only, JWT, LocalStorage e SessionStorage",
-    "articledescription2": "Entenda fluxos de autenticação seguros e mecanismos de armazenamento em aplicações modernas.",
-    "articlep2": "Explico boas práticas para tokens, cookies, segurança de armazenamento e redução de superfícies de ataque.",
-    "articletitle3": "Gerenciando Variáveis de Ambiente (.env) com Segurança e Eficiência",
-    "articledescription3": "Como lidar com variáveis sensíveis em desenvolvimento, CI/CD e produção.",
-    "articlep3": "Inclui gestão de segredos, separação de ambientes, carregamento seguro e fluxos DevOps.",
-    "articletitle4": "Otimizando Imagens Docker: Boas Práticas para Builds Eficientes",
-    "articledescription4": "Técnicas práticas para reduzir o tamanho das imagens, melhorar caching e acelerar deploys.",
-    "articlep4": "Inclui multi-stage builds, imagens base mínimas, otimização de cache e estratégias de limpeza.",
-    "year": "Ano",
-    "articletitle5": "Regra de segurança no Android nativo com SharedPreferences",
-    "articledescription5": "Um guia prático sobre como proteger dados sensíveis em aplicativos Android usando regras de backup personalizadas.",
-    "articlep5": "Aprenda a evitar restauração indevida de dados com Android Auto Backup e SharedPreferences.",
-    "articletitle6": "Certificados TLS com SAN (Subject Alternative Name) e suas utilidades em aplicações multidomínio",
-    "articledescription6": "Entenda como certificados SAN permitem proteger múltiplos domínios com um único certificado TLS/SSL.",
-    "articlep6": "Descubra as vantagens, casos de uso e considerações importantes ao utilizar Subject Alternative Name."
+    "year": "Ano"
   },
   "GlobalError": {
     "title": "Erro na aplicação",

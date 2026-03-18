@@ -263,47 +263,6 @@ make clean
 
 ---
 
-<h2 id="makefile-commands">
-  Makefile Commands Reference
-</h2>
-
-| Command        | Description                                                                 |
-| -------------- | --------------------------------------------------------------------------- |
-| `make install` | Install dependencies using bun                                              |
-| `make dev`     | Run the app locally in development mode                                     |
-| `make prod`    | Run the app in production mode (Mode Build Prod - Test local - Preview)     |
-| `make build`   | Build the Docker image                                                      |
-| `make run`     | Build and run the Docker container (Docker Run + Build - Development local) |
-| `make test`    | Run the automated tests (Isolated Docker container)                         |
-| `make stop`    | Stop and remove the container                                               |
-| `make clean`   | Clean Docker environment and build files                                    |
-| `make logs`    | Display container logs in real-time                                         |
-| `make shell`   | Access container shell (sh)                                                 |
-| `make help`    | Show all available commands                                                 |
-
-### NPM / Bun Scripts Reference
-
-| Script                | Description                        |
-| --------------------- | ---------------------------------- |
-| `bun run dev`         | Start development server           |
-| `bun run build`       | Build for production               |
-| `bun run start`       | Start production server            |
-| `bun run lint`        | Run Biome linter                   |
-| `bun run format`      | Format code with Biome             |
-| `bun run typecheck`   | TypeScript type check (no emit)    |
-| `bun run typegen`     | Generate Next.js types             |
-| `bun test`            | Run tests                          |
-| `bun run test:watch`  | Run tests in watch mode            |
-| `bun run test:update` | Update test snapshots              |
-| `bun run prod`        | Build and start in production mode |
-| `bun run clean`       | Remove node_modules and .next      |
-| `bun run db:generate` | Generate Drizzle migrations        |
-| `bun run db:migrate`  | Run database migrations            |
-| `bun run db:push`     | Push schema to database (dev)      |
-| `bun run db:studio`   | Open Drizzle Studio                |
-
----
-
 <h2 id="screenshots">
   Screenshots
 </h2>
@@ -313,11 +272,11 @@ make clean
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5e55bd0e-a9d6-4d33-983a-c4222a3e1445" width="1000" height="600" alt="Projects Section">
+  <img src="https://github.com/user-attachments/assets/1fbac9fb-838c-4683-bd8f-4075db871080" width="1000" height="600" alt="Projects Section">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7afc36b1-d4eb-4dcb-b077-1ccd28c068b5" alt="Dark Mode" width="1000" height="500">
+  <img src="https://github.com/user-attachments/assets/0f8d0978-e8f1-4590-bfc0-8f4a48f68156" alt="Dark Mode" width="1000" height="500">
 </p>
 
 ---

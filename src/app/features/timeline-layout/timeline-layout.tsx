@@ -123,6 +123,24 @@ export const TimelineLayout = () => {
                           {item.local}
                         </TimelineDescription>
                       )}
+                      {item.tags && item.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mt-3">
+                          {item.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className={cn(
+                                "text-[11px] px-2 py-0.5 rounded-full",
+                                "border border-border/50 bg-muted/50",
+                                "text-muted-foreground tracking-wide",
+                                "transition-colors duration-200",
+                                "group-hover:border-border group-hover:text-foreground",
+                              )}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </TimelineItem>
