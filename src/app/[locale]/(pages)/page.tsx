@@ -1,4 +1,4 @@
-import Skills from "@/app/entities/skills-component/skills";
+import Skills from "@/app/shared/ui/icons/skills/skills";
 import Header from "@/app/widgets/header/header-layout";
 
 export default function Home() {
