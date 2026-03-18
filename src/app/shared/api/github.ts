@@ -83,7 +83,7 @@ export async function getStats(): Promise<GithubStats | null> {
           }
         `,
         variables: {
-          login: env.GITHUB_USERNAME,
+          login: env.GH_USERNAME,
         },
       }),
     });
@@ -194,7 +194,7 @@ export async function getProjects(perPage = 20): Promise<GithubProject[]> {
           }
         `,
         variables: {
-          login: env.GITHUB_USERNAME,
+          login: env.GH_USERNAME,
           perPage,
         },
       }),

@@ -3,7 +3,6 @@ import { Briefcase, GraduationCap, PenLine } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Fade } from "react-awesome-reveal";
 import { getTimelineData } from "@/app/shared/data/getTimelineData";
-import { cn } from "@/app/shared/lib/utils";
 import type { Experience } from "@/app/shared/types/get-data/get-data";
 import {
   Timeline,
@@ -14,6 +13,7 @@ import {
   TimelineTitle,
 } from "@/app/shared/ui/timeline";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
+import { cn } from "@/lib/utils";
 
 export const TimelineLayout = () => {
   const t = useTranslations("Experiences");

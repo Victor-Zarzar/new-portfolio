@@ -12,7 +12,6 @@ import {
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useEffect } from "react";
-import { cn } from "@/app/shared/lib/utils";
 import type { CommandLink } from "@/app/shared/types/command/command";
 import { Button } from "@/app/shared/ui/button";
 import {
@@ -31,6 +30,7 @@ import {
   DialogTitle,
 } from "@/app/shared/ui/dialog";
 import { useRouter } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 
 export default function CommandPalette() {
   const t = useTranslations("CommandPalette");

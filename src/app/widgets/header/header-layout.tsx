@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { Bounce } from "react-awesome-reveal";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiArrowCircleDown } from "react-icons/hi";
 import { getProfileData } from "@/app/shared/data/getProfileData";

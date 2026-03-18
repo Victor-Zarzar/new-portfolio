@@ -22,6 +22,7 @@ env:
   BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
   BETTER_AUTH_URL: "http://localhost:3000"
   ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+  GH_USERNAME: ${{ secrets.GH_USERNAME }}
 
 jobs:
   build:
