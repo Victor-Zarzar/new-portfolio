@@ -36,4 +36,5 @@ export type Experience = {
   achievements?: string;
   description?: string;
   local?: string;
+  tags?: string[];
 };

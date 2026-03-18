@@ -3,7 +3,6 @@ import { Briefcase, GraduationCap, PenLine } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Fade } from "react-awesome-reveal";
 import { getTimelineData } from "@/app/shared/data/getTimelineData";
-import { cn } from "@/app/shared/lib/utils";
 import type { Experience } from "@/app/shared/types/get-data/get-data";
 import {
   Timeline,
@@ -14,6 +13,7 @@ import {
   TimelineTitle,
 } from "@/app/shared/ui/timeline";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
+import { cn } from "@/lib/utils";
 
 export const TimelineLayout = () => {
   const t = useTranslations("Experiences");
@@ -122,6 +122,24 @@ export const TimelineLayout = () => {
                         <TimelineDescription className="text-[14px] tracking-wide">
                           {item.local}
                         </TimelineDescription>
+                      )}
+                      {item.tags && item.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mt-3">
+                          {item.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className={cn(
+                                "text-[11px] px-2 py-0.5 rounded-full",
+                                "border border-border/50 bg-muted/50",
+                                "text-muted-foreground tracking-wide",
+                                "transition-colors duration-200",
+                                "group-hover:border-border group-hover:text-foreground",
+                              )}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       )}
                     </div>
                   )}

@@ -3,7 +3,6 @@
 import { Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import { cn } from "@/app/shared/lib/utils";
 import { Button } from "@/app/shared/ui/button";
 import {
   DropdownMenu,
@@ -11,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/app/shared/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();

@@ -14,6 +14,15 @@ export function getTimelineData({ t }: GetTimelineDataParams): Experience[] {
       achievements: t("xlabs.achievements"),
       description: t("xlabs.description"),
       local: t("xlabs.local"),
+      tags: [
+        "React",
+        "TypeScript",
+        "Python",
+        "FastAPI",
+        "Nginx",
+        "Docker",
+        "MySQL",
+      ],
     },
     {
       id: 2,
@@ -24,6 +33,7 @@ export function getTimelineData({ t }: GetTimelineDataParams): Experience[] {
       achievements: t("freelance.achievements"),
       description: t("freelance.description"),
       local: t("freelance.local"),
+      tags: ["Tester", "Web", "iOS", "Android"],
     },
     {
       id: 3,

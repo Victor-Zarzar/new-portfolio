@@ -6,9 +6,9 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { cn } from "@/app/shared/lib/utils";
 import type { CookieConsentProps } from "@/app/shared/types/cookies/cookies";
 import { Button } from "@/app/shared/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function CookieConsentComponent({
   demo = false,

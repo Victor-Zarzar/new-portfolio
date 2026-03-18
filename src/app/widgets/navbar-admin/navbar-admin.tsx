@@ -8,12 +8,12 @@ import CommandPalette from "@/app/features/command-palette/command-palette";
 import { LocaleLink } from "@/app/features/locale-link/locale-link";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { ModeToggle } from "@/app/features/toggle-mode/toggle-mode";
-import { cn, getInitials } from "@/app/shared/lib/utils";
 import type { AdminNavbarProps } from "@/app/shared/types/navbar/nav";
 import { Avatar, AvatarFallback, AvatarImage } from "@/app/shared/ui/avatar";
 import { Button } from "@/app/shared/ui/button";
 import { Logo } from "@/app/shared/ui/logo";
 import { authClient } from "@/lib/auth-client";
+import { cn, getInitials } from "@/lib/utils";
 
 export const AdminNavbar = React.forwardRef<HTMLElement, AdminNavbarProps>(
   (

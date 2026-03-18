@@ -7,7 +7,6 @@ import CommandPalette from "@/app/features/command-palette/command-palette";
 import { LocaleLink } from "@/app/features/locale-link/locale-link";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { ModeToggle } from "@/app/features/toggle-mode/toggle-mode";
-import { cn } from "@/app/shared/lib/utils";
 import type { NavbarNavLink, NavbarProps } from "@/app/shared/types/navbar/nav";
 import { Logo } from "@/app/shared/ui/logo";
 import {
@@ -16,6 +15,7 @@ import {
   NavigationMenuList,
 } from "@/app/shared/ui/navigation-menu";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils";
 import { NavMobile } from "./nav-mobile";
 
 export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(

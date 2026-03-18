@@ -43,5 +43,10 @@ describe("env.mjs loading .env", () => {
     expect(env.SENTRY_RELEASE).toBeTruthy();
     expect(env.SENTRY_ORG).toBeTruthy();
     expect(env.SENTRY_PROJECT).toBeTruthy();
+    expect(env.GH_USERNAME).toBeTruthy();
+    expect(env.ADMIN_EMAIL).toBeTruthy();
+    expect(env.BETTER_AUTH_SECRET).toBeTruthy();
+    expect(env.BETTER_AUTH_URL).toBeTruthy();
+    expect(env.POSTGRES_URL).toBeTruthy();
   });
 });

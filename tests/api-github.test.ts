@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, mock } from "bun:test";
 mock.module("@/env.mjs", () => ({
   default: {
     GITHUB_API_TOKEN: "test_token",
-    GITHUB_USERNAME: "fake-user",
+    GH_USERNAME: "fake-user",
   },
 }));
 
