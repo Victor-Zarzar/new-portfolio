@@ -63,13 +63,13 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
     return (
       <header
         className={cn(
-          "sticky top-0 z-50 w-full border-b backdrop-blur supports-backdrop-filter:bg-background/60 px-4 md:px-6 **:no-underline dark:bg-stone-950 bg-[#ffffff]",
+          "sticky top-0 z-50 w-full border-b supports-backdrop-filter:bg-background/60 px-4 md:px-6 **:no-underline",
           className,
         )}
         ref={ref}
         {...props}
       >
-        <div className="container relative mx-auto flex h-16 items-center justify-between gap-4">
+        <div className="container relative mx-auto flex h-16 items-center justify-between gap-4 dark:bg-stone-950 bg-white">
           <div className="flex items-center gap-2">
             <div className="md:flex lg:hidden">
               <NavMobile
