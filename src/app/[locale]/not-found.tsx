@@ -5,7 +5,7 @@ import { Button } from "@/app/shared/ui/button";
 import { Link } from "@/i18n/navigation";
 import FadeWrapper from "../shared/wrapper/fade-wrapper";
 
-export default function NotFound404() {
+export default function NotFound() {
   const t = useTranslations("NotFound");
 
   return (
