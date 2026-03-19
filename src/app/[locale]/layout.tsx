@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import LayoutProvider from "../widgets/layout-provider/layout-provider";
 import "./globals.css";
 import { getTranslations } from "next-intl/server";
+import { ThemeProvider } from "../features/theme-provider/theme-provider";
 
 const JetBrains = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -93,9 +94,16 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
       <body className={JetBrains.className}>
-        <NextIntlClientProvider>
-          <LayoutProvider>{children}</LayoutProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider>
+            <LayoutProvider>{children}</LayoutProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
