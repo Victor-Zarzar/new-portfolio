@@ -10,8 +10,13 @@
     "cssVariables": false,
     "prefix": ""
   },
+  "iconLibrary": "lucide",
   "aliases": {
     "components": "@/app/shared/ui",
-    "utils": "@/app/shared/lib/utils"
-  }
+    "utils": "@/app/shared/lib/utils",
+    "ui": "@/app/shared/ui",
+    "lib": "@/app/shared/lib",
+    "hooks": "@/app/shared/hooks"
+  },
+  "registries": {}
 }

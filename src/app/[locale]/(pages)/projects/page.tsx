@@ -6,6 +6,8 @@ import LoadingSkeleton from "@/app/widgets/loading-skeleton/loading-skeleton";
 import { routing } from "@/i18n/routing";
 import ProjectsContent from "./project-content";
 
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

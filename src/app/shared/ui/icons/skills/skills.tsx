@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
-import CardSkills from "@/app/widgets/skills-showcase/card-skills";
+import CardSkills from "@/app/widgets/card-skills/card-skills";
 
 export default function Skills() {
   const t = useTranslations("Skills");

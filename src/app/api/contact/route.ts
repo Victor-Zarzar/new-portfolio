@@ -26,7 +26,7 @@ async function sendSlackMessage(payload: SlackContactPayload) {
     return;
   }
 
-  const text = `New portfolio contact from ${payload.name} <${payload.email}>`;
+  const text = `My portfolio contact from ${payload.name} <${payload.email}>`;
 
   const res = await fetch(env.SLACK_WEBHOOK_URL, {
     method: "POST",
