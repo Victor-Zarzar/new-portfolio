@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import * as Sentry from "@sentry/nextjs";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -69,6 +70,7 @@ export function LoginForm({
 
     if (error) {
       form.setError("root", { message: error.message });
+      Sentry.captureException(error);
     }
   }
 

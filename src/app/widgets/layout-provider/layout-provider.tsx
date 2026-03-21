@@ -32,15 +32,22 @@ export default function LayoutProvider({
 
   return (
     <>
-      <main className="min-h-screen">{children}</main>
-      <Toaster position="top-right" expand={true} />
-      {hasConsented && <Analytics />}
-      <SpeedInsights />
-      <CookieConsentComponent
-        onAcceptAction={handleAccept}
-        onDeclineAction={handleDecline}
-      />
-      <Footer />
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <main className="min-h-screen">{children}</main>
+        <Toaster position="top-right" expand={true} />
+        {hasConsented && <Analytics />}
+        <SpeedInsights />
+        <CookieConsentComponent
+          onAcceptAction={handleAccept}
+          onDeclineAction={handleDecline}
+        />
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }

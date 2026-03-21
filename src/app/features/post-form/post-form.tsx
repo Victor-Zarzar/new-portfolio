@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import * as Sentry from "@sentry/nextjs";
 import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
@@ -9,7 +10,7 @@ import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
-import { createPost, updatePost } from "@/app/features/posts/actions";
+import { createPost, updatePost } from "@/app/shared/services/post-actions";
 import { Button } from "@/app/shared/ui/button";
 import { Input } from "@/app/shared/ui/input";
 import { Label } from "@/app/shared/ui/label";
@@ -92,6 +93,7 @@ export function PostForm({
 
       if (!result.success) {
         toast.error(result.error);
+        Sentry.captureException(result.error);
         return;
       }
 

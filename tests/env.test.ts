@@ -39,6 +39,8 @@ describe("env.mjs loading .env", () => {
     expect(env.NEXT_PUBLIC_WEBSITE_URL).toBeTruthy();
     expect(env.SMTP_EMAIL).toBeTruthy();
     expect(env.SMTP_PASSWORD).toBeTruthy();
+    expect(env.SMTP_HOST).toBeTruthy();
+    expect(env.SMTP_PORT).toBeTruthy();
     expect(env.SENTRY_AUTH_TOKEN).toBeTruthy();
     expect(env.SENTRY_RELEASE).toBeTruthy();
     expect(env.SENTRY_ORG).toBeTruthy();

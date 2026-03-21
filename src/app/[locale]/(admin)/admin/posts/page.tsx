@@ -1,7 +1,7 @@
 import { desc } from "drizzle-orm";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { PostsTable } from "@/app/features/posts/posts-table";
+import { PostsTable } from "@/app/features/post-form/posts-table";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 import { db } from "@/lib/db";
 import { posts } from "@/lib/db/schema";

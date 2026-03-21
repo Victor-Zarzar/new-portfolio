@@ -111,8 +111,8 @@ export async function POST(request: Request) {
     const sanitizedMessage = sanitizeHtml(message);
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
+      host: env.SMTP_HOST,
+      port: env.SMTP_PORT,
       secure: true,
       auth: {
         user: env.SMTP_EMAIL,

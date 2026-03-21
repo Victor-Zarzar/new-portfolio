@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import DevToolsGuard from "@/app/guard/disable-dev-tools";
+import DevToolsGuard from "@/app/shared/guard/disable-dev-tools";
 import { AdminNavbar } from "@/app/widgets/navbar-admin/navbar-admin";
 import { auth } from "@/lib/auth";
 

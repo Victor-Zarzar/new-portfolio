@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import { getTranslations } from "next-intl/server";
-import { PostForm } from "@/app/features/posts/post-form";
+import { PostForm } from "@/app/features/post-form/post-form";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";

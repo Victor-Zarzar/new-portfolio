@@ -14,6 +14,8 @@ env:
   NEXT_PUBLIC_WEBSITE_URL: "http://localhost:3000"
   SMTP_EMAIL: ${{ secrets.SMTP_EMAIL }}
   SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+  SMTP_HOST: ${{ secrets.SMTP_HOST }}
+  SMTP_PORT: ${{ secrets.SMTP_PORT }}
   SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
   SENTRY_RELEASE: ${{ secrets.SENTRY_RELEASE }}
   SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
