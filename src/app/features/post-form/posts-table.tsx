@@ -1,12 +1,13 @@
 "use client";
 
+import * as Sentry from "@sentry/nextjs";
 import { format } from "date-fns";
 import { Edit, Eye, EyeOff, Loader2, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { toast } from "sonner";
-import { deletePost, togglePublish } from "@/app/features/posts/actions";
+import { deletePost, togglePublish } from "@/app/shared/services/post-actions";
 import type { PostRow, PostsTableProps } from "@/app/shared/types/post/post";
 import {
   AlertDialog,
@@ -31,6 +32,7 @@ function PostRowActions({ post }: { post: PostRow }) {
       const result = await togglePublish(post.id, !post.isPublished);
       if (!result.success) {
         toast.error(result.error);
+        Sentry.captureException(result.error);
         return;
       }
       toast.success(
@@ -44,6 +46,7 @@ function PostRowActions({ post }: { post: PostRow }) {
       const result = await deletePost(post.id);
       if (!result.success) {
         toast.error(result.error);
+        Sentry.captureException(result.error);
         return;
       }
       toast.success(t("toast.deleted"));

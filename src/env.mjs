@@ -9,6 +9,8 @@ const env = createEnv({
 
     SMTP_EMAIL: z.email(),
     SMTP_PASSWORD: z.string(),
+    SMTP_HOST: z.string(),
+    SMTP_PORT: z.coerce.number(),
     SLACK_WEBHOOK_URL: z.string().optional(),
     GITHUB_API_TOKEN: z.string(),
     GH_USERNAME: z.string(),
@@ -49,6 +51,8 @@ const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     SMTP_EMAIL: process.env.SMTP_EMAIL,
     SMTP_PASSWORD: process.env.SMTP_PASSWORD,
+    SMTP_HOST: process.env.SMTP_HOST,
+    SMTP_PORT: process.env.SMTP_PORT,
     SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
     GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
     GH_USERNAME: process.env.GH_USERNAME,

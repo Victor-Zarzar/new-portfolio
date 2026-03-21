@@ -1,4 +1,4 @@
-import DevToolsGuard from "@/app/guard/disable-dev-tools";
+import DevToolsGuard from "@/app/shared/guard/disable-dev-tools";
 
 export default function AuthLayout({
   children,

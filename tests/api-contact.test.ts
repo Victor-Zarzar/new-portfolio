@@ -15,6 +15,8 @@ mock.module("@/env.mjs", () => ({
   default: {
     SMTP_EMAIL: "test@example.com",
     SMTP_PASSWORD: "password123",
+    SMTP_HOST: "smtp.example.com",
+    SMTP_PORT: 587,
   },
 }));
 

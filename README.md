@@ -45,13 +45,14 @@
 - **Tailwind CSS v4** - Utility-first CSS framework
 - **Drizzle ORM** - Type-safe ORM for PostgreSQL
 - **PostgreSQL** - Serverless PostgreSQL database for blog content
-- **Docker** - Optional containerized deployment
+- **Docker** - Optional containerized deployment (Development and Testing)
 
 ### Features & Integrations
 
 - **Blog powered by PostgreSQL** - Articles stored and served via Neon serverless database
 - **Drizzle ORM + Drizzle Kit** - Database schema management and migrations
 - **Better Auth** - Authentication
+- **Two Factor Auth** - Used Better Auth
 - **Zod & React Hook Form** - Form validation and management
 - **Shadcn UI** - Beautiful and accessible components
 - **Dark Mode** - Theme switching with Next Themes
