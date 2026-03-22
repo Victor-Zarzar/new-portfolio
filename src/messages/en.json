@@ -262,7 +262,15 @@
     "emailrequired": "Please enter your email.",
     "passwordmin": "Password must be at least 6 characters",
     "passwordmax": "Password must be at most 100 characters",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "errors": {
+      "toastTitle": "Failed to sign in",
+      "INVALID_EMAIL_OR_PASSWORD": "Invalid email or password.",
+      "USER_NOT_FOUND": "User not found.",
+      "ACCOUNT_DISABLED": "Account disabled. Please contact support.",
+      "TOO_MANY_REQUESTS": "Too many attempts. Please try again later.",
+      "UNKNOWN": "An unexpected error occurred. Please try again."
+    }
   },
   "twoFactor": {
     "title": "Two-step verification",
@@ -272,7 +280,10 @@
     "verify": "Verify",
     "secureNote": "Your account is protected with two-factor authentication",
     "backToLogin": "Back to login",
-    "codeExpires": "Code expires in 30 seconds"
+    "codeExpires": "Code expires in 30 seconds",
+    "invalidCode": "Invalid code",
+    "successVerified": "Successfully verified 2FA",
+    "onlyNumbers": "Only numbers are allowed"
   },
   "dashboard": {
     "title": "Dashboard",
