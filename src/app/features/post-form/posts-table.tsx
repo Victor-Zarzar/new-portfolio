@@ -31,7 +31,7 @@ function PostRowActions({ post }: { post: PostRow }) {
     startTransition(async () => {
       const result = await togglePublish(post.id, !post.isPublished);
       if (!result.success) {
-        toast.error("Failed to update publish status");
+        toast.error(t("toast.errorUpdatePublish"));
         Sentry.captureException(result.error);
         return;
       }
@@ -45,7 +45,7 @@ function PostRowActions({ post }: { post: PostRow }) {
     startTransition(async () => {
       const result = await deletePost(post.id);
       if (!result.success) {
-        toast.error("Failed to delete post");
+        toast.error(t("toast.errorDelete"));
         Sentry.captureException(result.error);
         return;
       }

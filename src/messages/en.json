@@ -313,7 +313,10 @@
         "unpublished": "Post unpublished",
         "deleted": "Post deleted",
         "created": "Post created",
-        "updated": "Post updated"
+        "updated": "Post updated",
+        "error": "Failed to save post",
+        "errorUpdatePublish": "Failed to update publish status",
+        "errorDelete": "Failed to delete post"
       },
       "dialog": {
         "title": "Delete post?",

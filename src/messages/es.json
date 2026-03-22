@@ -319,7 +319,10 @@
         "unpublished": "Publicación despublicada",
         "deleted": "Publicación eliminada",
         "created": "Publicación creada",
-        "updated": "Publicación actualizada"
+        "updated": "Publicación actualizada",
+        "error": "Error al guardar la publicación",
+        "errorUpdatePublish": "Error al actualizar el estado de publicación",
+        "errorDelete": "Error al eliminar la publicación"
       },
       "dialog": {
         "title": "¿Eliminar publicación?",

@@ -315,7 +315,10 @@
         "unpublished": "Post despublicado",
         "deleted": "Post excluído",
         "created": "Post criado",
-        "updated": "Post atualizado"
+        "updated": "Post atualizado",
+        "error": "Falha ao salvar o post",
+        "errorUpdatePublish": "Falha ao atualizar o status de publicação",
+        "errorDelete": "Falha ao deletar o post"
       },
       "dialog": {
         "title": "Excluir post?",
