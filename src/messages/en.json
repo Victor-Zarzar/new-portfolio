@@ -89,7 +89,7 @@
     "xlabs": {
       "time": "Mar 2023 – Dec 2025",
       "title": "XLabs Security",
-      "role": "Junior Software Developer",
+      "role": "Software Developer",
       "achievements": "Main Demands & Achievements:",
       "description": "Developed a full dashboard with authentication, scheduled notifications and admin panel. Frontend with React, TypeScript, Vite, Tailwind, MUI and Shadcn/UI including dark mode. Tables with PDF/Excel export and operational charts. Cross-platform Flutter app (Android, iOS and Web) with i18n, Provider, Sentry and configurable notifications. REST API in FastAPI from scratch with Docker, Nginx, HTTPS, rate limiting, ELK Stack and Pytest. Maintained FastAPI + MariaDB + Redis APIs with Alembic migrations.",
       "local": "São Leopoldo, RS, Brazil · Remote"
