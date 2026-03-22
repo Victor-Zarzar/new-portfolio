@@ -7,7 +7,6 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import { Toaster } from "@/app/shared/ui/sonner";
 import CookieConsentComponent from "../cookie-consent/cookie-consent";
-import Footer from "../footer/footer-component";
 
 export default function LayoutProvider({
   children,
@@ -46,7 +45,6 @@ export default function LayoutProvider({
           onAcceptAction={handleAccept}
           onDeclineAction={handleDecline}
         />
-        <Footer />
       </ThemeProvider>
     </>
   );

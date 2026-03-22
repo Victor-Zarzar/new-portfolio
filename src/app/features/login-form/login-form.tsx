@@ -3,9 +3,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as Sentry from "@sentry/nextjs";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
+import Captcha from "@/app/features/captcha-component/captcha-component";
 import { Button } from "@/app/shared/ui/button";
 import {
   Card,
@@ -33,6 +35,7 @@ export function LoginForm({
 }: React.ComponentProps<"form">) {
   const t = useTranslations("Login");
   const router = useRouter();
+  const [captchaToken, setCaptchaToken] = useState("");
 
   const formSchema = z.object({
     email: z
@@ -53,12 +56,13 @@ export function LoginForm({
   });
 
   async function handleSubmit(values: z.infer<typeof formSchema>) {
-    const { error } = await authClient.signIn.email(
-      {
-        email: values.email,
-        password: values.password,
-      },
-      {
+    const { error } = await authClient.signIn.email({
+      email: values.email,
+      password: values.password,
+      fetchOptions: {
+        headers: {
+          "x-captcha-response": captchaToken,
+        },
         async onSuccess(context) {
           if (context.data.twoFactorRedirect) {
             router.push("/auth/two-factor");
@@ -67,7 +71,7 @@ export function LoginForm({
           router.push("/admin");
         },
       },
-    );
+    });
 
     if (error) {
       const errorKey = error.code ?? "UNKNOWN";
@@ -159,6 +163,7 @@ export function LoginForm({
             </CardFooter>
           </form>
         </Form>
+        <Captcha handleVerify={setCaptchaToken} />
       </CardContent>
     </Card>
   );

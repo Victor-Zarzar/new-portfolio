@@ -50,5 +50,7 @@ describe("env.mjs loading .env", () => {
     expect(env.BETTER_AUTH_SECRET).toBeTruthy();
     expect(env.BETTER_AUTH_URL).toBeTruthy();
     expect(env.POSTGRES_URL).toBeTruthy();
+    expect(env.GOOGLE_RECAPTCHA_SECRET_KEY).toBeTruthy();
+    expect(env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY).toBeTruthy();
   });
 });

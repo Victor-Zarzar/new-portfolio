@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import {
+  captcha,
   customSession,
   lastLoginMethod,
   oAuthProxy,
@@ -33,6 +34,10 @@ export const auth = betterAuth({
     lastLoginMethod(),
     twoFactor({
       issuer: "Victor Zarzar",
+    }),
+    captcha({
+      provider: "google-recaptcha",
+      secretKey: env.GOOGLE_RECAPTCHA_SECRET_KEY,
     }),
     customSession(async ({ user, session }) => {
       return {

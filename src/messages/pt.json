@@ -89,7 +89,7 @@
     "xlabs": {
       "time": "Mar 2023 – Dez 2025",
       "title": "XLabs Security",
-      "role": "Desenvolvedor de Software Júnior",
+      "role": "Desenvolvedor de Software",
       "achievements": "Principais Demandas e Realizações:",
       "description": "Desenvolvi dashboard completo com autenticação, notificações agendadas e painel administrativo. Frontend com React, TypeScript, Vite, Tailwind, MUI e Shadcn/UI com dark mode. Tabelas com exportação PDF/Excel e gráficos operacionais. App mobile multiplataforma em Flutter (Android, iOS e Web) com i18n, Provider, Sentry e notificações configuráveis. API REST em FastAPI do zero com Docker, Nginx, HTTPS, rate limiting, ELK Stack e Pytest. Manutenção de APIs FastAPI + MariaDB + Redis com migrations via Alembic.",
       "local": "São Leopoldo, RS, Brasil · Remoto"
@@ -315,7 +315,10 @@
         "unpublished": "Post despublicado",
         "deleted": "Post excluído",
         "created": "Post criado",
-        "updated": "Post atualizado"
+        "updated": "Post atualizado",
+        "error": "Falha ao salvar o post",
+        "errorUpdatePublish": "Falha ao atualizar o status de publicação",
+        "errorDelete": "Falha ao deletar o post"
       },
       "dialog": {
         "title": "Excluir post?",

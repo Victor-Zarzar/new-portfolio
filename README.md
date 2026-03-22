@@ -51,8 +51,9 @@
 
 - **Blog powered by PostgreSQL** - Articles stored and served via Neon serverless database
 - **Drizzle ORM + Drizzle Kit** - Database schema management and migrations
-- **Better Auth** - Authentication
-- **Two Factor Auth** - Used Better Auth
+- **Better Auth** - Authentication with session management and secure credential handling
+- **Two Factor Auth** - Two Factor Authentication - TOTP-based 2FA via Better Auth
+- **Google reCAPTCHA v3** - Invisible bot protection via react-google-recaptcha-v3
 - **Zod & React Hook Form** - Form validation and management
 - **Shadcn UI** - Beautiful and accessible components
 - **Dark Mode** - Theme switching with Next Themes

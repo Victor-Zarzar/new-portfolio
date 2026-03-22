@@ -92,7 +92,7 @@ export function PostForm({
         : await createPost({ ...values, authorId });
 
       if (!result.success) {
-        toast.error(result.error);
+        toast.error(t("toast.error"));
         Sentry.captureException(result.error);
         return;
       }
