@@ -268,7 +268,15 @@
     "emailrequired": "Ingresa tu correo electrónico.",
     "passwordmin": "La contraseña debe tener al menos 6 caracteres",
     "passwordmax": "La contraseña debe tener como máximo 100 caracteres",
-    "backToHome": "Volver al inicio"
+    "backToHome": "Volver al inicio",
+    "errors": {
+      "toastTitle": "Error al iniciar sesión",
+      "INVALID_EMAIL_OR_PASSWORD": "Correo electrónico o contraseña inválidos.",
+      "USER_NOT_FOUND": "Usuario no encontrado.",
+      "ACCOUNT_DISABLED": "Cuenta desactivada. Por favor, contacte al soporte.",
+      "TOO_MANY_REQUESTS": "Demasiados intentos. Por favor, inténtelo más tarde.",
+      "UNKNOWN": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo."
+    }
   },
   "twoFactor": {
     "title": "Verificación en dos pasos",
@@ -278,7 +286,10 @@
     "verify": "Verificar",
     "secureNote": "Tu cuenta está protegida con autenticación de dos factores",
     "backToLogin": "Volver al inicio de sesión",
-    "codeExpires": "El código expira en 30 segundos"
+    "codeExpires": "El código expira en 30 segundos",
+    "invalidCode": "Código inválido",
+    "successVerified": "2FA verificado correctamente",
+    "onlyNumbers": "Solo se permiten números"
   },
   "dashboard": {
     "title": "Panel",

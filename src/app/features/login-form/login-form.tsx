@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as Sentry from "@sentry/nextjs";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import * as z from "zod";
 import { Button } from "@/app/shared/ui/button";
 import {
@@ -69,7 +70,15 @@ export function LoginForm({
     );
 
     if (error) {
-      form.setError("root", { message: error.message });
+      const errorKey = error.code ?? "UNKNOWN";
+      const message = t.has(`errors.${errorKey}`)
+        ? t(`errors.${errorKey}`)
+        : t("errors.UNKNOWN");
+
+      form.setError("root", { message });
+      toast.error(t("errors.toastTitle"), {
+        description: message,
+      });
       Sentry.captureException(error);
     }
   }
