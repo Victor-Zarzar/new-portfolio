@@ -35,6 +35,7 @@
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" width="48" title="Docker">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sentry.svg" width="48" title="Sentry">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/PostgreSQL-Dark.svg" width="48" title="PostgreSQL">
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Redis-Dark.svg" width="48" title="Redis">
 </p>
 
 ### Core Technologies
@@ -52,8 +53,9 @@
 - **Blog powered by PostgreSQL** - Articles stored and served via Neon serverless database
 - **Drizzle ORM + Drizzle Kit** - Database schema management and migrations
 - **Better Auth** - Authentication with session management and secure credential handling
-- **Two Factor Auth** - Two Factor Authentication - TOTP-based 2FA via Better Auth
+- **Two Factor Auth** - TOTP-based 2FA via Better Auth, with QR code setup flow and backup codes support
 - **Google reCAPTCHA v3** - Invisible bot protection via react-google-recaptcha-v3
+- **Redis** - In-memory cache layer for session storage and performance optimization
 - **Zod & React Hook Form** - Form validation and management
 - **Shadcn UI** - Beautiful and accessible components
 - **Dark Mode** - Theme switching with Next Themes
@@ -76,7 +78,7 @@
 Before starting, ensure you have the following installed:
 
 - [Bun](https://bun.sh/docs) (v1 or higher) – primary runtime & package manager
-- [Docker](https://www.docker.com/) – optional, for local containerized development (Development and Testing)
+- [Docker](https://www.docker.com/) – For local containerized development (Development and Testing)
 - [Git](https://git-scm.com/)
 
 > Optional: [Node.js](https://nodejs.org/) (v22 or higher), if you prefer running the app with Node or using Node-based global tooling.
@@ -116,28 +118,33 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 - **Sentry**: DSN and authentication token from your [Sentry project](https://sentry.io/)
 - **Database**: Neon PostgreSQL connection string from [Neon Console](https://neon.tech/)
 - **Website URL**: Your production domain or `http://localhost:3000` for development
+- **Redis URL**:
 
 > **Important:** Never commit your `.env` file to version control. It's already in `.gitignore`.
 
-### 4. Install Dependencies & Run Migrations (Local)
+### 4. Run the Application
 
 ```bash
+make redis-server  # Start Redis container (required)
 make install && make dev
+bun db:generate
+bun db:migrate
 ```
 
 Or manually with bun:
 
 ```bash
+docker run --rm -d --name redis -p 6379:6379 redis:8-alpine
 bun install
 bun run db:generate
 bun run db:migrate
 bun run dev
 ```
 
-Optional: Docker + Build (Local dev):
+Docker Container + Build (Local dev):
 
 ```bash
-make run
+make run  # Starts Redis + builds image + runs container
 make generate
 make migrate
 ```
@@ -241,12 +248,14 @@ make stop
 
 ```bash
 make logs
+make redis-logs
 ```
 
 Or directly with Docker:
 
 ```bash
 docker logs -f new-portfolio
+docker logs -f redis
 ```
 
 #### Access Container Shell

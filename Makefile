@@ -4,9 +4,20 @@ DOCKER_IMAGE_NAME = my-portfolio
 DOCKER_CONTAINER_NAME = my-portfolio
 PORT = 3000
 DOCKER_TAG = 1.0.5
+REDIS_CONTAINER_NAME = redis
+REDIS_TAG = 8-alpine
 
 install:
 	bun install
+
+redis-server:
+	docker run --rm -d \
+		--name $(REDIS_CONTAINER_NAME) \
+		-p 6379:6379 \
+		redis:$(REDIS_TAG)
+
+redis-logs:
+	docker logs -f $(REDIS_CONTAINER_NAME)
 
 dev: install
 	bun run dev
@@ -14,7 +25,7 @@ dev: install
 prod: install
 	bun run build && bun run start
 
-build:
+build: redis-server
 	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) .
 
 run: build
@@ -28,10 +39,13 @@ run: build
 
 stop:
 	docker stop $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
+	docker stop $(REDIS_CONTAINER_NAME) >/dev/null 2>&1 || true
 	docker rm $(DOCKER_CONTAINER_NAME) >/dev/null 2>&1 || true
+	docker rm $(REDIS_CONTAINER_NAME) >/dev/null 2>&1 || true
 
 clean: stop
 	docker rmi -f $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) >/dev/null 2>&1 || true
+	docker rmi -f $(REDIS_CONTAINER_NAME):$(REDIS_TAG) >/dev/null 2>&1 || true
 	rm -rf node_modules .next >/dev/null 2>&1 || true
 
 logs:
@@ -81,4 +95,6 @@ help:
 	@echo "  make clean            Remove image and clean environment"
 	@echo "  make logs             Show container logs"
 	@echo "  make shell            Access container shell"
+	@echo "  make redis-server     Run Redis server"
+	@echo "  make redis-logs       Show Redis logs"
 	@echo ""

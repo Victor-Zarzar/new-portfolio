@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { LoginForm } from "@/app/features/login-form/login-form";
+import SignInForm from "@/app/features/signin-form/signin-form";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 
 export default async function LoginPage() {
@@ -15,7 +15,7 @@ export default async function LoginPage() {
           {t("subtitle")}
         </p>
       </div>
-      <LoginForm />
+      <SignInForm />
     </section>
   );
 }

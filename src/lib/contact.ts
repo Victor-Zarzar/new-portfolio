@@ -10,13 +10,17 @@ export const contactService = {
       success: string;
       error: string;
     },
+    captchaToken: string,
   ): Promise<boolean> {
     const toastId = toast.loading(messages.loading);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-captcha-response": captchaToken,
+        },
         body: JSON.stringify(data),
       });
 

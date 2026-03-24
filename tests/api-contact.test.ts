@@ -17,12 +17,32 @@ mock.module("@/env.mjs", () => ({
     SMTP_PASSWORD: "password123",
     SMTP_HOST: "smtp.example.com",
     SMTP_PORT: 587,
+    GOOGLE_RECAPTCHA_SECRET_KEY: "test-secret",
+    SLACK_WEBHOOK_URL: "test-url-slack",
   },
 }));
 
 describe("POST /api/contact", () => {
   beforeEach(() => {
     mockSendMail.mockClear();
+
+    global.fetch = mock((url: string | URL | Request) => {
+      const requestUrl = typeof url === "string" ? url : url.toString();
+
+      if (requestUrl.includes("google.com/recaptcha/api/siteverify")) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => ({
+            success: true,
+          }),
+        } as Response);
+      }
+
+      return Promise.resolve({
+        ok: true,
+        json: async () => ({}),
+      } as Response);
+    }) as unknown as typeof fetch;
   });
 
   it("should send email successfully", async () => {
@@ -31,13 +51,13 @@ describe("POST /api/contact", () => {
       headers: {
         "Content-Type": "application/json",
         "x-forwarded-for": "192.168.1.1",
+        "x-captcha-response": "valid-captcha-token",
       },
       body: JSON.stringify({
         name: "John Doe",
         email: "john@example.com",
         subject: "Test Subject",
         message: "Test message",
-        loading: "Sending...",
       }),
     });
 
@@ -55,6 +75,7 @@ describe("POST /api/contact", () => {
       headers: {
         "Content-Type": "application/json",
         "x-forwarded-for": "192.168.1.2",
+        "x-captcha-response": "valid-captcha-token",
       },
       body: JSON.stringify({
         name: "Bot",
@@ -79,6 +100,7 @@ describe("POST /api/contact", () => {
       headers: {
         "Content-Type": "application/json",
         "x-forwarded-for": "192.168.1.3",
+        "x-captcha-response": "valid-captcha-token",
       },
       body: JSON.stringify({
         name: "",
@@ -105,13 +127,13 @@ describe("POST /api/contact", () => {
         headers: {
           "Content-Type": "application/json",
           "x-forwarded-for": testIP,
+          "x-captcha-response": "valid-captcha-token",
         },
         body: JSON.stringify({
           name: "John Doe",
           email: "john@example.com",
           subject: "Test",
           message: "Test message",
-          loading: "Sending...",
         }),
       });
 
@@ -124,7 +146,6 @@ describe("POST /api/contact", () => {
 
     expect(response.status).toBe(429);
     expect(data.message).toBe("Too many requests. Please try again later.");
-
     expect(mockSendMail).toHaveBeenCalledTimes(3);
   });
 });
