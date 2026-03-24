@@ -1,5 +1,6 @@
 import type { Mock } from "bun:test";
 import { afterEach, beforeEach, describe, expect, it, mock } from "bun:test";
+import { getProjects, getStats } from "@/lib/github";
 
 mock.module("@/env.mjs", () => ({
   default: {
@@ -7,8 +8,6 @@ mock.module("@/env.mjs", () => ({
     GH_USERNAME: "fake-user",
   },
 }));
-
-import { getProjects, getStats } from "@/app/shared/api/github";
 
 type FetchFn = (
   input: RequestInfo | URL,

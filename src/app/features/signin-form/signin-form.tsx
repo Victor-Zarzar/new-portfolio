@@ -3,11 +3,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as Sentry from "@sentry/nextjs";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
-import Captcha from "@/app/features/captcha-component/captcha-component";
 import { Button } from "@/app/shared/ui/button";
 import {
   Card,
@@ -29,13 +28,13 @@ import { useRouter } from "@/i18n/navigation";
 import { authClient } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 
-export function LoginForm({
+export default function SignInForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
   const t = useTranslations("Login");
   const router = useRouter();
-  const [captchaToken, setCaptchaToken] = useState("");
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const formSchema = z.object({
     email: z
@@ -56,7 +55,19 @@ export function LoginForm({
   });
 
   async function handleSubmit(values: z.infer<typeof formSchema>) {
-    const { error } = await authClient.signIn.email({
+    if (!executeRecaptcha) {
+      toast.error(t("captcha-not-ready"));
+      return;
+    }
+
+    const captchaToken = await executeRecaptcha("sign_in");
+
+    if (!captchaToken) {
+      toast.error(t("captcha-failed"));
+      return;
+    }
+
+    const res = await authClient.signIn.email({
       email: values.email,
       password: values.password,
       fetchOptions: {
@@ -73,17 +84,18 @@ export function LoginForm({
       },
     });
 
-    if (error) {
-      const errorKey = error.code ?? "UNKNOWN";
-      const message = t.has(`errors.${errorKey}`)
-        ? t(`errors.${errorKey}`)
-        : t("errors.UNKNOWN");
+    if (res.error) {
+      const status = res.error.status;
 
-      form.setError("root", { message });
-      toast.error(t("errors.toastTitle"), {
-        description: message,
-      });
-      Sentry.captureException(error);
+      const description =
+        status === 401
+          ? t("error401")
+          : status === 403
+            ? t("error403")
+            : res.error.message;
+
+      toast.error(t("signinFailed"), { description });
+      return;
     }
   }
 
@@ -163,7 +175,6 @@ export function LoginForm({
             </CardFooter>
           </form>
         </Form>
-        <Captcha handleVerify={setCaptchaToken} />
       </CardContent>
     </Card>
   );

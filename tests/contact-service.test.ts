@@ -2,7 +2,7 @@ import type { Mock } from "bun:test";
 import { beforeEach, describe, expect, it, mock } from "bun:test";
 import * as Sentry from "@sentry/nextjs";
 import { toast } from "sonner";
-import { contactService } from "@/app/shared/api/contact";
+import { contactService } from "@/lib/contact";
 
 type ToastLoadingMock = Mock<(message: string) => string | number>;
 type ToastMsgMock = Mock<
@@ -54,7 +54,13 @@ describe("contactService", () => {
       error: "Error!",
     };
 
-    const result = await contactService.sendContactForm(data, messages);
+    const captchaToken = "test-captcha-token";
+
+    const result = await contactService.sendContactForm(
+      data,
+      messages,
+      captchaToken,
+    );
 
     expect(result).toBe(true);
 
@@ -64,7 +70,10 @@ describe("contactService", () => {
 
     expect(global.fetch).toHaveBeenCalledWith("/api/contact", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "x-captcha-response": captchaToken,
+      },
       body: JSON.stringify(data),
     });
   });
@@ -90,7 +99,13 @@ describe("contactService", () => {
       error: "Failed to send!",
     };
 
-    const result = await contactService.sendContactForm(data, messages);
+    const captchaToken = "test-captcha-token";
+
+    const result = await contactService.sendContactForm(
+      data,
+      messages,
+      captchaToken,
+    );
 
     expect(result).toBe(false);
 
@@ -118,7 +133,13 @@ describe("contactService", () => {
       error: "Network error!",
     };
 
-    const result = await contactService.sendContactForm(data, messages);
+    const captchaToken = "test-captcha-token";
+
+    const result = await contactService.sendContactForm(
+      data,
+      messages,
+      captchaToken,
+    );
 
     expect(result).toBe(false);
 

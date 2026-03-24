@@ -97,6 +97,35 @@ export async function POST(request: Request) {
 
   try {
     await rateLimiter.consume(ip);
+    const captchaToken = request.headers.get("x-captcha-response");
+
+    if (!captchaToken) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification is required" },
+        { status: 400 },
+      );
+    }
+
+    const recaptchaResponse = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `secret=${env.GOOGLE_RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+      },
+    );
+
+    const recaptchaResult = await recaptchaResponse.json();
+
+    if (!recaptchaResult.success) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed. Please try again." },
+        { status: 400 },
+      );
+    }
+
     const body = await request.json();
 
     if (body.company) {

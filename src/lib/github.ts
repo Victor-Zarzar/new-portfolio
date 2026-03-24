@@ -1,40 +1,10 @@
 import type {
   GithubProject,
   GithubStats,
+  RepoResponse,
+  StatsResponse,
 } from "@/app/shared/types/github/github";
 import env from "@/env.mjs";
-
-type RepoResponse = {
-  data?: {
-    user?: {
-      repositories?: { nodes?: GithubProject[] };
-    };
-  };
-  errors?: Array<{ message: string }>;
-};
-
-type StatsResponse = {
-  data?: {
-    user?: {
-      contributionsCollection?: {
-        totalCommitContributions?: number;
-        restrictedContributionsCount?: number;
-      };
-      repositoriesContributedTo?: { totalCount?: number };
-      pullRequests?: { totalCount?: number };
-      openIssues?: { totalCount?: number };
-      closedIssues?: { totalCount?: number };
-      repositories?: {
-        totalCount?: number;
-        nodes?: Array<{
-          stargazers?: { totalCount?: number };
-          primaryLanguage?: { name: string; color: string | null } | null;
-        }>;
-      };
-    };
-  };
-  errors?: Array<{ message: string }>;
-};
 
 const GITHUB_GRAPHQL_URL = "https://api.github.com/graphql";
 

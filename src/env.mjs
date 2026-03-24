@@ -14,6 +14,7 @@ const env = createEnv({
     SLACK_WEBHOOK_URL: z.string().optional(),
     GITHUB_API_TOKEN: z.string(),
     GH_USERNAME: z.string(),
+    REDIS_URL: z.string(),
     GOOGLE_RECAPTCHA_SECRET_KEY: z.string(),
     SENTRY_AUTH_TOKEN: z.string().optional(),
     SENTRY_RELEASE: z.string().optional(),
@@ -58,6 +59,7 @@ const env = createEnv({
     SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
     GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
     GH_USERNAME: process.env.GH_USERNAME,
+    REDIS_URL: process.env.REDIS_URL,
     GOOGLE_RECAPTCHA_SECRET_KEY: process.env.GOOGLE_RECAPTCHA_SECRET_KEY,
     NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY:
       process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY,

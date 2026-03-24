@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import env from "@/env.mjs";
@@ -8,7 +8,15 @@ import LayoutProvider from "../widgets/layout-provider/layout-provider";
 import "./globals.css";
 import { getTranslations } from "next-intl/server";
 
-const JetBrains = JetBrains_Mono({ subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 const ogLocaleMap: Record<string, string> = {
   pt: "pt_BR",
@@ -91,8 +99,12 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={JetBrains.className}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
           <LayoutProvider>{children}</LayoutProvider>
         </NextIntlClientProvider>

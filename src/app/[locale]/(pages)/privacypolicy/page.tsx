@@ -31,13 +31,6 @@ export default async function PrivacyPolicy() {
           </p>
         </section>
       ))}
-
-      <section className="text-center mt-10">
-        <ul className="list-disc list-inside mx-auto max-w-md">
-          <li className="mb-3">{t("email")}</li>
-          <li className="mb-20">{t("website")}</li>
-        </ul>
-      </section>
     </main>
   );
 }

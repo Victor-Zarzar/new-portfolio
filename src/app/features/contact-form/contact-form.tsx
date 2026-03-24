@@ -1,17 +1,18 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import * as Sentry from "@sentry/nextjs";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import {
   AiOutlineGithub,
   AiOutlineInstagram,
   AiOutlineLinkedin,
 } from "react-icons/ai";
+import { toast } from "sonner";
 import * as z from "zod";
-import { contactService } from "@/app/shared/api/contact";
-import type { ContactFormData } from "@/app/shared/types/form/form";
 import { Button } from "@/app/shared/ui/button";
 import {
   Card,
@@ -30,9 +31,14 @@ import {
 } from "@/app/shared/ui/form";
 import { Input } from "@/app/shared/ui/input";
 import { Textarea } from "@/app/shared/ui/textarea";
+import { contactService } from "@/lib/contact";
 
-export default function ContactForm() {
+export default function ContactForm({
+  className,
+  ...props
+}: React.ComponentProps<"form">) {
   const t = useTranslations("Contact");
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const formSchema = z.object({
     name: z.string().min(1, t("namerequired")),
@@ -59,17 +65,35 @@ export default function ContactForm() {
   });
 
   async function handleSubmit(values: z.infer<typeof formSchema>) {
-    const success = await contactService.sendContactForm(
-      values as ContactFormData,
-      {
-        loading: t("loading"),
-        success: t("emailsucess"),
-        error: t("emailerror"),
-      },
-    );
+    try {
+      if (!executeRecaptcha) {
+        toast.error(t("captcha-not-ready"));
+        return;
+      }
 
-    if (success) {
-      form.reset();
+      const captchaToken = await executeRecaptcha("contact_form");
+
+      if (!captchaToken) {
+        toast.error(t("captcha-failed"));
+        return;
+      }
+
+      const success = await contactService.sendContactForm(
+        values,
+        {
+          loading: t("loading"),
+          success: t("emailsucess"),
+          error: t("emailerror"),
+        },
+        captchaToken,
+      );
+
+      if (success) {
+        form.reset();
+      }
+    } catch (error) {
+      Sentry.captureException(error);
+      toast.error(t("emailerror"));
     }
   }
 
@@ -123,6 +147,7 @@ export default function ContactForm() {
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
             className="flex flex-col gap-4"
+            {...props}
           >
             <FormField
               control={form.control}

@@ -27,12 +27,22 @@ env:
   GH_USERNAME: ${{ secrets.GH_USERNAME }}
   GOOGLE_RECAPTCHA_SECRET_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SECRET_KEY }}
   NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY }}
+  REDIS_URL: "redis://localhost:6379"
 
 jobs:
   build:
     name: Bun CI
     runs-on: ubuntu-latest
-
+    services:
+      redis:
+        image: redis:8-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v6
 

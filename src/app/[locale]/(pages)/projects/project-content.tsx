@@ -2,10 +2,10 @@ import { Bug, GitBranch, GitCommit, GitPullRequest, Star } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { VscGithub } from "react-icons/vsc";
-import { getProjects, getStats } from "@/app/shared/api/github";
 import { Card, CardContent } from "@/app/shared/ui/card";
 import SeeAllProjects from "@/app/widgets/seall-projects/see-all-projects";
 import { Link } from "@/i18n/navigation";
+import { getProjects, getStats } from "@/lib/github";
 
 export default async function ProjectsContent({ locale }: { locale: string }) {
   const nf = new Intl.NumberFormat(locale);
