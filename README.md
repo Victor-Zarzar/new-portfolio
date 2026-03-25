@@ -196,12 +196,23 @@ The blog content is stored in a **PostgreSQL database** via [Neon](https://neon.
 
 ```
 lib/
-└── db/
-    ├── migrations/       # Auto-generated SQL migration files
-    │   └── meta/
-    └── queries/
-        ├── blog.ts       # Blog post queries
-        └── index.ts
+├── auth.ts               # Better Auth server configuration
+├── auth-client.ts        # Better Auth client setup
+├── contact.ts            # Contact form logic
+├── github.ts             # GitHub API integration
+├── utils.ts              # Shared utility functions
+├── db/
+│   ├── auth-schema.ts    # Auth-related table definitions
+│   ├── index.ts          # Drizzle client instance
+│   ├── schema.ts         # Main database schema
+│   ├── migrations/       # Auto-generated SQL migration files
+│   │   └── meta/
+│   └── queries/
+│       └── blog.ts       # Blog post queries
+└── redis/
+    ├── cache.ts          # Cache helpers and abstractions
+    ├── client.ts         # Redis client initialization
+    └── key.ts            # Cache key constants
 ```
 
 ---
@@ -279,7 +290,7 @@ make clean
 </h2>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9bd52cf3-50a3-4a88-b669-6351d5c47f5a" width="1000" height="600" alt="Architecture">
+  <img src="https://github.com/user-attachments/assets/dc73aa3a-899b-44de-a919-227cc7fde245" width="1000" height="600" alt="Architecture">
 </p>
 
 <p align="center">
@@ -306,6 +317,35 @@ The application is deployed on Vercel for production use, with Neon PostgreSQL a
 
 - **CI/CD Pipeline** - `.github/workflows/main.yaml` for automated checks and builds
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
+
+---
+
+<h2 id="scripts">
+  Scripts
+</h2>
+
+Full list of available `bun run` scripts:
+
+| Script          | Description                                         |
+| --------------- | --------------------------------------------------- |
+| `dev`           | Start Next.js development server                    |
+| `build`         | Build the application for production                |
+| `start`         | Start the production server                         |
+| `lint`          | Run Biome linter checks                             |
+| `format`        | Auto-format code with Biome                         |
+| `typegen`       | Generate Next.js types                              |
+| `typecheck`     | Run TypeScript type checking (no emit)              |
+| `test`          | Run tests with Bun                                  |
+| `test:watch`    | Run tests in watch mode                             |
+| `test:update`   | Update test snapshots                               |
+| `prod`          | Build and start production server                   |
+| `clean`         | Remove `node_modules` and `.next`                   |
+| `db:generate`   | Generate SQL migrations from schema                 |
+| `db:migrate`    | Apply pending migrations to the database            |
+| `db:push`       | Push schema changes directly (dev only)             |
+| `db:studio`     | Open Drizzle Studio (visual DB explorer)            |
+| `redis:start`   | Start redis server local                            |
+| `redis:monitor` | Monitor Redis commands in real-time via `redis-cli` |
 
 ---
 

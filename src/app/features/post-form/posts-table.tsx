@@ -3,11 +3,9 @@
 import * as Sentry from "@sentry/nextjs";
 import { format } from "date-fns";
 import { Edit, Eye, EyeOff, Loader2, Trash2 } from "lucide-react";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { toast } from "sonner";
-import { deletePost, togglePublish } from "@/app/shared/services/post-actions";
 import type { PostRow, PostsTableProps } from "@/app/shared/types/post/post";
 import {
   AlertDialog,
@@ -22,6 +20,8 @@ import {
 } from "@/app/shared/ui/alert-dialog";
 import { Badge } from "@/app/shared/ui/badge";
 import { Button } from "@/app/shared/ui/button";
+import { Link } from "@/i18n/navigation";
+import { deletePost, togglePublish } from "./post-actions";
 
 function PostRowActions({ post }: { post: PostRow }) {
   const [isPending, startTransition] = useTransition();

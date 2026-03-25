@@ -9,6 +9,16 @@ mock.module("@/env.mjs", () => ({
   },
 }));
 
+mock.module("@/lib/redis/cache", () => ({
+  cacheWithRedis: async <T>({
+    fetcher,
+  }: {
+    key: string;
+    ttl?: number;
+    fetcher: () => Promise<T>;
+  }): Promise<T> => fetcher(),
+}));
+
 type FetchFn = (
   input: RequestInfo | URL,
   init?: RequestInit,

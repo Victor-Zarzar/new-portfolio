@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { db } from "@/lib/db";
 import { posts, postTags, postTranslations } from "@/lib/db/schema";
+import { invalidatePostCache } from "@/lib/redis/cache";
 
 const translationSchema = z.object({
   locale: z.enum(["pt", "en", "es"]),
@@ -77,6 +78,7 @@ export async function createPost(
         .values(tagIds.map((tagId) => ({ postId: post.id, tagId })));
     }
 
+    await invalidatePostCache({ slug, locales: ["pt", "en", "es"] });
     revalidatePosts();
     return { success: true, data: { id: post.id } };
   } catch (err) {
@@ -140,6 +142,19 @@ export async function updatePost(
       }
     }
 
+    const existing = await db.query.posts.findFirst({
+      where: eq(posts.id, id),
+      columns: { slug: true },
+    });
+
+    const oldSlug = existing?.slug;
+    const newSlug = slug ?? oldSlug;
+
+    await invalidatePostCache({
+      slug: newSlug,
+      locales: ["pt", "en", "es"],
+    });
+
     revalidatePosts();
     return { success: true, data: undefined };
   } catch (err) {
@@ -154,7 +169,22 @@ export async function updatePost(
 
 export async function deletePost(id: number): Promise<ActionResult> {
   try {
+    const existing = await db.query.posts.findFirst({
+      where: eq(posts.id, id),
+      columns: { slug: true },
+    });
+
+    if (!existing) {
+      return { success: false, error: "Post not found" };
+    }
+
     await db.delete(posts).where(eq(posts.id, id));
+
+    await invalidatePostCache({
+      slug: existing.slug,
+      locales: ["pt", "en", "es"],
+    });
+
     revalidatePosts();
     return { success: true, data: undefined };
   } catch {
@@ -175,6 +205,16 @@ export async function togglePublish(
         updatedAt: new Date(),
       })
       .where(eq(posts.id, id));
+
+    const existing = await db.query.posts.findFirst({
+      where: eq(posts.id, id),
+      columns: { slug: true },
+    });
+
+    await invalidatePostCache({
+      slug: existing?.slug,
+      locales: ["pt", "en", "es"],
+    });
 
     revalidatePosts();
     return { success: true, data: undefined };
