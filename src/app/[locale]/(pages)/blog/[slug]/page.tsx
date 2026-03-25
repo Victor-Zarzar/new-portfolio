@@ -71,8 +71,6 @@ const components = {
   },
 };
 
-export const revalidate = 3600;
-
 export async function generateStaticParams() {
   const posts = await getAllPostsForSitemap();
   return posts.map((post) => ({
@@ -110,7 +108,9 @@ export async function generateMetadata({
       title,
       description,
       type: "article",
-      publishedTime: publishedAt?.toISOString(),
+      publishedTime: publishedAt
+        ? new Date(publishedAt).toISOString()
+        : undefined,
       url: canonical,
       images: photo ? [{ url: ogImage }] : [],
       tags,
@@ -141,8 +141,12 @@ export default async function BlogPostPage({ params }: PageProps) {
     description: post.metadata.description,
     image: imageUrl,
     url: `${env.NEXT_PUBLIC_WEBSITE_URL}/${locale}/blog/${slug}`,
-    datePublished: post.metadata.publishedAt?.toISOString(),
-    dateModified: post.metadata.updatedAt?.toISOString(),
+    datePublished: post.metadata.publishedAt
+      ? new Date(post.metadata.publishedAt).toISOString()
+      : undefined,
+    dateModified: post.metadata.updatedAt
+      ? new Date(post.metadata.updatedAt).toISOString()
+      : undefined,
     author: {
       "@type": "Person",
       name: "Victor Zarzar",

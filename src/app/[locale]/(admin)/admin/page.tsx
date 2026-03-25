@@ -1,7 +1,7 @@
 import { desc } from "drizzle-orm";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
+import { Link } from "@/i18n/navigation";
 import { db } from "@/lib/db";
 import { posts } from "@/lib/db/schema";
 

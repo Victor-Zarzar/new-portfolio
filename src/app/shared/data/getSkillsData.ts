@@ -18,6 +18,7 @@ import {
   SiPostgresql,
   SiPrisma,
   SiReact,
+  SiRedis,
   SiSentry,
   SiShadcnui,
   SiSqlite,
@@ -65,6 +66,7 @@ export function getSkillsData(): SkillCategory[] {
         { icon: SiSqlite, text: "SQLite" },
         { icon: SiPostgresql, text: "PostgreSQL" },
         { icon: SiDrizzle, text: "Drizzle" },
+        { icon: SiRedis, text: "Redis" },
       ],
     },
     {

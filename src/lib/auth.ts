@@ -7,16 +7,10 @@ import {
   oAuthProxy,
   twoFactor,
 } from "better-auth/plugins";
-import { createClient } from "redis";
 import env from "@/env.mjs";
 import { db } from "@/lib/db";
 import * as authSchema from "./db/auth-schema";
-
-const redis = createClient({
-  url: env.REDIS_URL,
-});
-
-await redis.connect();
+import { redis } from "./redis/client";
 
 export const auth = betterAuth({
   appName: "Victor Zarzar",

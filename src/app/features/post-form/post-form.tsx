@@ -10,11 +10,11 @@ import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
-import { createPost, updatePost } from "@/app/shared/services/post-actions";
 import { Button } from "@/app/shared/ui/button";
 import { Input } from "@/app/shared/ui/input";
 import { Label } from "@/app/shared/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/shared/ui/tabs";
+import { createPost, updatePost } from "./post-actions";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
