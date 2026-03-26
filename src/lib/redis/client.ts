@@ -10,6 +10,6 @@ export const redis =
   createClient({ url: env.REDIS_URL ?? "redis://localhost:6379" });
 
 if (!globalForRedis.redis) {
-  redis.connect();
+  await redis.connect();
   globalForRedis.redis = redis;
 }

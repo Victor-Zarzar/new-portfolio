@@ -125,8 +125,7 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 ### 4. Run the Application
 
 ```bash
-make redis-server  # Start Redis container (required)
-make install && make dev
+make install && make dev # Install dependecies + run redis server + app next
 bun db:generate
 bun db:migrate
 ```

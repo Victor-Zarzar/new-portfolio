@@ -1,11 +1,6 @@
+import type { CacheOptions } from "@/app/shared/types/redis/cache";
 import { redis } from "./client";
 import { cacheKeys } from "./keys";
-
-type CacheOptions<T> = {
-  key: string;
-  ttl?: number;
-  fetcher: () => Promise<T>;
-};
 
 export async function cacheWithRedis<T>({
   key,

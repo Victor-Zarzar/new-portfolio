@@ -3,35 +3,43 @@ PROJECT_NAME= My Portfolio
 DOCKER_IMAGE_NAME = my-portfolio
 DOCKER_CONTAINER_NAME = my-portfolio
 PORT = 3000
-DOCKER_TAG = 1.0.5
+DOCKER_TAG = 1.0.6
+REDIS_IMAGE_NAME = redis
 REDIS_CONTAINER_NAME = redis
 REDIS_TAG = 8-alpine
+NETWORK_NAME = my-portfolio-network
 
 install:
 	bun install
 
-redis-server:
+create-network:
+	docker network inspect $(NETWORK_NAME) >/dev/null 2>&1 || docker network create $(NETWORK_NAME)
+
+redis-server: create-network
 	docker run --rm -d \
 		--name $(REDIS_CONTAINER_NAME) \
+		--network $(NETWORK_NAME) \
 		-p 6379:6379 \
-		redis:$(REDIS_TAG)
+		$(REDIS_IMAGE_NAME):$(REDIS_TAG)
 
 redis-logs:
 	docker logs -f $(REDIS_CONTAINER_NAME)
 
-dev: install
+dev: install redis-server
 	bun run dev
 
 prod: install
 	bun run build && bun run start
 
-build: redis-server
+build:
 	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) .
 
-run: build
+run: build redis-server
 	docker run --rm -it \
 		--name $(DOCKER_CONTAINER_NAME) \
+		--network $(NETWORK_NAME) \
 		-p $(PORT):3000 \
+		-e REDIS_URL=redis://$(REDIS_CONTAINER_NAME):6379 \
 		-v $(PWD):/app \
 		-v /app/node_modules \
 		-v /app/.next \
@@ -45,7 +53,7 @@ stop:
 
 clean: stop
 	docker rmi -f $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) >/dev/null 2>&1 || true
-	docker rmi -f $(REDIS_CONTAINER_NAME):$(REDIS_TAG) >/dev/null 2>&1 || true
+	docker rmi -f $(REDIS_IMAGE_NAME):$(REDIS_TAG) >/dev/null 2>&1 || true
 	rm -rf node_modules .next >/dev/null 2>&1 || true
 
 logs:
@@ -63,9 +71,11 @@ migrate:
 studio:
 	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit studio
 
-test: build
+test: build redis-server
 	docker run --rm \
 		--name $(DOCKER_CONTAINER_NAME)-test \
+		--network $(NETWORK_NAME) \
+		-e REDIS_URL=redis://$(REDIS_CONTAINER_NAME):6379 \
 		-v $(PWD):/app \
 		-v /app/node_modules \
 		-w /app \
