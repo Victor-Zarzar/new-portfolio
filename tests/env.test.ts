@@ -18,8 +18,8 @@ function restoreRuntime(): void {
   g.navigator = originalNavigator;
 }
 
-async function importFreshEnv(): Promise<typeof import("../src/env.mjs")> {
-  return import(`../src/env.mjs?test=${crypto.randomUUID()}`);
+async function importFreshEnv(): Promise<typeof import("@/env.mjs")> {
+  return import(`@/env.mjs?test=${crypto.randomUUID()}`);
 }
 
 describe("env.mjs loading .env", () => {
@@ -52,5 +52,6 @@ describe("env.mjs loading .env", () => {
     expect(env.POSTGRES_URL).toBeTruthy();
     expect(env.GOOGLE_RECAPTCHA_SECRET_KEY).toBeTruthy();
     expect(env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY).toBeTruthy();
+    expect(env.REDIS_URL).toBeTruthy();
   });
 });
