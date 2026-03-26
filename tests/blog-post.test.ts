@@ -14,7 +14,7 @@ const limitSpy = mock(async () => [
   {
     id: 1,
     slug: "clean-architecture",
-    year: "2025",
+    year: 2025,
     photo: "/post/cover.png",
     publishedAt: new Date("2025-01-10T00:00:00.000Z"),
     updatedAt: new Date("2025-01-11T00:00:00.000Z"),
@@ -162,7 +162,7 @@ describe("blog queries > getPostBySlug", () => {
         slug: "clean-architecture",
         title: "Clean Architecture",
         description: "Post description",
-        year: "2025",
+        year: 2025,
         photo: "/post/cover.png",
         publishedAt: new Date("2025-01-10T00:00:00.000Z"),
         updatedAt: new Date("2025-01-11T00:00:00.000Z"),
