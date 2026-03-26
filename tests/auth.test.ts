@@ -76,7 +76,7 @@ mock.module("@/lib/db", () => ({
   db: { __db: true },
 }));
 
-mock.module("./db/auth-schema", () => ({
+mock.module("@/lib/db/auth-schema", () => ({
   user: {},
   session: {},
   account: {},
