@@ -3,7 +3,13 @@ import env from "@/env.mjs";
 import { routing } from "@/i18n/routing";
 import { getAllPostsForSitemap } from "@/lib/db/queries/blog";
 
-const STATIC_PAGES = ["", "about", "contact", "projects", "privacypolicy"];
+const STATIC_PAGES = [
+  "",
+  "about",
+  "contact",
+  "projects",
+  "privacypolicy",
+] as const;
 
 const BUILD_DATE = new Date().toISOString().split("T")[0];
 
