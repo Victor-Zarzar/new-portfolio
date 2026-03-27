@@ -118,7 +118,7 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 - **Sentry**: DSN and authentication token from your [Sentry project](https://sentry.io/)
 - **Database**: Neon PostgreSQL connection string from [Neon Console](https://neon.tech/)
 - **Website URL**: Your production domain or `http://localhost:3000` for development
-- **Redis URL**:
+- **Redis URL**: Your production domain or `redis://localhost:6379` for development
 
 > **Important:** Never commit your `.env` file to version control. It's already in `.gitignore`.
 
@@ -157,7 +157,7 @@ make test
 Or manually with bun:
 
 ```bash
-bun test
+bun test # Units tests
 ```
 
 ### 6. Code Quality Check
@@ -316,35 +316,6 @@ The application is deployed on Vercel for production use, with Neon PostgreSQL a
 
 - **CI/CD Pipeline** - `.github/workflows/main.yaml` for automated checks and builds
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
-
----
-
-<h2 id="scripts">
-  Scripts
-</h2>
-
-Full list of available `bun run` scripts:
-
-| Script          | Description                                         |
-| --------------- | --------------------------------------------------- |
-| `dev`           | Start Next.js development server                    |
-| `build`         | Build the application for production                |
-| `start`         | Start the production server                         |
-| `lint`          | Run Biome linter checks                             |
-| `format`        | Auto-format code with Biome                         |
-| `typegen`       | Generate Next.js types                              |
-| `typecheck`     | Run TypeScript type checking (no emit)              |
-| `test`          | Run tests with Bun                                  |
-| `test:watch`    | Run tests in watch mode                             |
-| `test:update`   | Update test snapshots                               |
-| `prod`          | Build and start production server                   |
-| `clean`         | Remove `node_modules` and `.next`                   |
-| `db:generate`   | Generate SQL migrations from schema                 |
-| `db:migrate`    | Apply pending migrations to the database            |
-| `db:push`       | Push schema changes directly (dev only)             |
-| `db:studio`     | Open Drizzle Studio (visual DB explorer)            |
-| `redis:start`   | Start redis server local                            |
-| `redis:monitor` | Monitor Redis commands in real-time via `redis-cli` |
 
 ---
 

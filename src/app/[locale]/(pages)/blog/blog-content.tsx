@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { HiArrowRight } from "react-icons/hi";
-import { z } from "zod";
 import {
   calculateReadingTime,
   formatReadingTime,
