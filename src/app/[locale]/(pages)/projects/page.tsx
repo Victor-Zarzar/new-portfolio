@@ -1,8 +1,6 @@
 import type { Metadata } from "next/types";
 import { getTranslations } from "next-intl/server";
-import { Suspense } from "react";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
-import LoadingSkeleton from "@/app/widgets/loading-skeleton/loading-skeleton";
 import { routing } from "@/i18n/routing";
 import ProjectsContent from "./project-content";
 
@@ -44,9 +42,7 @@ export default async function ProjectsPage({
         </header>
       </section>
 
-      <Suspense fallback={<LoadingSkeleton />}>
-        <ProjectsContent locale={locale} />
-      </Suspense>
+      <ProjectsContent locale={locale} />
     </main>
   );
 }
