@@ -3,7 +3,7 @@ PROJECT_NAME= My Portfolio
 DOCKER_IMAGE_NAME = my-portfolio
 DOCKER_CONTAINER_NAME = my-portfolio
 PORT = 3000
-DOCKER_TAG = 1.0.6
+DOCKER_TAG = 1.0.0
 REDIS_IMAGE_NAME = redis
 REDIS_CONTAINER_NAME = redis
 REDIS_TAG = 8-alpine
@@ -71,7 +71,7 @@ migrate:
 studio:
 	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit studio
 
-test: build redis-server
+test-unit: build redis-server
 	docker run --rm \
 		--name $(DOCKER_CONTAINER_NAME)-test \
 		--network $(NETWORK_NAME) \
@@ -80,7 +80,18 @@ test: build redis-server
 		-v /app/node_modules \
 		-w /app \
 		$(DOCKER_IMAGE_NAME):$(DOCKER_TAG) \
-		bun run test
+		bun run test:unit
+
+test-e2e: build redis-server
+	docker run --rm \
+		--name $(DOCKER_CONTAINER_NAME)-test \
+		--network $(NETWORK_NAME) \
+		-e REDIS_URL=redis://$(REDIS_CONTAINER_NAME):6379 \
+		-v $(PWD):/app \
+		-v /app/node_modules \
+		-w /app \
+		$(DOCKER_IMAGE_NAME):$(DOCKER_TAG) \
+		sh -c "bun install --frozen-lockfile && bunx playwright install --with-deps chromium webkit && bun run test:e2e"
 
 help:
 	@echo ""
@@ -101,7 +112,8 @@ help:
 	@echo "  make migrate          Run database migrations"
 	@echo "  make studio           Open Drizzle Studio"
 	@echo "  make stop             Stop and remove the container"
-	@echo "  make test             Run the automated tests (Isolated Docker container)"
+	@echo "  make test-unit        Run the automated tests Units (Isolated Docker container)"
+	@echo "  make test-e2e         Run the automated tests E2E (Isolated Docker container)"
 	@echo "  make clean            Remove image and clean environment"
 	@echo "  make logs             Show container logs"
 	@echo "  make shell            Access container shell"
