@@ -21,16 +21,29 @@
 
 ---
 
-<h2 id="stack">
-  Tech Stack
-</h2>
+<h2 id="table-of-contents">Table of Contents</h2>
+
+- [Tech Stack](#stack)
+- [Prerequisites](#prerequisites)
+- [Installation & Setup](#installation)
+- [Database](#database)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
+
+---
+
+<h2 id="stack">Tech Stack</h2>
 
 <p>
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" width="48" title="HTML5"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" width="48" title="HTML5">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TailwindCSS-Dark.svg" width="48" title="TailwindCSS">
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" width="48" title="React.js"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" width="48" title="React.js">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TypeScript.svg" width="48" title="TypeScript">
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/NextJS-Dark.svg" width="48" title="Next.js"> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/NextJS-Dark.svg" width="48" title="Next.js">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Vercel-Dark.svg" width="48" title="Vercel">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" width="48" title="Docker">
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sentry.svg" width="48" title="Sentry">
@@ -71,9 +84,7 @@
 
 ---
 
-<h2 id="prerequisites">
-  Prerequisites
-</h2>
+<h2 id="prerequisites">Prerequisites</h2>
 
 Before starting, ensure you have the following installed:
 
@@ -85,9 +96,7 @@ Before starting, ensure you have the following installed:
 
 ---
 
-<h2 id="installation">
-  Installation & Setup
-</h2>
+<h2 id="installation">Installation & Setup</h2>
 
 ### 1. Clone the Repository
 
@@ -125,7 +134,7 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 ### 4. Run the Application
 
 ```bash
-make install && make dev # Install dependecies + run redis server + app next
+make install && make dev # Install dependencies + run redis server + app next
 bun db:generate
 bun db:migrate
 ```
@@ -151,13 +160,21 @@ make migrate
 ### 5. Run the automated tests (Isolated Docker container)
 
 ```bash
-make test
+make test-unit
+```
+
+```bash
+make test-e2e
 ```
 
 Or manually with bun:
 
 ```bash
-bun test # Units tests
+bun test:unit # Unit tests
+```
+
+```bash
+bun test:e2e # e2e tests
 ```
 
 ### 6. Code Quality Check
@@ -176,9 +193,7 @@ bun format
 
 ---
 
-<h2 id="database">
-  Database
-</h2>
+<h2 id="database">Database</h2>
 
 The blog content is stored in a **PostgreSQL database** via [Neon](https://neon.tech/) serverless infrastructure, managed through **Drizzle ORM**.
 
@@ -216,9 +231,7 @@ lib/
 
 ---
 
-<h2 id="usage">
-  Usage
-</h2>
+<h2 id="usage">Usage</h2>
 
 ### Available Commands
 
@@ -284,9 +297,7 @@ make clean
 
 ---
 
-<h2 id="screenshots">
-  Screenshots
-</h2>
+<h2 id="screenshots">Screenshots</h2>
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/dc73aa3a-899b-44de-a919-227cc7fde245" width="1000" height="600" alt="Architecture">
@@ -302,9 +313,7 @@ make clean
 
 ---
 
-<h2 id="deployment">
-   Deployment
-</h2>
+<h2 id="deployment">Deployment</h2>
 
 ### Vercel (Recommended - Production)
 
@@ -314,7 +323,7 @@ The application is deployed on Vercel for production use, with Neon PostgreSQL a
 
 **Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings, including your Neon database connection string.
 
-- **CI/CD Pipeline** - `.github/workflows/main.yaml` for automated checks and builds
+- **CI/CD Pipeline** - `.github/workflows/` with `ci.yaml`, `codeql-analysis.yaml`, `e2e.yaml` and `release.yaml` for automated checks, security analysis, end-to-end tests and releases
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
 
 ---

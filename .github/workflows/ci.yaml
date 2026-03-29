@@ -43,15 +43,13 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout code
+        uses: actions/checkout@v6
 
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: "latest"
-
-      - name: Install deps
-        run: bun install --frozen-lockfile
+      - name: Setup project
+        uses: ./.github/actions/setup-project
 
       - name: Typegen
         run: bun run typegen
@@ -63,7 +61,7 @@ jobs:
         run: bun run lint
 
       - name: Tests
-        run: bun run test
+        run: bun run test:unit
 
       - name: Build
         run: bun run build

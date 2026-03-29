@@ -10,15 +10,17 @@ export default function ContactLayoutClient({
   children: ReactNode;
 }) {
   return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY!}
-      scriptProps={{
-        async: true,
-        defer: true,
-        appendTo: "head",
-      }}
-    >
-      {children}
-    </GoogleReCaptchaProvider>
+    <div className="min-h-screen">
+      <GoogleReCaptchaProvider
+        reCaptchaKey={env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_PUBLIC_KEY!}
+        scriptProps={{
+          async: true,
+          defer: true,
+          appendTo: "head",
+        }}
+      >
+        {children}
+      </GoogleReCaptchaProvider>
+    </div>
   );
 }

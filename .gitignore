@@ -41,3 +41,8 @@ next-env.d.ts
 
 # Redis DB
 dump.rdb
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
