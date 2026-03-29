@@ -28,6 +28,7 @@
 - [Installation & Setup](#installation)
 - [Database](#database)
 - [Usage](#usage)
+- [Testing](#testing)
 - [Screenshots](#screenshots)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
@@ -157,27 +158,29 @@ make generate
 make migrate
 ```
 
-### 5. Run the automated tests (Isolated Docker container)
+<h2 id="testing">Testing</h2>
+
+This My Portfolio uses Bun's built-in test runner with React Testing Library:
 
 ```bash
-make test-unit
+# Run all units
+bun test:unit
+
+# Run all e2e
+bun test:e2e
+
+# Watch mode
+bun test --watch
+
+# Update snapshots
+bun test --update-snapshots
 ```
 
-```bash
-make test-e2e
-```
+Add your tests in the `tests/` directory or colocate them with your components.
 
-Or manually with bun:
+---
 
-```bash
-bun test:unit # Unit tests
-```
-
-```bash
-bun test:e2e # e2e tests
-```
-
-### 6. Code Quality Check
+### 5. Code Quality Check
 
 Before starting development, run the linter to ensure code quality (bunx biome check):
 
@@ -293,6 +296,16 @@ Remove containers, images, and build artifacts:
 
 ```bash
 make clean
+```
+
+#### Run the automated tests (Isolated Docker container)
+
+```bash
+make test-unit
+```
+
+```bash
+make test-e2e
 ```
 
 ---
