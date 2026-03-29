@@ -1,14 +1,11 @@
 name: Release
 
 on:
-  workflow_run:
-    workflows: ["Main CI"]
-    types: [completed]
+  push:
     branches: [main]
 
 jobs:
   release:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Create Release
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -19,18 +16,13 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: "latest"
-
-      - name: Install deps
-        run: bun install --frozen-lockfile
+      - name: Setup project
+        uses: ./.github/actions/setup-project
 
       - name: Release
         run: bunx semantic-release
