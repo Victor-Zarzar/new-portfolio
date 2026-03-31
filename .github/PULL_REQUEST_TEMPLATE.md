@@ -18,9 +18,10 @@
 
 <!-- Describe how you tested this change -->
 
-- [ ] `bash -n` checks for touched shell scripts
-- [ ] Manual verification on macOS
-- [ ] Documentation updated if commands/behavior changed
+- [ ] `bun lint` passes without errors
+- [ ] `bun format` applied
+- [ ] Manual verification in browser
+- [ ] Documentation updated if behavior/commands changed
 
 ## Checklist
 

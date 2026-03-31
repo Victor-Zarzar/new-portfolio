@@ -8,28 +8,13 @@ jobs:
   release:
     name: Create Release
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
     permissions:
       contents: write
       issues: write
       pull-requests: write
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
+      - uses: googleapis/release-please-action@v4
         with:
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "24"
-
-      - name: Setup project
-        uses: ./.github/actions/setup-project
-
-      - name: Release
-        run: bunx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          token: ${{ secrets.GITHUB_TOKEN }}
