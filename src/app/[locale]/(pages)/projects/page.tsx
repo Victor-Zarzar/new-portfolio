@@ -4,8 +4,6 @@ import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
 import { routing } from "@/i18n/routing";
 import ProjectsContent from "./project-content";
 
-export const revalidate = 3600;
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -17,8 +15,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Projects" });
+  const path = "/projects";
+
   return {
     title: t("title"),
+    alternates: {
+      canonical: `/${locale}${path}`,
+      languages: {
+        "pt-BR": `/pt${path}`,
+        "en-US": `/en${path}`,
+        "es-ES": `/es${path}`,
+      },
+    },
   };
 }
 

@@ -1,6 +1,35 @@
+import type { Metadata } from "next/types";
 import { getTranslations } from "next-intl/server";
 import { privacyPolicySections } from "@/app/shared/data/getPrivacyData";
 import FadeWrapper from "@/app/shared/wrapper/fade-wrapper";
+import { routing } from "@/i18n/routing";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "PrivacyPolicy" });
+  const path = "/privacypolicy";
+
+  return {
+    title: t("title"),
+    description: t("h1"),
+    alternates: {
+      canonical: `/${locale}${path}`,
+      languages: {
+        "pt-BR": `/pt${path}`,
+        "en-US": `/en${path}`,
+        "es-ES": `/es${path}`,
+      },
+    },
+  };
+}
 
 export default async function PrivacyPolicy() {
   const t = await getTranslations("PrivacyPolicy");

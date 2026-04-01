@@ -9,6 +9,8 @@ export type ProfileData = {
   image: {
     src: string;
     alt: string;
+    blurDataURL?: string;
+    placeholder?: string;
     quality: number;
     priority?: boolean;
     sizes: string;

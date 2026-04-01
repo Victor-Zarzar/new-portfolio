@@ -15,10 +15,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Contact" });
+  const path = "/contact";
 
   return {
     title: t("title"),
     description: t("h1"),
+    alternates: {
+      canonical: `/${locale}${path}`,
+      languages: {
+        "pt-BR": `/pt${path}`,
+        "en-US": `/en${path}`,
+        "es-ES": `/es${path}`,
+      },
+    },
   };
 }
 

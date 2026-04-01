@@ -74,7 +74,7 @@ function ActionCard({
               <p className="text-xs">{formattedReadingTime}</p>
             </div>
 
-            <h4 className="text-xl font-semibold">{post.title}</h4>
+            <h1 className="text-xl font-semibold">{post.title}</h1>
 
             <ArticleDescription description={post.description} />
 

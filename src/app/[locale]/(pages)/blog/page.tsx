@@ -8,8 +8,6 @@ import { routing } from "@/i18n/routing";
 import { getAllPosts } from "@/lib/db/queries/blog";
 import BlogContent from "./blog-content";
 
-export const revalidate = 3600;
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -21,9 +19,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Blog" });
+  const path = "/blog";
 
   return {
     title: t("title"),
+    alternates: {
+      canonical: `/${locale}${path}`,
+      languages: {
+        "pt-BR": `/pt${path}`,
+        "en-US": `/en${path}`,
+        "es-ES": `/es${path}`,
+      },
+    },
   };
 }
 
