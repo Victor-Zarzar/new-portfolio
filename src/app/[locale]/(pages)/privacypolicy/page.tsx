@@ -18,8 +18,8 @@ export async function generateMetadata({
   const path = "/privacypolicy";
 
   return {
-    title: t("h1"),
-    description: t("h2"),
+    title: t("title"),
+    description: t("h1"),
     alternates: {
       canonical: `/${locale}${path}`,
       languages: {
