@@ -6,9 +6,9 @@ export function getProfileData(): ProfileData {
     image: {
       src: "/static/profile.jpg",
       alt: "victorzarzar",
-      sizes: "(max-width: 640px) 160px, (max-width: 1024px) 220px, 280px",
+      sizes: "30vw",
       quality: 75,
-      priority: true,
+      blurDataURL: `${"/static/profile.jpg"}?w=16&blur=20`,
     },
     links: [
       {

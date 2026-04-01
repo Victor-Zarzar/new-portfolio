@@ -3,11 +3,11 @@ PROJECT_NAME= My Portfolio
 DOCKER_IMAGE_NAME = my-portfolio
 DOCKER_CONTAINER_NAME = my-portfolio
 PORT = 3000
-DOCKER_TAG = 1.1.0
 REDIS_IMAGE_NAME = redis
 REDIS_CONTAINER_NAME = redis
 REDIS_TAG = 8-alpine
 NETWORK_NAME = my-portfolio-network
+DOCKER_TAG = $(shell node -p "require('./package.json').version")
 
 install:
 	bun install

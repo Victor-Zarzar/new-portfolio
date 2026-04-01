@@ -56,7 +56,7 @@ export default function TerminalCourses() {
             <span className="text-yellow-600 dark:text-orange-400 flex items-center gap-2">
               <BunIcon /> v1.3.10
             </span>
-            <span className="text-neutral-600 dark:text-neutral-500">took</span>
+            <span className="text-neutral-600 dark:text-neutral-400">took</span>
           </div>
           <div className="px-4 text-sm md:text-base text-neutral-800 dark:text-neutral-200">
             ${" "}

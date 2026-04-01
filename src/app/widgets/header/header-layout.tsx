@@ -21,18 +21,20 @@ export default function Header() {
   return (
     <>
       <header className="flex flex-col text-center items-center justify-center py-0 sm:py-32 md:py-20 md:flex-row md:space-x-4 md:text-left">
-        <section className="md:mt-2 md:w-1/2">
-          <div className="w-40 h-40 md:w-72 md:h-72 rounded-full mb-4 mx-auto mt-2 relative overflow-hidden">
-            <Image
-              src={profile.image.src}
-              alt={profile.image.alt}
-              fill
-              sizes={profile.image.sizes}
-              priority={profile.image.priority}
-              quality={profile.image.quality}
-            />
-          </div>
-        </section>
+        <div className="relative mb-6 w-40 h-40 md:w-72 md:h-72 sm:mb-0">
+          <Image
+            src={profile.image.src}
+            alt={profile.image.alt}
+            height={500}
+            width={500}
+            sizes={profile.image.sizes}
+            priority
+            quality={profile.image.quality}
+            className="rounded-full"
+            placeholder="blur"
+            blurDataURL={profile.image.blurDataURL}
+          />
+        </div>
 
         <section className="md:mt-2 md:w-3/5 md:ml-8">
           <>

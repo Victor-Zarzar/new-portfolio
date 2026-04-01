@@ -5,7 +5,7 @@ import {
   AiOutlineLinkedin,
 } from "react-icons/ai";
 import { BiLogoDevTo } from "react-icons/bi";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { SiMedium } from "react-icons/si";
 import type { SocialLink } from "@/app/shared/types/social/social";
 import { Link } from "@/i18n/navigation";
 
@@ -17,31 +17,37 @@ export default function Footer() {
       icon: AiOutlineGithub,
       href: "https://github.com/Victor-Zarzar",
       label: "GitHub",
+      size: 26,
     },
     {
       icon: BiLogoDevTo,
       href: "https://dev.to/victorzarzar",
       label: "Dev.to",
+      size: 28,
     },
     {
-      icon: FaSquareXTwitter,
-      href: "https://twitter.com/victorzarzar1",
-      label: "Twitter",
+      icon: SiMedium,
+      href: "https://medium.com/@victorzarzar58",
+      label: "Medium",
+      size: 21,
     },
     {
       icon: AiOutlineLinkedin,
       href: "https://www.linkedin.com/in/victorzarzar",
       label: "LinkedIn",
+      size: 27,
     },
     {
       icon: AiOutlineInstagram,
       href: "https://instagram.com/victorzarzar7",
       label: "Instagram",
+      size: 28,
     },
     {
       icon: AiOutlineFacebook,
       href: "https://www.facebook.com/victorzarzar58",
       label: "Facebook",
+      size: 27,
     },
   ];
 
@@ -53,6 +59,7 @@ export default function Footer() {
         <div className="flex flex-row items-center justify-center space-x-1">
           <span>© {currentYear} Victor Zarzar</span>
         </div>
+
         <div className="flex flex-row items-center justify-center space-x-2 mb-1 mt-2 md:mt-0">
           {socialLinks.map((social) => (
             <Link
@@ -63,7 +70,7 @@ export default function Footer() {
               className="hover:-translate-y-1 transition-transform"
               aria-label={social.label}
             >
-              <social.icon className="h-6 w-6 md:h-7 md:w-7" />
+              <social.icon size={social.size ?? 28} aria-hidden="true" />
             </Link>
           ))}
         </div>

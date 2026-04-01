@@ -83,6 +83,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
               <Link
                 href={logoHref ?? "/"}
                 className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors"
+                aria-label="home"
               >
                 <div className="text-2xl">{logo}</div>
               </Link>
