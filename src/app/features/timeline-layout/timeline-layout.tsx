@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Briefcase, GraduationCap, PenLine } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Fade } from "react-awesome-reveal";
+
 import { getTimelineData } from "@/app/shared/data/getTimelineData";
 import type { Experience } from "@/app/shared/types/get-data/get-data";
 import {
@@ -26,10 +26,9 @@ export const TimelineLayout = () => {
   };
 
   const pillClass: Record<string, string> = {
-    work: "border border-blue-500/30 bg-blue-500/10 text-blue-400",
-    education:
-      "border border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
-    freelance: "border border-amber-500/30 bg-amber-500/10 text-amber-400",
+    work: "bg-neutral-800 dark:bg-neutral-800 border border-neutral-700",
+    education: "bg-neutral-800 dark:bg-neutral-800 border border-neutral-700",
+    freelance: "bg-neutral-800 dark:bg-neutral-800 border border-neutral-700",
   };
 
   const pillLabel: Record<string, string> = {
@@ -48,17 +47,12 @@ export const TimelineLayout = () => {
 
       <div className="relative pl-8">
         <Timeline className="flex flex-col">
-          {timelineData.map((item, index) => {
+          {timelineData.map((item) => {
             const Icon = iconMap[item.type ?? "work"] ?? Briefcase;
             const type = item.type ?? "work";
 
             return (
-              <Fade
-                key={item.id}
-                triggerOnce
-                delay={index * 110}
-                duration={480}
-              >
+              <FadeWrapper key={item.id}>
                 <TimelineItem className="group relative">
                   <TimelineHeader className="flex flex-wrap items-center gap-2 mb-1">
                     <TimelineTime
@@ -100,7 +94,7 @@ export const TimelineLayout = () => {
 
                     <span
                       className={cn(
-                        "ml-auto text-[11px] tracking-widest px-2 py-1.5 rounded-full",
+                        "ml-auto text-[11px] text-white tracking-widest px-2 py-1.5 rounded-full",
                         pillClass[type],
                       )}
                     >
@@ -130,10 +124,10 @@ export const TimelineLayout = () => {
                               key={tag}
                               className={cn(
                                 "text-[11px] px-2 py-0.5 rounded-full",
-                                "border border-border/50 bg-muted/50",
-                                "text-muted-foreground tracking-wide",
+                                "bg-neutral-800 dark:bg-neutral-800 border border-neutral-700",
+                                "text-white tracking-wide",
                                 "transition-colors duration-200",
-                                "group-hover:border-border group-hover:text-foreground",
+                                "group-hover:border-border",
                               )}
                             >
                               {tag}
@@ -144,7 +138,7 @@ export const TimelineLayout = () => {
                     </div>
                   )}
                 </TimelineItem>
-              </Fade>
+              </FadeWrapper>
             );
           })}
         </Timeline>

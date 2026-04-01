@@ -41,6 +41,7 @@ describe("env.mjs loading .env", () => {
     expect(env.SMTP_PASSWORD).toBeTruthy();
     expect(env.SMTP_HOST).toBeTruthy();
     expect(env.SMTP_PORT).toBeTruthy();
+    expect(env.SLACK_WEBHOOK_URL).toBeTruthy();
     expect(env.SENTRY_AUTH_TOKEN).toBeTruthy();
     expect(env.SENTRY_RELEASE).toBeTruthy();
     expect(env.SENTRY_ORG).toBeTruthy();

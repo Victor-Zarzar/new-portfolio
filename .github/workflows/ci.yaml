@@ -16,6 +16,7 @@ env:
   SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
   SMTP_HOST: ${{ secrets.SMTP_HOST }}
   SMTP_PORT: ${{ secrets.SMTP_PORT }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
   SENTRY_RELEASE: ${{ secrets.SENTRY_RELEASE }}
   SENTRY_ORG: ${{ secrets.SENTRY_ORG }}

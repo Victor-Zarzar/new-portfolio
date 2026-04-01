@@ -10,7 +10,7 @@ export type ProfileData = {
     src: string;
     alt: string;
     quality: number;
-    priority: boolean;
+    priority?: boolean;
     sizes: string;
   };
   links: ProfileLink[];
