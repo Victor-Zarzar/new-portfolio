@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.3.0...v1.3.1) (2026-04-01)
+
+
+### Bug Fixes
+
+* test e2e ([8cc48af](https://github.com/Victor-Zarzar/my-portfolio/commit/8cc48af12b7346fcf4fee55d01954c1a4d524dc5))
+
 ## [1.3.0](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.2.0...v1.3.0) (2026-04-01)
 
 
