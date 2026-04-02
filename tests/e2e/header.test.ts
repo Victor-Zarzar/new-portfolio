@@ -1,23 +1,38 @@
 import { expect, test } from "@playwright/test";
 
-test.describe("contact page", () => {
-  test("should render contact form fields", async ({ page }) => {
-    await page.goto("/contact");
+test.describe("Header", () => {
+  test("should render social buttons with correct links", async ({ page }) => {
+    await page.goto("/en");
 
-    await expect(page.locator("form")).toBeVisible();
+    const header = page.locator("header");
+    const githubButton = header.getByRole("link", { name: /github/i });
+    const linkedinButton = header.getByRole("link", { name: /linkedin/i });
 
-    await expect(page.getByRole("textbox", { name: /name/i })).toBeVisible();
-    await expect(page.getByRole("textbox", { name: /email/i })).toBeVisible();
-    await expect(page.getByRole("textbox", { name: /subject/i })).toBeVisible();
+    await expect(githubButton).toBeVisible();
+    await expect(linkedinButton).toBeVisible();
 
-    const messageField = page
-      .getByRole("textbox", { name: /message/i })
-      .or(page.locator("textarea"));
+    await expect(githubButton).toHaveAttribute("href", /github\.com/i);
+    await expect(linkedinButton).toHaveAttribute("href", /linkedin\.com/i);
+  });
 
-    await expect(messageField).toBeVisible();
+  test("should open github link in new tab", async ({ page, context }) => {
+    await page.goto("/en");
 
-    await expect(
-      page.getByRole("button", { name: /send|submit|contact/i }),
-    ).toBeVisible();
+    const acceptCookies = page.getByRole("button", { name: /accept/i });
+
+    if (await acceptCookies.isVisible().catch(() => false)) {
+      await acceptCookies.click();
+    }
+
+    const header = page.locator("header");
+    const githubButton = header.getByRole("link", { name: /github/i });
+
+    const [newPage] = await Promise.all([
+      context.waitForEvent("page"),
+      githubButton.click(),
+    ]);
+
+    await newPage.waitForLoadState();
+    await expect(newPage).toHaveURL(/github\.com/i);
   });
 });

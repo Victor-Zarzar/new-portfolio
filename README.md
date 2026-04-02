@@ -162,18 +162,24 @@ make migrate
 
 This My Portfolio uses Bun's built-in test runner with React Testing Library:
 
+Manual with Bun:
+
 ```bash
-# Run all units
-bun test:unit
+bun test-unit
+```
 
-# Run all e2e
-bun test:e2e
+```bash
+bun test-e2e
+```
 
-# Watch mode
-bun test --watch
+Automated (Isolated Docker container):
 
-# Update snapshots
-bun test --update-snapshots
+```bash
+make test-unit
+```
+
+```bash
+make test-e2e
 ```
 
 Add your tests in the `tests/` directory or colocate them with your components.
@@ -185,13 +191,9 @@ Add your tests in the `tests/` directory or colocate them with your components.
 Before starting development, run the linter to ensure code quality (bunx biome check):
 
 ```bash
-bun lint
-```
-
-This command will check for code style issues and potential errors. To automatically fix issues and format your code (bunx biome format --write):
-
-```bash
-bun format
+bun run lint              # Check for issues
+bun run lint:fix          # Format errors code
+bun run format            # Format code
 ```
 
 ---
