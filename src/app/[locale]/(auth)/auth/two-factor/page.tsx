@@ -20,9 +20,7 @@ export default async function TwoFactorPage() {
         </p>
       </div>
       <TwoFactorForm />
-      <p className="mt-8 text-xs text-muted-foreground/50">
-        {t("codeExpires")}
-      </p>
+      <p className="mt-8 text-xs text-muted-foreground">{t("codeExpires")}</p>
     </section>
   );
 }

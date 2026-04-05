@@ -57,6 +57,7 @@ export default function SignInForm({
   async function handleSubmit(values: z.infer<typeof formSchema>) {
     if (!executeRecaptcha) {
       toast.error(t("captcha-not-ready"));
+      Sentry.captureMessage(t("captcha-not-ready"), "warning");
       return;
     }
 
@@ -64,6 +65,7 @@ export default function SignInForm({
 
     if (!captchaToken) {
       toast.error(t("captcha-failed"));
+      Sentry.captureMessage(t("captcha-failed"), "error");
       return;
     }
 
@@ -95,6 +97,7 @@ export default function SignInForm({
             : res.error.message;
 
       toast.error(t("signinFailed"), { description });
+      Sentry.captureException(res.error);
       return;
     }
   }
