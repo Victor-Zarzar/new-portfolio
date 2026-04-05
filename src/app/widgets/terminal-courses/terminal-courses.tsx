@@ -47,14 +47,14 @@ export default function TerminalCourses() {
               🧙‍♂️victorzarzar
             </span>
             <span className="text-neutral-600 dark:text-neutral-400">in</span>
-            <span className="text-blue-500 dark:text-blue-400">
+            <span className="text-blue-700 dark:text-blue-400">
               my-portfolio
             </span>
-            <span className="text-yellow-600 dark:text-yellow-400 flex items-center gap-2">
-              <NodeIcon /> v24.14.0
+            <span className="text-yellow-700 dark:text-yellow-400 flex items-center gap-2">
+              <NodeIcon /> v24.14.1
             </span>
-            <span className="text-yellow-600 dark:text-orange-400 flex items-center gap-2">
-              <BunIcon /> v1.3.10
+            <span className="text-yellow-700 dark:text-orange-400 flex items-center gap-2">
+              <BunIcon /> v1.3.11
             </span>
             <span className="text-neutral-600 dark:text-neutral-400">took</span>
           </div>
