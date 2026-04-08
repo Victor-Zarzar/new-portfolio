@@ -14,6 +14,10 @@ export default function LayoutClientProvider({
   children: React.ReactNode;
 }) {
   const [hasConsented, setHasConsented] = useState(false);
+  const scriptProps =
+    typeof window === "undefined"
+      ? undefined
+      : ({ type: "application/json" } as const);
 
   useEffect(() => {
     if (document.cookie.includes("cookieConsent=true")) {
@@ -32,6 +36,7 @@ export default function LayoutClientProvider({
   return (
     <>
       <ThemeProvider
+        scriptProps={scriptProps}
         attribute="class"
         defaultTheme="system"
         enableSystem
