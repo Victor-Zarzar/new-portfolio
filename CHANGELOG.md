@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.2](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.3.1...v1.3.2) (2026-04-08)
+
+
+### Bug Fixes
+
+* theme provider debug mode and fix locale router form. ([9613e17](https://github.com/Victor-Zarzar/my-portfolio/commit/9613e1793a85a2746b6f98ee8ca58662ad3daf3b))
+* theme provider debug mode and fix locale router form. ([34553f7](https://github.com/Victor-Zarzar/my-portfolio/commit/34553f76a093ed87e7d0569fd6449cf5be89d5bd))
+
 ## [1.3.1](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.3.0...v1.3.1) (2026-04-01)
 
 
