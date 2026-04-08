@@ -5,7 +5,7 @@ import * as Sentry from "@sentry/nextjs";
 import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -55,6 +55,7 @@ export function PostForm({
   availableTags,
 }: PostFormProps) {
   const router = useRouter();
+  const locale = useLocale();
   const t = useTranslations("dashboard.posts-form");
   const [isPending, startTransition] = useTransition();
   const isEditing = !!postId;
@@ -98,8 +99,7 @@ export function PostForm({
       }
 
       toast.success(isEditing ? t("toast.updated") : t("toast.created"));
-      router.push("/admin/posts");
-      router.refresh();
+      router.replace(`/${locale}/admin/posts`);
     });
   }
 
