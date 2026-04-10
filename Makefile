@@ -54,7 +54,7 @@ stop:
 clean: stop
 	docker rmi -f $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) >/dev/null 2>&1 || true
 	docker rmi -f $(REDIS_IMAGE_NAME):$(REDIS_TAG) >/dev/null 2>&1 || true
-	rm -rf node_modules .next >/dev/null 2>&1 || true
+	rm -rf node_modules .next playwright-report test-results >/dev/null 2>&1 || true
 
 logs:
 	docker logs -f $(DOCKER_CONTAINER_NAME)

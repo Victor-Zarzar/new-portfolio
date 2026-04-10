@@ -12,9 +12,9 @@ const order: Locale[] = ["en", "es", "pt"];
 function nextLocale(current: Locale): Locale {
   const idx = order.indexOf(current);
   if (idx === -1) {
-    return order[0];
+    return order[0] ?? current;
   }
-  return order[(idx + 1) % order.length];
+  return order[(idx + 1) % order.length] ?? current;
 }
 
 export function LocaleLink({ className }: { className?: string }) {

@@ -176,7 +176,7 @@ describe("shared/api/github.ts", () => {
 
       const repos = await getProjects(30);
       expect(repos).toHaveLength(1);
-      expect(repos[0].name).toBe("repo-1");
+      expect(repos.at(0)?.name).toBe("repo-1");
     });
 
     it("returns [] when HTTP response is not ok", async () => {

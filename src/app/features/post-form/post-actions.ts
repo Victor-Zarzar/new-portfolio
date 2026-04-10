@@ -45,7 +45,10 @@ export async function createPost(
 ): Promise<ActionResult<{ id: number }>> {
   const parsed = createPostSchema.safeParse(input);
   if (!parsed.success) {
-    return { success: false, error: parsed.error.issues[0].message };
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Validation error",
+    };
   }
 
   const { slug, year, photo, authorId, translations, tagIds } = parsed.data;
@@ -61,6 +64,10 @@ export async function createPost(
         isPublished: false,
       })
       .returning();
+
+    if (!post) {
+      return { success: false, error: "Failed to create post" };
+    }
 
     await db.insert(postTranslations).values(
       translations.map((t) => ({
@@ -98,7 +105,10 @@ export async function updatePost(
 ): Promise<ActionResult> {
   const parsed = updatePostSchema.safeParse(input);
   if (!parsed.success) {
-    return { success: false, error: parsed.error.issues[0].message };
+    return {
+      success: false,
+      error: parsed.error.issues[0]?.message ?? "Validation error",
+    };
   }
 
   const { slug, year, photo, translations, tagIds } = parsed.data;
