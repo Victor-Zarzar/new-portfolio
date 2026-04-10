@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.0](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.3.2...v1.4.0) (2026-04-10)
+
+
+### Features
+
+* add new auth schema and update deps ([716f307](https://github.com/Victor-Zarzar/my-portfolio/commit/716f3078964189acc8675b95d46e005ae08206ac))
+* add new rulers typescript 6.0.2 ([df80e9f](https://github.com/Victor-Zarzar/my-portfolio/commit/df80e9ff30ce3947a0e157734cb2cac75d1a5cfe))
+* add new schema two factor auth (better auth) ([df80e9f](https://github.com/Victor-Zarzar/my-portfolio/commit/df80e9ff30ce3947a0e157734cb2cac75d1a5cfe))
+
+
+### Bug Fixes
+
+* typescript errors ([df80e9f](https://github.com/Victor-Zarzar/my-portfolio/commit/df80e9ff30ce3947a0e157734cb2cac75d1a5cfe))
+* update test unit ([df80e9f](https://github.com/Victor-Zarzar/my-portfolio/commit/df80e9ff30ce3947a0e157734cb2cac75d1a5cfe))
+
 ## [1.3.2](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.3.1...v1.3.2) (2026-04-08)
 
 
