@@ -8,7 +8,7 @@ const mockRouter = {
 
 let mockPathname = "/";
 
-mock.module("next/navigation", () => ({
+mock.module("@/i18n/navigation", () => ({
   useRouter: () => mockRouter,
   usePathname: () => mockPathname,
 }));

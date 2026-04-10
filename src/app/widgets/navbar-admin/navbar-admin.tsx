@@ -1,7 +1,6 @@
 "use client";
 
 import { LogOut } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import CommandPalette from "@/app/features/command-palette/command-palette";
@@ -12,6 +11,7 @@ import type { AdminNavbarProps } from "@/app/shared/types/navbar/nav";
 import { Avatar, AvatarFallback, AvatarImage } from "@/app/shared/ui/avatar";
 import { Button } from "@/app/shared/ui/button";
 import { Logo } from "@/app/shared/ui/logo";
+import { useRouter } from "@/i18n/navigation";
 import { authClient } from "@/lib/auth-client";
 import { cn, getInitials } from "@/lib/utils";
 
