@@ -48,7 +48,7 @@
   "About": {
     "title": "Victor Zarzar | About",
     "h1": "About",
-    "p": "My first contact with programming was in 2009, using SQL Server 2000 and MySQL technologies, creating, restoring, and managing databases, as well as building websites with PHP. Always striving to improve my knowledge on a daily basis, I’m not afraid of the unknown and aim to evolve every day. New challenges are always welcome—I love learning new technologies and solving problems. Passionate about coffee, my vinyl records, and Rock ’n’ Roll, and a guitar enthusiast.🤘🏻🎸",
+    "p": "My first contact with programming was in 2009, using SQL Server 2000 and MySQL technologies, creating, restoring, and managing databases, as well as building websites with PHP. Always striving to improve my knowledge on a daily basis, I’m not afraid of the unknown and aim to evolve every day. New challenges are always welcome. I love learning new technologies and solving problems. Passionate about coffee, my vinyl records, and Rock ’n’ Roll, and a guitar enthusiast.🤘🏻🎸",
     "h2": "Language",
     "span1": "English - Basic Tech",
     "span2": "PT-BR - Native Speaker",
@@ -91,7 +91,7 @@
       "title": "XLabs Security",
       "role": "Software Developer",
       "achievements": "Main Demands & Achievements:",
-      "description": "Developed a full dashboard with authentication, scheduled notifications and admin panel. Frontend with React, TypeScript, Vite, Tailwind, MUI and Shadcn/UI including dark mode. Tables with PDF/Excel export and operational charts. Cross-platform Flutter app (Android, iOS and Web) with i18n, Provider, Sentry and configurable notifications. REST API in FastAPI from scratch with Docker, Nginx, HTTPS, rate limiting, ELK Stack and Pytest. Maintained FastAPI + MariaDB + Redis APIs with Alembic migrations.",
+      "description": "Developed a complete dashboard with authentication, scheduled notifications, and an admin panel. Built the frontend with React, TypeScript, Next.js, Tailwind, i18n and Shadcn/UI, including dark mode. Implemented tables with PDF/Excel export and operational charts. Developed a cross-platform mobile app with Flutter (Android, iOS, and Web) using i18n, Provider, Sentry, and configurable notifications. Built a REST API from scratch with FastAPI, using Docker, Nginx, HTTPS, rate limiting, and Pytest. Maintained APIs with FastAPI, MySQL, and Redis, using Alembic for database migrations.",
       "local": "São Leopoldo, RS, Brazil · Remote"
     },
     "freelance": {

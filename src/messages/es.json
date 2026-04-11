@@ -91,7 +91,7 @@
       "title": "XLabs Security",
       "role": "Desarrollador de Software",
       "achievements": "Principales Demandas y Logros:",
-      "description": "Desarrollé dashboard completo con autenticación, notificaciones programadas y panel administrativo. Frontend con React, TypeScript, Vite, Tailwind, MUI y Shadcn/UI con dark mode. Tablas con exportación PDF/Excel y gráficos operacionales. App móvil multiplataforma en Flutter (Android, iOS y Web) con i18n, Provider, Sentry y notificaciones configurables. API REST en FastAPI desde cero con Docker, Nginx, HTTPS, rate limiting, ELK Stack y Pytest. Mantenimiento de APIs FastAPI + MariaDB + Redis con migraciones via Alembic.",
+      "description": "Desarrollé un dashboard completo con autenticación, notificaciones programadas y panel administrativo. Implementé el frontend con React, TypeScript, Next.js, Tailwind, i18n y Shadcn/UI, incluyendo modo oscuro. Desarrollé tablas con exportación a PDF/Excel y gráficos operativos. Creé una aplicación móvil multiplataforma con Flutter (Android, iOS y Web) con i18n, Provider, Sentry y notificaciones configurables. Construí una API REST desde cero con FastAPI, utilizando Docker, Nginx, HTTPS, rate limiting y Pytest. Mantuve APIs con FastAPI, MySQL y Redis, utilizando Alembic para migraciones de base de datos.",
       "local": "São Leopoldo, RS, Brasil · Remoto"
     },
     "freelance": {
