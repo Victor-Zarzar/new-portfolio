@@ -24,8 +24,13 @@ export const AdminNavbar = React.forwardRef<HTMLElement, AdminNavbarProps>(
     const t = useTranslations("AdminNavbar");
 
     async function logOut() {
-      await authClient.signOut();
-      router.refresh();
+      await authClient.signOut({
+        fetchOptions: {
+          onSuccess: () => {
+            router.push("/auth/signin");
+          },
+        },
+      });
     }
 
     return (

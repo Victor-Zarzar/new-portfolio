@@ -82,6 +82,7 @@
 - **Vercel Speed Insights** - Real-time performance metrics
 - **Sentry** - Error tracking and performance monitoring
 - **GitHub Actions** - Continuous integration and deployment
+- **Argon2** - Standard secure password hashing
 
 ---
 

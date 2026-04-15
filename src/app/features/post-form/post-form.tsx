@@ -4,8 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as Sentry from "@sentry/nextjs";
 import { Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -14,6 +13,7 @@ import { Button } from "@/app/shared/ui/button";
 import { Input } from "@/app/shared/ui/input";
 import { Label } from "@/app/shared/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/shared/ui/tabs";
+import { useRouter } from "@/i18n/navigation";
 import { createPost, updatePost } from "./post-actions";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
@@ -55,7 +55,6 @@ export function PostForm({
   availableTags,
 }: PostFormProps) {
   const router = useRouter();
-  const locale = useLocale();
   const t = useTranslations("dashboard.posts-form");
   const [isPending, startTransition] = useTransition();
   const isEditing = !!postId;
@@ -99,7 +98,7 @@ export function PostForm({
       }
 
       toast.success(isEditing ? t("toast.updated") : t("toast.created"));
-      router.replace(`/${locale}/admin/posts`);
+      router.push("/admin/posts");
     });
   }
 

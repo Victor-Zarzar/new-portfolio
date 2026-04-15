@@ -1,3 +1,4 @@
+import { hash, verify } from "argon2";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import {
@@ -25,6 +26,10 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
     disableSignUp: true,
+    password: {
+      hash: async (password) => await hash(password),
+      verify: async ({ hash, password }) => await verify(hash, password),
+    },
   },
   secondaryStorage: {
     get: async (key) => {

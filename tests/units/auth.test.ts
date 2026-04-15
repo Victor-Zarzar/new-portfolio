@@ -101,6 +101,10 @@ const authConfig = betterAuthSpy.mock.calls[0]?.[0] as {
   emailAndPassword: {
     enabled: boolean;
     disableSignUp: boolean;
+    password: {
+      hash: Function;
+      verify: Function;
+    };
   };
   rateLimit: {
     enabled: boolean;
@@ -132,6 +136,10 @@ describe("auth config", () => {
     expect(authConfig.emailAndPassword).toEqual({
       enabled: true,
       disableSignUp: true,
+      password: {
+        hash: expect.any(Function),
+        verify: expect.any(Function),
+      },
     });
     expect(authConfig.rateLimit).toEqual({
       enabled: true,
