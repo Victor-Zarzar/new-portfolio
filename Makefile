@@ -1,5 +1,5 @@
 # Makefile - My-Portfolio
-PROJECT_NAME= My Portfolio
+PROJECT_NAME = My Portfolio
 DOCKER_IMAGE_NAME = my-portfolio
 DOCKER_CONTAINER_NAME = my-portfolio
 PORT = 3000
