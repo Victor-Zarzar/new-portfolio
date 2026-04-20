@@ -5,6 +5,7 @@ export type GithubProject = {
   homepageUrl: string | null;
   stargazerCount: number;
   primaryLanguage: { name: string; color: string | null } | null;
+  topics: string[];
 };
 
 export type GithubTopLanguage = {
@@ -25,7 +26,23 @@ export type GithubStats = {
 export type RepoResponse = {
   data?: {
     user?: {
-      repositories?: { nodes?: GithubProject[] };
+      repositories?: {
+        nodes?: Array<{
+          name: string;
+          url: string;
+          description: string | null;
+          homepageUrl: string | null;
+          stargazerCount: number;
+          primaryLanguage: { name: string; color: string | null } | null;
+          repositoryTopics?: {
+            nodes?: Array<{
+              topic?: {
+                name?: string;
+              };
+            }>;
+          };
+        }>;
+      };
     };
   };
   errors?: Array<{ message: string }>;

@@ -168,6 +168,13 @@ export async function getProjects(perPage = 20): Promise<GithubProject[]> {
                       homepageUrl
                       stargazerCount
                       primaryLanguage { name color }
+                      repositoryTopics(first: 5) {
+                        nodes {
+                          topic {
+                            name
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -189,7 +196,20 @@ export async function getProjects(perPage = 20): Promise<GithubProject[]> {
           return [];
         }
 
-        return json.data?.user?.repositories?.nodes ?? [];
+        const repos = json.data?.user?.repositories?.nodes ?? [];
+
+        return repos.map((repo) => ({
+          name: repo.name,
+          url: repo.url,
+          description: repo.description,
+          homepageUrl: repo.homepageUrl,
+          stargazerCount: repo.stargazerCount,
+          primaryLanguage: repo.primaryLanguage,
+          topics:
+            repo.repositoryTopics?.nodes
+              ?.map((node) => node.topic?.name)
+              .filter((topic): topic is string => Boolean(topic)) ?? [],
+        }));
       } catch {
         return [];
       }
