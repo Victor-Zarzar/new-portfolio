@@ -165,6 +165,13 @@ describe("shared/api/github.ts", () => {
                       homepageUrl: "https://example.com",
                       stargazerCount: 2,
                       primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+                      repositoryTopics: {
+                        nodes: [
+                          { topic: { name: "nextjs" } },
+                          { topic: { name: "typescript" } },
+                          { topic: { name: "portfolio" } },
+                        ],
+                      },
                     },
                   ],
                 },
@@ -175,8 +182,18 @@ describe("shared/api/github.ts", () => {
       );
 
       const repos = await getProjects(30);
-      expect(repos).toHaveLength(1);
-      expect(repos.at(0)?.name).toBe("repo-1");
+
+      expect(repos).toEqual([
+        {
+          name: "repo-1",
+          url: "https://github.com/fake-user/repo-1",
+          description: "desc",
+          homepageUrl: "https://example.com",
+          stargazerCount: 2,
+          primaryLanguage: { name: "TypeScript", color: "#3178c6" },
+          topics: ["nextjs", "typescript", "portfolio"],
+        },
+      ]);
     });
 
     it("returns [] when HTTP response is not ok", async () => {

@@ -21,7 +21,11 @@ export default async function ProjectsContent({ locale }: { locale: string }) {
   }
 
   const repos = reposRaw.filter(
-    (r) => r.description || r.homepageUrl || r.stargazerCount > 0,
+    (r) =>
+      r.description ||
+      r.homepageUrl ||
+      r.topics.length > 0 ||
+      r.stargazerCount > 0,
   );
 
   return (
@@ -109,7 +113,21 @@ export default async function ProjectsContent({ locale }: { locale: string }) {
                   </p>
                 ) : null}
 
-                <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400">
+                {repo.topics?.length ? (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {repo.topics.map((topic) => (
+                      <span
+                        key={topic}
+                        className="inline-flex items-center rounded-full text-white px-2.5 py-1 text-xs font-medium bg-neutral-800
+                        dark:bg-neutral-800 border border-neutral-700"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+
+                <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400">
                   {repo.primaryLanguage?.name ? (
                     <span className="inline-flex items-center gap-2">
                       <span
