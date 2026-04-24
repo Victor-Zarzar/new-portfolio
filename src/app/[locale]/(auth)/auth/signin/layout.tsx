@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import SignInLayoutClient from "./layout-client";
+import SignInLayoutWrapper from "@/app/shared/wrapper/signin-wrapper";
 
 export default function SignInLayout({ children }: { children: ReactNode }) {
-  return <SignInLayoutClient>{children}</SignInLayoutClient>;
+  return <SignInLayoutWrapper>{children}</SignInLayoutWrapper>;
 }

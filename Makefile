@@ -1,8 +1,8 @@
 # Makefile - My-Portfolio
-PROJECT_NAME = My Portfolio
 DOCKER_IMAGE_NAME = my-portfolio
 DOCKER_CONTAINER_NAME = my-portfolio
 PORT = 3000
+DE = docker exec -it
 REDIS_IMAGE_NAME = redis
 REDIS_CONTAINER_NAME = redis
 REDIS_TAG = 8-alpine
@@ -60,16 +60,16 @@ logs:
 	docker logs -f $(DOCKER_CONTAINER_NAME)
 
 shell:
-	docker exec -it $(DOCKER_CONTAINER_NAME) sh
+	$(DE) $(DOCKER_CONTAINER_NAME) sh
 
 generate:
-	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit generate
+	$(DE) $(DOCKER_CONTAINER_NAME) bun db:generate
 
 migrate:
-	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit migrate
+	$(DE) $(DOCKER_CONTAINER_NAME) bun db:migrate
 
 studio:
-	docker exec -it $(DOCKER_CONTAINER_NAME) bun run drizzle-kit studio
+	bun db:studio
 
 test-unit: build redis-server
 	docker run --rm \
@@ -95,7 +95,7 @@ test-e2e: build redis-server
 
 help:
 	@echo ""
-	@echo "$(PROJECT_NAME) v$(DOCKER_TAG)"
+	@echo "$(DOCKER_IMAGE_NAME) v$(DOCKER_TAG)"
 	@echo "──────────────────────────────────────────────"
 	@echo ""
 	@echo "Local Commands:"

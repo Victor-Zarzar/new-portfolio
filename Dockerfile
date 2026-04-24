@@ -2,6 +2,8 @@ FROM oven/bun:1 AS base
 
 WORKDIR /app
 
+ENV NODE_ENV=development
+
 COPY package.json bun.lock* ./
 
 RUN bun install
