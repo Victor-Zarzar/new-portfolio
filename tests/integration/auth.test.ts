@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, mock } from "bun:test";
+import type { AuthConfigUnderTest } from "@/app/shared/types/auth/auth";
 
 const betterAuthMock = mock((config: unknown) => config);
 const drizzleAdapterMock = mock(() => "drizzle-adapter");
@@ -80,7 +81,7 @@ describe("auth integration", () => {
     expect(betterAuthMock).toHaveBeenCalledTimes(1);
     expect(drizzleAdapterMock).toHaveBeenCalledTimes(1);
 
-    const config = betterAuthMock.mock.calls[0]?.[0] as any;
+    const config = betterAuthMock.mock.calls[0]?.[0] as AuthConfigUnderTest;
 
     expect(config.appName).toBe("Victor Zarzar");
     expect(config.baseURL).toBe("http://localhost:3000");
