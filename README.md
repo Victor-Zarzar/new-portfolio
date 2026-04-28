@@ -27,6 +27,7 @@
 - [Prerequisites](#prerequisites)
 - [Installation & Setup](#installation)
 - [Database](#database)
+- [Neon Branch Strategy](#neon-branch-strategy)
 - [Usage](#usage)
 - [Testing](#testing)
 - [Screenshots](#screenshots)
@@ -91,6 +92,7 @@
 Before starting, ensure you have the following installed:
 
 - [Bun](https://bun.sh/docs) (v1 or higher) – primary runtime & package manager
+- [Redis](https://redis.io) - In-memory cache layer for session storage and performance optimization
 - [Docker](https://www.docker.com/) – For local containerized development (Development and Testing)
 - [Git](https://git-scm.com/)
 
@@ -136,7 +138,7 @@ Then edit `.env` with your actual values. The `.env-example` file contains detai
 ### 4. Run the Application
 
 ```bash
-make install && make dev # Install dependencies + run redis server + app next
+make redis-dev-server & make dev # Run redis server + install deps + run next dev
 bun db:generate
 bun db:migrate
 ```
@@ -159,6 +161,60 @@ make generate
 make migrate
 ```
 
+---
+
+<h2 id="neon-branch-strategy">Neon Branch Strategy</h2>
+
+To keep the production database safe, this project uses **Neon's branching feature** to isolate environments. The `main` branch in Neon is reserved exclusively for production and must **never** be used directly for local development or CI pipelines.
+
+### Branch Overview
+
+| Neon Branch   | Purpose                                    | Used by                                          |
+| ------------- | ------------------------------------------ | ------------------------------------------------ |
+| `main`        | Production data — read/write in production | Vercel (Production deployment)                   |
+| `development` | Isolated database for local debug and CI   | Local `.env` + GitHub Actions `integration.yaml` |
+
+### Creating the `development` Branch
+
+1. Go to your [Neon Console](https://neon.tech/) and open your project.
+2. Navigate to **Branches** → **Create Branch**.
+3. Name it `development` and branch it from `main`.
+4. Copy the connection string for the `development` branch.
+
+**Local `.env`:**
+
+```env
+# Use the development branch connection string — never main
+DATABASE_URL="postgresql://user:password@ep-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require"
+```
+
+**GitHub Actions (`integration.yaml`):**
+
+In your GitHub repository, go to **Settings** → **Secrets and variables** → **Actions** and add the same connection string:
+
+```
+DATABASE_URL=postgresql://user:password@ep-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require
+```
+
+Then reference it in `.github/workflows/integration.yaml`:
+
+```yaml
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+```
+
+> **Important:** The `integration.yaml` workflow must never reference the `main` branch connection string. Both local development and CI use the `development` branch to stay fully isolated from production.
+
+### Summary
+
+```
+Neon Project
+├── main          → Vercel Production only
+└── development   → Local .env + GitHub Actions integration.yaml (CI tests)
+```
+
+---
+
 <h2 id="testing">Testing</h2>
 
 This My Portfolio uses Bun's built-in test runner with React Testing Library:
@@ -173,6 +229,10 @@ bun test-unit
 bun test-e2e
 ```
 
+```bash
+bun test-integration
+```
+
 Automated (Isolated Docker container):
 
 ```bash
@@ -181,6 +241,10 @@ make test-unit
 
 ```bash
 make test-e2e
+```
+
+```bash
+make test-integration
 ```
 
 Add your tests in the `tests/` directory or colocate them with your components.
@@ -277,13 +341,13 @@ make stop
 
 ```bash
 make logs
-make redis-logs
+make logs-redis
 ```
 
 Or directly with Docker:
 
 ```bash
-docker logs -f new-portfolio
+docker logs -f my-portfolio
 docker logs -f redis
 ```
 
@@ -299,16 +363,6 @@ Remove containers, images, and build artifacts:
 
 ```bash
 make clean
-```
-
-#### Run the automated tests (Isolated Docker container)
-
-```bash
-make test-unit
-```
-
-```bash
-make test-e2e
 ```
 
 ---
@@ -335,11 +389,11 @@ make test-e2e
 
 The application is deployed on Vercel for production use, with Neon PostgreSQL as the database backend.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/new-portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/my-portfolio)
 
 **Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings, including your Neon database connection string.
 
-- **CI/CD Pipeline** - `.github/workflows/` with `ci.yaml`, `codeql-analysis.yaml`, `e2e.yaml` and `release.yaml` for automated checks, security analysis, end-to-end tests and releases
+- **CI/CD Pipeline** - `.github/workflows/` with `ci.yaml`, `codeql-analysis.yaml`, `e2e.yaml`, `integration.yaml` and `release.yaml` for automated checks, security analysis, end-to-end tests and releases
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
 
 ---

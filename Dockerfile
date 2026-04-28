@@ -1,12 +1,14 @@
-FROM oven/bun:1 AS base
+FROM oven/bun:1.3.13-alpine AS dev
 
 WORKDIR /app
 
 ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
 
 COPY package.json bun.lock* ./
 
-RUN bun install
+RUN bun install --frozen-lockfile && \
+    rm -rf /root/.bun/install/cache /tmp/*
 
 EXPOSE 3000
 
