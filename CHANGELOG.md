@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.0](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.4.0...v1.5.0) (2026-04-28)
+
+
+### Features
+
+* add basic tests integration and update deps ([b1cc62c](https://github.com/Victor-Zarzar/my-portfolio/commit/b1cc62c20687316e1ad3e1929d404dc57e11dae6))
+* add integration.yaml and update deps ([dbb45e5](https://github.com/Victor-Zarzar/my-portfolio/commit/dbb45e55ee60779d9f531c5c10b489305dcad9ad))
+* add integration.yaml and update deps ([dbb45e5](https://github.com/Victor-Zarzar/my-portfolio/commit/dbb45e55ee60779d9f531c5c10b489305dcad9ad))
+* add integration.yaml and update README ([67b7af8](https://github.com/Victor-Zarzar/my-portfolio/commit/67b7af84d2ef8942b00e16b83e6ae54ad723e867))
+
 ## [1.4.0](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.3.2...v1.4.0) (2026-04-10)
 
 
