@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import LayoutClientProvider from "./layout-client-provider";
+import LayoutWrapper from "@/app/shared/wrapper/layout-wrapper";
 
 export default function LayoutProvider({ children }: { children: ReactNode }) {
-  return <LayoutClientProvider>{children}</LayoutClientProvider>;
+  return <LayoutWrapper>{children}</LayoutWrapper>;
 }

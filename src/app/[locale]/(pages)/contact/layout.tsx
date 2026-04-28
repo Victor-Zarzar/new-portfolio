@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import ContactLayoutClient from "./layout-client";
+import ContactLayoutWrapper from "@/app/shared/wrapper/contact-wrapper";
 
 export default function ContactLayout({ children }: { children: ReactNode }) {
-  return <ContactLayoutClient>{children}</ContactLayoutClient>;
+  return <ContactLayoutWrapper>{children}</ContactLayoutWrapper>;
 }

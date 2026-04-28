@@ -6,9 +6,9 @@ import { ThemeProvider } from "next-themes";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { Toaster } from "@/app/shared/ui/sonner";
-import CookieConsentComponent from "../cookie-consent/cookie-consent";
+import CookieConsentComponent from "@/app/widgets/cookie-consent/cookie-consent";
 
-export default function LayoutClientProvider({
+export default function LayoutWrapper({
   children,
 }: {
   children: React.ReactNode;

@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import env from "@/env.mjs";
 
-export default function SignInLayoutClient({
+export default function SignInLayoutWrapper({
   children,
 }: {
   children: ReactNode;

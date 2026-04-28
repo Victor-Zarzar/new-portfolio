@@ -20,7 +20,7 @@ export async function getStats(): Promise<GithubStats | null> {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
+            Authorization: `Bearer ${env.GH_API_TOKEN}`,
           },
           body: JSON.stringify({
             query: `
@@ -149,7 +149,7 @@ export async function getProjects(perPage = 20): Promise<GithubProject[]> {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
+            Authorization: `Bearer ${env.GH_API_TOKEN}`,
           },
           body: JSON.stringify({
             query: `

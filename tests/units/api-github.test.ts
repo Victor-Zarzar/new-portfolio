@@ -4,7 +4,7 @@ import { getProjects, getStats } from "@/lib/github";
 
 mock.module("@/env.mjs", () => ({
   default: {
-    GITHUB_API_TOKEN: "test_token",
+    GH_API_TOKEN: "test_token",
     GH_USERNAME: "fake-user",
   },
 }));
