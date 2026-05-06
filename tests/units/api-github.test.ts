@@ -1,11 +1,11 @@
 import type { Mock } from "bun:test";
 import { afterEach, beforeEach, describe, expect, it, mock } from "bun:test";
-import { getProjects, getStats } from "@/lib/github";
 
 mock.module("@/env.mjs", () => ({
   default: {
     GH_API_TOKEN: "test_token",
     GH_USERNAME: "fake-user",
+    REDIS_URL: "redis://localhost:6379",
   },
 }));
 
@@ -18,6 +18,8 @@ mock.module("@/lib/redis/cache", () => ({
     fetcher: () => Promise<T>;
   }): Promise<T> => fetcher(),
 }));
+
+const { getProjects, getStats } = await import("@/lib/github");
 
 type FetchFn = (
   input: RequestInfo | URL,
