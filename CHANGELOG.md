@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.5.0...v1.6.0) (2026-05-06)
+
+
+### Features
+
+* add new painel tags and separate command links ([42b1889](https://github.com/Victor-Zarzar/my-portfolio/commit/42b18896cdfd3547e0b2b0fd39ab10ee6bd318e8))
+* add new test unit and integration ([aeaf35e](https://github.com/Victor-Zarzar/my-portfolio/commit/aeaf35e15df50652fa2139eb74c1725a38ffb911))
+
 ## [1.5.0](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.4.0...v1.5.0) (2026-04-28)
 
 
