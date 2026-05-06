@@ -7,6 +7,7 @@ import CommandPalette from "@/app/features/command-palette/command-palette";
 import { LocaleLink } from "@/app/features/locale-link/locale-link";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { ModeToggle } from "@/app/features/toggle-mode/toggle-mode";
+import { adminCommandLinks } from "@/app/shared/constants/command-links";
 import type { AdminNavbarProps } from "@/app/shared/types/navbar/nav";
 import { Avatar, AvatarFallback, AvatarImage } from "@/app/shared/ui/avatar";
 import { Button } from "@/app/shared/ui/button";
@@ -36,13 +37,13 @@ export const AdminNavbar = React.forwardRef<HTMLElement, AdminNavbarProps>(
     return (
       <header
         className={cn(
-          "sticky top-0 z-50 w-full border-b backdrop-blur supports-backdrop-filter:bg-background/60 px-4 md:px-6 dark:bg-stone-950 bg-[#ffffff]",
+          "sticky top-0 z-50 w-full border-b supports-backdrop-filter:bg-background/60 px-4 md:px-6 **:no-underline",
           className,
         )}
         ref={ref}
         {...props}
       >
-        <div className="container relative mx-auto flex h-16 items-center justify-between gap-4">
+        <div className="container relative mx-auto flex h-16 items-center justify-between gap-4 dark:bg-stone-950 bg-white">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Avatar className="h-7 w-7">
               <AvatarImage src={user.image ?? undefined} alt={user.name} />
@@ -56,7 +57,7 @@ export const AdminNavbar = React.forwardRef<HTMLElement, AdminNavbarProps>(
 
           <div className="flex items-center gap-3">
             <div className="hidden lg:flex items-center gap-3">
-              <CommandPalette />
+              <CommandPalette links={adminCommandLinks} />
               <ModeToggle />
               <LocaleLink />
             </div>

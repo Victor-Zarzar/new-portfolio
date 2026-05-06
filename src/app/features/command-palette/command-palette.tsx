@@ -1,18 +1,10 @@
 "use client";
 
-import {
-  BookOpen,
-  FolderKanban,
-  Home,
-  Mail,
-  SearchIcon,
-  Settings,
-  User,
-} from "lucide-react";
+import { SearchIcon, Settings } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useEffect } from "react";
-import type { CommandLink } from "@/app/shared/types/command/command";
+import type { CommandPaletteProps } from "@/app/shared/types/command/command";
 import { Button } from "@/app/shared/ui/button";
 import {
   Command,
@@ -32,46 +24,13 @@ import {
 import { useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-export default function CommandPalette() {
+const iconClass = "mr-0.5 h-4 w-4";
+
+export default function CommandPalette({ links }: CommandPaletteProps) {
   const t = useTranslations("CommandPalette");
   const router = useRouter();
 
   const [isOpen, setIsOpen] = React.useState(false);
-
-  const cls = "mr-0.5 h-4 w-4";
-
-  const links: CommandLink[] = [
-    {
-      id: "home",
-      labelKey: "nav.home",
-      href: "/",
-      icon: <Home className={cls} />,
-    },
-    {
-      id: "about",
-      labelKey: "nav.about",
-      href: "/about",
-      icon: <User className={cls} />,
-    },
-    {
-      id: "projects",
-      labelKey: "nav.projects",
-      href: "/projects",
-      icon: <FolderKanban className={cls} />,
-    },
-    {
-      id: "blog",
-      labelKey: "nav.blog",
-      href: "/blog",
-      icon: <BookOpen className={cls} />,
-    },
-    {
-      id: "contact",
-      labelKey: "nav.contact",
-      href: "/contact",
-      icon: <Mail className={cls} />,
-    },
-  ];
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -103,11 +62,11 @@ export default function CommandPalette() {
         size="icon"
         aria-label={t("command.navigate")}
         className={cn(
-          "h-10 w-10 rounded-md",
+          "hidden h-10 w-10 rounded-md md:flex",
           "border border-transparent",
           "hover:bg-accent/50",
           "dark:bg-input/40 dark:hover:bg-input/30",
-          "focus-visible:ring-0 focus-visible:ring-offset-0 hidden md:flex",
+          "focus-visible:ring-0 focus-visible:ring-offset-0",
         )}
         onClick={() => setIsOpen(true)}
       >
@@ -115,13 +74,16 @@ export default function CommandPalette() {
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="p-0 overflow-hidden">
+        <DialogContent className="overflow-hidden p-0">
           <DialogTitle className="sr-only">{t("command.navigate")}</DialogTitle>
+
           <DialogDescription className="sr-only">
             {t("command.description")}
           </DialogDescription>
+
           <Command>
             <CommandInput placeholder={t("searchPlaceholder")} />
+
             <CommandList>
               <CommandEmpty>{t("command.empty")}</CommandEmpty>
 
@@ -133,7 +95,7 @@ export default function CommandPalette() {
                     onSelect={() => go(item.href)}
                   >
                     {item.icon}
-                    {t(item.labelKey)}
+                    <span>{t(item.labelKey)}</span>
                   </CommandItem>
                 ))}
               </CommandGroup>
@@ -147,8 +109,8 @@ export default function CommandPalette() {
                     window.dispatchEvent(new CustomEvent("app:open-settings"));
                   }}
                 >
-                  <Settings className={cls} />
-                  {t("nav.settings")}
+                  <Settings className={iconClass} />
+                  <span>{t("nav.settings")}</span>
                 </CommandItem>
               </CommandGroup>
             </CommandList>

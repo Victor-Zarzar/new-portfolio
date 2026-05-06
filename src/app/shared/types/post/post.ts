@@ -67,3 +67,38 @@ export type PostRow = {
 export type PostsTableProps = {
   posts: PostRow[];
 };
+
+export type AdminPostRow = {
+  id: number;
+  slug: string;
+  createdAt: Date | string | null;
+  translations: {
+    title: string | null;
+    description: string | null;
+  }[];
+  postTags: {
+    tag: {
+      name: string | null;
+    };
+  }[];
+};
+
+export type PostsTablePropsTwo = {
+  posts: AdminPostRow[];
+};
+
+export type Props = {
+  data: PostRow[];
+};
+
+export type PostsTableTranslations = {
+  title: string;
+  tags: string;
+  year: string;
+  created: string;
+  status: string;
+  actions: string;
+  published: string;
+  draft: string;
+  noResults: string;
+};
