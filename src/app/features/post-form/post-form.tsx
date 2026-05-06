@@ -41,12 +41,12 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-interface PostFormProps {
+export type PostFormProps = {
   authorId: string;
   postId?: number;
   defaultValues?: Partial<FormValues>;
   availableTags?: { id: number; name: string }[];
-}
+};
 
 export function PostForm({
   authorId,
@@ -240,13 +240,19 @@ export function PostForm({
       <div className="flex justify-end gap-3">
         <Button
           type="button"
-          variant="outline"
           onClick={() => router.back()}
           disabled={isPending}
+          className="border border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-700 hover:text-white dark:bg-neutral-800"
+          variant="secondary"
         >
           {t("form.cancel")}
         </Button>
-        <Button type="submit" disabled={isPending}>
+        <Button
+          type="submit"
+          disabled={isPending}
+          className="border border-neutral-700 bg-neutral-800 text-white hover:bg-neutral-700 hover:text-white dark:bg-neutral-800"
+          variant="secondary"
+        >
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isEditing ? t("form.save") : t("form.create")}
         </Button>

@@ -5,3 +5,7 @@ export type CommandLink = {
   keywords?: string;
   icon?: React.ReactNode;
 };
+
+export type CommandPaletteProps = {
+  links: CommandLink[];
+};

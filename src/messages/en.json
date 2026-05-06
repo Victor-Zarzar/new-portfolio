@@ -39,7 +39,7 @@
   "Header": {
     "h1": "Victor Zarzar",
     "h2": "Full Stack Developer",
-    "span": "Building clean, performant, and user-friendly web applications."
+    "span": "Building clean, performant, and user-friendly applications."
   },
   "Skills": {
     "h1": "Skills",
@@ -212,7 +212,7 @@
       "navigate": "Navigation",
       "settings": "Settings",
       "empty": "No results found",
-      "description": "Description of the page"
+      "description": "Page description"
     },
     "nav": {
       "home": "Home",
@@ -221,7 +221,16 @@
       "projects": "Projects",
       "blog": "Blog",
       "contact": "Contact",
-      "settings": "Settings"
+      "settings": "Settings",
+      "dashboard": "Dashboard",
+      "posts": {
+        "index": "Posts",
+        "new": "New post",
+        "tags": "Tags"
+      },
+      "tags": {
+        "new": "New tag"
+      }
     }
   },
   "Login": {
@@ -269,6 +278,59 @@
       "published": "Published",
       "drafts": "Drafts"
     },
+    "tags": {
+      "title": "Tags",
+      "new": "New tag",
+      "search": "Search tags...",
+      "columns": "Columns",
+      "empty": "No tags found.",
+      "posts": "Posts",
+      "table": {
+        "name": "Name",
+        "slug": "Slug",
+        "postsCount": "Posts",
+        "actions": "Actions"
+      },
+      "pagination": {
+        "show": "Show {size}",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "actions": {
+        "delete": "Delete tag"
+      },
+      "form": {
+        "title": "New Tag",
+        "name": "Name",
+        "slug": "Slug",
+        "save": "Save",
+        "cancel": "Cancel",
+        "create": "Create tag",
+        "namePlaceholder": "Name",
+        "slugPlaceholder": "Slug",
+        "created": "Tag created successfully.",
+        "error": "Error creating tag.",
+        "namerequired": "Name is required",
+        "slugrequired": "Slug is required",
+        "sluginvalid": "Slug must be lowercase, numbers and hyphens only"
+      },
+      "toast": {
+        "deleted": "Tag deleted successfully.",
+        "deleteError": "Error deleting tag."
+      }
+    },
+    "table-tags": {
+      "name": "Name",
+      "slug": "Slug",
+      "posts": "Posts",
+      "counts": "Posts",
+      "actions": "Actions"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "show": "Show"
+    },
     "recentPosts": {
       "title": "Recent posts",
       "viewAll": "View all →",
@@ -279,6 +341,14 @@
       "new": "New post"
     },
     "posts-form": {
+      "searchPlaceholder": "Search posts...",
+      "columns": "Columns",
+      "noResults": "No results found.",
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "show": "Show {size}"
+      },
       "actions": {
         "publish": "Publish",
         "unpublish": "Unpublish",
@@ -311,7 +381,8 @@
         "year": "Year",
         "created": "Created",
         "status": "Status",
-        "actions": "Actions"
+        "actions": "Actions",
+        "published": "Published"
       },
       "status": {
         "published": "Published",

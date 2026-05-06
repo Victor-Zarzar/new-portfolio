@@ -15,7 +15,7 @@ export default async function NewPostPage() {
     <div className="container mx-auto px-4 py-8">
       <FadeWrapper>
         <h1 className="text-center text-2xl font-bold mb-8">
-          {t("posts.title")}
+          {t("posts.new")}
         </h1>
       </FadeWrapper>
       <PostForm authorId={session!.user.id} availableTags={availableTags} />

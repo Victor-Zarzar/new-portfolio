@@ -1,12 +1,12 @@
 {
   "Layout": {
     "title": "Victor Zarzar | Desarrollador Full Stack",
-    "description": "Desarrollador Full Stack con experiencia en el desarrollo de aplicaciones modernas enfocado en front-end, SEO, accesibilidad, seguridad, rendimiento y buenas prácticas. Actuación en proyectos web y mobile.",
+    "description": "Desarrollador Full Stack con experiencia en el desarrollo de aplicaciones modernas enfocadas en front-end, SEO, accesibilidad, seguridad, rendimiento y buenas prácticas. Trabajando en proyectos web y móviles.",
     "ogDescription": "Portafolio profesional con proyectos modernos y tecnologías actualizadas."
   },
   "Manifest": {
-    "name": "Victor Zarzar Portfolio",
-    "shortName": "Victor Portfolio",
+    "name": "Portafolio Victor Zarzar",
+    "shortName": "Victor Portafolio",
     "description": "Portafolio profesional con proyectos modernos y tecnologías actualizadas."
   },
   "AdminNavbar": {
@@ -16,16 +16,16 @@
   "Navbar": {
     "titlenavbar": "Victor Zarzar",
     "menu": "Menú",
-    "home": "Casa",
-    "about": "Acerca de",
+    "home": "Inicio",
+    "about": "Sobre mí",
     "services": "Servicios",
     "projects": "Proyectos",
     "blog": "Blog",
     "contact": "Contacto",
     "language": "Idioma",
     "english": "Inglés",
-    "spanish": "Español",
     "portuguese": "Portugués",
+    "spanish": "Español",
     "settings": "Configuración",
     "dialog-description": "Personaliza tu experiencia.",
     "dark-mode": "Modo oscuro",
@@ -39,48 +39,48 @@
   "Header": {
     "h1": "Victor Zarzar",
     "h2": "Desarrollador Full Stack",
-    "span": "Construyendo aplicaciones web limpias, eficientes y fáciles de usar."
+    "span": "Construyendo aplicaciones limpias, rápidas y fáciles de usar."
   },
   "Skills": {
     "h1": "Habilidades",
-    "p": "Algunas de las tecnologías que uso en mi vida diaria..."
+    "p": "Algunas de las tecnologías que uso en mi día a día..."
   },
   "About": {
-    "title": "Victor Zarzar | Acerca de",
-    "h1": "Acerca de",
-    "p": "Mi primer contacto con la programación fue en 2009, utilizando las tecnologías SQL Server 2000 y MySQL, creando, restaurando y gestionando bases de datos, además de desarrollar sitios web en PHP. Siempre buscando mejorar mis conocimientos día a día, no le tengo miedo a lo desconocido y procuro evolucionar constantemente. Los nuevos desafíos son bienvenidos; me encanta aprender nuevas tecnologías y resolver problemas. Apasionado por el café, mis discos de vinilo y el Rock and Roll, y entusiasta de la guitarra.🤘🏻🎸",
+    "title": "Victor Zarzar | Sobre mí",
+    "h1": "Sobre mí",
+    "p": "Mi primer contacto con la programación fue en 2009, usando tecnologías como SQL Server 2000 y MySQL, creando, restaurando y administrando bases de datos, además de crear sitios web con PHP. Siempre buscando mejorar mis conocimientos diariamente, no tengo miedo a lo desconocido y busco evolucionar todos los días. Los nuevos desafíos siempre son bienvenidos. Me encanta aprender nuevas tecnologías y resolver problemas. Apasionado por el café, mis discos de vinilo y el Rock ’n’ Roll, además de ser entusiasta de la guitarra.🤘🏻🎸",
     "h2": "Idioma",
-    "span1": "Inglés - Tecnología básica",
-    "span2": "PT-BR - Hablante nativo",
+    "span1": "Inglés - Técnico básico",
+    "span2": "PT-BR - Nativo",
     "span3": "Español - Básico"
   },
   "Courses": {
     "h1": "Cursos",
     "p": "ls cursos/",
-    "course1": "De Cero a Programador en solo 14 clases. Dart y Flutter",
-    "course2": "TypeScript de básico a avanzado (con React y Express)",
-    "course3": "Base de datos SQL de principiante a avanzado 2023",
-    "course4": "Masterclass SwiftUI 2023 - Desarrollo de Apps iOS & Swift",
+    "course1": "De cero a programador en solo 14 clases. Dart y Flutter",
+    "course2": "TypeScript de básico a avanzado con React y Express",
+    "course3": "Base de datos SQL desde CERO hasta avanzado 2023",
+    "course4": "SwiftUI Masterclass 2023 - Desarrollo de apps iOS y Swift",
     "course5": "Apps iOS 12 con Swift 5 y Xcode 10 - Básico",
-    "course6": "Curso de Diseño Web: HTML5, CSS3 y JS + 5 Proyectos",
-    "course7": "Testing Automatizado con Cypress - Básico",
-    "course8": "Testing Automatizado + Curso COMPLETO de Testing de Software"
+    "course6": "Curso de Web Design: HTML5, CSS3 y JS + 5 proyectos",
+    "course7": "Pruebas automatizadas con Cypress - Básico",
+    "course8": "Pruebas automatizadas + Curso COMPLETO de pruebas de software"
   },
   "Services": {
     "title": "Victor Zarzar | Servicios",
     "h1": "Servicios",
-    "cardtitle1": "Desarrollo web",
-    "carddescription1": "Sitios web y aplicaciones web modernos y responsivos",
-    "p1": "Creación de sitios web y aplicaciones web personalizados, centrándose en el rendimiento, SEO y experiencia de usuario.",
-    "cardtitle2": "Desenvolvimento móvel Android",
-    "carddescription2": "Aplicaciones de Android con React Native",
-    "p2": "Desarrollo de aplicaciones Android con React Native, asegurando una experiencia nativa y de alto rendimiento.",
-    "cardtitle3": "Desarrollo móvil iOS",
-    "carddescription3": "aplicaciones de iOS con React Native",
-    "p3": "Creación de aplicaciones de iOS usando React Native, aprovechando una única base de código para múltiples plataformas"
+    "cardtitle1": "Desarrollo Web",
+    "carddescription1": "Sitios web y aplicaciones web modernas y responsivas",
+    "p1": "Creación de sitios web y aplicaciones web personalizadas, con foco en rendimiento, SEO y experiencia de usuario.",
+    "cardtitle2": "Desarrollo Mobile Android",
+    "carddescription2": "Apps Android con React Native",
+    "p2": "Desarrollo de aplicaciones Android con React Native, garantizando una experiencia nativa y de alto rendimiento.",
+    "cardtitle3": "Desarrollo Mobile iOS",
+    "carddescription3": "Apps iOS con React Native",
+    "p3": "Creación de aplicaciones iOS usando React Native, aprovechando una única base de código para múltiples plataformas."
   },
   "Experiences": {
-    "h1": "Experiencias Tech y Educación",
+    "h1": "Experiencias Técnicas y Formación",
     "type": {
       "work": "trabajo",
       "education": "educación",
@@ -90,26 +90,26 @@
       "time": "Mar 2023 – Dic 2025",
       "title": "XLabs Security",
       "role": "Desarrollador de Software",
-      "achievements": "Principales Demandas y Logros:",
-      "description": "Desarrollé un dashboard completo con autenticación, notificaciones programadas y panel administrativo. Implementé el frontend con React, TypeScript, Next.js, Tailwind, i18n y Shadcn/UI, incluyendo modo oscuro. Desarrollé tablas con exportación a PDF/Excel y gráficos operativos. Creé una aplicación móvil multiplataforma con Flutter (Android, iOS y Web) con i18n, Provider, Sentry y notificaciones configurables. Construí una API REST desde cero con FastAPI, utilizando Docker, Nginx, HTTPS, rate limiting y Pytest. Mantuve APIs con FastAPI, MySQL y Redis, utilizando Alembic para migraciones de base de datos.",
+      "achievements": "Principales demandas y logros:",
+      "description": "Desarrollé un dashboard completo con autenticación, notificaciones programadas y panel administrativo. Construí el frontend con React, TypeScript, Next.js, Tailwind, i18n y Shadcn/UI, incluyendo modo oscuro. Implementé tablas con exportación a PDF/Excel y gráficos operativos. Desarrollé una app móvil multiplataforma con Flutter (Android, iOS y Web), usando i18n, Provider, Sentry y notificaciones configurables. Construí una API REST desde cero con FastAPI, usando Docker, Nginx, HTTPS, rate limiting y Pytest. Mantuve APIs con FastAPI, MySQL y Redis, usando Alembic para migraciones de base de datos.",
       "local": "São Leopoldo, RS, Brasil · Remoto"
     },
     "freelance": {
       "time": "Dic 2022 – Mar 2023",
       "title": "Freelance",
-      "role": "Tester QA",
-      "achievements": "Principales Demandas & Logros:",
-      "description": "Pruebas Funcional, Usabilidad, Carga, Localización, Accesibilidad, Regresión.",
+      "role": "QA Tester",
+      "achievements": "Principales demandas y logros:",
+      "description": "Pruebas funcionales, usabilidad, carga, localización, accesibilidad y regresión.",
       "local": "Novo Hamburgo, RS, Brasil · Remoto"
     },
     "ahanguera1": {
-      "time": "JUL 2024 – OUT 2027",
-      "title": "Facultad Ahanguera",
+      "time": "Abr 2024 – Oct 2027",
+      "title": "Facultad Anhanguera",
       "description": "Ingeniería de Software"
     },
     "ahanguera2": {
-      "time": "JUL 2022 – JUL 2024",
-      "title": "Facultad Ahanguera",
+      "time": "Jul 2022 – Jul 2024",
+      "title": "Facultad Anhanguera",
       "description": "Análisis y Desarrollo de Sistemas"
     }
   },
@@ -117,35 +117,35 @@
     "title": "Victor Zarzar | Proyectos",
     "h1": "Proyectos",
     "h2": "Proyectos destacados",
-    "seeAll": "Ver todos los proyectos",
+    "seeAll": "Todos los proyectos",
     "titleCard": "Mis estadísticas de GitHub",
-    "totalStars": "Total de estrellas",
+    "totalStars": "Total de estrellas recibidas",
     "totalCommits": "Total de commits",
     "totalPrs": "Total de PRs",
     "totalIssues": "Total de issues",
-    "contributedTo": "Contribuciones",
-    "topLanguages": "Lenguajes principales",
-    "repo": "Sitio Web"
+    "contributedTo": "Contribuciones en",
+    "topLanguages": "Principales lenguajes",
+    "repo": "Sitio web"
   },
   "PrivacyPolicy": {
     "title": "Victor Zarzar | Política de Privacidad",
     "h1": "Política de Privacidad",
-    "p": "Cómo recopilamos, usamos y protegemos su información.",
-    "h2": "Última actualización: marzo de 2026",
+    "p": "Cómo recopilamos, usamos y protegemos tu información.",
+    "h2": "Última actualización: Marzo de 2026",
     "informationCollectedTitle": "01. Información que recopilamos",
-    "informationCollectedDescription": "Solo recopilamos la información que usted proporciona voluntariamente, como su nombre, correo electrónico y mensaje al ponerse en contacto a través del formulario de este sitio web. También podremos recopilar datos anónimos de navegación, como páginas visitadas y tiempo de permanencia, con fines analíticos y de mejora de la experiencia.",
-    "howWeUseTitle": "02. Cómo usamos su información",
-    "howWeUseDescription": "La información recopilada se utiliza únicamente para responder a sus mensajes, mejorar la experiencia de navegación en este sitio web y, cuando corresponda, enviar comunicaciones relevantes con su consentimiento.",
+    "informationCollectedDescription": "Solo recopilamos la información que proporcionas voluntariamente, como tu nombre, dirección de correo electrónico y mensaje al contactarnos a través del formulario de este sitio web. También podemos recopilar datos anónimos de navegación, como páginas visitadas y tiempo de permanencia, con fines de análisis y mejora de la experiencia.",
+    "howWeUseTitle": "02. Cómo usamos tu información",
+    "howWeUseDescription": "La información recopilada se utiliza únicamente para responder a tus mensajes, mejorar la experiencia de navegación en este sitio web y, cuando corresponda, enviar comunicaciones relevantes con tu consentimiento.",
     "dataSharingTitle": "03. Compartición de datos",
-    "dataSharingDescription": "Sus datos personales no se venden, comercian ni transfieren a terceros, salvo cuando sea necesario para operar el sitio web mediante proveedores de servicios de confianza que también están obligados a mantener dicha información de forma confidencial.",
+    "dataSharingDescription": "Tus datos personales no se venden, negocian ni transfieren a terceros, excepto cuando sea necesario para operar el sitio web mediante proveedores de servicios confiables, quienes también están obligados a mantener dicha información confidencial.",
     "cookiesTitle": "04. Cookies",
-    "cookiesDescription": "Este sitio web puede utilizar cookies para mejorar su experiencia de navegación y comprender cómo se utiliza el contenido. Puede desactivarlas en la configuración de su navegador, aunque esto podría afectar algunas funcionalidades.",
-    "rightsTitle": "05. Sus derechos",
-    "rightsDescription": "Puede solicitar el acceso, la corrección o la eliminación de sus datos personales en cualquier momento, cuando corresponda según la legislación vigente. Para ello, utilice los canales de contacto disponibles en este sitio web.",
+    "cookiesDescription": "Este sitio web puede usar cookies para mejorar tu experiencia de navegación y entender cómo se utiliza el contenido. Puedes desactivar las cookies en la configuración de tu navegador, aunque esto puede afectar algunas funcionalidades.",
+    "rightsTitle": "05. Tus derechos",
+    "rightsDescription": "Puedes solicitar acceso, corrección o eliminación de tus datos personales en cualquier momento, cuando sea aplicable según la legislación vigente. Para ello, utiliza los canales de contacto disponibles en este sitio web.",
     "changesTitle": "06. Cambios en esta política",
-    "changesDescription": "Esta Política de Privacidad podrá actualizarse periódicamente para reflejar cambios en este sitio web, en sus servicios o en obligaciones legales. Recomendamos revisar esta página cuando sea necesario.",
+    "changesDescription": "Esta Política de Privacidad puede actualizarse periódicamente para reflejar cambios en este sitio web, sus servicios u obligaciones legales. Recomendamos revisar esta página cuando sea necesario.",
     "contactTitle": "07. Contacto",
-    "contactDescription": "Si tiene alguna pregunta sobre esta Política de Privacidad o sobre cómo se manejan sus datos, póngase en contacto a través del formulario disponible en este sitio web."
+    "contactDescription": "Si tienes preguntas sobre esta Política de Privacidad o sobre cómo se trata tu información, ponte en contacto mediante el formulario disponible en este sitio web."
   },
   "Contact": {
     "title": "Victor Zarzar | Contacto",
@@ -155,36 +155,33 @@
     "subject": "Asunto",
     "message": "Mensaje",
     "submit": "Enviar",
-    "namerequired": "Nombre requerido",
-    "subjectrequired": "Asunto requerido",
-    "messagerequired": "Mensaje requerido",
-    "emailerror": "Error al enviar el correo electrónico. Vuelva a intentarlo más tarde.",
+    "namerequired": "Nombre obligatorio",
+    "subjectrequired": "Asunto obligatorio",
+    "messagerequired": "Mensaje obligatorio",
+    "emailerror": "Error al enviar el correo. Inténtalo de nuevo más tarde.",
     "loading": "Enviando...",
-    "emailsucess": "¡Correo electrónico enviado exitosamente!",
+    "emailsucess": "¡Correo enviado con éxito!",
     "cardTitle": "¿Te gustó mi trabajo? Envíame un mensaje",
-    "cardSubtitle": "Ponte en contacto enviando un mensaje o a través de mis redes sociales.",
-    "socialText": "O comunícate conmigo por",
+    "cardSubtitle": "Contáctame enviando un mensaje o a través de mis redes sociales.",
+    "socialText": "O contáctame por",
     "eyebrow": "Contacto",
-    "description": "Siéntete libre de contactarme completando el formulario abajo.",
-    "emailrequired": "Ingresa tu correo electrónico.",
-    "invalidemail": "Ingresa una dirección de correo válida.",
-    "captcha-not-ready": "el captcha no está listo",
-    "captcha-failed": "el captcha falló. inténtalo de nuevo."
+    "description": "Siéntete libre de contactarme completando el formulario a continuación.",
+    "emailrequired": "Introduce tu correo electrónico.",
+    "invalidemail": "Introduce una dirección de correo electrónico válida.",
+    "captcha-not-ready": "captcha no está listo",
+    "captcha-failed": "captcha falló. inténtalo de nuevo."
   },
   "NotFound": {
     "p": "Lo sentimos, no pudimos encontrar esta página.",
     "button": "Volver a la página de inicio"
   },
   "Cookies": {
-    "title": "Nosotros usamos cookies",
+    "title": "Usamos cookies",
     "accept": "Aceptar",
     "decline": "Rechazar",
-    "message": "Utilizamos cookies para mejorar tu experiencia.",
-    "privacyLink": "Lea nuestra Política de Privacidad",
+    "message": "Usamos cookies para mejorar tu experiencia.",
+    "privacyLink": "Lee nuestra Política de Privacidad",
     "error": "Error al aceptar cookies"
-  },
-  "Stats": {
-    "stats": "⚡ Estadísticas ⚡"
   },
   "Unauthorized": {
     "title": "Acceso denegado",
@@ -192,21 +189,21 @@
   },
   "Blog": {
     "title": "Victor Zarzar | Blog",
-    "h1": "Artículos y Publicaciones",
-    "h2": "Contenido técnico que he escrito recientemente...",
+    "h1": "Artículos y publicaciones",
+    "h2": "Contenido técnico que escribí recientemente...",
     "p": "Leer más",
     "year": "Año"
   },
   "GlobalError": {
-    "title": "Error en la aplicación",
-    "description": "Se ha producido un error crítico. Nuestro equipo ha sido notificado.",
+    "title": "Error de la aplicación",
+    "description": "Ha ocurrido un error crítico. Nuestro equipo ha sido notificado.",
     "errorId": "ID del error: {id}",
     "tryAgain": "Intentar de nuevo"
   },
   "Error": {
-    "title": "Algo deu errado",
-    "description": "Ocurrió un error inesperado al cargar esta página. No te preocupes — ya hemos sido notificados y puedes continuar navegando con normalidad.",
-    "return-home": "Volver a la página principal"
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado al cargar esta página. No te preocupes — fuimos notificados y puedes seguir navegando normalmente.",
+    "return-home": "Volver a la página de inicio"
   },
   "CommandPalette": {
     "searchPlaceholder": "Buscar páginas...",
@@ -219,69 +216,141 @@
     },
     "nav": {
       "home": "Inicio",
-      "about": "Acerca de",
+      "about": "Sobre mí",
       "services": "Servicios",
       "projects": "Proyectos",
       "blog": "Blog",
       "contact": "Contacto",
-      "settings": "Configuración"
+      "settings": "Configuración",
+      "dashboard": "Dashboard",
+      "posts": {
+        "index": "Posts",
+        "new": "Nuevo post",
+        "tags": "Tags"
+      },
+      "tags": {
+        "new": "Nueva tag"
+      }
     }
   },
   "Login": {
-    "title": "Inicia sesión en tu cuenta",
-    "title-card": "Inicia sesión en tu cuenta",
-    "subtitle": "Ingresa tu correo abajo para iniciar sesión",
-    "emailLabel": "Correo",
-    "emailPlaceholder": "m@ejemplo.com",
+    "title": "Entrar en la cuenta Admin",
+    "title-card": "Entrar en tu cuenta",
+    "subtitle": "Introduce tu correo electrónico abajo para entrar en tu cuenta",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "m@example.com",
     "passwordLabel": "Contraseña",
     "forgotPassword": "¿Olvidaste tu contraseña?",
-    "submit": "Iniciar sesión",
+    "submit": "Entrar",
     "orContinueWith": "O continúa con",
-    "github": "Iniciar con GitHub",
+    "github": "Entrar con GitHub",
     "noAccount": "¿No tienes una cuenta?",
-    "signup": "Regístrate",
-    "invalidemail": "Correo inválido",
+    "signup": "Registrarse",
+    "invalidemail": "Correo electrónico inválido",
     "passwordrequired": "La contraseña es obligatoria",
-    "emailrequired": "Ingresa tu correo electrónico.",
+    "emailrequired": "Introduce tu correo electrónico.",
     "passwordmin": "La contraseña debe tener al menos 6 caracteres",
     "passwordmax": "La contraseña debe tener como máximo 100 caracteres",
     "backToHome": "Volver al inicio",
     "signinFailed": "Error al iniciar sesión",
     "error401": "Correo electrónico o contraseña incorrectos.",
-    "error403": "Tu acceso está bloqueado. Por favor, contacta con soporte.",
-    "captcha-not-ready": "el captcha no está listo",
-    "captcha-failed": "el captcha falló. inténtalo de nuevo."
+    "error403": "Tu acceso está bloqueado. Contacta con soporte.",
+    "captcha-not-ready": "captcha no está listo",
+    "captcha-failed": "captcha falló. inténtalo de nuevo."
   },
   "twoFactor": {
     "title": "Verificación en dos pasos",
-    "subtitle": "Ingresa el código de tu app Google Authenticator a continuación",
+    "subtitle": "Introduce abajo el código de tu app Google Authenticator",
     "codeLabel": "Código de Google Authenticator",
     "codeLength": "El código debe tener exactamente 6 dígitos",
     "verify": "Verificar",
     "secureNote": "Tu cuenta está protegida con autenticación de dos factores",
-    "backToLogin": "Volver al inicio de sesión",
+    "backToLogin": "Volver al login",
     "codeExpires": "El código expira en 30 segundos",
     "invalidCode": "Código inválido",
-    "successVerified": "2FA verificado correctamente",
+    "successVerified": "2FA verificado con éxito",
     "onlyNumbers": "Solo se permiten números"
   },
   "dashboard": {
-    "title": "Panel",
+    "title": "Dashboard",
     "stats": {
-      "totalPosts": "Total de publicaciones",
+      "totalPosts": "Total de posts",
       "published": "Publicados",
       "drafts": "Borradores"
     },
+    "tags": {
+      "title": "Etiquetas",
+      "new": "Nueva etiqueta",
+      "search": "Buscar etiquetas...",
+      "columns": "Columnas",
+      "empty": "No se encontraron etiquetas.",
+      "posts": "Publicaciones",
+      "table": {
+        "name": "Nombre",
+        "slug": "Slug",
+        "postsCount": "Publicaciones",
+        "actions": "Acciones"
+      },
+      "pagination": {
+        "show": "Mostrar {size}",
+        "previous": "Anterior",
+        "next": "Siguiente"
+      },
+      "actions": {
+        "delete": "Eliminar etiqueta"
+      },
+      "form": {
+        "title": "Nueva Etiqueta",
+        "name": "Nombre",
+        "slug": "Slug",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "create": "Crear etiqueta",
+        "namePlaceholder": "Nombre",
+        "slugPlaceholder": "Slug",
+        "created": "Etiqueta creada correctamente.",
+        "error": "Error al crear la etiqueta.",
+        "namerequired": "El nombre es obligatorio",
+        "slugrequired": "El slug es obligatorio",
+        "sluginvalid": "El slug debe contener solo letras minúsculas, números y guiones"
+      },
+      "toast": {
+        "deleted": "Etiqueta eliminada correctamente.",
+        "deleteError": "Error al eliminar la etiqueta.",
+        "created": "Etiqueta creada correctamente."
+      }
+    },
+    "table-tags": {
+      "name": "Nombre",
+      "slug": "Slug",
+      "posts": "Posts",
+      "counts": "Posts",
+      "postsCount": "Posts",
+      "actions": "Acciones"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "show": "Mostrar"
+    },
     "recentPosts": {
-      "title": "Publicaciones recientes",
+      "title": "Posts recientes",
       "viewAll": "Ver todos →",
       "untitled": "Sin título"
     },
     "posts": {
-      "title": "Publicaciones",
-      "new": "Nueva publicación"
+      "title": "Posts",
+      "new": "Nuevo post"
     },
     "posts-form": {
+      "searchPlaceholder": "Buscar posts...",
+      "columns": "Columnas",
+      "noResults": "No se encontraron resultados.",
+      "pagination": {
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "show": "Mostrar {size}"
+      },
       "actions": {
         "publish": "Publicar",
         "unpublish": "Despublicar",
@@ -289,32 +358,34 @@
         "edit": "Editar"
       },
       "toast": {
-        "published": "Publicación publicada",
-        "unpublished": "Publicación despublicada",
-        "deleted": "Publicación eliminada",
-        "created": "Publicación creada",
-        "updated": "Publicación actualizada",
-        "error": "Error al guardar la publicación",
+        "published": "Post publicado",
+        "unpublished": "Post despublicado",
+        "deleted": "Post eliminado",
+        "created": "Post creado",
+        "updated": "Post actualizado",
+        "error": "Error al guardar el post",
         "errorUpdatePublish": "Error al actualizar el estado de publicación",
-        "errorDelete": "Error al eliminar la publicación"
+        "errorDelete": "Error al eliminar el post"
       },
       "dialog": {
-        "title": "¿Eliminar publicación?",
+        "title": "¿Eliminar post?",
         "description": "Esto eliminará permanentemente {title} y todas sus traducciones. Esta acción no se puede deshacer.",
         "cancel": "Cancelar",
         "confirm": "Eliminar"
       },
       "empty": {
-        "title": "Aún no hay publicaciones.",
-        "cta": "Crea tu primera publicación"
+        "title": "Aún no hay posts.",
+        "cta": "Crea tu primer post"
       },
       "table": {
         "title": "Título",
-        "tags": "Etiquetas",
+        "tags": "Tags",
         "year": "Año",
         "created": "Creado",
+        "createdAt": "Creado en",
         "status": "Estado",
-        "actions": "Acciones"
+        "actions": "Acciones",
+        "published": "Publicado"
       },
       "status": {
         "published": "Publicado",
@@ -322,7 +393,7 @@
       },
       "form": {
         "slug": "Slug",
-        "slugPlaceholder": "mi-post",
+        "slugPlaceholder": "mi-post-slug",
         "year": "Año",
         "photo": "URL de la imagen de portada",
         "photoPlaceholder": "https://...",
@@ -331,12 +402,12 @@
         "description": "Descripción",
         "descriptionPlaceholder": "Descripción corta en {locale}",
         "content": "Contenido",
-        "tags": "Etiquetas",
+        "tags": "Tags",
         "cancel": "Cancelar",
-        "create": "Crear publicación",
+        "create": "Crear post",
         "save": "Guardar cambios"
       }
     },
-    "editPost": "Editar publicación"
+    "editPost": "Editar post"
   }
 }

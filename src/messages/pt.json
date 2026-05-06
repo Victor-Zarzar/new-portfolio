@@ -1,12 +1,12 @@
 {
   "Layout": {
     "title": "Victor Zarzar | Desenvolvedor Full Stack",
-    "description": "Desenvolvedor Full Stack com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuação em projetos web e mobile.",
+    "description": "Desenvolvedor Full Stack com experiência no desenvolvimento de aplicações modernas com foco em front-end, SEO, acessibilidade, segurança, performance e boas práticas. Atuando em projetos web e mobile.",
     "ogDescription": "Portfólio profissional com projetos modernos e tecnologias atualizadas."
   },
   "Manifest": {
-    "name": "Victor Zarzar Portfolio",
-    "shortName": "Victor Portfolio",
+    "name": "Portfólio Victor Zarzar",
+    "shortName": "Victor Portfólio",
     "description": "Portfólio profissional com projetos modernos e tecnologias atualizadas."
   },
   "AdminNavbar": {
@@ -22,7 +22,7 @@
     "projects": "Projetos",
     "blog": "Blog",
     "contact": "Contato",
-    "language": "Linguagem",
+    "language": "Idioma",
     "english": "Inglês",
     "portuguese": "Português",
     "spanish": "Espanhol",
@@ -39,28 +39,28 @@
   "Header": {
     "h1": "Victor Zarzar",
     "h2": "Desenvolvedor Full Stack",
-    "span": "Construindo aplicações web limpas, performáticas e fáceis de usar."
+    "span": "Construindo aplicações limpas, performáticas e fáceis de usar."
   },
   "Skills": {
     "h1": "Habilidades",
-    "p": "Algumas das tecnologias que utilizo no meu dia a dia..."
+    "p": "Algumas das tecnologias que uso no meu dia a dia..."
   },
   "About": {
     "title": "Victor Zarzar | Sobre",
     "h1": "Sobre",
-    "p": "Meu primeiro contato com programação foi em 2009, utilizando as tecnologias SQL-SERVER 2000 & My SQL, criando, restaurando e editando bancos de dados, e criando sites em PHP. Sempre buscando aprimorar meus conhecimentos diariamente, não tenho medo do desconhecido, procuro evoluir a cada dia, novos desafios são bem vindos adoro aprender sobre novas tecnologias e resolver problemas. Apaixonado por café, meus discos de vinil & Rock n Roll, e entusiasta de guitarra.🤘🏻🎸",
-    "h2": "Linguagem",
-    "span1": "Inglês - Técnico Básico",
-    "span2": "PT-BR - Língua Nativa",
+    "p": "Meu primeiro contato com programação foi em 2009, usando tecnologias como SQL Server 2000 e MySQL, criando, restaurando e gerenciando bancos de dados, além de desenvolver sites com PHP. Sempre buscando aprimorar meus conhecimentos diariamente, não tenho medo do desconhecido e busco evoluir todos os dias. Novos desafios são sempre bem-vindos. Amo aprender novas tecnologias e resolver problemas. Apaixonado por café, meus discos de vinil e Rock ’n’ Roll, além de ser entusiasta de guitarra.🤘🏻🎸",
+    "h2": "Idioma",
+    "span1": "Inglês - Técnico básico",
+    "span2": "PT-BR - Nativo",
     "span3": "Espanhol - Básico"
   },
   "Courses": {
     "h1": "Cursos",
     "p": "ls cursos/",
-    "course1": "De Zero a Programador em apenas 14 aulas. Dart e Flutter",
-    "course2": "TypeScript do básico ao avançado (com React e Express)",
-    "course3": "Banco de Dados SQL do zero ao avançado 2023",
-    "course4": "Masterclass SwiftUI 2023 - Desenvolvimento iOS & Swift",
+    "course1": "Do Zero ao Programador em apenas 14 aulas. Dart e Flutter",
+    "course2": "TypeScript do básico ao avançado com React e Express",
+    "course3": "Banco de Dados SQL do ZERO ao Avançado 2023",
+    "course4": "SwiftUI Masterclass 2023 - Desenvolvimento de Apps iOS e Swift",
     "course5": "Apps iOS 12 com Swift 5 e Xcode 10 - Básico",
     "course6": "Curso de Web Design: HTML5, CSS3 e JS + 5 Projetos",
     "course7": "Testes Automatizados com Cypress - Básico",
@@ -70,17 +70,17 @@
     "title": "Victor Zarzar | Serviços",
     "h1": "Serviços",
     "cardtitle1": "Desenvolvimento Web",
-    "carddescription1": "Sites e aplicações web modernos e responsivos",
-    "p1": "Criação de sites e aplicações web personalizados, com foco em performance, SEO e experiência do usuário.",
-    "cardtitle2": "Desenvolvimento móvel Android",
-    "carddescription2": "Aplicativos Android com React Native",
-    "p2": "Desenvolvimento de aplicações Android com React Native, garantindo uma experiência nativa e de alto desempenho.",
-    "cardtitle3": "Desenvolvimento Móvel iOS",
-    "carddescription3": "Aplicativos iOS com React Native",
-    "p3": "Construindo aplicativos iOS usando React Native, aproveitando uma única base de código para múltiplas plataformas."
+    "carddescription1": "Sites e aplicações web modernas e responsivas",
+    "p1": "Criação de sites e aplicações web personalizadas, com foco em performance, SEO e experiência do usuário.",
+    "cardtitle2": "Desenvolvimento Mobile Android",
+    "carddescription2": "Apps Android com React Native",
+    "p2": "Desenvolvimento de aplicações Android com React Native, garantindo uma experiência nativa e de alta performance.",
+    "cardtitle3": "Desenvolvimento Mobile iOS",
+    "carddescription3": "Apps iOS com React Native",
+    "p3": "Criação de aplicativos iOS usando React Native, aproveitando uma única base de código para múltiplas plataformas."
   },
   "Experiences": {
-    "h1": "Experiências Tech & Educação",
+    "h1": "Experiências Técnicas e Formação",
     "type": {
       "work": "trabalho",
       "education": "educação",
@@ -90,100 +90,98 @@
       "time": "Mar 2023 – Dez 2025",
       "title": "XLabs Security",
       "role": "Desenvolvedor de Software",
-      "achievements": "Principais Demandas e Realizações:",
-      "description": "Desenvolvi dashboard completo com autenticação, notificações agendadas e painel administrativo. Frontend com React, TypeScript, Nextjs, Tailwind, i18n, Shadcn/UI com dark mode. Tabelas com exportação PDF/Excel e gráficos operacionais. App mobile multiplataforma em Flutter (Android, iOS e Web) com i18n, Provider, Sentry e notificações configuráveis. API REST em FastAPI do zero com Docker, Nginx, HTTPS, rate limiting, e Pytest. Manutenção de API FastAPI + MySQL + Redis com migrations via Alembic.",
+      "achievements": "Principais demandas e conquistas:",
+      "description": "Desenvolvi um dashboard completo com autenticação, notificações agendadas e painel administrativo. Construí o frontend com React, TypeScript, Next.js, Tailwind, i18n e Shadcn/UI, incluindo modo escuro. Implementei tabelas com exportação para PDF/Excel e gráficos operacionais. Desenvolvi um app mobile multiplataforma com Flutter (Android, iOS e Web), usando i18n, Provider, Sentry e notificações configuráveis. Construí uma API REST do zero com FastAPI, usando Docker, Nginx, HTTPS, rate limiting e Pytest. Mantive APIs com FastAPI, MySQL e Redis, usando Alembic para migrações de banco de dados.",
       "local": "São Leopoldo, RS, Brasil · Remoto"
     },
     "freelance": {
       "time": "Dez 2022 – Mar 2023",
       "title": "Freelance",
-      "role": "Testador QA",
-      "achievements": "Principais Demandas & Realizações:",
-      "description": "Testes Funcional, Usabilidade, Carga, Localização, Acessibilidade, Regressão.",
+      "role": "QA Tester",
+      "achievements": "Principais demandas e conquistas:",
+      "description": "Testes funcionais, usabilidade, carga, localização, acessibilidade e regressão.",
       "local": "Novo Hamburgo, RS, Brasil · Remoto"
     },
     "ahanguera1": {
-      "time": "JUL 2024 – OUT 2027",
-      "title": "Faculdade Ahanguera",
+      "time": "Abr 2024 – Out 2027",
+      "title": "Faculdade Anhanguera",
       "description": "Engenharia de Software"
     },
     "ahanguera2": {
-      "time": "JUL 2022 – JUL 2024",
-      "title": "Faculdade Ahanguera",
+      "time": "Jul 2022 – Jul 2024",
+      "title": "Faculdade Anhanguera",
       "description": "Análise e Desenvolvimento de Sistemas"
     }
   },
   "Projects": {
     "title": "Victor Zarzar | Projetos",
     "h1": "Projetos",
-    "seeAll": "Ver todos os projetos",
-    "titleCard": "Minhas estatísticas no GitHub",
-    "totalStars": "Total de estrelas",
+    "h2": "Projetos em destaque",
+    "seeAll": "Todos os projetos",
+    "titleCard": "Minhas estatísticas do GitHub",
+    "totalStars": "Total de estrelas recebidas",
     "totalCommits": "Total de commits",
     "totalPrs": "Total de PRs",
     "totalIssues": "Total de issues",
-    "contributedTo": "Contribuições",
-    "topLanguages": "Linguagens mais utilizadas",
-    "repo": "Website"
+    "contributedTo": "Contribuições em",
+    "topLanguages": "Principais linguagens",
+    "repo": "Site"
   },
   "PrivacyPolicy": {
     "title": "Victor Zarzar | Política de Privacidade",
     "h1": "Política de Privacidade",
     "p": "Como coletamos, usamos e protegemos suas informações.",
-    "h2": "Última atualização: março de 2026",
+    "h2": "Última atualização: Março de 2026",
     "informationCollectedTitle": "01. Informações que coletamos",
-    "informationCollectedDescription": "Coletamos apenas as informações que você fornece voluntariamente, como nome, e-mail e mensagem ao entrar em contato por meio do formulário deste site. Também poderemos coletar dados anônimos de navegação, como páginas visitadas e tempo de permanência, para fins estatísticos e de melhoria da experiência.",
+    "informationCollectedDescription": "Coletamos apenas as informações que você fornece voluntariamente, como nome, endereço de e-mail e mensagem ao entrar em contato pelo formulário deste site. Também podemos coletar dados anônimos de navegação, como páginas visitadas e tempo de permanência, para fins de análise e melhoria da experiência.",
     "howWeUseTitle": "02. Como usamos suas informações",
-    "howWeUseDescription": "As informações coletadas são utilizadas exclusivamente para responder às suas mensagens, melhorar a navegação e a experiência no site e, quando aplicável, realizar comunicações relevantes com o seu consentimento.",
+    "howWeUseDescription": "As informações coletadas são usadas exclusivamente para responder às suas mensagens, melhorar a experiência de navegação neste site e, quando aplicável, enviar comunicações relevantes com o seu consentimento.",
     "dataSharingTitle": "03. Compartilhamento de dados",
-    "dataSharingDescription": "Seus dados não são vendidos, comercializados ou transferidos a terceiros, exceto quando necessário para a operação do site por prestadores de serviço confiáveis, que também devem manter essas informações em sigilo.",
+    "dataSharingDescription": "Seus dados pessoais não são vendidos, negociados ou transferidos para terceiros, exceto quando necessário para operar o site por meio de provedores de serviço confiáveis, que também são obrigados a manter essas informações em sigilo.",
     "cookiesTitle": "04. Cookies",
-    "cookiesDescription": "Este site poderá utilizar cookies para melhorar a experiência de navegação e entender como o conteúdo é utilizado. Você pode desativá-los nas configurações do seu navegador, embora isso possa afetar algumas funcionalidades.",
+    "cookiesDescription": "Este site pode usar cookies para melhorar sua experiência de navegação e entender como o conteúdo é utilizado. Você pode desativar os cookies nas configurações do navegador, embora isso possa afetar algumas funcionalidades.",
     "rightsTitle": "05. Seus direitos",
-    "rightsDescription": "Você pode solicitar acesso, correção ou exclusão dos seus dados pessoais a qualquer momento, conforme aplicável pela legislação vigente. Para isso, utilize os canais de contato disponíveis neste site.",
+    "rightsDescription": "Você pode solicitar acesso, correção ou exclusão dos seus dados pessoais a qualquer momento, quando aplicável pela legislação vigente. Para isso, utilize os canais de contato disponíveis neste site.",
     "changesTitle": "06. Alterações nesta política",
-    "changesDescription": "Esta Política de Privacidade poderá ser atualizada periodicamente para refletir mudanças neste site, em seus serviços ou em obrigações legais. Recomendamos a revisão desta página sempre que necessário.",
+    "changesDescription": "Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças neste site, em seus serviços ou em obrigações legais. Recomendamos revisar esta página sempre que necessário.",
     "contactTitle": "07. Contato",
-    "contactDescription": "Se você tiver dúvidas sobre esta Política de Privacidade ou sobre o tratamento das suas informações, entre em contato por meio do formulário disponível neste site."
+    "contactDescription": "Caso tenha dúvidas sobre esta Política de Privacidade ou sobre como suas informações são tratadas, entre em contato pelo formulário disponível neste site."
   },
   "Contact": {
     "title": "Victor Zarzar | Contato",
     "h1": "Entre em contato ;)",
     "name": "Nome",
-    "email": "Email",
+    "email": "E-mail",
     "subject": "Assunto",
-    "message": "Menssagem",
+    "message": "Mensagem",
     "submit": "Enviar",
     "namerequired": "Nome obrigatório",
     "subjectrequired": "Assunto obrigatório",
-    "messagerequired": "Mensagem necessária",
+    "messagerequired": "Mensagem obrigatória",
     "emailerror": "Erro ao enviar o e-mail. Tente novamente mais tarde.",
     "loading": "Enviando...",
     "emailsucess": "E-mail enviado com sucesso!",
-    "cardTitle": "Gostou do meu trabalho? Envie-me uma mensagem",
+    "cardTitle": "Gostou do meu trabalho? Envie uma mensagem",
     "cardSubtitle": "Entre em contato enviando uma mensagem ou pelas minhas redes sociais.",
     "socialText": "Ou fale comigo por",
     "eyebrow": "Contato",
     "description": "Fique à vontade para entrar em contato preenchendo o formulário abaixo.",
-    "emailrequired": "Informe seu e-mail.",
-    "invalidemail": "Digite um e-mail válido.",
-    "captcha-not-ready": "captcha ainda não está pronto",
-    "captcha-failed": "falha no captcha. tente novamente."
+    "emailrequired": "Digite seu e-mail.",
+    "invalidemail": "Digite um endereço de e-mail válido.",
+    "captcha-not-ready": "captcha não está pronto",
+    "captcha-failed": "captcha falhou. tente novamente."
   },
   "NotFound": {
-    "p": "Desculpe, não conseguimos encontrar esta página.",
-    "button": "Voltar à página inicial"
+    "p": "Desculpe, não encontramos esta página.",
+    "button": "Voltar para a página inicial"
   },
   "Cookies": {
-    "title": "Nós usamos cookies",
+    "title": "Usamos cookies",
     "accept": "Aceitar",
     "decline": "Recusar",
     "message": "Usamos cookies para melhorar sua experiência.",
     "privacyLink": "Leia nossa Política de Privacidade",
-    "error": "Erro ao aceitar os cookies"
-  },
-  "Stats": {
-    "stats": "⚡ Status ⚡"
+    "error": "Erro ao aceitar cookies"
   },
   "Unauthorized": {
     "title": "Acesso negado",
@@ -191,24 +189,24 @@
   },
   "Blog": {
     "title": "Victor Zarzar | Blog",
-    "h1": "Artigos & Publicações",
-    "h2": "Conteúdo técnico que escrevi recentemente...",
-    "p": "Leia mais",
+    "h1": "Artigos e publicações",
+    "h2": "Conteúdos técnicos que escrevi recentemente...",
+    "p": "Ler mais",
     "year": "Ano"
   },
   "GlobalError": {
     "title": "Erro na aplicação",
-    "description": "Ocorreu um erro crítico. Nossa equipe já foi notificada.",
+    "description": "Ocorreu um erro crítico. Nossa equipe foi notificada.",
     "errorId": "ID do erro: {id}",
     "tryAgain": "Tentar novamente"
   },
   "Error": {
     "title": "Algo deu errado",
-    "description": "Ocorreu um erro inesperado ao carregar esta página. Não se preocupe — já fomos notificados e você pode continuar navegando normalmente.",
-    "return-home": "Voltar à página inicial"
+    "description": "Ocorreu um erro inesperado ao carregar esta página. Não se preocupe — fomos notificados e você pode continuar navegando normalmente.",
+    "return-home": "Voltar para a página inicial"
   },
   "CommandPalette": {
-    "searchPlaceholder": "Buscar páginas...",
+    "searchPlaceholder": "Pesquisar páginas...",
     "pressToNavigate": "Pressione ⌘K para navegar",
     "command": {
       "navigate": "Navegação",
@@ -223,15 +221,24 @@
       "projects": "Projetos",
       "blog": "Blog",
       "contact": "Contato",
-      "settings": "Configurações"
+      "settings": "Configurações",
+      "dashboard": "Dashboard",
+      "posts": {
+        "index": "Posts",
+        "new": "Novo post",
+        "tags": "Tags"
+      },
+      "tags": {
+        "new": "Nova tag"
+      }
     }
   },
   "Login": {
-    "title": "Entrar na sua conta",
-    "title-card": "Faça login na sua conta",
-    "subtitle": "Informe seu e-mail abaixo para entrar na sua conta",
+    "title": "Entrar na conta Admin",
+    "title-card": "Entrar na sua conta",
+    "subtitle": "Digite seu e-mail abaixo para entrar na sua conta",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "m@exemplo.com",
+    "emailPlaceholder": "m@example.com",
     "passwordLabel": "Senha",
     "forgotPassword": "Esqueceu sua senha?",
     "submit": "Entrar",
@@ -240,29 +247,29 @@
     "noAccount": "Não tem uma conta?",
     "signup": "Criar conta",
     "invalidemail": "E-mail inválido",
-    "passwordrequired": "A senha é obrigatória",
-    "emailrequired": "Informe seu e-mail.",
+    "passwordrequired": "Senha obrigatória",
+    "emailrequired": "Digite seu e-mail.",
     "passwordmin": "A senha deve ter pelo menos 6 caracteres",
     "passwordmax": "A senha deve ter no máximo 100 caracteres",
-    "backToHome": "Voltar para Home",
+    "backToHome": "Voltar para o início",
     "signinFailed": "Falha ao entrar",
     "error401": "E-mail ou senha incorretos.",
     "error403": "Seu acesso está bloqueado. Entre em contato com o suporte.",
-    "captcha-not-ready": "captcha ainda não está pronto",
-    "captcha-failed": "falha no captcha. tente novamente."
+    "captcha-not-ready": "captcha não está pronto",
+    "captcha-failed": "captcha falhou. tente novamente."
   },
   "twoFactor": {
     "title": "Verificação em duas etapas",
-    "subtitle": "Insira o código do seu app Google Authenticator abaixo",
+    "subtitle": "Digite abaixo o código do seu app Google Authenticator",
     "codeLabel": "Código do Google Authenticator",
     "codeLength": "O código deve ter exatamente 6 dígitos",
     "verify": "Verificar",
     "secureNote": "Sua conta está protegida com autenticação de dois fatores",
-    "backToLogin": "Voltar ao login",
+    "backToLogin": "Voltar para o login",
     "codeExpires": "O código expira em 30 segundos",
     "invalidCode": "Código inválido",
     "successVerified": "2FA verificado com sucesso",
-    "onlyNumbers": "O código deve conter apenas números"
+    "onlyNumbers": "Apenas números são permitidos"
   },
   "dashboard": {
     "title": "Dashboard",
@@ -270,6 +277,61 @@
       "totalPosts": "Total de posts",
       "published": "Publicados",
       "drafts": "Rascunhos"
+    },
+    "tags": {
+      "title": "Tags",
+      "new": "Nova tag",
+      "search": "Pesquisar tags...",
+      "columns": "Colunas",
+      "empty": "Nenhuma tag encontrada.",
+      "posts": "Posts",
+      "table": {
+        "name": "Nome",
+        "slug": "Slug",
+        "postsCount": "Posts",
+        "actions": "Ações"
+      },
+      "pagination": {
+        "show": "Mostrar {size}",
+        "previous": "Anterior",
+        "next": "Próximo"
+      },
+      "actions": {
+        "delete": "Excluir tag"
+      },
+      "form": {
+        "title": "Nova tag",
+        "name": "Nome",
+        "slug": "Slug",
+        "save": "Salvar",
+        "cancel": "Cancelar",
+        "create": "Criar tag",
+        "namePlaceholder": "Nome",
+        "slugPlaceholder": "Slug",
+        "created": "Tag criada com sucesso.",
+        "error": "Erro ao criar tag.",
+        "namerequired": "O nome é obrigatório",
+        "slugrequired": "O slug é obrigatório",
+        "sluginvalid": "O slug deve conter apenas letras minúsculas, números e hífens"
+      },
+      "toast": {
+        "deleted": "Tag excluída com sucesso.",
+        "deleteError": "Erro ao excluir tag.",
+        "created": "Tag criada com sucesso."
+      }
+    },
+    "table-tags": {
+      "name": "Nome",
+      "slug": "Slug",
+      "posts": "Posts",
+      "counts": "Posts",
+      "postsCount": "Posts",
+      "actions": "Ações"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Próximo",
+      "show": "Mostrar"
     },
     "recentPosts": {
       "title": "Posts recentes",
@@ -281,6 +343,14 @@
       "new": "Novo post"
     },
     "posts-form": {
+      "searchPlaceholder": "Pesquisar posts...",
+      "columns": "Colunas",
+      "noResults": "Nenhum resultado encontrado.",
+      "pagination": {
+        "previous": "Anterior",
+        "next": "Próximo",
+        "show": "Mostrar {size}"
+      },
       "actions": {
         "publish": "Publicar",
         "unpublish": "Despublicar",
@@ -295,11 +365,11 @@
         "updated": "Post atualizado",
         "error": "Falha ao salvar o post",
         "errorUpdatePublish": "Falha ao atualizar o status de publicação",
-        "errorDelete": "Falha ao deletar o post"
+        "errorDelete": "Falha ao excluir o post"
       },
       "dialog": {
         "title": "Excluir post?",
-        "description": "Isso irá excluir permanentemente {title} e todas as suas traduções. Esta ação não pode ser desfeita.",
+        "description": "Isso excluirá permanentemente {title} e todas as suas traduções. Esta ação não pode ser desfeita.",
         "cancel": "Cancelar",
         "confirm": "Excluir"
       },
@@ -312,8 +382,10 @@
         "tags": "Tags",
         "year": "Ano",
         "created": "Criado",
+        "createdAt": "Criado em",
         "status": "Status",
-        "actions": "Ações"
+        "actions": "Ações",
+        "published": "Publicado"
       },
       "status": {
         "published": "Publicado",
@@ -321,7 +393,7 @@
       },
       "form": {
         "slug": "Slug",
-        "slugPlaceholder": "meu-post",
+        "slugPlaceholder": "meu-post-slug",
         "year": "Ano",
         "photo": "URL da imagem de capa",
         "photoPlaceholder": "https://...",

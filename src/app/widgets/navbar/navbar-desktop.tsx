@@ -7,6 +7,7 @@ import CommandPalette from "@/app/features/command-palette/command-palette";
 import { LocaleLink } from "@/app/features/locale-link/locale-link";
 import SettingsSwitcher from "@/app/features/settings-switcher/settings-switcher";
 import { ModeToggle } from "@/app/features/toggle-mode/toggle-mode";
+import { publicCommandLinks } from "@/app/shared/constants/command-links";
 import type { NavbarNavLink, NavbarProps } from "@/app/shared/types/navbar/nav";
 import { Logo } from "@/app/shared/ui/logo";
 import {
@@ -112,7 +113,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
           </div>
 
           <div className="items-center gap-3 md:hidden lg:flex">
-            <CommandPalette />
+            <CommandPalette links={publicCommandLinks} />
             <ModeToggle />
             <LocaleLink />
           </div>
