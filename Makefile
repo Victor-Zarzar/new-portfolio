@@ -10,6 +10,9 @@ REDIS_TAG = 8-alpine
 NETWORK_NAME = my-portfolio-network
 DOCKER_TAG = $(shell node -p "require('./package.json').version")
 
+check:
+	bun run check
+
 install:
 	bun install
 
@@ -58,7 +61,7 @@ stop:
 clean: stop
 	docker rmi -f $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) >/dev/null 2>&1 || true
 	docker rmi -f $(REDIS_IMAGE_NAME):$(REDIS_TAG) >/dev/null 2>&1 || true
-	rm -rf node_modules .next playwright-report test-results >/dev/null 2>&1 || true
+	rm -rf node_modules .next tsconfig.tsbuildinfo playwright-report test-results >/dev/null 2>&1 || true
 
 logs:
 	$(DL) $(DOCKER_CONTAINER_NAME)
@@ -115,6 +118,7 @@ help:
 	@echo ""
 	@echo "Local Commands:"
 	@echo "  make install            Install dependencies using bun"
+	@echo "  make check              Run typecheck, lint, and typegen"
 	@echo "  make dev                Run the app locally in development mode"
 	@echo "  make redis-dev-server   Run the local Redis server"
 	@echo ""
