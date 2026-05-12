@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.1](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.6.0...v1.6.1) (2026-05-12)
+
+
+### Bug Fixes
+
+* favicon and update deps ([e009afe](https://github.com/Victor-Zarzar/my-portfolio/commit/e009afe7c061e90e16850370f2b06456b8284847))
+* favicon and update deps ([0ab6504](https://github.com/Victor-Zarzar/my-portfolio/commit/0ab6504e1a574ae4aefc2e9432b298873e803ba5))
+
 ## [1.6.0](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.5.0...v1.6.0) (2026-05-06)
 
 
