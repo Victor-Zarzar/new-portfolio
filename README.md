@@ -185,7 +185,7 @@ To keep the production database safe, this project uses **Neon's branching featu
 
 ```env
 # Use the development branch connection string — never main
-DATABASE_URL="postgresql://user:password@ep-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL="postgresql://user:password@ep-xx.us.neon.tech/neondb?sslmode=require"
 ```
 
 **GitHub Actions (`integration.yaml`):**
@@ -193,7 +193,7 @@ DATABASE_URL="postgresql://user:password@ep-xxx.us-east-2.aws.neon.tech/neondb?s
 In your GitHub repository, go to **Settings** → **Secrets and variables** → **Actions** and add the same connection string:
 
 ```
-DATABASE_URL=postgresql://user:password@ep-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=postgresql://user:password@ep-xx.aws.neon.tech/neondb?sslmode=require
 ```
 
 Then reference it in `.github/workflows/integration.yaml`:

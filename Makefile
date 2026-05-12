@@ -16,6 +16,9 @@ check:
 install:
 	bun install
 
+install-e2e:
+	bunx playwright install
+
 dev: install
 	bun run dev
 
@@ -118,6 +121,7 @@ help:
 	@echo ""
 	@echo "Local Commands:"
 	@echo "  make install            Install dependencies using bun"
+	@echo "  make install-e2e        Install Playwright dependencies"
 	@echo "  make check              Run typecheck, lint, and typegen"
 	@echo "  make dev                Run the app locally in development mode"
 	@echo "  make redis-dev-server   Run the local Redis server"
