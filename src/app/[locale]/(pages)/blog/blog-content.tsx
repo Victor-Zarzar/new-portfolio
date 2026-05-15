@@ -16,7 +16,7 @@ export default async function BlogContent({ locale, posts }: BlogContentProps) {
   const t = await getTranslations("Blog");
 
   return (
-    <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mb-52 md:mb-72 items-stretch">
+    <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 mb-52 md:mb-72 items-stretch">
       {posts.map((post, index) => (
         <ActionCard
           key={post.slug}
@@ -71,6 +71,15 @@ function ActionCard({
   const readingTime = calculateReadingTime(post.content || post.description);
   const formattedReadingTime = formatReadingTime(readingTime, locale);
 
+  const publishedDate = post.publishedAt
+    ? new Intl.DateTimeFormat(locale, {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        timeZone: "UTC",
+      }).format(new Date(post.publishedAt))
+    : null;
+
   return (
     <Link href={`/${locale}/blog/${post.slug}`} className="h-full">
       <Card className="group h-full overflow-hidden">
@@ -92,23 +101,25 @@ function ActionCard({
                 {post.title}
               </h1>
 
-              <div className="mt-2 flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
-                <p>
-                  {t("year")}: {post.year}
-                </p>
-
+              <div className="mt-2 flex justify-end text-xs text-neutral-500 dark:text-neutral-400">
                 <p>{formattedReadingTime}</p>
               </div>
+
+              {publishedDate ? (
+                <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400 mb-3">
+                  {publishedDate}
+                </p>
+              ) : null}
 
               <ArticleDescription description={post.description} />
             </div>
 
-            <div className="mt-4 flex items-end justify-between gap-4">
+            <div className="mt-4 flex items-end justify-between gap-4 text-white">
               <div className="min-w-0 flex flex-wrap gap-2 overflow-hidden">
                 <Tags tags={post.tags?.slice(0, 3)} />
 
                 {post.tags && post.tags.length > 3 ? (
-                  <span className="px-3 py-1 text-xs rounded-full bg-neutral-800 border border-neutral-700">
+                  <span className="px-3 py-1 text-xs  rounded-full bg-neutral-800 border border-neutral-700">
                     +{post.tags.length - 3}
                   </span>
                 ) : null}
