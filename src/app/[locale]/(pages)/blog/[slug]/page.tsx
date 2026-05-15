@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image, { type ImageProps } from "next/image";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { PostAuthor } from "@/app/features/post-author/post-author";
+import { Tags } from "@/app/features/tags-blog/tags-blog";
 import type {
   MdxAnchorProps,
   MdxCodeProps,
@@ -122,6 +125,11 @@ export default async function BlogPostPage({ params }: PageProps) {
   const { locale, slug } = await params;
   const post = await getPostBySlug(locale, slug);
 
+  const t = await getTranslations({
+    locale,
+    namespace: "Blog",
+  });
+
   if (!post) {
     notFound();
   }
@@ -200,6 +208,16 @@ export default async function BlogPostPage({ params }: PageProps) {
         <p className="text-xl text-neutral-600 dark:text-neutral-300">
           {post.metadata.description}
         </p>
+
+        <div className="flex flex-col gap-5 mt-6">
+          <Tags tags={post.metadata.tags} />
+
+          <PostAuthor
+            name={t("author")}
+            profession={t("profession")}
+            avatar="/static/profile.jpg"
+          />
+        </div>
       </header>
 
       <div className="prose prose-neutral dark:prose-invert max-w-none">

@@ -8,3 +8,7 @@ export type AdminTagRow = {
 export type TagsDataTableProps = {
   data: AdminTagRow[];
 };
+
+export type TagsProps = {
+  tags?: string[];
+};
