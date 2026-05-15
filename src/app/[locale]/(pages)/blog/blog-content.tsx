@@ -10,14 +10,21 @@ import type {
   BlogListItem,
 } from "@/app/shared/types/post/post";
 import { Card, CardContent } from "@/app/shared/ui/card";
+import { HeroImageClient } from "@/app/shared/wrapper/hero-image-client";
 
 export default async function BlogContent({ locale, posts }: BlogContentProps) {
   const t = await getTranslations("Blog");
 
   return (
-    <section className="max-w-3xl mx-auto grid grid-cols-1 gap-6 px-4 mb-52 md:mb-72">
-      {posts.map((post) => (
-        <ActionCard key={post.slug} post={post} locale={locale} t={t} />
+    <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mb-52 md:mb-72 items-stretch">
+      {posts.map((post, index) => (
+        <ActionCard
+          key={post.slug}
+          post={post}
+          locale={locale}
+          t={t}
+          priority={index < 2}
+        />
       ))}
     </section>
   );
@@ -54,36 +61,60 @@ function ActionCard({
   post,
   locale,
   t,
+  priority,
 }: {
   post: BlogListItem;
   locale: string;
   t: (key: string) => string;
+  priority?: boolean;
 }) {
   const readingTime = calculateReadingTime(post.content || post.description);
   const formattedReadingTime = formatReadingTime(readingTime, locale);
 
   return (
-    <Link href={`/${locale}/blog/${post.slug}`}>
-      <Card className="w-full group">
-        <CardContent className="p-6">
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <p className="text-xs">
-                {t("year")}: {post.year}
-              </p>
-              <p className="text-xs">{formattedReadingTime}</p>
+    <Link href={`/${locale}/blog/${post.slug}`} className="h-full">
+      <Card className="group h-full overflow-hidden">
+        <CardContent className="flex h-full flex-col p-0">
+          {post.photo ? (
+            <div className="relative aspect-video w-full overflow-hidden">
+              <HeroImageClient
+                src={post.photo}
+                alt={post.title}
+                priority={priority}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
+          ) : null}
 
-            <h1 className="text-xl font-semibold">{post.title}</h1>
+          <div className="flex flex-1 flex-col p-5">
+            <div className="flex-1">
+              <h1 className="text-lg font-semibold leading-tight">
+                {post.title}
+              </h1>
 
-            <ArticleDescription description={post.description} />
+              <div className="mt-2 flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+                <p>
+                  {t("year")}: {post.year}
+                </p>
 
-            <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div className="min-w-0 text-white">
-                <Tags tags={post.tags} />
+                <p>{formattedReadingTime}</p>
               </div>
 
-              <div className="flex items-center gap-2 text-sm text-stone-950 dark:text-stone-50 self-end sm:self-auto sm:shrink-0">
+              <ArticleDescription description={post.description} />
+            </div>
+
+            <div className="mt-4 flex items-end justify-between gap-4">
+              <div className="min-w-0 flex flex-wrap gap-2 overflow-hidden">
+                <Tags tags={post.tags?.slice(0, 3)} />
+
+                {post.tags && post.tags.length > 3 ? (
+                  <span className="px-3 py-1 text-xs rounded-full bg-neutral-800 border border-neutral-700">
+                    +{post.tags.length - 3}
+                  </span>
+                ) : null}
+              </div>
+
+              <div className="flex shrink-0 items-center gap-2 text-sm text-stone-950 dark:text-stone-50">
                 <span className="leading-none whitespace-nowrap">{t("p")}</span>
                 <HiArrowRight className="transition-transform group-hover:translate-x-1" />
               </div>

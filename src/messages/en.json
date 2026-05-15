@@ -192,7 +192,9 @@
     "h1": "Articles & Publications",
     "h2": "Technical content I've written recently...",
     "p": "Read more",
-    "year": "Year"
+    "year": "Year",
+    "author": "Victor Zarzar",
+    "profession": "Full Stack Developer"
   },
   "GlobalError": {
     "title": "Application Error",

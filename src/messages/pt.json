@@ -192,7 +192,9 @@
     "h1": "Artigos e publicações",
     "h2": "Conteúdos técnicos que escrevi recentemente...",
     "p": "Ler mais",
-    "year": "Ano"
+    "year": "Ano",
+    "author": "Victor Zarzar",
+    "profession": "Desenvolvedor Full Stack"
   },
   "GlobalError": {
     "title": "Erro na aplicação",

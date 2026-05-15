@@ -17,8 +17,8 @@ export function HeroImageClient({
         fill
         sizes={sizes}
         priority={priority}
-        quality={90}
-        className={["object-contain transition-opacity duration-300"].join(" ")}
+        quality={75}
+        className={["object-cover transition-opacity duration-300"].join(" ")}
       />
     </>
   );
