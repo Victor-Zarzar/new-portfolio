@@ -16,7 +16,9 @@
 </p>
 
 <p align="center">
-  Modern portfolio application built with Next.js 16, featuring internationalization, dark mode, MDX blog powered by PostgreSQL.
+  Full-stack personal portfolio featuring a blog and admin dashboard, built with Next.js 16, 
+  TypeScript, React 19, PostgreSQL (Neon), Drizzle ORM, Redis, and Better Auth — 
+  with internationalization, dark mode, and secure authentication.
 </p>
 
 ---
@@ -276,29 +278,6 @@ The blog content is stored in a **PostgreSQL database** via [Neon](https://neon.
 | `bun run db:push`     | Push schema changes directly (dev only)  |
 | `bun run db:studio`   | Open Drizzle Studio (visual DB explorer) |
 
-### Schema Location
-
-```
-lib/
-├── auth.ts               # Better Auth server configuration
-├── auth-client.ts        # Better Auth client setup
-├── contact.ts            # Contact form logic
-├── github.ts             # GitHub API integration
-├── utils.ts              # Shared utility functions
-├── db/
-│   ├── auth-schema.ts    # Auth-related table definitions
-│   ├── index.ts          # Drizzle client instance
-│   ├── schema.ts         # Main database schema
-│   ├── migrations/       # Auto-generated SQL migration files
-│   │   └── meta/
-│   └── queries/
-│       └── blog.ts       # Blog post queries
-└── redis/
-    ├── cache.ts          # Cache helpers and abstractions
-    ├── client.ts         # Redis client initialization
-    └── key.ts            # Cache key constants
-```
-
 ---
 
 <h2 id="usage">Usage</h2>
@@ -392,6 +371,11 @@ The application is deployed on Vercel for production use, with Neon PostgreSQL a
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Victor-Zarzar/my-portfolio)
 
 **Important:** Don't forget to add all environment variables from `.env-example` to your Vercel project settings, including your Neon database connection string.
+
+### Self-Hosted (VPS + Docker)
+
+Prefer to host on your own server? I wrote a step-by-step guide covering how to deploy Next.js with Docker on a VPS:
+[Deploy Next.js with Docker on a VPS](https://www.victorzarzar.com.br/blog/deploy-nextjs-docker-vps)
 
 - **CI/CD Pipeline** - `.github/workflows/` with `ci.yaml`, `codeql-analysis.yaml`, `e2e.yaml`, `integration.yaml` and `release.yaml` for automated checks, security analysis, end-to-end tests and releases
 - **Dependabot** - Monthly dependency updates for GitHub Actions and Pub packages
