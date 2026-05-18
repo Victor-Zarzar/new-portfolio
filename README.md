@@ -353,11 +353,11 @@ make clean
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1fbac9fb-838c-4683-bd8f-4075db871080" width="1000" height="600" alt="Projects Section">
+  <img src="https://github.com/user-attachments/assets/15a16382-e75d-4b16-97a0-7d70377687ba" width="1000" height="600" alt="Projects Section">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0f8d0978-e8f1-4590-bfc0-8f4a48f68156" alt="Dark Mode" width="1000" height="500">
+  <img src="https://github.com/user-attachments/assets/88348b29-d069-48ac-9f9f-73b883f05037" alt="Dark Mode" width="1000" height="500">
 </p>
 
 ---

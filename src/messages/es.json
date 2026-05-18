@@ -1,8 +1,8 @@
 {
   "Layout": {
-    "title": "Victor Zarzar | Desarrollador Full Stack",
-    "description": "Desarrollador Full Stack con experiencia en el desarrollo de aplicaciones modernas enfocadas en front-end, SEO, accesibilidad, seguridad, rendimiento y buenas prácticas. Trabajando en proyectos web y móviles.",
-    "ogDescription": "Portafolio profesional con proyectos modernos y tecnologías actualizadas."
+    "title": "Victor Zarzar | Desarrollador Front-end Web & Mobile",
+    "description": "Desarrollador Front-end Web & Mobile con experiencia Full Stack en React, Next.js, TypeScript y Flutter, enfocado en rendimiento, SEO, accesibilidad, seguridad e interfaces escalables.",
+    "ogDescription": "Portafolio profesional con proyectos web y mobile modernos, arquitectura front-end, interfaces responsivas y tecnologías actualizadas."
   },
   "Manifest": {
     "name": "Portafolio Victor Zarzar",
@@ -38,7 +38,7 @@
   },
   "Header": {
     "h1": "Victor Zarzar",
-    "h2": "Desarrollador Full Stack",
+    "h2": "Desarrollador Front-end Web & Mobile",
     "span": "Construyendo aplicaciones limpias, rápidas y fáciles de usar."
   },
   "Skills": {
@@ -194,7 +194,7 @@
     "p": "Leer más",
     "year": "Año",
     "author": "Victor Zarzar",
-    "profession": "Desenvolvedor Full Stack"
+    "profession": "Desarrollador Front-end Web & Mobile"
   },
   "GlobalError": {
     "title": "Error de la aplicación",
