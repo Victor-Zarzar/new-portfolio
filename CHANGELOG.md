@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.2](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.6.1...v1.6.2) (2026-05-18)
+
+
+### Bug Fixes
+
+* lib date-fns ([cfa9154](https://github.com/Victor-Zarzar/my-portfolio/commit/cfa9154b5a00407fe0c941c5088ab768bf7caa1d))
+* lib date-fns ([a206097](https://github.com/Victor-Zarzar/my-portfolio/commit/a2060977cf2ccb80e08375fd8cb2827111405ab7))
+
 ## [1.6.1](https://github.com/Victor-Zarzar/my-portfolio/compare/v1.6.0...v1.6.1) (2026-05-12)
 
 
